@@ -35,6 +35,20 @@ class Plan(StrictModel):
     refusal: str | None = None
     clarification: str | None = Field(default=None, max_length=1000)
 
+    @model_validator(mode="before")
+    @classmethod
+    def normalize_notes(cls, data):
+        """Strict decoding fills every field. Blank notes mean absent, and a clarification
+        note next to executable steps is dropped. A refusal next to steps stays an error."""
+        if isinstance(data, dict):
+            data = dict(data)
+            for key in ("refusal", "clarification"):
+                if isinstance(data.get(key), str) and not data[key].strip():
+                    data[key] = None
+            if data.get("steps") and data.get("clarification"):
+                data["clarification"] = None
+        return data
+
     @model_validator(mode="after")
     def validate_dag(self):
         if self.steps and (self.refusal or self.clarification):
@@ -188,6 +202,46 @@ def cited_synthesis_schema(references):
     )
 
 
+def research_schema(references):
+    """General-profile research output. Citations are an enum of this run's passage IDs."""
+    ids = tuple(references)
+    cite = list[Literal[ids]] if ids else list[str]
+    quote_model = create_model(
+        "CitedQuote",
+        __base__=StrictModel,
+        text=(str, Field(max_length=1500)),
+        quote=(str, Field(max_length=2200)),
+        citations=(cite, Field(max_length=4)),
+    )
+    return create_model(
+        "CitedFinding",
+        __base__=StrictModel,
+        summary=(str, Field(max_length=6000)),
+        claims=(list[quote_model], Field(max_length=12)),
+        contradictions=(list[str], Field(max_length=6)),
+        insufficient=(bool, ...),
+    )
+
+
+def finding_from_research(result) -> Finding:
+    claims = [
+        Claim(
+            text=c.text,
+            quote=c.quote,
+            citations=list(c.citations),
+            kind="extractive" if c.text.strip() == c.quote.strip() else "source",
+        )
+        for c in result.claims
+    ]
+    return Finding(
+        summary=result.summary,
+        claims=claims,
+        citations=list(dict.fromkeys(cid for c in claims for cid in c.citations)),
+        contradictions=list(result.contradictions),
+        insufficient=result.insufficient,
+    )
+
+
 class RecordInterpretation(StrictModel):
     summary: str = Field(min_length=1, max_length=2400)
     insufficient: bool
@@ -255,6 +309,17 @@ class AnalyticsIntent(StrictModel):
         return self
 
 
+class ToolChoice(StrictModel):
+    tool: Literal[
+        "create_report",
+        "export_csv",
+        "create_followup",
+        "draft_email",
+        "update_inventory",
+        "create_notification",
+    ]
+
+
 class ActionSpec(StrictModel):
     tool: Literal[
         "create_report",
@@ -273,6 +338,52 @@ class ProviderError(RuntimeError):
 
 class BudgetExceeded(ProviderError):
     pass
+
+
+UNSUPPORTED_STRICT_KEYS = {"default", "title", "minLength", "maxLength", "examples"}
+
+
+def strict_schema(node):
+    """Rewrite a Pydantic JSON schema for OpenAI strict structured outputs.
+
+    Strict mode constrains decoding to the schema, so enums and patterns are guaranteed by
+    the server instead of being checked after the fact. It requires every property to be
+    listed in ``required`` and ``additionalProperties: false``; optional fields become
+    nullable. Pydantic still validates the decoded value on the client.
+    """
+    if isinstance(node, list):
+        return [strict_schema(item) for item in node]
+    if not isinstance(node, dict):
+        return node
+    out = {}
+    for key, value in node.items():
+        if key in {"properties", "$defs", "definitions"}:
+            # Keys here are field or model names, never schema keywords: keep all of them.
+            out[key] = {name: strict_schema(sub) for name, sub in value.items()}
+        elif key not in UNSUPPORTED_STRICT_KEYS:
+            out[key] = strict_schema(value)
+    if out.get("type") == "object" or "properties" in out:
+        props = out.get("properties", {})
+        required = set(node.get("required", []))
+        for name, prop in list(props.items()):
+            nullable = prop.get("type") == "null" or any(
+                isinstance(o, dict) and o.get("type") == "null" for o in prop.get("anyOf", [])
+            )
+            if name not in required and not nullable:
+                props[name] = {"anyOf": [prop, {"type": "null"}]}
+        out["properties"] = props
+        out["required"] = list(props)
+        out["additionalProperties"] = False
+    return out
+
+
+def drop_nulls(value):
+    """Strict mode returns null for omitted optional fields; Pydantic defaults expect absence."""
+    if isinstance(value, dict):
+        return {k: drop_nulls(v) for k, v in value.items() if v is not None}
+    if isinstance(value, list):
+        return [drop_nulls(v) for v in value]
+    return value
 
 
 def tool_choice_mode():
@@ -369,6 +480,12 @@ class Provider:
                         )
                         protocol = os.getenv("OPENAI_STRUCTURED_OUTPUT", "tool")
                         parameters = schema.model_json_schema()
+                        strict = os.getenv(
+                            "OPENAI_STRICT_SCHEMA", "true" if official_openai else "false"
+                        ).lower() in {"1", "true", "yes"}
+                        if strict:
+                            parameters = strict_schema(parameters)
+                        record["strict_schema"] = strict
                         if protocol == "json_schema":
                             # Some compatible servers constrain decoding without describing the schema in the prompt.
                             wire_system = (
@@ -379,7 +496,11 @@ class Provider:
                             options = {
                                 "response_format": {
                                     "type": "json_schema",
-                                    "json_schema": {"name": schema.__name__, "schema": parameters},
+                                    "json_schema": {
+                                        "name": schema.__name__,
+                                        "schema": parameters,
+                                        **({"strict": True} if strict else {}),
+                                    },
                                 }
                             }
                         elif protocol == "tool":
@@ -397,6 +518,7 @@ class Provider:
                                             "name": "emit_result",
                                             "description": "Return the validated structured result",
                                             "parameters": parameters,
+                                            **({"strict": True} if strict else {}),
                                         },
                                     }
                                 ],
@@ -405,6 +527,9 @@ class Provider:
                         else:
                             raise ValueError("Unsupported OpenAI structured output protocol")
                         record["protocol"] = protocol
+                        if not is_reasoning_model(model):
+                            # Deterministic decoding for reproducible evaluation and audits.
+                            options["temperature"] = float(os.getenv("MODEL_TEMPERATURE", "0"))
                         if official_openai:
                             # The official API replaced max_tokens; reasoning models reject it.
                             options["max_completion_tokens"] = output_limit + headroom
@@ -499,9 +624,12 @@ class Provider:
                             input_tokens=response.usage.input_tokens,
                             output_tokens=response.usage.output_tokens,
                         )
-                    return schema.model_validate(
-                        json.loads(value) if isinstance(value, str) else value
-                    )
+                    decoded = json.loads(value) if isinstance(value, str) else value
+                    try:
+                        return schema.model_validate(decoded)
+                    except Exception:
+                        # Strict decoding emits null for optional fields Pydantic defaults.
+                        return schema.model_validate(drop_nulls(decoded))
                 except Exception as exc:
                     last = exc
                     record["error"] = type(exc).__name__

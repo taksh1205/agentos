@@ -218,13 +218,18 @@ class ScriptedProvider:
             return AnalyticsIntent(metrics=["revenue", "costs"])
         if schema.__name__ == "Review":
             return schema(supported=True, issues=[])
-        if schema.__name__ == "Finding":
-            ids = [h["id"] for h in value.get("sources", [])]
+        if schema.__name__ == "CitedFinding":
+            source = value["sources"][0]
             return schema(
                 summary="Evidence-backed finding",
-                citations=ids,
-                claims=[{"text": "Enterprise policy exists", "citations": ids}] if ids else [],
+                claims=[
+                    {"text": source["text"], "quote": source["text"], "citations": [source["id"]]}
+                ],
+                contradictions=[],
+                insufficient=False,
             )
+        if schema.__name__ == "LedgerReading":
+            return schema(focus="revenue", direction="increase")
         raise AssertionError(schema)
 
 
@@ -313,7 +318,7 @@ def test_chunking_boundaries_and_validation():
 
 @pytest.mark.asyncio
 async def test_prepared_action_stays_identical_after_resume(services, tmp_path):
-    from agentos.models import ActionSpec
+    from agentos.models import ToolChoice
 
     calls = []
 
@@ -325,13 +330,12 @@ async def test_prepared_action_stays_identical_after_resume(services, tmp_path):
                         Step(id="act", agent="action", instruction="Create a local notification")
                     ]
                 )
-            if schema is ActionSpec:
+            if schema is ToolChoice:
+                return ToolChoice(tool="create_notification")
+            if schema.__name__ == "NoticeArgs":
                 calls.append(1)
-                return ActionSpec(
-                    tool="create_notification",
-                    arguments={
-                        "message": "reviewed message" if len(calls) == 1 else "UNREVIEWED MESSAGE"
-                    },
+                return schema(
+                    message="reviewed message" if len(calls) == 1 else "UNREVIEWED MESSAGE"
                 )
             return await super().structured(schema, system, payload)
 

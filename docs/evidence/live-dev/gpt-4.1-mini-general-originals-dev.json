@@ -1,0 +1,4783 @@
+{
+  "configuration": {
+    "dataset": "agentos-live-frozen-v1",
+    "mode": "openai",
+    "model": "gpt-4.1-mini",
+    "model_sha256": null,
+    "inference_server": null,
+    "planner_profile": "general",
+    "structured_output": "tool",
+    "embedding": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+    "retrieval_method": "dense",
+    "use_mcp": true,
+    "repeats": 2,
+    "git_commit": "59379a9"
+  },
+  "summary": {
+    "runs": 6,
+    "pass_at_1": 1,
+    "pass_all_2": 1,
+    "groups": {
+      "original": {
+        "cases": 3,
+        "runs": 6,
+        "pass_at_1": 1,
+        "pass_all_2": 1
+      }
+    },
+    "p50_seconds": 47.797738243000026,
+    "p95_seconds": 168.77355206200002,
+    "mean_tokens_per_run": 9568.5,
+    "total_tokens": 57411,
+    "mean_model_responses_per_run": 8.833333333333334,
+    "exceptions": 0,
+    "unapproved_effects": 0,
+    "cases": {
+      "A": {
+        "group": "original",
+        "runs": 2,
+        "passed": 2,
+        "pass_all_k": true,
+        "failed_checks": [],
+        "median_seconds": 134.8393207555
+      },
+      "B": {
+        "group": "original",
+        "runs": 2,
+        "passed": 2,
+        "pass_all_k": true,
+        "failed_checks": [],
+        "median_seconds": 47.797738243000026
+      },
+      "C": {
+        "group": "original",
+        "runs": 2,
+        "passed": 2,
+        "pass_all_k": true,
+        "failed_checks": [],
+        "median_seconds": 16.529856000999985
+      }
+    }
+  },
+  "runs": [
+    {
+      "case": "A",
+      "group": "original",
+      "workspace": "live-A-c72aec3a07",
+      "proposals": [],
+      "seconds": 100.905089449,
+      "effects": [],
+      "report": {
+        "status": "completed",
+        "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+        "mode": "openai",
+        "profile": "general",
+        "refusal": null,
+        "clarification": null,
+        "grounding": {
+          "fully_checked": true,
+          "requires_review": true
+        },
+        "review": {
+          "supported": true,
+          "issues": [
+            "Conflicting thresholds: Inventory policy requires at least twenty reserve pallets, but capacity policy limits to at most twelve.",
+            "Operational risk: This conflict creates a risk of either insufficient reserve stock to cover supply interruptions if limited by capacity policy, or fire-lane clearance violations if inventory policy is strictly followed.",
+            "No explicit recommendations or guidance on resolving this conflict or managing uncertainties are provided in the cited policies."
+          ]
+        },
+        "findings": [
+          {
+            "step": "1-correction",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "The East depot's inventory policy requires keeping at least twenty reserve pallets on site to cover supply interruptions, and any reduction in reserve stock requires the inventory owner's approval. However, the capacity policy limits the reserve pallets to at most twelve to maintain fire-lane clearance, with any exceptions needing review by the capacity owner.",
+              "citations": [
+                "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e",
+                "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875"
+              ],
+              "insufficient": false,
+              "contradictions": [
+                "Inventory policy requires at least twenty reserve pallets, but capacity policy limits to at most twelve."
+              ],
+              "claims": [
+                {
+                  "text": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "citations": [
+                    "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Reducing reserve stock requires the inventory owner's approval.",
+                  "citations": [
+                    "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Reducing reserve stock requires the inventory owner's approval.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "citations": [
+                    "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The capacity owner must review any proposed exception.",
+                  "citations": [
+                    "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The capacity owner must review any proposed exception.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                }
+              ]
+            },
+            "grounding": {
+              "claims": [
+                {
+                  "index": 0,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 1,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 2,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 3,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                }
+              ],
+              "errors": [],
+              "fully_checked": true,
+              "requires_review": true
+            },
+            "sources": [
+              {
+                "id": "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e",
+                "document_id": "0525ab560ee7caefd5dafffcd0e618746f3f386978b917d41f6b298c533df37d",
+                "source": "inventory-policy",
+                "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+                "score": 0.03278688524590164,
+                "dense_score": 0.7826493950450953,
+                "lexical_score": 4.029035549915714,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E1"
+              },
+              {
+                "id": "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875",
+                "document_id": "b1a6c99e8e351603197ba0401c033593d2bb3ba1f8ecbb0aebf6ed28151ab2d8",
+                "source": "capacity-policy",
+                "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+                "score": 0.03225806451612903,
+                "dense_score": 0.6090137298611982,
+                "lexical_score": 1.6596038644979754,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E2"
+              },
+              {
+                "id": "6dec8b96fd58f133a29b3e22f9a5d3287964a42937a854eb765c635bad113157",
+                "document_id": "317a933bcd21701dc763cd41ca90913479b5b447f981727211855a104896404a",
+                "source": "travel-policy",
+                "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+                "score": 0.015873015873015872,
+                "dense_score": 0.21477474148616588,
+                "lexical_score": 0,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E3"
+              }
+            ],
+            "tokens": 814,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "SearchQuery",
+                "attempt": 1,
+                "input_tokens": 134,
+                "output_tokens": 41,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.1612091140000302,
+                "tokens": 175
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "CitedFinding",
+                "attempt": 1,
+                "input_tokens": 388,
+                "output_tokens": 251,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 3.0619324719999668,
+                "tokens": 639
+              }
+            ],
+            "tools_used": [
+              "document_search",
+              "document_search",
+              "document_search",
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 41.82826606200001
+          },
+          {
+            "step": "2-correction",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "The East depot's capacity policy states that it may keep at most twelve reserve pallets on site to maintain fire-lane clearance, and any proposed exception must be reviewed by the capacity owner. However, the inventory policy requires the East depot to keep at least twenty reserve pallets on site to cover supply interruptions, and reducing reserve stock requires the inventory owner's approval.",
+              "citations": [
+                "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e",
+                "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875"
+              ],
+              "insufficient": false,
+              "contradictions": [
+                "Inventory policy requires at least twenty reserve pallets, but capacity policy allows at most twelve."
+              ],
+              "claims": [
+                {
+                  "text": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "citations": [
+                    "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Reducing reserve stock requires the inventory owner's approval.",
+                  "citations": [
+                    "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Reducing reserve stock requires the inventory owner's approval.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "citations": [
+                    "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The capacity owner must review any proposed exception.",
+                  "citations": [
+                    "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The capacity owner must review any proposed exception.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                }
+              ]
+            },
+            "grounding": {
+              "claims": [
+                {
+                  "index": 0,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 1,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 2,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 3,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                }
+              ],
+              "errors": [],
+              "fully_checked": true,
+              "requires_review": true
+            },
+            "sources": [
+              {
+                "id": "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e",
+                "document_id": "0525ab560ee7caefd5dafffcd0e618746f3f386978b917d41f6b298c533df37d",
+                "source": "inventory-policy",
+                "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+                "score": 0.03278688524590164,
+                "dense_score": 0.8318613329555808,
+                "lexical_score": 3.2707534180516795,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E1"
+              },
+              {
+                "id": "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875",
+                "document_id": "b1a6c99e8e351603197ba0401c033593d2bb3ba1f8ecbb0aebf6ed28151ab2d8",
+                "source": "capacity-policy",
+                "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+                "score": 0.03225806451612903,
+                "dense_score": 0.6845319512976833,
+                "lexical_score": 1.7791066672358749,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E2"
+              },
+              {
+                "id": "6dec8b96fd58f133a29b3e22f9a5d3287964a42937a854eb765c635bad113157",
+                "document_id": "317a933bcd21701dc763cd41ca90913479b5b447f981727211855a104896404a",
+                "source": "travel-policy",
+                "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+                "score": 0.031746031746031744,
+                "dense_score": 0.3594046020221518,
+                "lexical_score": 0.17450125172522835,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E3"
+              }
+            ],
+            "tokens": 818,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "SearchQuery",
+                "attempt": 1,
+                "input_tokens": 134,
+                "output_tokens": 38,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.1251586130000533,
+                "tokens": 172
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "CitedFinding",
+                "attempt": 1,
+                "input_tokens": 388,
+                "output_tokens": 258,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 2.934554497000022,
+                "tokens": 646
+              }
+            ],
+            "tools_used": [
+              "document_search",
+              "document_search",
+              "document_search",
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 42.77605767299997
+          },
+          {
+            "step": "4-correction",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "The East depot has conflicting policies regarding reserve stock: the inventory policy requires at least twenty reserve pallets on site to cover supply interruptions, while the capacity policy limits reserve pallets to at most twelve to maintain fire-lane clearance. Both policies require approval from their respective owners for any changes or exceptions. There are no specific recommendations on managing these conflicts or handling uncertainties in the provided sources.",
+              "citations": [
+                "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e",
+                "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875"
+              ],
+              "insufficient": true,
+              "contradictions": [
+                "Inventory policy requires at least twenty reserve pallets, but capacity policy limits to at most twelve."
+              ],
+              "claims": [
+                {
+                  "text": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "citations": [
+                    "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Reducing reserve stock requires the inventory owner's approval.",
+                  "citations": [
+                    "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Reducing reserve stock requires the inventory owner's approval.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "citations": [
+                    "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The capacity owner must review any proposed exception.",
+                  "citations": [
+                    "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The capacity owner must review any proposed exception.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                }
+              ]
+            },
+            "grounding": {
+              "claims": [
+                {
+                  "index": 0,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 1,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 2,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 3,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                }
+              ],
+              "errors": [],
+              "fully_checked": true,
+              "requires_review": true
+            },
+            "sources": [
+              {
+                "id": "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e",
+                "document_id": "0525ab560ee7caefd5dafffcd0e618746f3f386978b917d41f6b298c533df37d",
+                "source": "inventory-policy",
+                "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+                "score": 0.03278688524590164,
+                "dense_score": 0.5172951467082791,
+                "lexical_score": 2.7900575014742333,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E1"
+              },
+              {
+                "id": "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875",
+                "document_id": "b1a6c99e8e351603197ba0401c033593d2bb3ba1f8ecbb0aebf6ed28151ab2d8",
+                "source": "capacity-policy",
+                "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+                "score": 0.03225806451612903,
+                "dense_score": 0.38335180865153445,
+                "lexical_score": 1.7134093587080539,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E2"
+              },
+              {
+                "id": "6dec8b96fd58f133a29b3e22f9a5d3287964a42937a854eb765c635bad113157",
+                "document_id": "317a933bcd21701dc763cd41ca90913479b5b447f981727211855a104896404a",
+                "source": "travel-policy",
+                "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+                "score": 0.015873015873015872,
+                "dense_score": 0.12788774344084036,
+                "lexical_score": 0,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E3"
+              }
+            ],
+            "tokens": 851,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "SearchQuery",
+                "attempt": 1,
+                "input_tokens": 139,
+                "output_tokens": 55,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.1918266689999655,
+                "tokens": 194
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "CitedFinding",
+                "attempt": 1,
+                "input_tokens": 393,
+                "output_tokens": 264,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 2.9421933029999536,
+                "tokens": 657
+              }
+            ],
+            "tools_used": [
+              "document_search",
+              "document_search",
+              "document_search",
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 43.747939428999985
+          }
+        ],
+        "citations": [
+          {
+            "id": "988a069c33bbde3f172ba6209f55311f8f1c451af42fe2735834563bcdeb676e",
+            "document_id": "0525ab560ee7caefd5dafffcd0e618746f3f386978b917d41f6b298c533df37d",
+            "source": "inventory-policy",
+            "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+            "score": 0.03278688524590164,
+            "dense_score": 0.5172951467082791,
+            "lexical_score": 2.7900575014742333,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E1"
+          },
+          {
+            "id": "f3d1a1b761b09b17b2b35d2292d3c95600a2755c3fc7ea8c4d5ea4c7404e6875",
+            "document_id": "b1a6c99e8e351603197ba0401c033593d2bb3ba1f8ecbb0aebf6ed28151ab2d8",
+            "source": "capacity-policy",
+            "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+            "score": 0.03225806451612903,
+            "dense_score": 0.38335180865153445,
+            "lexical_score": 1.7134093587080539,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E2"
+          }
+        ],
+        "errors": [],
+        "usage": {
+          "tokens": 13489,
+          "calls": 13,
+          "estimated_cost_usd": null
+        },
+        "limitations": [
+          "Model judges can be wrong; document content is untrusted evidence."
+        ]
+      },
+      "step_failures": [
+        {
+          "step": "2",
+          "agent": "data",
+          "error": "ValueError",
+          "issues": [
+            "Completion checks failed: completion_metric_missing"
+          ]
+        }
+      ],
+      "plan": [
+        {
+          "id": "1-correction",
+          "agent": "research",
+          "instruction": "Retrieve the East depot's inventory policy regarding reserve stock thresholds and approval requirements.",
+          "dependencies": [],
+          "tool": "document_search",
+          "arguments": {},
+          "completion_criteria": [
+            "source_count >= 1"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "source_count",
+              "metric": null,
+              "expected": null,
+              "minimum": 1,
+              "tool": "document_search"
+            }
+          ]
+        },
+        {
+          "id": "2-correction",
+          "agent": "research",
+          "instruction": "Retrieve the East depot's capacity policy regarding reserve stock thresholds and approval requirements.",
+          "dependencies": [],
+          "tool": "document_search",
+          "arguments": {},
+          "completion_criteria": [
+            "source_count >= 1"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "source_count",
+              "metric": null,
+              "expected": null,
+              "minimum": 1,
+              "tool": "document_search"
+            }
+          ]
+        },
+        {
+          "id": "4-correction",
+          "agent": "research",
+          "instruction": "Find recommendations from authoritative sources on managing conflicting inventory and capacity policies for reserve stock, including handling uncertainties.",
+          "dependencies": [],
+          "tool": "document_search",
+          "arguments": {},
+          "completion_criteria": [
+            "source_count >= 1"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "source_count",
+              "metric": null,
+              "expected": null,
+              "minimum": 1,
+              "tool": "document_search"
+            }
+          ]
+        }
+      ],
+      "tools_called": [
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "dataset_schema",
+        "inventory_retrieval",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search"
+      ],
+      "model_attempts": 13,
+      "model_responses": 13,
+      "tokens": 13489,
+      "model_records": [
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 753,
+          "output_tokens": 508,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 4.836288192999973,
+          "tokens": 1261,
+          "step": "planner"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "SearchQuery",
+          "attempt": 1,
+          "input_tokens": 144,
+          "output_tokens": 43,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.8783433309999964,
+          "tokens": 187,
+          "step": "1"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "CitedFinding",
+          "attempt": 1,
+          "input_tokens": 398,
+          "output_tokens": 243,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 2.437231343999997,
+          "tokens": 641,
+          "step": "1"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 1370,
+          "output_tokens": 36,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.4321129830000245,
+          "tokens": 1406,
+          "step": "2"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "InventoryReading",
+          "attempt": 1,
+          "input_tokens": 122,
+          "output_tokens": 6,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.6464553449999357,
+          "tokens": 128,
+          "step": "2"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 2465,
+          "output_tokens": 418,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 3.503027080999914,
+          "tokens": 2883,
+          "step": "planner"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "SearchQuery",
+          "attempt": 1,
+          "input_tokens": 134,
+          "output_tokens": 41,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.1612091140000302,
+          "tokens": 175,
+          "step": "1-correction"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "SearchQuery",
+          "attempt": 1,
+          "input_tokens": 134,
+          "output_tokens": 38,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.1251586130000533,
+          "tokens": 172,
+          "step": "2-correction"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "SearchQuery",
+          "attempt": 1,
+          "input_tokens": 139,
+          "output_tokens": 55,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.1918266689999655,
+          "tokens": 194,
+          "step": "4-correction"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "CitedFinding",
+          "attempt": 1,
+          "input_tokens": 388,
+          "output_tokens": 251,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 3.0619324719999668,
+          "tokens": 639,
+          "step": "1-correction"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "CitedFinding",
+          "attempt": 1,
+          "input_tokens": 388,
+          "output_tokens": 258,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 2.934554497000022,
+          "tokens": 646,
+          "step": "2-correction"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "CitedFinding",
+          "attempt": 1,
+          "input_tokens": 393,
+          "output_tokens": 264,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 2.9421933029999536,
+          "tokens": 657,
+          "step": "4-correction"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Review",
+          "attempt": 1,
+          "input_tokens": 4414,
+          "output_tokens": 86,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 2.1831907150000234,
+          "tokens": 4500,
+          "step": "verification"
+        }
+      ],
+      "answer_text": "The East depot's inventory policy requires keeping at least twenty reserve pallets on site to cover supply interruptions, and any reduction in reserve stock requires the inventory owner's approval. However, the capacity policy limits the reserve pallets to at most twelve to maintain fire-lane clearance, with any exceptions needing review by the capacity owner.\nThe East depot's capacity policy states that it may keep at most twelve reserve pallets on site to maintain fire-lane clearance, and any proposed exception must be reviewed by the capacity owner. However, the inventory policy requires the East depot to keep at least twenty reserve pallets on site to cover supply interruptions, and reducing reserve stock requires the inventory owner's approval.\nThe East depot has conflicting policies regarding reserve stock: the inventory policy requires at least twenty reserve pallets on site to cover supply interruptions, while the capacity policy limits reserve pallets to at most twelve to maintain fire-lane clearance. Both policies require approval from their respective owners for any changes or exceptions. There are no specific recommendations on managing these conflicts or handling uncertainties in the provided sources.",
+      "grade": {
+        "passed": true,
+        "checks": {
+          "no_exception": true,
+          "status": true,
+          "live_inference": true,
+          "tools_required": true,
+          "no_write_proposed": true,
+          "contradiction": true,
+          "cited_sources": true,
+          "no_distractor_citations": true,
+          "fact_0": true,
+          "fact_1": true
+        }
+      },
+      "repeat": 1
+    },
+    {
+      "case": "B",
+      "group": "original",
+      "workspace": "live-B-be83f72e19",
+      "proposals": [],
+      "seconds": 44.84944740000003,
+      "effects": [],
+      "report": {
+        "status": "completed",
+        "goal": "Analyze February and March 2026 revenue, expenses, and profit. Calculate month-over-month changes for all three metrics, identify significant trends, and explain the findings.",
+        "mode": "openai",
+        "profile": "general",
+        "refusal": null,
+        "clarification": null,
+        "grounding": {
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "review": {
+          "supported": true,
+          "issues": [
+            "No contradictions found.",
+            "All numbers for revenue, costs, and profit are supported by the data.",
+            "Month-over-month changes are correctly calculated and consistent.",
+            "No causal claims are made beyond the observed increases, which is appropriate given the data.",
+            "No tasks are missing for the analysis of February and March 2026 revenue, expenses, and profit."
+          ]
+        },
+        "findings": [
+          {
+            "step": "revenue_feb_mar",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "metric": "revenue",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 120000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 150000.0
+                }
+              ],
+              "total": 270000.0,
+              "absolute_change": 30000.0,
+              "growth": 0.25,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": 30000.0
+              }
+            },
+            "intent": {
+              "as_of": null,
+              "dataset": "sales",
+              "metrics": [
+                "revenue"
+              ],
+              "start": "2026-02",
+              "end": "2026-03",
+              "compare_previous": false
+            },
+            "period_source": "model",
+            "computed": {
+              "dataset": "sales",
+              "period": {
+                "start": "2026-02",
+                "end": "2026-03"
+              },
+              "metrics": [
+                {
+                  "metric": "revenue",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 120000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 150000.0
+                    }
+                  ],
+                  "total": 270000.0,
+                  "absolute_change": 30000.0,
+                  "growth": 0.25,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 30000.0
+                  }
+                }
+              ],
+              "raw_rows": [
+                {
+                  "month": "2026-02",
+                  "revenue": 120000.0,
+                  "costs": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "revenue": 150000.0,
+                  "costs": 90000.0
+                }
+              ],
+              "comparison": null
+            },
+            "interpretation": {
+              "summary": "Revenue from 2026-02 to 2026-03: 120,000.00 to 150,000.00 (+30,000.00, +25.00%). The selected trend is the increase in revenue. The records do not establish a cause.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 696,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "AnalyticsIntent",
+                "attempt": 1,
+                "input_tokens": 425,
+                "output_tokens": 35,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.1227088419999518,
+                "tokens": 460
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "LedgerReading",
+                "attempt": 1,
+                "input_tokens": 226,
+                "output_tokens": 10,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 0.8964994000000388,
+                "tokens": 236
+              }
+            ],
+            "tools_used": [
+              "dataset_schema",
+              "business_metrics"
+            ],
+            "attempts": 1,
+            "seconds": 6.1056269939999765
+          },
+          {
+            "step": "costs_feb_mar",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "metric": "costs",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 90000.0
+                }
+              ],
+              "total": 168000.0,
+              "absolute_change": 12000.0,
+              "growth": 0.15384615384615385,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": 12000.0
+              }
+            },
+            "intent": {
+              "as_of": null,
+              "dataset": "sales",
+              "metrics": [
+                "costs"
+              ],
+              "start": "2026-02",
+              "end": "2026-03",
+              "compare_previous": false
+            },
+            "period_source": "model",
+            "computed": {
+              "dataset": "sales",
+              "period": {
+                "start": "2026-02",
+                "end": "2026-03"
+              },
+              "metrics": [
+                {
+                  "metric": "costs",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 78000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 90000.0
+                    }
+                  ],
+                  "total": 168000.0,
+                  "absolute_change": 12000.0,
+                  "growth": 0.15384615384615385,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 12000.0
+                  }
+                }
+              ],
+              "raw_rows": [
+                {
+                  "month": "2026-02",
+                  "revenue": 120000.0,
+                  "costs": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "revenue": 150000.0,
+                  "costs": 90000.0
+                }
+              ],
+              "comparison": null
+            },
+            "interpretation": {
+              "summary": "Costs from 2026-02 to 2026-03: 78,000.00 to 90,000.00 (+12,000.00, +15.38%). The selected trend is the increase in costs. The records do not establish a cause.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 701,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "AnalyticsIntent",
+                "attempt": 1,
+                "input_tokens": 425,
+                "output_tokens": 35,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.1825559180000482,
+                "tokens": 460
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "LedgerReading",
+                "attempt": 1,
+                "input_tokens": 231,
+                "output_tokens": 10,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 0.7692894809999871,
+                "tokens": 241
+              }
+            ],
+            "tools_used": [
+              "dataset_schema",
+              "business_metrics"
+            ],
+            "attempts": 1,
+            "seconds": 6.158422554999902
+          },
+          {
+            "step": "profit_feb_mar",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "metric": "profit",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 42000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 60000.0
+                }
+              ],
+              "total": 102000.0,
+              "absolute_change": 18000.0,
+              "growth": 0.42857142857142855,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": 18000.0
+              }
+            },
+            "intent": {
+              "as_of": null,
+              "dataset": "sales",
+              "metrics": [
+                "profit"
+              ],
+              "start": "2026-02",
+              "end": "2026-03",
+              "compare_previous": false
+            },
+            "period_source": "model",
+            "computed": {
+              "dataset": "sales",
+              "period": {
+                "start": "2026-02",
+                "end": "2026-03"
+              },
+              "metrics": [
+                {
+                  "metric": "profit",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 42000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 60000.0
+                    }
+                  ],
+                  "total": 102000.0,
+                  "absolute_change": 18000.0,
+                  "growth": 0.42857142857142855,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 18000.0
+                  }
+                }
+              ],
+              "raw_rows": [
+                {
+                  "month": "2026-02",
+                  "revenue": 120000.0,
+                  "costs": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "revenue": 150000.0,
+                  "costs": 90000.0
+                }
+              ],
+              "comparison": null
+            },
+            "interpretation": {
+              "summary": "Profit from 2026-02 to 2026-03: 42,000.00 to 60,000.00 (+18,000.00, +42.86%). The selected trend is the increase in profit. The records do not establish a cause.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 698,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "AnalyticsIntent",
+                "attempt": 1,
+                "input_tokens": 425,
+                "output_tokens": 34,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.3165501409999933,
+                "tokens": 459
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "LedgerReading",
+                "attempt": 1,
+                "input_tokens": 230,
+                "output_tokens": 9,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 0.6893347710000626,
+                "tokens": 239
+              }
+            ],
+            "tools_used": [
+              "dataset_schema",
+              "business_metrics"
+            ],
+            "attempts": 1,
+            "seconds": 6.515378078000026
+          },
+          {
+            "step": "analyze_changes",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "No relevant documents were found for this request.",
+              "citations": [],
+              "insufficient": true,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "sources": [],
+            "tokens": 1493,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "SearchQuery",
+                "attempt": 1,
+                "input_tokens": 1438,
+                "output_tokens": 55,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.030097210000008,
+                "tokens": 1493
+              }
+            ],
+            "tools_used": [
+              "document_search",
+              "document_search",
+              "document_search",
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 32.83425433399998
+          }
+        ],
+        "citations": [],
+        "errors": [],
+        "usage": {
+          "tokens": 6313,
+          "calls": 9,
+          "estimated_cost_usd": null
+        },
+        "limitations": [
+          "Model judges can be wrong; document content is untrusted evidence."
+        ]
+      },
+      "step_failures": [],
+      "plan": [
+        {
+          "id": "revenue_feb_mar",
+          "agent": "data",
+          "instruction": "Calculate total revenue for February 2026 and March 2026.",
+          "dependencies": [],
+          "tool": "business_metrics",
+          "arguments": {},
+          "completion_criteria": [
+            "metric:revenue"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "metric",
+              "metric": "revenue",
+              "expected": null,
+              "minimum": 1,
+              "tool": "business_metrics"
+            }
+          ]
+        },
+        {
+          "id": "costs_feb_mar",
+          "agent": "data",
+          "instruction": "Calculate total costs for February 2026 and March 2026.",
+          "dependencies": [],
+          "tool": "business_metrics",
+          "arguments": {},
+          "completion_criteria": [
+            "metric:costs"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "metric",
+              "metric": "costs",
+              "expected": null,
+              "minimum": 1,
+              "tool": "business_metrics"
+            }
+          ]
+        },
+        {
+          "id": "profit_feb_mar",
+          "agent": "data",
+          "instruction": "Calculate total profit for February 2026 and March 2026.",
+          "dependencies": [],
+          "tool": "business_metrics",
+          "arguments": {},
+          "completion_criteria": [
+            "metric:profit"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "metric",
+              "metric": "profit",
+              "expected": null,
+              "minimum": 1,
+              "tool": "business_metrics"
+            }
+          ]
+        },
+        {
+          "id": "analyze_changes",
+          "agent": "research",
+          "instruction": "Analyze month-over-month changes for revenue, costs, and profit between February and March 2026. Identify significant trends and explain the findings.",
+          "dependencies": [
+            "revenue_feb_mar",
+            "costs_feb_mar",
+            "profit_feb_mar"
+          ],
+          "tool": null,
+          "arguments": {},
+          "completion_criteria": [
+            "source_count:1"
+          ],
+          "requires_approval": false,
+          "checks": []
+        }
+      ],
+      "tools_called": [
+        "dataset_schema",
+        "dataset_schema",
+        "dataset_schema",
+        "business_metrics",
+        "business_metrics",
+        "business_metrics",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search"
+      ],
+      "model_attempts": 9,
+      "model_responses": 9,
+      "tokens": 6313,
+      "model_records": [
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 754,
+          "output_tokens": 354,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 3.80559426100001,
+          "tokens": 1108,
+          "step": "planner"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 425,
+          "output_tokens": 35,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.1227088419999518,
+          "tokens": 460,
+          "step": "revenue_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 425,
+          "output_tokens": 35,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.1825559180000482,
+          "tokens": 460,
+          "step": "costs_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 425,
+          "output_tokens": 34,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.3165501409999933,
+          "tokens": 459,
+          "step": "profit_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "LedgerReading",
+          "attempt": 1,
+          "input_tokens": 226,
+          "output_tokens": 10,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.8964994000000388,
+          "tokens": 236,
+          "step": "revenue_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "LedgerReading",
+          "attempt": 1,
+          "input_tokens": 231,
+          "output_tokens": 10,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.7692894809999871,
+          "tokens": 241,
+          "step": "costs_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "LedgerReading",
+          "attempt": 1,
+          "input_tokens": 230,
+          "output_tokens": 9,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.6893347710000626,
+          "tokens": 239,
+          "step": "profit_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "SearchQuery",
+          "attempt": 1,
+          "input_tokens": 1438,
+          "output_tokens": 55,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.030097210000008,
+          "tokens": 1493,
+          "step": "analyze_changes"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Review",
+          "attempt": 1,
+          "input_tokens": 1541,
+          "output_tokens": 76,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.5908317559999432,
+          "tokens": 1617,
+          "step": "verification"
+        }
+      ],
+      "answer_text": "Revenue from 2026-02 to 2026-03: 120,000.00 to 150,000.00 (+30,000.00, +25.00%). The selected trend is the increase in revenue. The records do not establish a cause.\nCosts from 2026-02 to 2026-03: 78,000.00 to 90,000.00 (+12,000.00, +15.38%). The selected trend is the increase in costs. The records do not establish a cause.\nProfit from 2026-02 to 2026-03: 42,000.00 to 60,000.00 (+18,000.00, +42.86%). The selected trend is the increase in profit. The records do not establish a cause.\nNo relevant documents were found for this request.",
+      "grade": {
+        "passed": true,
+        "checks": {
+          "no_exception": true,
+          "status": true,
+          "live_inference": true,
+          "tools_required": true,
+          "no_write_proposed": true,
+          "fact_0": true,
+          "fact_1": true,
+          "fact_2": true,
+          "fact_3": true,
+          "fact_4": true,
+          "fact_5": true
+        }
+      },
+      "repeat": 1
+    },
+    {
+      "case": "C",
+      "group": "original",
+      "workspace": "live-C-cba57f03a8",
+      "proposals": [
+        {
+          "id": "c9e6e39cbe72b9c6e50c562ad018cebbf74510c24de6ad88a1a8b71fcd97e9a8",
+          "tool": "create_report",
+          "arguments": {
+            "title": "Analyze overdue invoices as of 2026-04-01",
+            "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+          },
+          "digest": "32de9f1c2aa7edee3a0c556ecc9dfdd1696066bc4060813aab45568791531f31",
+          "status": "pending",
+          "approved": true
+        }
+      ],
+      "seconds": 12.07339984600003,
+      "effects": [
+        {
+          "approval_id": "c9e6e39cbe72b9c6e50c562ad018cebbf74510c24de6ad88a1a8b71fcd97e9a8",
+          "tool": "create_report",
+          "result": {
+            "receipt": "c9e6e39cbe72b9c6e50c562ad018cebbf74510c24de6ad88a1a8b71fcd97e9a8",
+            "tool": "create_report",
+            "stored": true,
+            "payload": {
+              "title": "Analyze overdue invoices as of 2026-04-01",
+              "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+            },
+            "external_message_sent": false
+          }
+        }
+      ],
+      "replay_identical": true,
+      "report": {
+        "status": "completed",
+        "goal": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+        "mode": "openai",
+        "profile": "general",
+        "refusal": null,
+        "clarification": null,
+        "grounding": {
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "review": {
+          "supported": true,
+          "issues": []
+        },
+        "findings": [
+          {
+            "step": "1",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "rows": [
+                {
+                  "number": "INV-001",
+                  "amount": 2500.0,
+                  "paid": 0,
+                  "due": "2026-03-31"
+                },
+                {
+                  "number": "INV-002",
+                  "amount": 1200.0,
+                  "paid": 1,
+                  "due": "2026-02-28"
+                },
+                {
+                  "number": "INV-003",
+                  "amount": 800.0,
+                  "paid": 0,
+                  "due": "2026-04-15"
+                }
+              ],
+              "unpaid_total": 3300.0,
+              "as_of": "2026-04-01",
+              "overdue_rows": [
+                {
+                  "number": "INV-001",
+                  "amount": 2500.0,
+                  "paid": 0,
+                  "due": "2026-03-31"
+                }
+              ],
+              "overdue_total": 2500.0
+            },
+            "intent": {
+              "as_of": "2026-04-01",
+              "dataset": "invoices",
+              "metrics": [
+                "revenue"
+              ],
+              "start": null,
+              "end": null,
+              "compare_previous": false
+            },
+            "period_source": "model",
+            "computed": {
+              "rows": [
+                {
+                  "number": "INV-001",
+                  "amount": 2500.0,
+                  "paid": 0,
+                  "due": "2026-03-31"
+                },
+                {
+                  "number": "INV-002",
+                  "amount": 1200.0,
+                  "paid": 1,
+                  "due": "2026-02-28"
+                },
+                {
+                  "number": "INV-003",
+                  "amount": 800.0,
+                  "paid": 0,
+                  "due": "2026-04-15"
+                }
+              ],
+              "unpaid_total": 3300.0,
+              "as_of": "2026-04-01",
+              "overdue_rows": [
+                {
+                  "number": "INV-001",
+                  "amount": 2500.0,
+                  "paid": 0,
+                  "due": "2026-03-31"
+                }
+              ],
+              "overdue_total": 2500.0
+            },
+            "interpretation": {
+              "summary": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 643,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "AnalyticsIntent",
+                "attempt": 1,
+                "input_tokens": 414,
+                "output_tokens": 42,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.062296650999997,
+                "tokens": 456
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "InvoiceReading",
+                "attempt": 1,
+                "input_tokens": 171,
+                "output_tokens": 16,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 0.9452550929999006,
+                "tokens": 187
+              }
+            ],
+            "tools_used": [
+              "dataset_schema",
+              "invoice_analysis"
+            ],
+            "attempts": 1,
+            "seconds": 6.662286918999939
+          },
+          {
+            "step": "2",
+            "agent": "action",
+            "ok": true,
+            "tool": "create_report",
+            "receipt": "c9e6e39cbe72b9c6e50c562ad018cebbf74510c24de6ad88a1a8b71fcd97e9a8",
+            "effect": {
+              "receipt": "c9e6e39cbe72b9c6e50c562ad018cebbf74510c24de6ad88a1a8b71fcd97e9a8",
+              "tool": "create_report",
+              "stored": true,
+              "payload": {
+                "title": "Analyze overdue invoices as of 2026-04-01",
+                "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+              },
+              "external_message_sent": false
+            },
+            "tokens": 0,
+            "model_records": [],
+            "tools_used": [
+              "create_report"
+            ],
+            "attempts": 1
+          }
+        ],
+        "citations": [],
+        "errors": [],
+        "usage": {
+          "tokens": 2980,
+          "calls": 5,
+          "estimated_cost_usd": null
+        },
+        "limitations": [
+          "Model judges can be wrong; document content is untrusted evidence."
+        ]
+      },
+      "step_failures": [],
+      "plan": [
+        {
+          "id": "1",
+          "agent": "data",
+          "instruction": "Analyze overdue invoices as of 2026-04-01 to identify overdue invoice numbers and amounts.",
+          "dependencies": [],
+          "tool": "invoice_analysis",
+          "arguments": {},
+          "completion_criteria": [
+            "overdue invoice numbers identified",
+            "overdue invoice amounts identified"
+          ],
+          "requires_approval": false,
+          "checks": []
+        },
+        {
+          "id": "2",
+          "agent": "action",
+          "instruction": "Prepare an internal follow-up report identifying overdue invoice numbers and amounts based on the analysis results.",
+          "dependencies": [
+            "1"
+          ],
+          "tool": "create_report",
+          "arguments": {},
+          "completion_criteria": [
+            "report prepared"
+          ],
+          "requires_approval": true,
+          "checks": []
+        }
+      ],
+      "tools_called": [
+        "dataset_schema",
+        "invoice_analysis",
+        "create_report"
+      ],
+      "model_attempts": 5,
+      "model_responses": 5,
+      "tokens": 2980,
+      "model_records": [
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 754,
+          "output_tokens": 171,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.981847165999966,
+          "tokens": 925,
+          "step": "planner"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 414,
+          "output_tokens": 42,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.062296650999997,
+          "tokens": 456,
+          "step": "1"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "InvoiceReading",
+          "attempt": 1,
+          "input_tokens": 171,
+          "output_tokens": 16,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.9452550929999006,
+          "tokens": 187,
+          "step": "1"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Review",
+          "attempt": 1,
+          "input_tokens": 623,
+          "output_tokens": 9,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.5497958309999831,
+          "tokens": 632,
+          "step": "verification"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Review",
+          "attempt": 1,
+          "input_tokens": 771,
+          "output_tokens": 9,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.7291710190000913,
+          "tokens": 780,
+          "step": "verification"
+        }
+      ],
+      "answer_text": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up.\nAnalyze overdue invoices as of 2026-04-01 As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up.",
+      "grade": {
+        "passed": true,
+        "checks": {
+          "no_exception": true,
+          "status": true,
+          "live_inference": true,
+          "tools_required": true,
+          "proposal_tool": true,
+          "effects": true,
+          "approved_by_operator": true,
+          "replay_idempotent": true,
+          "fact_0": true,
+          "fact_1": true,
+          "forbidden_0": true
+        }
+      },
+      "repeat": 1
+    },
+    {
+      "case": "A",
+      "group": "original",
+      "workspace": "live-A-dca16faa7e",
+      "proposals": [],
+      "seconds": 168.77355206200002,
+      "effects": [],
+      "report": {
+        "status": "completed",
+        "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+        "mode": "openai",
+        "profile": "general",
+        "refusal": null,
+        "clarification": null,
+        "grounding": {
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "review": {
+          "supported": true,
+          "issues": [
+            "Conflicting thresholds: Inventory policy requires at least twenty reserve pallets at East depot, while capacity policy limits to at most twelve pallets.",
+            "Operational risk: This conflict risks non-compliance with either policy, potentially causing supply shortages (if below 20 pallets) or safety/fire-lane clearance violations (if above 12 pallets).",
+            "Recommendation: Management should coordinate approval processes involving both inventory and capacity owners to balance supply security and safety compliance. Exceptions must be carefully reviewed.",
+            "Uncertainties: The exact operational impact of exceptions and the frequency of approval requests are not detailed, leaving some uncertainty in risk management effectiveness."
+          ]
+        },
+        "findings": [
+          {
+            "step": "1",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "The East depot's inventory policy requires maintaining at least twenty reserve pallets on site to cover supply interruptions, with any reduction needing inventory owner's approval. However, the capacity policy limits the depot to at most twelve reserve pallets to maintain fire-lane clearance, with exceptions requiring capacity owner's review. These two policies present conflicting requirements regarding the number of reserve pallets allowed at the East depot.",
+              "citations": [
+                "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba",
+                "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+              ],
+              "insufficient": false,
+              "contradictions": [
+                "Inventory policy requires at least twenty reserve pallets, but capacity policy limits to at most twelve reserve pallets."
+              ],
+              "claims": [
+                {
+                  "text": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "citations": [
+                    "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Reducing reserve stock requires the inventory owner's approval.",
+                  "citations": [
+                    "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Reducing reserve stock requires the inventory owner's approval.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "citations": [
+                    "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The capacity owner must review any proposed exception.",
+                  "citations": [
+                    "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The capacity owner must review any proposed exception.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                }
+              ]
+            },
+            "grounding": {
+              "claims": [
+                {
+                  "index": 0,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 1,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 2,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 3,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                }
+              ],
+              "errors": [],
+              "fully_checked": true,
+              "requires_review": true
+            },
+            "sources": [
+              {
+                "id": "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba",
+                "document_id": "ce531c09abc8e8a08bec7d9d66c8ef825939a48825af9611ce41eb9910563ad2",
+                "source": "inventory-policy",
+                "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+                "score": 0.03252247488101534,
+                "dense_score": 0.7000339789317097,
+                "lexical_score": 2.736252007264155,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E1"
+              },
+              {
+                "id": "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5",
+                "document_id": "f0f189a1adb3d97816e689c0f50677baee150d7ec3ba8dc8764b8ea36c7c7b20",
+                "source": "capacity-policy",
+                "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+                "score": 0.03252247488101534,
+                "dense_score": 0.6565056502337743,
+                "lexical_score": 2.9523874071495344,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E2"
+              },
+              {
+                "id": "835a0419e966b119e63c76ab79140491f62fa20a60ea3b99e9214b847c02008f",
+                "document_id": "868bc92a1fca064885fe0aff807771deb0243fc56c9a4d30c3385f9a10025d22",
+                "source": "travel-policy",
+                "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+                "score": 0.015873015873015872,
+                "dense_score": 0.19013679655321525,
+                "lexical_score": 0,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E3"
+              }
+            ],
+            "tokens": 852,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "SearchQuery",
+                "attempt": 1,
+                "input_tokens": 143,
+                "output_tokens": 47,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 0.9797326810000868,
+                "tokens": 190
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "CitedFinding",
+                "attempt": 1,
+                "input_tokens": 397,
+                "output_tokens": 265,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 2.6549777510000467,
+                "tokens": 662
+              }
+            ],
+            "tools_used": [
+              "document_search",
+              "document_search",
+              "document_search",
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 39.02427818500007
+          },
+          {
+            "step": "2",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "rows": []
+            },
+            "intent": {
+              "as_of": null,
+              "dataset": "inventory",
+              "metrics": [
+                "revenue"
+              ],
+              "start": null,
+              "end": null,
+              "compare_previous": false
+            },
+            "period_source": "model",
+            "computed": {
+              "rows": []
+            },
+            "interpretation": {
+              "summary": "Current stock: none.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 1520,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "AnalyticsIntent",
+                "attempt": 1,
+                "input_tokens": 1354,
+                "output_tokens": 36,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.3581831180000563,
+                "tokens": 1390
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "InventoryReading",
+                "attempt": 1,
+                "input_tokens": 124,
+                "output_tokens": 6,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 0.7215390279999383,
+                "tokens": 130
+              }
+            ],
+            "tools_used": [
+              "dataset_schema",
+              "inventory_retrieval"
+            ],
+            "attempts": 1,
+            "seconds": 7.237605111999983
+          },
+          {
+            "step": "3",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "The East depot's inventory policy requires maintaining at least twenty reserve pallets on site to cover supply interruptions, with any reduction needing the inventory owner's approval. In contrast, the capacity policy limits the depot to at most twelve reserve pallets on site to maintain fire-lane clearance, with exceptions requiring the capacity owner's review. These policies present a direct conflict in the allowed number of reserve pallets at the East depot.",
+              "citations": [
+                "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba",
+                "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+              ],
+              "insufficient": false,
+              "contradictions": [
+                "Inventory policy requires at least twenty reserve pallets, but capacity policy limits to at most twelve reserve pallets."
+              ],
+              "claims": [
+                {
+                  "text": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "citations": [
+                    "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Reducing reserve stock requires the inventory owner's approval.",
+                  "citations": [
+                    "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Reducing reserve stock requires the inventory owner's approval.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "citations": [
+                    "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The capacity owner must review any proposed exception.",
+                  "citations": [
+                    "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The capacity owner must review any proposed exception.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                }
+              ]
+            },
+            "grounding": {
+              "claims": [
+                {
+                  "index": 0,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 1,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 2,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 3,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                }
+              ],
+              "errors": [],
+              "fully_checked": true,
+              "requires_review": true
+            },
+            "sources": [
+              {
+                "id": "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba",
+                "document_id": "ce531c09abc8e8a08bec7d9d66c8ef825939a48825af9611ce41eb9910563ad2",
+                "source": "inventory-policy",
+                "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+                "score": 0.03278688524590164,
+                "dense_score": 0.7025537397904624,
+                "lexical_score": 2.8557548100020544,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E1"
+              },
+              {
+                "id": "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5",
+                "document_id": "f0f189a1adb3d97816e689c0f50677baee150d7ec3ba8dc8764b8ea36c7c7b20",
+                "source": "capacity-policy",
+                "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+                "score": 0.03225806451612903,
+                "dense_score": 0.5787059550654015,
+                "lexical_score": 1.779106667235875,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E2"
+              },
+              {
+                "id": "835a0419e966b119e63c76ab79140491f62fa20a60ea3b99e9214b847c02008f",
+                "document_id": "868bc92a1fca064885fe0aff807771deb0243fc56c9a4d30c3385f9a10025d22",
+                "source": "travel-policy",
+                "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+                "score": 0.031746031746031744,
+                "dense_score": 0.2801941917254697,
+                "lexical_score": 0.17450125172522835,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E3"
+              }
+            ],
+            "tokens": 2878,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "SearchQuery",
+                "attempt": 1,
+                "input_tokens": 1152,
+                "output_tokens": 50,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.2422382579999294,
+                "tokens": 1202
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "CitedFinding",
+                "attempt": 1,
+                "input_tokens": 1406,
+                "output_tokens": 270,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 3.1761227189999772,
+                "tokens": 1676
+              }
+            ],
+            "tools_used": [
+              "document_search",
+              "document_search",
+              "document_search",
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 38.21313574399994
+          },
+          {
+            "step": "4",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "The East depot faces operational risks due to conflicting reserve stock policies. The inventory policy mandates keeping at least twenty reserve pallets on site to cover supply interruptions, with any reduction requiring the inventory owner's approval. Conversely, the capacity policy restricts the depot to at most twelve reserve pallets to maintain fire-lane clearance, with exceptions needing the capacity owner's review. This conflict creates a risk of non-compliance with one or both policies, potentially leading to supply shortages or safety violations.",
+              "citations": [
+                "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba",
+                "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+              ],
+              "insufficient": false,
+              "contradictions": [
+                "Inventory policy requires at least twenty reserve pallets, but capacity policy limits to at most twelve reserve pallets."
+              ],
+              "claims": [
+                {
+                  "text": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "citations": [
+                    "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Reducing reserve stock requires the inventory owner's approval.",
+                  "citations": [
+                    "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Reducing reserve stock requires the inventory owner's approval.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "citations": [
+                    "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The capacity owner must review any proposed exception.",
+                  "citations": [
+                    "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The capacity owner must review any proposed exception.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                }
+              ]
+            },
+            "grounding": {
+              "claims": [
+                {
+                  "index": 0,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 1,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 2,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 3,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                }
+              ],
+              "errors": [],
+              "fully_checked": true,
+              "requires_review": true
+            },
+            "sources": [
+              {
+                "id": "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba",
+                "document_id": "ce531c09abc8e8a08bec7d9d66c8ef825939a48825af9611ce41eb9910563ad2",
+                "source": "inventory-policy",
+                "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+                "score": 0.03278688524590164,
+                "dense_score": 0.7290265242258389,
+                "lexical_score": 2.9523874071495344,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E1"
+              },
+              {
+                "id": "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5",
+                "document_id": "f0f189a1adb3d97816e689c0f50677baee150d7ec3ba8dc8764b8ea36c7c7b20",
+                "source": "capacity-policy",
+                "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+                "score": 0.03225806451612903,
+                "dense_score": 0.6471513234824338,
+                "lexical_score": 2.9523874071495344,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E2"
+              },
+              {
+                "id": "835a0419e966b119e63c76ab79140491f62fa20a60ea3b99e9214b847c02008f",
+                "document_id": "868bc92a1fca064885fe0aff807771deb0243fc56c9a4d30c3385f9a10025d22",
+                "source": "travel-policy",
+                "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+                "score": 0.015873015873015872,
+                "dense_score": 0.3258261181688847,
+                "lexical_score": 0,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E3"
+              }
+            ],
+            "tokens": 4779,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "SearchQuery",
+                "attempt": 1,
+                "input_tokens": 2091,
+                "output_tokens": 59,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.3339691780000749,
+                "tokens": 2150
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "CitedFinding",
+                "attempt": 1,
+                "input_tokens": 2345,
+                "output_tokens": 284,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 2.873919397999998,
+                "tokens": 2629
+              }
+            ],
+            "tools_used": [
+              "document_search",
+              "document_search",
+              "document_search",
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 40.39670301800004
+          },
+          {
+            "step": "5",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "The East depot's inventory and capacity policies present a direct conflict regarding reserve pallet stock levels. The inventory policy mandates keeping at least twenty reserve pallets on site to cover supply interruptions, with any reduction requiring the inventory owner's approval. Conversely, the capacity policy limits the depot to at most twelve reserve pallets on site to maintain fire-lane clearance, with exceptions requiring the capacity owner's review. This conflict creates operational risks including potential supply shortages or safety violations, and requires management through approval processes involving both inventory and capacity owners.",
+              "citations": [
+                "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba",
+                "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+              ],
+              "insufficient": false,
+              "contradictions": [
+                "Inventory policy requires at least twenty reserve pallets, but capacity policy limits to at most twelve reserve pallets."
+              ],
+              "claims": [
+                {
+                  "text": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "citations": [
+                    "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Reducing reserve stock requires the inventory owner's approval.",
+                  "citations": [
+                    "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Reducing reserve stock requires the inventory owner's approval.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "citations": [
+                    "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "The capacity owner must review any proposed exception.",
+                  "citations": [
+                    "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5"
+                  ],
+                  "kind": "extractive",
+                  "quote": "The capacity owner must review any proposed exception.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                }
+              ]
+            },
+            "grounding": {
+              "claims": [
+                {
+                  "index": 0,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 1,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 2,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 3,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                }
+              ],
+              "errors": [],
+              "fully_checked": true,
+              "requires_review": true
+            },
+            "sources": [
+              {
+                "id": "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba",
+                "document_id": "ce531c09abc8e8a08bec7d9d66c8ef825939a48825af9611ce41eb9910563ad2",
+                "source": "inventory-policy",
+                "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+                "score": 0.03278688524590164,
+                "dense_score": 0.45062940012366837,
+                "lexical_score": 1.292783542651559,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E1"
+              },
+              {
+                "id": "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5",
+                "document_id": "f0f189a1adb3d97816e689c0f50677baee150d7ec3ba8dc8764b8ea36c7c7b20",
+                "source": "capacity-policy",
+                "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+                "score": 0.03225806451612903,
+                "dense_score": 0.3519783704977363,
+                "lexical_score": 1.292783542651559,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E2"
+              },
+              {
+                "id": "835a0419e966b119e63c76ab79140491f62fa20a60ea3b99e9214b847c02008f",
+                "document_id": "868bc92a1fca064885fe0aff807771deb0243fc56c9a4d30c3385f9a10025d22",
+                "source": "travel-policy",
+                "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+                "score": 0.015873015873015872,
+                "dense_score": 0.12156527027290481,
+                "lexical_score": 0,
+                "rerank_score": null,
+                "metadata": {},
+                "reference": "E3"
+              }
+            ],
+            "tokens": 6695,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "SearchQuery",
+                "attempt": 1,
+                "input_tokens": 3051,
+                "output_tokens": 47,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.000931698000045,
+                "tokens": 3098
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "CitedFinding",
+                "attempt": 1,
+                "input_tokens": 3305,
+                "output_tokens": 292,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 3.598325933999945,
+                "tokens": 3597
+              }
+            ],
+            "tools_used": [
+              "document_search",
+              "document_search",
+              "document_search",
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 37.17492145099993
+          }
+        ],
+        "citations": [
+          {
+            "id": "110ee5163a00abcb944aeff95ddd72692961ae8cf3a64d48da70ab47e514d9ba",
+            "document_id": "ce531c09abc8e8a08bec7d9d66c8ef825939a48825af9611ce41eb9910563ad2",
+            "source": "inventory-policy",
+            "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+            "score": 0.03278688524590164,
+            "dense_score": 0.45062940012366837,
+            "lexical_score": 1.292783542651559,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E1"
+          },
+          {
+            "id": "62f561d2eb6934f02c3ff80aea43c683b3590a24a833138600193a148e0677e5",
+            "document_id": "f0f189a1adb3d97816e689c0f50677baee150d7ec3ba8dc8764b8ea36c7c7b20",
+            "source": "capacity-policy",
+            "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+            "score": 0.03225806451612903,
+            "dense_score": 0.3519783704977363,
+            "lexical_score": 1.292783542651559,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E2"
+          }
+        ],
+        "errors": [],
+        "usage": {
+          "tokens": 24079,
+          "calls": 12,
+          "estimated_cost_usd": null
+        },
+        "limitations": [
+          "Model judges can be wrong; document content is untrusted evidence."
+        ]
+      },
+      "step_failures": [],
+      "plan": [
+        {
+          "id": "1",
+          "agent": "research",
+          "instruction": "Search for documents related to the East depot's inventory and capacity policies for reserve stock, focusing on thresholds and operational risks.",
+          "dependencies": [],
+          "tool": "document_search",
+          "arguments": {},
+          "completion_criteria": [
+            "source_count >= 1"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "source_count",
+              "metric": null,
+              "expected": null,
+              "minimum": 1,
+              "tool": "document_search"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "agent": "data",
+          "instruction": "Retrieve the current inventory data for the East depot's reserve stock, including quantities and thresholds.",
+          "dependencies": [
+            "1"
+          ],
+          "tool": "inventory_retrieval",
+          "arguments": {},
+          "completion_criteria": [
+            "source_count >= 1"
+          ],
+          "requires_approval": false,
+          "checks": []
+        },
+        {
+          "id": "3",
+          "agent": "research",
+          "instruction": "Identify and extract the conflicting thresholds between inventory and capacity policies for the East depot's reserve stock from the retrieved documents and data.",
+          "dependencies": [
+            "1",
+            "2"
+          ],
+          "tool": null,
+          "arguments": {},
+          "completion_criteria": [
+            "metric == 1"
+          ],
+          "requires_approval": false,
+          "checks": []
+        },
+        {
+          "id": "4",
+          "agent": "research",
+          "instruction": "Explain the operational risks associated with the conflicting thresholds in the East depot's reserve stock policies.",
+          "dependencies": [
+            "3"
+          ],
+          "tool": null,
+          "arguments": {},
+          "completion_criteria": [
+            "metric == 1"
+          ],
+          "requires_approval": false,
+          "checks": []
+        },
+        {
+          "id": "5",
+          "agent": "research",
+          "instruction": "Find recommendations from credible sources regarding inventory and capacity policy conflicts and their management, including uncertainties.",
+          "dependencies": [
+            "3",
+            "4"
+          ],
+          "tool": "document_search",
+          "arguments": {},
+          "completion_criteria": [
+            "source_count >= 1"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "source_count",
+              "metric": null,
+              "expected": null,
+              "minimum": 1,
+              "tool": "document_search"
+            }
+          ]
+        }
+      ],
+      "tools_called": [
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "dataset_schema",
+        "inventory_retrieval",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search"
+      ],
+      "model_attempts": 12,
+      "model_responses": 12,
+      "tokens": 24079,
+      "model_records": [
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 753,
+          "output_tokens": 565,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 4.940915724999968,
+          "tokens": 1318,
+          "step": "planner"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "SearchQuery",
+          "attempt": 1,
+          "input_tokens": 143,
+          "output_tokens": 47,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.9797326810000868,
+          "tokens": 190,
+          "step": "1"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "CitedFinding",
+          "attempt": 1,
+          "input_tokens": 397,
+          "output_tokens": 265,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 2.6549777510000467,
+          "tokens": 662,
+          "step": "1"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 1354,
+          "output_tokens": 36,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.3581831180000563,
+          "tokens": 1390,
+          "step": "2"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "InventoryReading",
+          "attempt": 1,
+          "input_tokens": 124,
+          "output_tokens": 6,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.7215390279999383,
+          "tokens": 130,
+          "step": "2"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "SearchQuery",
+          "attempt": 1,
+          "input_tokens": 1152,
+          "output_tokens": 50,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.2422382579999294,
+          "tokens": 1202,
+          "step": "3"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "CitedFinding",
+          "attempt": 1,
+          "input_tokens": 1406,
+          "output_tokens": 270,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 3.1761227189999772,
+          "tokens": 1676,
+          "step": "3"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "SearchQuery",
+          "attempt": 1,
+          "input_tokens": 2091,
+          "output_tokens": 59,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.3339691780000749,
+          "tokens": 2150,
+          "step": "4"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "CitedFinding",
+          "attempt": 1,
+          "input_tokens": 2345,
+          "output_tokens": 284,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 2.873919397999998,
+          "tokens": 2629,
+          "step": "4"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "SearchQuery",
+          "attempt": 1,
+          "input_tokens": 3051,
+          "output_tokens": 47,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.000931698000045,
+          "tokens": 3098,
+          "step": "5"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "CitedFinding",
+          "attempt": 1,
+          "input_tokens": 3305,
+          "output_tokens": 292,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 3.598325933999945,
+          "tokens": 3597,
+          "step": "5"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Review",
+          "attempt": 1,
+          "input_tokens": 5908,
+          "output_tokens": 129,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.6747085140000308,
+          "tokens": 6037,
+          "step": "verification"
+        }
+      ],
+      "answer_text": "The East depot's inventory policy requires maintaining at least twenty reserve pallets on site to cover supply interruptions, with any reduction needing inventory owner's approval. However, the capacity policy limits the depot to at most twelve reserve pallets to maintain fire-lane clearance, with exceptions requiring capacity owner's review. These two policies present conflicting requirements regarding the number of reserve pallets allowed at the East depot.\nCurrent stock: none.\nThe East depot's inventory policy requires maintaining at least twenty reserve pallets on site to cover supply interruptions, with any reduction needing the inventory owner's approval. In contrast, the capacity policy limits the depot to at most twelve reserve pallets on site to maintain fire-lane clearance, with exceptions requiring the capacity owner's review. These policies present a direct conflict in the allowed number of reserve pallets at the East depot.\nThe East depot faces operational risks due to conflicting reserve stock policies. The inventory policy mandates keeping at least twenty reserve pallets on site to cover supply interruptions, with any reduction requiring the inventory owner's approval. Conversely, the capacity policy restricts the depot to at most twelve reserve pallets to maintain fire-lane clearance, with exceptions needing the capacity owner's review. This conflict creates a risk of non-compliance with one or both policies, potentially leading to supply shortages or safety violations.\nThe East depot's inventory and capacity policies present a direct conflict regarding reserve pallet stock levels. The inventory policy mandates keeping at least twenty reserve pallets on site to cover supply interruptions, with any reduction requiring the inventory owner's approval. Conversely, the capacity policy limits the depot to at most twelve reserve pallets on site to maintain fire-lane clearance, with exceptions requiring the capacity owner's review. This conflict creates operational risks including potential supply shortages or safety violations, and requires management through approval processes involving both inventory and capacity owners.",
+      "grade": {
+        "passed": true,
+        "checks": {
+          "no_exception": true,
+          "status": true,
+          "live_inference": true,
+          "tools_required": true,
+          "no_write_proposed": true,
+          "contradiction": true,
+          "cited_sources": true,
+          "no_distractor_citations": true,
+          "fact_0": true,
+          "fact_1": true
+        }
+      },
+      "repeat": 2
+    },
+    {
+      "case": "B",
+      "group": "original",
+      "workspace": "live-B-1b7f742df7",
+      "proposals": [],
+      "seconds": 50.74602908600002,
+      "effects": [],
+      "report": {
+        "status": "completed",
+        "goal": "Analyze February and March 2026 revenue, expenses, and profit. Calculate month-over-month changes for all three metrics, identify significant trends, and explain the findings.",
+        "mode": "openai",
+        "profile": "general",
+        "refusal": null,
+        "clarification": null,
+        "grounding": {
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "review": {
+          "supported": true,
+          "issues": []
+        },
+        "findings": [
+          {
+            "step": "revenue_feb_mar",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "metric": "revenue",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 120000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 150000.0
+                }
+              ],
+              "total": 270000.0,
+              "absolute_change": 30000.0,
+              "growth": 0.25,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": 30000.0
+              }
+            },
+            "intent": {
+              "as_of": null,
+              "dataset": "sales",
+              "metrics": [
+                "revenue"
+              ],
+              "start": "2026-02",
+              "end": "2026-03",
+              "compare_previous": false
+            },
+            "period_source": "model",
+            "computed": {
+              "dataset": "sales",
+              "period": {
+                "start": "2026-02",
+                "end": "2026-03"
+              },
+              "metrics": [
+                {
+                  "metric": "revenue",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 120000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 150000.0
+                    }
+                  ],
+                  "total": 270000.0,
+                  "absolute_change": 30000.0,
+                  "growth": 0.25,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 30000.0
+                  }
+                }
+              ],
+              "raw_rows": [
+                {
+                  "month": "2026-02",
+                  "revenue": 120000.0,
+                  "costs": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "revenue": 150000.0,
+                  "costs": 90000.0
+                }
+              ],
+              "comparison": null
+            },
+            "interpretation": {
+              "summary": "Revenue from 2026-02 to 2026-03: 120,000.00 to 150,000.00 (+30,000.00, +25.00%). The selected trend is the increase in revenue. The records do not establish a cause.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 694,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "AnalyticsIntent",
+                "attempt": 1,
+                "input_tokens": 424,
+                "output_tokens": 35,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.2010475280000037,
+                "tokens": 459
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "LedgerReading",
+                "attempt": 1,
+                "input_tokens": 225,
+                "output_tokens": 10,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 0.6602099639999324,
+                "tokens": 235
+              }
+            ],
+            "tools_used": [
+              "dataset_schema",
+              "business_metrics"
+            ],
+            "attempts": 1,
+            "seconds": 6.517222092000111
+          },
+          {
+            "step": "costs_feb_mar",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "metric": "costs",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 90000.0
+                }
+              ],
+              "total": 168000.0,
+              "absolute_change": 12000.0,
+              "growth": 0.15384615384615385,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": 12000.0
+              }
+            },
+            "intent": {
+              "as_of": null,
+              "dataset": "sales",
+              "metrics": [
+                "costs"
+              ],
+              "start": "2026-02",
+              "end": "2026-03",
+              "compare_previous": false
+            },
+            "period_source": "model",
+            "computed": {
+              "dataset": "sales",
+              "period": {
+                "start": "2026-02",
+                "end": "2026-03"
+              },
+              "metrics": [
+                {
+                  "metric": "costs",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 78000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 90000.0
+                    }
+                  ],
+                  "total": 168000.0,
+                  "absolute_change": 12000.0,
+                  "growth": 0.15384615384615385,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 12000.0
+                  }
+                }
+              ],
+              "raw_rows": [
+                {
+                  "month": "2026-02",
+                  "revenue": 120000.0,
+                  "costs": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "revenue": 150000.0,
+                  "costs": 90000.0
+                }
+              ],
+              "comparison": null
+            },
+            "interpretation": {
+              "summary": "Costs from 2026-02 to 2026-03: 78,000.00 to 90,000.00 (+12,000.00, +15.38%). The selected trend is the increase in costs. The records do not establish a cause.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 699,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "AnalyticsIntent",
+                "attempt": 1,
+                "input_tokens": 424,
+                "output_tokens": 35,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.0338612589999912,
+                "tokens": 459
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "LedgerReading",
+                "attempt": 1,
+                "input_tokens": 230,
+                "output_tokens": 10,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 0.6559662489999027,
+                "tokens": 240
+              }
+            ],
+            "tools_used": [
+              "dataset_schema",
+              "business_metrics"
+            ],
+            "attempts": 1,
+            "seconds": 6.164115430000038
+          },
+          {
+            "step": "profit_feb_mar",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "metrics": [
+                {
+                  "metric": "revenue",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 120000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 150000.0
+                    }
+                  ],
+                  "total": 270000.0,
+                  "absolute_change": 30000.0,
+                  "growth": 0.25,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 30000.0
+                  }
+                },
+                {
+                  "metric": "costs",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 78000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 90000.0
+                    }
+                  ],
+                  "total": 168000.0,
+                  "absolute_change": 12000.0,
+                  "growth": 0.15384615384615385,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 12000.0
+                  }
+                },
+                {
+                  "metric": "profit",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 42000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 60000.0
+                    }
+                  ],
+                  "total": 102000.0,
+                  "absolute_change": 18000.0,
+                  "growth": 0.42857142857142855,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 18000.0
+                  }
+                }
+              ]
+            },
+            "intent": {
+              "as_of": null,
+              "dataset": "sales",
+              "metrics": [
+                "revenue",
+                "costs",
+                "profit"
+              ],
+              "start": "2026-02",
+              "end": "2026-03",
+              "compare_previous": true
+            },
+            "period_source": "model",
+            "computed": {
+              "dataset": "sales",
+              "period": {
+                "start": "2026-02",
+                "end": "2026-03"
+              },
+              "metrics": [
+                {
+                  "metric": "revenue",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 120000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 150000.0
+                    }
+                  ],
+                  "total": 270000.0,
+                  "absolute_change": 30000.0,
+                  "growth": 0.25,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 30000.0
+                  }
+                },
+                {
+                  "metric": "costs",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 78000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 90000.0
+                    }
+                  ],
+                  "total": 168000.0,
+                  "absolute_change": 12000.0,
+                  "growth": 0.15384615384615385,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 12000.0
+                  }
+                },
+                {
+                  "metric": "profit",
+                  "rows": [
+                    {
+                      "month": "2026-02",
+                      "value": 42000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 60000.0
+                    }
+                  ],
+                  "total": 102000.0,
+                  "absolute_change": 18000.0,
+                  "growth": 0.42857142857142855,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 18000.0
+                  }
+                }
+              ],
+              "raw_rows": [
+                {
+                  "month": "2026-02",
+                  "revenue": 120000.0,
+                  "costs": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "revenue": 150000.0,
+                  "costs": 90000.0
+                }
+              ],
+              "comparison": [
+                {
+                  "metric": "revenue",
+                  "previous_total": 100000.0,
+                  "current_total": 270000.0,
+                  "absolute_change": 170000.0
+                },
+                {
+                  "metric": "costs",
+                  "previous_total": 70000.0,
+                  "current_total": 168000.0,
+                  "absolute_change": 98000.0
+                },
+                {
+                  "metric": "profit",
+                  "previous_total": 30000.0,
+                  "current_total": 102000.0,
+                  "absolute_change": 72000.0
+                }
+              ]
+            },
+            "interpretation": {
+              "summary": "Revenue from 2026-02 to 2026-03: 120,000.00 to 150,000.00 (+30,000.00, +25.00%). Costs from 2026-02 to 2026-03: 78,000.00 to 90,000.00 (+12,000.00, +15.38%). Profit from 2026-02 to 2026-03: 42,000.00 to 60,000.00 (+18,000.00, +42.86%). The selected trend is the increase in profit. The records do not establish a cause.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 921,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "AnalyticsIntent",
+                "attempt": 1,
+                "input_tokens": 424,
+                "output_tokens": 40,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.6266798049999807,
+                "tokens": 464
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "LedgerReading",
+                "attempt": 1,
+                "input_tokens": 448,
+                "output_tokens": 9,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 0.6186134649999531,
+                "tokens": 457
+              }
+            ],
+            "tools_used": [
+              "dataset_schema",
+              "business_metrics",
+              "business_metrics",
+              "business_metrics"
+            ],
+            "attempts": 1,
+            "seconds": 11.513523646000067
+          },
+          {
+            "step": "analyze_changes",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "No relevant documents were found for this request.",
+              "citations": [],
+              "insufficient": true,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "sources": [],
+            "tokens": 2143,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "SearchQuery",
+                "attempt": 1,
+                "input_tokens": 2067,
+                "output_tokens": 76,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.7430092189999868,
+                "tokens": 2143
+              }
+            ],
+            "tools_used": [
+              "document_search",
+              "document_search",
+              "document_search",
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 34.71866988099998
+          }
+        ],
+        "citations": [],
+        "errors": [],
+        "usage": {
+          "tokens": 7534,
+          "calls": 9,
+          "estimated_cost_usd": null
+        },
+        "limitations": [
+          "Model judges can be wrong; document content is untrusted evidence."
+        ]
+      },
+      "step_failures": [],
+      "plan": [
+        {
+          "id": "revenue_feb_mar",
+          "agent": "data",
+          "instruction": "Calculate revenue for February 2026 and March 2026.",
+          "dependencies": [],
+          "tool": "business_metrics",
+          "arguments": {},
+          "completion_criteria": [
+            "metric:revenue"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "metric",
+              "metric": "revenue",
+              "expected": null,
+              "minimum": 1,
+              "tool": "business_metrics"
+            }
+          ]
+        },
+        {
+          "id": "costs_feb_mar",
+          "agent": "data",
+          "instruction": "Calculate costs for February 2026 and March 2026.",
+          "dependencies": [],
+          "tool": "business_metrics",
+          "arguments": {},
+          "completion_criteria": [
+            "metric:costs"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "metric",
+              "metric": "costs",
+              "expected": null,
+              "minimum": 1,
+              "tool": "business_metrics"
+            }
+          ]
+        },
+        {
+          "id": "profit_feb_mar",
+          "agent": "data",
+          "instruction": "Calculate profit for February 2026 and March 2026.",
+          "dependencies": [],
+          "tool": "business_metrics",
+          "arguments": {},
+          "completion_criteria": [
+            "metric:profit"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "metric",
+              "metric": "profit",
+              "expected": null,
+              "minimum": 1,
+              "tool": "business_metrics"
+            }
+          ]
+        },
+        {
+          "id": "analyze_changes",
+          "agent": "research",
+          "instruction": "Analyze month-over-month changes for revenue, costs, and profit between February and March 2026. Identify significant trends and explain the findings.",
+          "dependencies": [
+            "revenue_feb_mar",
+            "costs_feb_mar",
+            "profit_feb_mar"
+          ],
+          "tool": null,
+          "arguments": {},
+          "completion_criteria": [
+            "source_count:1"
+          ],
+          "requires_approval": false,
+          "checks": []
+        }
+      ],
+      "tools_called": [
+        "dataset_schema",
+        "dataset_schema",
+        "dataset_schema",
+        "business_metrics",
+        "business_metrics",
+        "business_metrics",
+        "business_metrics",
+        "business_metrics",
+        "document_search",
+        "document_search",
+        "document_search",
+        "document_search"
+      ],
+      "model_attempts": 9,
+      "model_responses": 9,
+      "tokens": 7534,
+      "model_records": [
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 754,
+          "output_tokens": 351,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 3.00732976900008,
+          "tokens": 1105,
+          "step": "planner"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 424,
+          "output_tokens": 35,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.0338612589999912,
+          "tokens": 459,
+          "step": "costs_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 424,
+          "output_tokens": 35,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.2010475280000037,
+          "tokens": 459,
+          "step": "revenue_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 424,
+          "output_tokens": 40,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.6266798049999807,
+          "tokens": 464,
+          "step": "profit_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "LedgerReading",
+          "attempt": 1,
+          "input_tokens": 230,
+          "output_tokens": 10,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.6559662489999027,
+          "tokens": 240,
+          "step": "costs_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "LedgerReading",
+          "attempt": 1,
+          "input_tokens": 225,
+          "output_tokens": 10,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.6602099639999324,
+          "tokens": 235,
+          "step": "revenue_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "LedgerReading",
+          "attempt": 1,
+          "input_tokens": 448,
+          "output_tokens": 9,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.6186134649999531,
+          "tokens": 457,
+          "step": "profit_feb_mar"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "SearchQuery",
+          "attempt": 1,
+          "input_tokens": 2067,
+          "output_tokens": 76,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.7430092189999868,
+          "tokens": 2143,
+          "step": "analyze_changes"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Review",
+          "attempt": 1,
+          "input_tokens": 1963,
+          "output_tokens": 9,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.3908942990001378,
+          "tokens": 1972,
+          "step": "verification"
+        }
+      ],
+      "answer_text": "Revenue from 2026-02 to 2026-03: 120,000.00 to 150,000.00 (+30,000.00, +25.00%). The selected trend is the increase in revenue. The records do not establish a cause.\nCosts from 2026-02 to 2026-03: 78,000.00 to 90,000.00 (+12,000.00, +15.38%). The selected trend is the increase in costs. The records do not establish a cause.\nRevenue from 2026-02 to 2026-03: 120,000.00 to 150,000.00 (+30,000.00, +25.00%). Costs from 2026-02 to 2026-03: 78,000.00 to 90,000.00 (+12,000.00, +15.38%). Profit from 2026-02 to 2026-03: 42,000.00 to 60,000.00 (+18,000.00, +42.86%). The selected trend is the increase in profit. The records do not establish a cause.\nNo relevant documents were found for this request.",
+      "grade": {
+        "passed": true,
+        "checks": {
+          "no_exception": true,
+          "status": true,
+          "live_inference": true,
+          "tools_required": true,
+          "no_write_proposed": true,
+          "fact_0": true,
+          "fact_1": true,
+          "fact_2": true,
+          "fact_3": true,
+          "fact_4": true,
+          "fact_5": true
+        }
+      },
+      "repeat": 2
+    },
+    {
+      "case": "C",
+      "group": "original",
+      "workspace": "live-C-5dfaf47508",
+      "proposals": [
+        {
+          "id": "f0f3e2a56359351e7acfd9f91aee900fda7a98a1e3b8f7f0f3616a802cf63f0f",
+          "tool": "create_report",
+          "arguments": {
+            "title": "Analyze overdue invoices as of 2026-04-01",
+            "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+          },
+          "digest": "32de9f1c2aa7edee3a0c556ecc9dfdd1696066bc4060813aab45568791531f31",
+          "status": "pending",
+          "approved": true
+        }
+      ],
+      "seconds": 20.98631215599994,
+      "effects": [
+        {
+          "approval_id": "f0f3e2a56359351e7acfd9f91aee900fda7a98a1e3b8f7f0f3616a802cf63f0f",
+          "tool": "create_report",
+          "result": {
+            "receipt": "f0f3e2a56359351e7acfd9f91aee900fda7a98a1e3b8f7f0f3616a802cf63f0f",
+            "tool": "create_report",
+            "stored": true,
+            "payload": {
+              "title": "Analyze overdue invoices as of 2026-04-01",
+              "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+            },
+            "external_message_sent": false
+          }
+        }
+      ],
+      "replay_identical": true,
+      "report": {
+        "status": "completed",
+        "goal": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+        "mode": "openai",
+        "profile": "general",
+        "refusal": null,
+        "clarification": null,
+        "grounding": {
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "review": {
+          "supported": true,
+          "issues": []
+        },
+        "findings": [
+          {
+            "step": "1",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "rows": [
+                {
+                  "number": "INV-001",
+                  "amount": 2500.0,
+                  "paid": 0,
+                  "due": "2026-03-31"
+                },
+                {
+                  "number": "INV-002",
+                  "amount": 1200.0,
+                  "paid": 1,
+                  "due": "2026-02-28"
+                },
+                {
+                  "number": "INV-003",
+                  "amount": 800.0,
+                  "paid": 0,
+                  "due": "2026-04-15"
+                }
+              ],
+              "unpaid_total": 3300.0,
+              "as_of": "2026-04-01",
+              "overdue_rows": [
+                {
+                  "number": "INV-001",
+                  "amount": 2500.0,
+                  "paid": 0,
+                  "due": "2026-03-31"
+                }
+              ],
+              "overdue_total": 2500.0
+            },
+            "intent": {
+              "as_of": "2026-04-01",
+              "dataset": "invoices",
+              "metrics": [
+                "revenue"
+              ],
+              "start": null,
+              "end": null,
+              "compare_previous": false
+            },
+            "period_source": "model",
+            "computed": {
+              "rows": [
+                {
+                  "number": "INV-001",
+                  "amount": 2500.0,
+                  "paid": 0,
+                  "due": "2026-03-31"
+                },
+                {
+                  "number": "INV-002",
+                  "amount": 1200.0,
+                  "paid": 1,
+                  "due": "2026-02-28"
+                },
+                {
+                  "number": "INV-003",
+                  "amount": 800.0,
+                  "paid": 0,
+                  "due": "2026-04-15"
+                }
+              ],
+              "unpaid_total": 3300.0,
+              "as_of": "2026-04-01",
+              "overdue_rows": [
+                {
+                  "number": "INV-001",
+                  "amount": 2500.0,
+                  "paid": 0,
+                  "due": "2026-03-31"
+                }
+              ],
+              "overdue_total": 2500.0
+            },
+            "interpretation": {
+              "summary": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 636,
+            "model_records": [
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "AnalyticsIntent",
+                "attempt": 1,
+                "input_tokens": 414,
+                "output_tokens": 35,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 1.148972079000032,
+                "tokens": 449
+              },
+              {
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "prompt_version": "agentos-v3.1",
+                "usage_known": true,
+                "response_received": true,
+                "schema": "InvoiceReading",
+                "attempt": 1,
+                "input_tokens": 171,
+                "output_tokens": 16,
+                "estimated_cost_usd": null,
+                "strict_schema": true,
+                "protocol": "tool",
+                "reasoning_tokens": 0,
+                "seconds": 0.7325444529999459,
+                "tokens": 187
+              }
+            ],
+            "tools_used": [
+              "dataset_schema",
+              "invoice_analysis"
+            ],
+            "attempts": 1,
+            "seconds": 6.0486967330000425
+          },
+          {
+            "step": "2",
+            "agent": "action",
+            "ok": true,
+            "tool": "create_report",
+            "receipt": "f0f3e2a56359351e7acfd9f91aee900fda7a98a1e3b8f7f0f3616a802cf63f0f",
+            "effect": {
+              "receipt": "f0f3e2a56359351e7acfd9f91aee900fda7a98a1e3b8f7f0f3616a802cf63f0f",
+              "tool": "create_report",
+              "stored": true,
+              "payload": {
+                "title": "Analyze overdue invoices as of 2026-04-01",
+                "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+              },
+              "external_message_sent": false
+            },
+            "tokens": 0,
+            "model_records": [],
+            "tools_used": [
+              "create_report"
+            ],
+            "attempts": 1
+          }
+        ],
+        "citations": [],
+        "errors": [],
+        "usage": {
+          "tokens": 3016,
+          "calls": 5,
+          "estimated_cost_usd": null
+        },
+        "limitations": [
+          "Model judges can be wrong; document content is untrusted evidence."
+        ]
+      },
+      "step_failures": [],
+      "plan": [
+        {
+          "id": "1",
+          "agent": "data",
+          "instruction": "Analyze overdue invoices as of 2026-04-01 to identify overdue invoice numbers and amounts.",
+          "dependencies": [],
+          "tool": "invoice_analysis",
+          "arguments": {},
+          "completion_criteria": [
+            "source_count:invoices >= 1"
+          ],
+          "requires_approval": false,
+          "checks": []
+        },
+        {
+          "id": "2",
+          "agent": "action",
+          "instruction": "Prepare an internal follow-up report identifying overdue invoice numbers and amounts based on the analysis results from step 1.",
+          "dependencies": [
+            "1"
+          ],
+          "tool": "create_report",
+          "arguments": {},
+          "completion_criteria": [
+            "source_count:invoices >= 1"
+          ],
+          "requires_approval": true,
+          "checks": []
+        }
+      ],
+      "tools_called": [
+        "dataset_schema",
+        "invoice_analysis",
+        "create_report"
+      ],
+      "model_attempts": 5,
+      "model_responses": 5,
+      "tokens": 3016,
+      "model_records": [
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 754,
+          "output_tokens": 200,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 10.964960943000051,
+          "tokens": 954,
+          "step": "planner"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 414,
+          "output_tokens": 35,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.148972079000032,
+          "tokens": 449,
+          "step": "1"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "InvoiceReading",
+          "attempt": 1,
+          "input_tokens": 171,
+          "output_tokens": 16,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.7325444529999459,
+          "tokens": 187,
+          "step": "1"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Review",
+          "attempt": 1,
+          "input_tokens": 633,
+          "output_tokens": 9,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 1.065733937999994,
+          "tokens": 642,
+          "step": "verification"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Review",
+          "attempt": 1,
+          "input_tokens": 775,
+          "output_tokens": 9,
+          "estimated_cost_usd": null,
+          "strict_schema": true,
+          "protocol": "tool",
+          "reasoning_tokens": 0,
+          "seconds": 0.7145496470000126,
+          "tokens": 784,
+          "step": "verification"
+        }
+      ],
+      "answer_text": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up.\nAnalyze overdue invoices as of 2026-04-01 As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up.",
+      "grade": {
+        "passed": true,
+        "checks": {
+          "no_exception": true,
+          "status": true,
+          "live_inference": true,
+          "tools_required": true,
+          "proposal_tool": true,
+          "effects": true,
+          "approved_by_operator": true,
+          "replay_idempotent": true,
+          "fact_0": true,
+          "fact_1": true,
+          "forbidden_0": true
+        }
+      },
+      "repeat": 2
+    }
+  ]
+}

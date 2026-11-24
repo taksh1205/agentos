@@ -162,7 +162,7 @@ async def test_compatible_json_protocol_uses_real_sdk_and_validates_content(monk
     def respond(request):
         packet = json.loads(request.content)
         assert "tools" not in packet
-        assert packet["response_format"]["json_schema"]["schema"]["title"] == "SearchQuery"
+        assert packet["response_format"]["json_schema"]["name"] == "SearchQuery"
         return httpx.Response(
             200,
             json={

@@ -77,7 +77,27 @@ async def test_sdk_graph_handoff_approval_and_review(tmp_path, monkeypatch, mode
         body = json.loads(request.content)
         anthropic = mode == "anthropic"
         tool = body["tools"][0]
-        schema = (tool["input_schema"] if anthropic else tool["function"]["parameters"])["title"]
+        props = set(
+            (tool["input_schema"] if anthropic else tool["function"]["parameters"])["properties"]
+        )
+        # Strict decoding strips schema titles, so identify each request by its fields.
+        schema = (
+            "Plan"
+            if "steps" in props
+            else "AnalyticsIntent"
+            if "compare_previous" in props
+            else "SearchQuery"
+            if "alternatives" in props
+            else "CitedFinding"
+            if {"claims", "contradictions"} <= props
+            else "LedgerReading"
+            if "focus" in props
+            else "Review"
+            if "supported" in props
+            else "ReportArgs"
+            if "body" in props
+            else "ToolChoice"
+        )
         packet = json.loads(body["messages"][-1]["content"])
         if schema == "Plan":
             response = {
@@ -109,45 +129,27 @@ async def test_sdk_graph_handoff_approval_and_review(tmp_path, monkeypatch, mode
         elif schema == "SearchQuery":
             assert packet["dependencies"][0]["computed"]["metrics"][0]["total"] == 370000
             response = {"query": "reporting rule"}
-        elif schema == "Finding" and "sources" in packet:
+        elif schema == "CitedFinding":
             src = packet["sources"][0]
             response = {
                 "summary": src["text"],
-                "citations": [src["id"]],
-                "claims": [
-                    {
-                        "kind": "extractive",
-                        "text": src["text"],
-                        "quote": src["text"],
-                        "citations": [src["id"]],
-                    }
-                ],
+                "claims": [{"text": src["text"], "quote": src["text"], "citations": [src["id"]]}],
+                "contradictions": [],
+                "insufficient": False,
             }
-        elif schema == "Finding":
-            response = {
-                "summary": "Revenue totaled 370000.",
-                "claims": [
-                    {
-                        "text": "Revenue totaled 370000.",
-                        "kind": "numeric",
-                        "operation": "total",
-                        "metric": "revenue",
-                        "value": 370000,
-                    }
-                ],
-            }
+        elif schema == "LedgerReading":
+            response = {"focus": "revenue", "direction": "increase"}
         elif schema == "Review":
             phases.append(packet["phase"])
             response = {"supported": True}
+        elif schema == "ToolChoice":
+            response = {"tool": "create_report"}
         else:
-            assert schema == "ActionSpec"
+            assert schema == "ReportArgs"
             assert len(packet["evidence"]) == 2
             response = {
-                "tool": "create_report",
-                "arguments": {
-                    "title": "Revenue summary",
-                    "body": "Revenue totaled 370000. Report totals in dollars.",
-                },
+                "title": "Revenue summary",
+                "body": "Revenue rose from 100,000.00 to 150,000.00. Report totals in dollars.",
             }
         if anthropic:
             data = {

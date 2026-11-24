@@ -201,3 +201,67 @@ def test_read_only_finding_cannot_claim_a_completed_change():
 def test_harness_records_failed_step_messages():
     source = open(grounded.__file__.replace("grounded.py", "live_eval.py")).read()
     assert '"step_failures"' in source
+
+
+def test_strict_schema_keeps_field_names_and_requires_every_property():
+    from agentos.models import AnalyticsIntent, strict_schema
+    from agentos.tools import ReportArgs
+
+    report = strict_schema(ReportArgs.model_json_schema())
+    # A field literally named "title" must survive removal of the "title" keyword.
+    assert set(report["properties"]) == {"title", "body"} and "title" not in report
+    assert report["required"] == ["title", "body"] and report["additionalProperties"] is False
+    intent = strict_schema(AnalyticsIntent.model_json_schema())
+    assert set(intent["required"]) == set(intent["properties"])
+    metrics = intent["properties"]["metrics"]
+    assert {"type": "null"} in metrics["anyOf"]  # optional with a default becomes nullable
+    assert "default" not in str(intent)
+
+
+def test_strict_nulls_and_notes_normalize_to_valid_plans():
+    from agentos.models import Plan, drop_nulls
+
+    step = {"id": "1", "agent": "data", "instruction": "x", "tool": None, "checks": None}
+    plan = Plan.model_validate(
+        drop_nulls({"steps": [step], "refusal": "", "clarification": "Proceeding as asked."})
+    )
+    assert plan.steps and plan.clarification is None and plan.refusal is None
+    with pytest.raises(ValueError):
+        Plan.model_validate({"steps": [step], "refusal": "Unsupported"})
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("model,has_temperature", [("gpt-4.1-mini", True), ("gpt-5-mini", False)])
+async def test_temperature_zero_only_for_non_reasoning_models(model, has_temperature, monkeypatch):
+    import json
+
+    import httpx
+
+    from agentos.models import Provider, SearchQuery
+
+    monkeypatch.setenv("OPENAI_API_KEY", "test-transport-only")
+    monkeypatch.delenv("OPENAI_BASE_URL", raising=False)
+    bodies = []
+
+    def respond(request):
+        bodies.append(json.loads(request.content))
+        call = {"id": "c", "type": "function"}
+        call["function"] = {"name": "emit_result", "arguments": json.dumps({"query": "q"})}
+        message = {"role": "assistant", "content": None, "tool_calls": [call]}
+        choice = {"index": 0, "finish_reason": "tool_calls", "message": message}
+        return httpx.Response(
+            200,
+            json={
+                "id": "r",
+                "object": "chat.completion",
+                "created": 1,
+                "model": model,
+                "choices": [choice],
+                "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2},
+            },
+        )
+
+    async with httpx.AsyncClient(transport=httpx.MockTransport(respond)) as client:
+        await Provider("openai", model, http_client=client).structured(SearchQuery, "s", "p")
+    assert ("temperature" in bodies[0]) == has_temperature
+    assert bodies[0]["tools"][0]["function"]["strict"] is True

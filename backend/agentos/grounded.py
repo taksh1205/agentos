@@ -29,7 +29,8 @@ class Selection(ReadSelection):
 
 
 class ReportSelection(ReadSelection):
-    write: Literal["create_report"] | None = None
+    # Offered only when the request asks to persist a document, so the write is not optional.
+    write: Literal["create_report"] = "create_report"
 
 
 PERSIST_VERB = re.compile(r"\b(?:save|store|persist|file|record|keep|put)\b", re.I)

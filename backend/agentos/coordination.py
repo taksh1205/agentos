@@ -13,6 +13,37 @@ OWNERS = {
 }
 
 
+CHECK_KINDS = {
+    "research": {"source_count", "tool"},
+    "data": {"metric", "tool"},
+    "action": {"action_receipt", "tool"},
+}
+
+
+def sanitize_checks(plan):
+    """Drop model-proposed completion checks that the assigned agent cannot establish.
+
+    Checks are extra assertions a planner may attach; dropping an impossible one grants no
+    capability. A planner also cannot know a value before it is computed, so an ``expected``
+    number is discarded and the check only requires that the metric was produced.
+    """
+    dropped = []
+    for step in plan.steps:
+        kept = []
+        for check in step.checks:
+            valid = (
+                check.kind in CHECK_KINDS[step.agent]
+                and not (check.kind == "tool" and check.tool not in OWNERS[step.agent])
+                and not (check.kind == "metric" and check.metric is None)
+            )
+            if valid:
+                kept.append(check.model_copy(update={"expected": None}))
+            else:
+                dropped.append(f"{step.id}:{check.kind}")
+        step.checks = kept
+    return dropped
+
+
 def validate_capabilities(plan):
     for step in plan.steps:
         if step.tool and (step.tool not in CAPABILITIES or step.tool not in OWNERS[step.agent]):
