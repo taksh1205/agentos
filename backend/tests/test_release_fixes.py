@@ -92,7 +92,7 @@ async def test_research_summary_drops_headings_and_echoed_question():
     model = Scripted(
         {
             "analysis": goal,  # the failure mode: the model restates the request
-            "conflict": "Retention minimum exceeds deletion deadline.",
+            "conflict_found": True,
             "recommendation": "seek_joint_review",
             "uncertainty": "precedence_unknown",
             "support": ["P1", "P2"],

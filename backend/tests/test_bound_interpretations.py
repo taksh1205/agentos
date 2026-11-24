@@ -83,7 +83,7 @@ async def test_unresolved_cold_storage_conflict_cannot_authorize_implementation(
     ]
     selection = {
         "analysis": "The two rules cannot both be satisfied.",
-        "conflict": "The minimum exceeds the maximum.",
+        "conflict_found": True,
         "recommendation": "apply_consistent_requirements",
         "uncertainty": "precedence_unknown",
         "support": ["P1", "P2"],

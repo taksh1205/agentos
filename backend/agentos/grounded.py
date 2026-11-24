@@ -32,16 +32,24 @@ class ReportSelection(ReadSelection):
     write: Literal["create_report"] | None = None
 
 
+PERSIST_VERB = re.compile(r"\b(?:save|store|persist|file|record|keep|put)\b", re.I)
+DOCUMENT_NOUN = re.compile(r"\b(?:report|memo|brief|briefing|summary|write-?up|document)\b", re.I)
+OTHER_WRITE_TARGET = re.compile(
+    r"\b(?:task|csv|export|e-?mail|notification|notify|alert|update|inventory)\b", re.I
+)
+
+
 def selection_schema(goal, can_write):
     if not can_write:
         return ReadSelection
-    # A request explicitly naming the object to persist should not grant a
-    # different mutation just because the report describes a follow-up.
-    if re.search(
-        r"\b(?:save|store|persist)\s+(?:(?:that|the|this|an?|internal|management|follow-up)\s+)*report\b",
-        goal,
-        re.I,
-    ) and not re.search(r"\b(?:task|csv|email|notification|update)\b", goal, re.I):
+    # A request to persist a document ("file a memo", "store the report") names its
+    # target. Restrict the write to create_report so a small model cannot substitute a
+    # notification or task for the document the user asked to keep.
+    if (
+        PERSIST_VERB.search(goal)
+        and DOCUMENT_NOUN.search(goal)
+        and not OTHER_WRITE_TARGET.search(goal)
+    ):
         return ReportSelection
     return Selection
 
@@ -85,9 +93,13 @@ def synthesis_candidates(hits):
 
 class PolicyReading(StrictModel):
     analysis: str
-    conflict: str | None
+    # A boolean, not free text: small models write "None" into a text field.
+    conflict_found: bool
     recommendation: Literal[
-        "seek_joint_review", "apply_consistent_requirements", "request_more_evidence"
+        "answer_directly",
+        "seek_joint_review",
+        "apply_consistent_requirements",
+        "request_more_evidence",
     ]
     uncertainty: Literal["precedence_unknown", "evidence_incomplete", "no_conflict_identified"]
 
@@ -138,13 +150,16 @@ async def compare_passages(p, goal, shown):
     schema = create_model(
         "PolicyAnalysis",
         __base__=PolicyReading,
-        support=(list[Literal[tuple(passages)]], Field(min_length=1, max_length=12)),
+        support=(list[Literal[tuple(passages)]], Field(max_length=12)),
     )
     result = await p.structured(
         schema,
-        "Explain the requirements, any conflict and operational risks using only the passages. "
-        "Select a recommendation and uncertainty. Conflicting requirements with no precedence rule "
-        "need joint review. Never assign authority to waive a rule. Select only supporting passages.",
+        "Answer the question using only the passages. For a factual question, state the answer "
+        "in analysis, set conflict_found false and recommendation answer_directly. If passages "
+        "impose incompatible requirements, set conflict_found true and recommend joint review; "
+        "never assign authority to waive a rule. If the passages do not contain the answer, say "
+        "so, set uncertainty evidence_incomplete, recommendation request_more_evidence and select "
+        "no support. Otherwise select only the passages that support the answer.",
         json.dumps({"question": goal, "passages": passages}),
     )
     quotes = [
@@ -154,6 +169,7 @@ async def compare_passages(p, goal, shown):
         for k in dict.fromkeys(result.support)
     ]
     recommendations = {
+        "answer_directly": "",
         "seek_joint_review": "Ask the responsible policy owners to review the conflict together and document a resolution before changing operations.",
         "apply_consistent_requirements": "Apply the consistent requirements described in the cited passages.",
         "request_more_evidence": "Request the missing policy evidence before deciding.",
@@ -163,15 +179,24 @@ async def compare_passages(p, goal, shown):
         "evidence_incomplete": "The available evidence leaves part of the question unresolved.",
         "no_conflict_identified": "This conclusion is limited to the passages reviewed.",
     }
-    if result.conflict and result.recommendation == "apply_consistent_requirements":
+    if result.conflict_found and result.recommendation in {
+        "apply_consistent_requirements",
+        "answer_directly",
+    }:
         raise ValueError("Unresolved conflict cannot authorize implementation")
+    abstained = (
+        result.recommendation == "request_more_evidence"
+        or result.uncertainty == "evidence_incomplete"
+    )
+    if not quotes and not abstained:
+        raise ValueError("An answer must select at least one supporting passage")
     # A conflict summary must carry its selected premises into downstream reports,
     # including reports consumed without the separate citation pane.
     source_of = {h["id"]: h.get("source", "source") for h in shown}
     conflict = (
         "Conflicting requirements: "
         + "; ".join(f'{source_of[c.citations[0]]} says "{c.quote}"' for c in quotes)
-        if result.conflict
+        if result.conflict_found
         else ""
     )
     analysis = re.sub(r"\s*[(\[]P[0-9]+[)\]]", "", result.analysis).strip()
@@ -192,6 +217,7 @@ async def compare_passages(p, goal, shown):
         claims=quotes,
         citations=list(dict.fromkeys(c.citations[0] for c in quotes)),
         contradictions=[conflict] if conflict else [],
+        insufficient=abstained,
     )
 
 
@@ -211,9 +237,26 @@ class LedgerReading(StrictModel):
     direction: Literal["increase", "decrease", "flat"]
 
 
+def _value(metric, value):
+    return f"{value:.2%}" if metric == "margin" else f"{value:,.2f}"
+
+
 async def interpret_sales(p, goal, data):
     metrics = data["metrics"]
-    if not metrics or not all(m["rows"] and m["absolute_change"] is not None for m in metrics):
+    if not metrics or not all(m["rows"] for m in metrics):
+        return Finding(summary="Insufficient period data.", insufficient=True)
+    if all(len(m["rows"]) == 1 for m in metrics):
+        # A single period has no trend to interpret; render the computed values directly.
+        lines = [
+            f"{m['metric'].capitalize()} in {m['rows'][0]['month']}: "
+            f"{_value(m['metric'], m['rows'][0]['value'])}."
+            for m in metrics
+            if m["rows"][0]["value"] is not None
+        ]
+        if not lines:
+            return Finding(summary="Insufficient period data.", insufficient=True)
+        return Finding(summary=" ".join(lines) + " A single period does not establish a trend.")
+    if not all(m["absolute_change"] is not None for m in metrics):
         return Finding(summary="Insufficient period data.", insufficient=True)
     reading = await p.structured(
         LedgerReading,
@@ -228,9 +271,15 @@ async def interpret_sales(p, goal, data):
         direction = "increase" if delta > 0 else "decrease" if delta < 0 else "flat"
         if m["metric"] == reading.focus and direction == reading.direction:
             focus = m["metric"]
-        pct = f"{m['growth']:+.2%}" if m["growth"] is not None else "undefined relative change"
+        if m["metric"] == "margin":
+            change = f"{delta:+.2%} points"
+        else:
+            pct = f"{m['growth']:+.2%}" if m["growth"] is not None else "undefined relative change"
+            change = f"{delta:+,.2f}, {pct}"
         lines.append(
-            f"{m['metric'].capitalize()} from {first['month']} to {last['month']}: {first['value']:,.2f} to {last['value']:,.2f} ({delta:+,.2f}, {pct})."
+            f"{m['metric'].capitalize()} from {first['month']} to {last['month']}: "
+            f"{_value(m['metric'], first['value'])} to {_value(m['metric'], last['value'])} "
+            f"({change})."
         )
     if not focus:
         raise ValueError("Model trend contradicted the ledger")
@@ -264,3 +313,46 @@ async def interpret_overdue(p, goal, data):
         + " ".join(lines)
         + (" Review for follow-up." if rows else " No follow-up needed.")
     )
+
+
+INVOICE_STATUS = re.compile(
+    r"\b(?:overdue|past[- ]due|late|delinquent|outstanding|unpaid|collections?)\b", re.I
+)
+
+
+class InventoryReading(StrictModel):
+    criterion: Literal["below_threshold", "at_or_below_threshold", "all_items"]
+
+
+async def interpret_inventory(p, goal, data):
+    """The model chooses which stock condition was asked about; the host applies it."""
+    reading = await p.structured(
+        InventoryReading,
+        "Choose the stock condition the request asks about. 'below' means quantity less than "
+        "the reorder threshold; 'at or below' includes equality; all_items lists everything.",
+        json.dumps({"request": goal}),
+    )
+    rows = data.get("rows", [])
+    test = {
+        "below_threshold": lambda r: r["quantity"] < r["threshold"],
+        "at_or_below_threshold": lambda r: r["quantity"] <= r["threshold"],
+        "all_items": lambda r: True,
+    }[reading.criterion]
+    label = {
+        "below_threshold": "Below reorder threshold (quantity < threshold)",
+        "at_or_below_threshold": "At or below reorder threshold (quantity <= threshold)",
+        "all_items": "Current stock",
+    }[reading.criterion]
+    selected = [r for r in rows if test(r)]
+    listing = (
+        ", ".join(f"{r['sku']} ({r['quantity']} of {r['threshold']})" for r in selected) or "none"
+    )
+    summary = f"{label}: {listing}."
+    equal = [r for r in rows if r["quantity"] == r["threshold"]]
+    if reading.criterion == "below_threshold" and equal:
+        summary += (
+            " Exactly at threshold and therefore excluded: "
+            + ", ".join(r["sku"] for r in equal)
+            + "."
+        )
+    return Finding(summary=summary)

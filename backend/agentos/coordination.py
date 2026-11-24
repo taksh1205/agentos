@@ -204,3 +204,17 @@ def drop_unrequested_writes(plan, goal):
             sorted(removed),
         )
     return plan.model_copy(update={"steps": kept}), sorted(removed)
+
+
+DESTRUCTIVE = re.compile(
+    r"\b(?:delete|wipe|erase|purge|truncate|destroy)\b"
+    r"|\bdrop\s+(?:the\s+|all\s+)?(?:\w+\s+)?(?:table|database|records?|ledger)\b"
+    r"|\breset\b[^.!?]{0,40}\b(?:ledger|database|table|records?)\b"
+    r"|\bremove\s+(?:all|every)\b",
+    re.I,
+)
+
+
+def requests_destruction(goal):
+    """No tool deletes or resets data, so such a request is refused before planning."""
+    return bool(DESTRUCTIVE.search(goal))

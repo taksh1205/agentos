@@ -22,6 +22,7 @@ from .coordination import (
     drop_unrequested_writes,
     evidence_fingerprint,
     expand_capability_plan,
+    requests_destruction,
     requests_write,
     validate_capabilities,
 )
@@ -306,6 +307,36 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
         return [p for p in s["plan"] if p["id"] not in done and set(p["dependencies"]) <= done]
 
     async def planner(s):
+        if s.get("workflow", "auto") == "auto" and requests_destruction(s["goal"]):
+            refusal = (
+                "AgentOS has no tool that deletes, drops or resets records. Approved operations "
+                "can only add reports, exports, tasks, drafts or notifications, or set a stock "
+                "quantity."
+            )
+            store.trace(
+                s["workspace"],
+                s["run_id"],
+                "plan",
+                {
+                    "plan": {"steps": [], "refusal": refusal},
+                    "mode": s["mode"],
+                    "profile": run_profile(s),
+                },
+            )
+            return {
+                "plan": [],
+                "refusal": refusal,
+                "clarification": None,
+                "prior": [],
+                "usage": {"tokens": 0, "calls": 0},
+                "events": [
+                    event(
+                        "planner",
+                        "Refused a destructive request with no matching tool",
+                        "planner:refusal",
+                    )
+                ],
+            }
         prior = (
             await asyncio.to_thread(rag.memory, s["workspace"], s["goal"])
             if s.get("memory_enabled", True)
@@ -616,8 +647,10 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
         compact = constrained(s)
         if compact and intent.dataset == "sales":
             interpretation = await grounded.interpret_sales(p, step["instruction"], evidence)
-        elif compact and intent.dataset == "invoices" and "overdue" in s["goal"].casefold():
+        elif compact and intent.dataset == "invoices" and grounded.INVOICE_STATUS.search(s["goal"]):
             interpretation = await grounded.interpret_overdue(p, step["instruction"], evidence)
+        elif compact and intent.dataset == "inventory":
+            interpretation = await grounded.interpret_inventory(p, step["instruction"], evidence)
         else:
             response = (
                 await p.structured(
@@ -981,8 +1014,17 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
                     }
                 ),
             )
-            if not review.supported:
+            abstained = [
+                r for r in latest.values() if r.get("agent") in {"research", "data"} and r.get("ok")
+            ]
+            abstention = bool(abstained) and all(
+                (r.get("finding") or r.get("interpretation") or {}).get("insufficient")
+                for r in abstained
+            )
+            if not review.supported and not abstention:
                 errors.extend(review.issues or ["model_review_failed"])
+            # A model judge rejecting an explicit "the evidence does not say" answer is a
+            # known false negative; it stays visible in the report as advice, not a failure.
         # A new plan could issue a semantically duplicate write with different arguments.
         # Preserve the existing receipt and report review failure to the operator.
         committed = any(r.get("effect", {}).get("stored") for r in s.get("results", []))

@@ -227,6 +227,11 @@ async def run_case(case, defaults, mode, model, rag, store):
             run["replay_identical"] = again == run["effects"][0]["result"] and len(after) == 1
     report = state.get("report") or {}
     run["report"] = report
+    run["step_failures"] = [
+        {k: r.get(k) for k in ("step", "agent", "error", "issues")}
+        for r in state.get("results", [])
+        if not r.get("ok")
+    ]
     run["plan"] = state.get("plan")
     traces = [
         {"kind": r["kind"], **json.loads(r["payload"])}

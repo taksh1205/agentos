@@ -185,11 +185,23 @@ EXCEPTION_PHRASE = re.compile(
 )
 
 
+# A read-only finding must never report that it changed something.
+COMPLETED_ACTION = re.compile(
+    r"\b(?:has|have|had)\s+(?:now\s+)?been\s+(?:successfully\s+)?(?:deleted|wiped|erased|"
+    r"reset|removed|cleared|dropped|purged|updated|sent|emailed|exported|saved|stored|created|"
+    r"filed)\b|\b(?:were|was)\s+(?:successfully\s+)?(?:deleted|wiped|erased|reset|removed|"
+    r"cleared|dropped|purged|emailed|exported)\b",
+    re.I,
+)
+
+
 def narrative_issues(text, computed=None, sources=None):
     """Catch high-value misleading patterns even if a model omits structured claims."""
     issues = []
     computed = computed or {}
     sources = sources or []
+    if computed and COMPLETED_ACTION.search(text):
+        issues.append("unsupported_action_claim")
     if "overdue_rows" in computed:
         rows_by_id = {r["number"].upper(): r for r in computed["rows"]}
         if {s.upper() for s in re.findall(r"\bINV-[0-9]+\b", text, re.I)} - rows_by_id.keys():
