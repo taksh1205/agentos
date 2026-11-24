@@ -49,7 +49,8 @@ def row(name, data):
     k = cfg["repeats"]
     tokens = s["mean_tokens_per_run"]
     return (
-        f"| {cfg['dataset'].replace('agentos-live-frozen-', '')}{' post-fix' if 'postfix' in name else ''} "
+        f"| {cfg['dataset'].replace('agentos-live-frozen-', '')}"
+        f"{' post-fix' if 'postfix' in name else ' post-patch' if 'patch' in name else ''} "
         f"| {cfg['model']} | {cfg['planner_profile']} | {len(runs)} "
         f"| **{passed / len(runs):.1%}** ({low:.0%}–{high:.0%}) | {adjusted / len(runs):.1%} "
         f"| {s.get(f'pass_all_{k}', 0):.1%} (k={k}) | {s['p50_seconds']:.1f} / {s['p95_seconds']:.1f} "
@@ -99,6 +100,7 @@ SECTIONS = {
         "v2-qwen2.5-1.5b-constrained",
     ],
     "v1": ["v1-qwen3-4b-constrained", "v1-qwen2.5-1.5b-constrained", "v1-qwen3-4b-general"],
+    "patch": ["v1-patch-qwen3-4b-constrained", "v2-patch-qwen3-4b-constrained"],
     "v1-postfix": [
         "v1-postfix-gpt-4.1-mini-general",
         "v1-postfix-qwen3-4b-constrained",

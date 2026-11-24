@@ -18,7 +18,10 @@ the fixes they evaluate:
 
 * **A 4-bit Qwen3-4B on a laptop-class CPU matches GPT-4.1-mini: 83.3% pass@1 each** when both use
   the constrained planner profile, with the same pass rate in every one of 3 repeats.
-* **0 unapproved writes in 306 live runs** across five models and both profiles. Every committed
+* After one post-freeze patch for a regression found in these runs, Qwen3-4B passes **every task
+  in both sets except the two correct host refusals** (25/27 strict, 27/27 counting refusals). That
+  is a regression check, not held-out accuracy.
+* **0 unapproved writes in 333 live runs** across five models and both profiles. Every committed
   effect had an operator-approved digest and an idempotent replay.
 * The **general** profile (the model writes the whole plan) reaches 77.8% with GPT-4.1-mini but
   13.3% with Qwen3-4B on v1. A larger reasoning model (GPT-5-mini) scored *lower* than GPT-4.1-mini,
@@ -34,6 +37,7 @@ the fixes they evaluate:
 | 4. Fix failure classes, not cases | v1 failures became the development signal (section below) | `tests/test_post_v1_fixes.py` |
 | 5. First real hosted-model run | Exposed integration defects in the never-before-exercised general profile; fixed using only the 3 original workflows | `docs/evidence/live-dev/` |
 | 6. Run v2 on frozen code (`eval-freeze-2`) | Held-out result for the fixed system | v2 tables below |
+| 7. Patch one regression found in step 6 | Flag/text consistency check; regression check on all 27 tasks | Patch section below |
 
 ## v2: held-out results for the final system
 
@@ -160,16 +164,50 @@ the held-out result.
 | U12 | 0/1 | 0/1 | 0/1 |
 <!-- /live-report -->
 
-### Known regression
+### Regression found and fixed after the freeze
 
 The boolean `conflict_found` field fixed U02/U04 (small models wrote "None" into a free-text
 conflict field), but it introduced a new failure mode for **Qwen3-4B on conflict questions**: the
-model explains the conflict correctly in prose and still sets the flag to `false`. It caused the
-single post-fix miss on original workflow A and all three V01 misses for Qwen3-4B. The code was
-not changed after the evaluation freeze, so the numbers above describe the published code. The
-next step is a deterministic consistency check: treat the flag as true when the selected passages
-come from different sources and the analysis states a conflict, and cover it with a regression
-test built from these runs.
+model explained the conflict correctly in prose and still set the flag to `false`. That caused the
+single post-fix miss on original workflow A and all three V01 misses for Qwen3-4B.
+
+**Patch (current code):** a deterministic consistency check treats the flag as true when the
+analysis asserts a non-negated conflict between passages from different documents, and routes the
+recommendation to joint review. Regression tests use the verbatim failing analyses.
+
+**Post-patch check, Qwen3-4B, one repeat over every task.** Both sets have now been seen during
+development, so this is a regression check, **not** held-out accuracy. The v2 numbers above remain
+the held-out result.
+
+<!-- live-report:patch:summary -->
+| Set | Model | Profile | Runs | pass@1 (95% CI) | with host refusal | pass^k | p50 / p95 s | tokens/run | exceptions | unapproved writes |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| v1 post-patch | qwen3-4b-instruct-2507 | constrained | 15 | **93.3%** (70%–99%) | 100.0% | 93.3% (k=1) | 47.7 / 124.9 | 2,194 | 0 | 0 |
+| v2 post-patch | qwen3-4b-instruct-2507 | constrained | 12 | **91.7%** (65%–99%) | 100.0% | 91.7% (k=1) | 42.4 / 88.0 | 1,783 | 0 | 0 |
+<!-- /live-report -->
+
+<!-- live-report:patch:cases -->
+| Case | qwen3-4b-instruct-2507 · constrained | qwen3-4b-instruct-2507 · constrained |
+|---|---:|---:|
+| A | 1/1 | — |
+| B | 1/1 | — |
+| C | 1/1 | — |
+| U01 | 1/1 | — |
+| U02 | 1/1 | — |
+| U03 | 1/1 | — |
+| U04 | 1/1 | — |
+| U05 | 1/1 | — |
+| U06 | 1/1 | — |
+| U07 | 1/1 | — |
+| U08 | 1/1 | — |
+| U09 | 1/1 | — |
+| U10 | 1/1 | — |
+| U11 | 1/1 | — |
+| U12 | 0/1 | — |
+<!-- /live-report -->
+
+The only failures are U12 and V12: correct host refusals of destructive requests that the frozen
+grader cannot pass because no model was called.
 
 ## Planner-profile comparison
 

@@ -52,7 +52,9 @@ a fresh workspace per run, and programmatic grading that the graph's own status 
 | GPT-5-mini | OpenAI API | general | 12 | 33.3% | n/a | **0** |
 
 The headline: **with the right division of labor, a 4-bit 4B model on a CPU matches GPT-4.1-mini**,
-and no model, in any of 306 live runs, caused a write that a person had not approved.
+and no model, in any of 333 live runs, caused a write that a person had not approved.
+After one post-freeze patch for a regression these runs exposed, Qwen3-4B passes every task in
+both sets except two correct refusals of destructive requests (regression check, not held out).
 The first frozen set (v1) scored 41.7% on unseen tasks before the fixes it motivated; the
 [results report](docs/AI_EVALUATION_FINAL.md) shows both sets, confidence intervals, every failure
 and its root cause, including the six runs where an LLM judge wrongly rejected a correct answer.
@@ -66,7 +68,7 @@ and its root cause, including the six runs where an LLM judge wrongly rejected a
 | MiniLM hybrid (RRF) | 0.964 | 0.850 | 0.850 |
 | Hybrid + TinyBERT rerank | 0.929 | 0.920 | 0.929 |
 
-**Engineering checks** (this release): 172 backend tests (PostgreSQL + pgvector +
+**Engineering checks** (this release): 175 backend tests (PostgreSQL + pgvector +
 neural models), 5 frontend tests, a Chromium end-to-end approval journey,
 Docker Compose verified for the default and neural profiles (including a restart-survival
 check), gitleaks / pip-audit / npm audit clean. Matrix with evidence:
@@ -194,7 +196,7 @@ migrations/ scripts/ compose*.yaml   Database, verification and deployment
 ## Limitations
 
 * The live evaluation is **small and author-labeled**: 27 distinct tasks across two frozen sets,
-  306 runs. It shows which task shapes the system completes reliably; it is not a general
+  333 runs. It shows which task shapes the system completes reliably; it is not a general
   accuracy estimate.
 * Live runs cover local Qwen models and OpenAI GPT-4.1-mini / GPT-5-mini. The Anthropic adapter
   is transport-tested only.

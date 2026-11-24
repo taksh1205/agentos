@@ -1,0 +1,5 @@
+default attempt=1 exit=1
+default attempt=2 exit=1
+default attempt=3 exit=1
+neural attempt=1 exit=0
+default retry=1 exit=0

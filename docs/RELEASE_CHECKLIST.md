@@ -4,10 +4,10 @@
 
 **Ready to publish as a public portfolio repository.** Every check that could run in the
 release environment was executed and is recorded in [FINAL_RELEASE_AUDIT.md](FINAL_RELEASE_AUDIT.md),
-including the one known regression. Hosted GitHub Actions run automatically on the first push.
+including one regression found late, patched and re-verified. Hosted GitHub Actions run automatically on the first push.
 
 Claims to make: a 4-bit 4B local model matching GPT-4.1-mini (83.3% each) on a frozen held-out
-set; 0 unapproved writes in 306 live runs; measured retrieval quality; approval-gated,
+set; 0 unapproved writes in 333 live runs; measured retrieval quality; approval-gated,
 idempotent writes; Docker and CI reproducibility.
 
 Claims **not** to make: production readiness, general autonomous reasoning, accuracy on
@@ -75,7 +75,6 @@ mounts it at runtime. The release environment needed this; the override is not p
 | Gap | Why it remains | Next step |
 |---|---|---|
 | Hosted GitHub Actions not yet run | Needs the repository to exist on GitHub | First push (step 3 above) |
-| Qwen3-4B conflict-flag regression | Found after the evaluation freeze; fixing it would change evaluated code | Flag/text consistency check plus a regression test, then rerun |
 | No Anthropic live run | No Anthropic key in the release environment | `--mode anthropic` with the same harness |
 | Small author-labeled live set | Labels are written by hand and every case needs its own fixtures | Grow the set with a versioned `live-frozen-v2.json` |
 | One scheduler per database | Correct restart semantics without distributed leases | Lease and heartbeat job claims for horizontal workers |

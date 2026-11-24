@@ -12,183 +12,241 @@
 #3 transferring dockerfile: 718B done
 #3 DONE 0.0s
 
-#4 [frontend] resolve image config for docker-image://docker.io/docker/dockerfile:1
-#4 DONE 0.7s
+#4 [backend] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#4 DONE 0.5s
 
 #5 [backend] docker-image://docker.io/docker/dockerfile:1@sha256:572cebbc2b15e6f84c077742952674889cb63cd5e9b80abdffcbe587b6f19183
 #5 resolve docker.io/docker/dockerfile:1@sha256:572cebbc2b15e6f84c077742952674889cb63cd5e9b80abdffcbe587b6f19183 0.0s done
 #5 CACHED
 
 #6 [frontend internal] load metadata for docker.io/library/node:22-alpine
-#6 ...
+#6 DONE 0.4s
 
 #7 [backend internal] load metadata for docker.io/library/python:3.12-slim
-#7 DONE 0.5s
+#7 ...
 
-#8 [backend internal] load .dockerignore
-#8 transferring context: 189B done
+#8 [frontend internal] load .dockerignore
+#8 transferring context: 59B done
 #8 DONE 0.0s
 
-#6 [frontend internal] load metadata for docker.io/library/node:22-alpine
-#6 DONE 0.5s
-
-#9 [frontend internal] load .dockerignore
-#9 transferring context: 59B done
+#9 [frontend internal] load build context
 #9 DONE 0.0s
 
-#10 [backend stage-0  1/10] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
-#10 resolve docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+#10 [frontend stage-0 1/6] FROM docker.io/library/node:22-alpine@sha256:1314fb30ec37592d5845e5a160d522c0e680972aa534549940b8d73bde88481a
+#10 resolve docker.io/library/node:22-alpine@sha256:1314fb30ec37592d5845e5a160d522c0e680972aa534549940b8d73bde88481a 0.0s done
 #10 DONE 0.0s
 
-#11 [backend internal] load build context
-#11 transferring context: 3.16kB done
-#11 DONE 0.0s
+#9 [frontend internal] load build context
+#9 transferring context: 166.72kB 0.0s done
+#9 DONE 0.0s
 
-#12 [backend stage-0  5/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     case ",postgres,ml,telemetry," in *,ml,*)         pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu ;; esac
-#12 CACHED
+#11 [frontend stage-0 2/6] WORKDIR /app
+#11 CACHED
 
-#13 [backend stage-0  4/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install -r requirements-lock.txt
-#13 CACHED
+#12 [frontend stage-0 3/6] COPY package*.json ./
+#12 DONE 0.1s
 
-#14 [backend stage-0  6/10] COPY backend/pyproject.toml ./
-#14 CACHED
+#13 [frontend stage-0 4/6] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/extra_ca; fi;     npm ci --no-audit --no-fund
+#13 ...
 
-#15 [backend stage-0  2/10] WORKDIR /app
-#15 CACHED
+#7 [backend internal] load metadata for docker.io/library/python:3.12-slim
+#7 DONE 1.1s
 
-#16 [backend stage-0  3/10] COPY backend/requirements-lock.txt backend/neural-constraints.txt ./
-#16 CACHED
+#14 [backend internal] load .dockerignore
+#14 transferring context: 189B 0.2s done
+#14 DONE 0.3s
 
-#17 [backend stage-0  7/10] COPY backend/agentos ./agentos
-#17 CACHED
+#13 [frontend stage-0 4/6] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/extra_ca; fi;     npm ci --no-audit --no-fund
+#13 ...
 
-#18 [frontend stage-0 1/6] FROM docker.io/library/node:22-alpine@sha256:1314fb30ec37592d5845e5a160d522c0e680972aa534549940b8d73bde88481a
-#18 resolve docker.io/library/node:22-alpine@sha256:1314fb30ec37592d5845e5a160d522c0e680972aa534549940b8d73bde88481a 0.0s done
-#18 DONE 0.0s
+#15 [backend internal] load build context
+#15 DONE 0.0s
 
-#19 [frontend internal] load build context
-#19 transferring context: 650B done
-#19 DONE 0.0s
+#15 [backend internal] load build context
+#15 transferring context: 4.28MB 0.6s done
+#15 DONE 0.6s
 
-#20 [backend stage-0  8/10] COPY evals /evals
-#20 DONE 0.0s
+#16 [backend stage-0  1/10] FROM docker.io/library/python:3.12-slim@sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b
+#16 resolve docker.io/library/python:3.12-slim@sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b 0.0s done
+#16 DONE 3.2s
 
-#21 [frontend stage-0 2/6] WORKDIR /app
-#21 CACHED
+#13 [frontend stage-0 4/6] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/extra_ca; fi;     npm ci --no-audit --no-fund
+#13 ...
 
-#22 [frontend stage-0 3/6] COPY package*.json ./
-#22 CACHED
+#16 [backend stage-0  1/10] FROM docker.io/library/python:3.12-slim@sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b
+#16 DONE 3.8s
 
-#23 [frontend stage-0 4/6] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/extra_ca; fi;     npm ci --no-audit --no-fund
-#23 CACHED
+#13 [frontend stage-0 4/6] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/extra_ca; fi;     npm ci --no-audit --no-fund
+#13 ...
 
-#24 [frontend stage-0 5/6] COPY . .
-#24 CACHED
+#16 [backend stage-0  1/10] FROM docker.io/library/python:3.12-slim@sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b
+#16 DONE 3.8s
 
-#25 [frontend stage-0 6/6] RUN npm run build
-#25 0.320 
-#25 0.320 > agentos-console@0.3.0 build
-#25 0.320 > next build
-#25 0.320 
-#25 1.145    ▲ Next.js 15.5.29
-#25 1.145 
-#25 1.172    Creating an optimized production build ...
-#25 ...
+#17 [backend stage-0  2/10] WORKDIR /app
+#17 DONE 0.5s
 
-#26 [backend stage-0  9/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install --no-deps .  && pip install ".[postgres,ml,telemetry]" -c neural-constraints.txt  && pip check
-#26 1.463 Processing /app
-#26 3.808   Getting requirements to build wheel: started
-#26 4.347   Getting requirements to build wheel: finished with status 'done'
-#26 4.349   Preparing metadata (pyproject.toml): started
-#26 4.930   Preparing metadata (pyproject.toml): finished with status 'done'
-#26 5.627 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
-#26 7.096 Processing /app
-#26 9.348   Getting requirements to build wheel: started
-#26 9.923   Getting requirements to build wheel: finished with status 'done'
-#26 9.926   Preparing metadata (pyproject.toml): started
-#26 10.51   Preparing metadata (pyproject.toml): finished with status 'done'
-#26 ...
+#13 [frontend stage-0 4/6] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/extra_ca; fi;     npm ci --no-audit --no-fund
+#13 ...
 
-#25 [frontend stage-0 6/6] RUN npm run build
-#25 10.91  ✓ Compiled successfully in 6.8s
-#25 10.91    Linting and checking validity of types ...
-#25 15.52    Generating static pages (0/4) ...
-#25 ...
+#18 [backend stage-0  3/10] COPY backend/requirements-lock.txt backend/neural-constraints.txt ./
+#18 DONE 0.1s
 
-#26 [backend stage-0  9/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install --no-deps .  && pip install ".[postgres,ml,telemetry]" -c neural-constraints.txt  && pip check
-#26 ...
+#19 [backend stage-0  4/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install -r requirements-lock.txt
+#19 ...
 
-#25 [frontend stage-0 6/6] RUN npm run build
-#25 16.23    Generating static pages (1/4) 
-#25 16.23    Generating static pages (2/4) 
-#25 16.23    Generating static pages (3/4) 
-#25 16.23  ✓ Generating static pages (4/4)
-#25 16.69    Finalizing page optimization ...
-#25 22.82 
-#25 22.83 Route (app)                                 Size  First Load JS
-#25 22.83 ┌ ○ /                                    6.85 kB         110 kB
-#25 22.83 └ ○ /_not-found                            991 B         104 kB
-#25 22.83 + First Load JS shared by all             103 kB
-#25 22.83   ├ chunks/255-73938ce8a8eac1ad.js       46.6 kB
-#25 22.83   ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
-#25 22.83   └ other shared chunks (total)           1.9 kB
-#25 22.83 
-#25 22.83 
-#25 22.83 ○  (Static)  prerendered as static content
-#25 22.83 
-#25 DONE 23.3s
+#13 [frontend stage-0 4/6] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/extra_ca; fi;     npm ci --no-audit --no-fund
+#13 20.42 
+#13 20.42 added 133 packages in 13s
+#13 20.42 npm notice
+#13 20.42 npm notice New major version of npm available! 10.9.9 -> 12.2.3
+#13 20.42 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+#13 20.42 npm notice To update run: npm install -g npm@12.2.3
+#13 20.42 npm notice
+#13 DONE 22.0s
 
-#26 [backend stage-0  9/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install --no-deps .  && pip install ".[postgres,ml,telemetry]" -c neural-constraints.txt  && pip check
-#26 ...
+#19 [backend stage-0  4/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install -r requirements-lock.txt
+#19 ...
 
-#27 [frontend] exporting to image
-#27 exporting layers
-#27 exporting layers 1.1s done
-#27 exporting manifest sha256:147119e696b2b2f4810951472f3b559bc9567ce90013da01381302c19ad22b73 done
-#27 exporting config sha256:0f5dd1e1435f3d364c0e28c2572a0b634f355df5df532a8d3392300c99f38d87 done
-#27 exporting attestation manifest sha256:74c41f42824a0a0cb58f011ada6452ef80d6f6ffb4a072ca1b542a7846940a1f done
-#27 exporting manifest list sha256:d7e9ce2917909a987bd0410336851796c2667736d4d99f2c617ddda897813f63 done
-#27 naming to docker.io/library/agentos-v3-review-frontend:latest done
-#27 unpacking to docker.io/library/agentos-v3-review-frontend:latest
-#27 unpacking to docker.io/library/agentos-v3-review-frontend:latest 0.2s done
-#27 DONE 1.4s
+#20 [frontend stage-0 5/6] COPY . .
+#20 DONE 0.2s
 
-#26 [backend stage-0  9/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install --no-deps .  && pip install ".[postgres,ml,telemetry]" -c neural-constraints.txt  && pip check
-#26 ...
+#19 [backend stage-0  4/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install -r requirements-lock.txt
+#19 ...
+
+#21 [frontend stage-0 6/6] RUN npm run build
+#21 0.507 
+#21 0.507 > agentos-console@0.3.0 build
+#21 0.507 > next build
+#21 0.507 
+#21 1.668    ▲ Next.js 15.5.29
+#21 1.669 
+#21 1.707    Creating an optimized production build ...
+#21 15.87  ✓ Compiled successfully in 10.5s
+#21 15.87    Linting and checking validity of types ...
+#21 24.27    Generating static pages (0/4) ...
+#21 25.86    Generating static pages (1/4) 
+#21 25.86    Generating static pages (2/4) 
+#21 25.86    Generating static pages (3/4) 
+#21 25.86  ✓ Generating static pages (4/4)
+#21 26.57    Finalizing page optimization ...
+#21 ...
+
+#19 [backend stage-0  4/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install -r requirements-lock.txt
+#19 44.56 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#19 DONE 45.8s
+
+#21 [frontend stage-0 6/6] RUN npm run build
+#21 ...
+
+#22 [backend stage-0  5/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     case ",postgres,ml,telemetry," in *,ml,*)         pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu ;; esac
+#22 1.675 Looking in indexes: https://download.pytorch.org/whl/cpu
+#22 ...
+
+#21 [frontend stage-0 6/6] RUN npm run build
+#21 35.30 
+#21 35.30 Route (app)                                 Size  First Load JS
+#21 35.30 ┌ ○ /                                    6.94 kB         110 kB
+#21 35.30 └ ○ /_not-found                            991 B         104 kB
+#21 35.30 + First Load JS shared by all             103 kB
+#21 35.30   ├ chunks/255-73938ce8a8eac1ad.js       46.6 kB
+#21 35.30   ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+#21 35.30   └ other shared chunks (total)           1.9 kB
+#21 35.30 
+#21 35.30 
+#21 35.30 ○  (Static)  prerendered as static content
+#21 35.30 
+#21 DONE 35.6s
+
+#23 [frontend] exporting to image
+#23 exporting layers
+#23 ...
+
+#22 [backend stage-0  5/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     case ",postgres,ml,telemetry," in *,ml,*)         pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu ;; esac
+#22 25.37 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#22 DONE 26.2s
+
+#23 [frontend] exporting to image
+#23 ...
+
+#24 [backend stage-0  6/10] COPY backend/pyproject.toml ./
+#24 DONE 0.2s
+
+#23 [frontend] exporting to image
+#23 ...
+
+#25 [backend stage-0  7/10] COPY backend/agentos ./agentos
+#25 DONE 0.1s
+
+#26 [backend stage-0  8/10] COPY evals /evals
+#26 DONE 0.1s
+
+#27 [backend stage-0  9/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install --no-deps .  && pip install ".[postgres,ml,telemetry]" -c neural-constraints.txt  && pip check
+#27 1.776 Processing /app
+#27 4.360   Getting requirements to build wheel: started
+#27 5.090   Getting requirements to build wheel: finished with status 'done'
+#27 5.092   Preparing metadata (pyproject.toml): started
+#27 5.846   Preparing metadata (pyproject.toml): finished with status 'done'
+#27 6.849 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#27 8.709 Processing /app
+#27 11.27   Getting requirements to build wheel: started
+#27 11.96   Getting requirements to build wheel: finished with status 'done'
+#27 11.96   Preparing metadata (pyproject.toml): started
+#27 12.73   Preparing metadata (pyproject.toml): finished with status 'done'
+#27 ...
+
+#23 [frontend] exporting to image
+#23 exporting layers 35.7s done
+#23 exporting manifest sha256:5a466d3245c8a37eadca4df9ce8cc2d906cebc5d6df72f24751d896d8b7b7fe0 0.0s done
+#23 exporting config sha256:1912d388acc6160446547a146b193402d50aec2c2ae0249ee0933912db7411af 0.0s done
+#23 exporting attestation manifest sha256:43a5d1d8329770214ec5e7efa4d6357f3b3454bf894061a49e041b855c332fe1
+#23 exporting attestation manifest sha256:43a5d1d8329770214ec5e7efa4d6357f3b3454bf894061a49e041b855c332fe1 0.0s done
+#23 exporting manifest list sha256:324802e8dc8b8f3bd572137c8651ef90a73410be5d27ffacb7a1bb9d267e3eef 0.0s done
+#23 naming to docker.io/library/agentos-v3-review-frontend:latest done
+#23 unpacking to docker.io/library/agentos-v3-review-frontend:latest
+#23 ...
+
+#27 [backend stage-0  9/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install --no-deps .  && pip install ".[postgres,ml,telemetry]" -c neural-constraints.txt  && pip check
+#27 ...
+
+#23 [frontend] exporting to image
+#23 unpacking to docker.io/library/agentos-v3-review-frontend:latest 11.1s done
+#23 DONE 47.0s
 
 #28 [frontend] resolving provenance for metadata file
 #28 DONE 0.0s
 
-#26 [backend stage-0  9/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install --no-deps .  && pip install ".[postgres,ml,telemetry]" -c neural-constraints.txt  && pip check
-#26 24.68 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
-#26 26.20 No broken requirements found.
-#26 DONE 26.4s
+#27 [backend stage-0  9/10] RUN --mount=type=secret,id=extra_ca,required=false     if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi;     pip install --no-deps .  && pip install ".[postgres,ml,telemetry]" -c neural-constraints.txt  && pip check
+#27 30.85 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#27 34.27 No broken requirements found.
+#27 DONE 35.3s
 
 #29 [backend stage-0 10/10] RUN useradd -m agentos  && mkdir -p /data /home/agentos/.cache/huggingface  && chown -R agentos /data /evals /home/agentos/.cache
-#29 DONE 0.3s
+#29 DONE 0.5s
 
 #30 [backend] exporting to image
-#30 exporting layers 6.0s done
-#30 exporting manifest sha256:802dfb68b9e5abd0087a412d4183e54c90e40594eb1185d22b9803a99bfa759a 0.0s done
-#30 exporting config sha256:f705f97b43c1486933c8da647c0004b7687e6568bd430b981f0f016ef9208682 done
-#30 exporting attestation manifest sha256:4d6eb86b71bd17df7fb637a8649f7300c9214a1032ec1c5a1868065c3ab135bb done
-#30 exporting manifest list sha256:6505717e5fa1a1f790689c41fe29e98dba2455088370c7c384477a5b7a2b51a7 done
+#30 exporting layers
+#30 exporting layers 37.9s done
+#30 exporting manifest sha256:9bbfa09b1e50ed73b91dfb6bcaa505a8484f42e6097f80f7f3118bb009553db2 0.0s done
+#30 exporting config sha256:d4ef28a09bd297217aaee5649602ba36152702671ec7318b1313d2f4df64292c 0.0s done
+#30 exporting attestation manifest sha256:8570b21591074b278e3b9decbd9976463d29fd229014b6bf28511d6c2cf8528d
+#30 exporting attestation manifest sha256:8570b21591074b278e3b9decbd9976463d29fd229014b6bf28511d6c2cf8528d 0.0s done
+#30 exporting manifest list sha256:d64db20053fe1a24465c8e0c2f97049c3af53b5dfc66addfe59db5d265db63b6 0.0s done
 #30 naming to docker.io/library/agentos-v3-review-backend:latest done
 #30 unpacking to docker.io/library/agentos-v3-review-backend:latest
-#30 unpacking to docker.io/library/agentos-v3-review-backend:latest 1.7s done
-#30 DONE 7.7s
+#30 unpacking to docker.io/library/agentos-v3-review-backend:latest 14.6s done
+#30 DONE 52.7s
 
 #31 [backend] resolving provenance for metadata file
 #31 DONE 0.0s
- Image agentos-v3-review-frontend Built 
  Image agentos-v3-review-backend Built 
- Network agentos-v3-review_default Creating 
- Volume agentos-v3-review_postgres Creating 
+ Image agentos-v3-review-frontend Built 
  Volume agentos-v3-review_checkpoints Creating 
  Volume agentos-v3-review_neural_models Creating 
- Volume agentos-v3-review_postgres Created 
+ Volume agentos-v3-review_postgres Creating 
+ Network agentos-v3-review_default Creating 
  Volume agentos-v3-review_checkpoints Created 
  Volume agentos-v3-review_neural_models Created 
+ Volume agentos-v3-review_postgres Created 
  Network agentos-v3-review_default Created 
  Container agentos-v3-review-postgres-1 Creating 
  Container agentos-v3-review-postgres-1 Created 
@@ -206,17 +264,17 @@
  Container agentos-v3-review-backend-1 Healthy 
  Container agentos-v3-review-frontend-1 Starting 
  Container agentos-v3-review-frontend-1 Started 
+ Container agentos-v3-review-backend-1 Waiting 
  Container agentos-v3-review-frontend-1 Waiting 
  Container agentos-v3-review-postgres-1 Waiting 
- Container agentos-v3-review-backend-1 Waiting 
  Container agentos-v3-review-backend-1 Healthy 
  Container agentos-v3-review-postgres-1 Healthy 
  Container agentos-v3-review-frontend-1 Healthy 
 research {'completed': True, 'retrieved_both_policies': True}
 business {'completed': True, 'verified_totals': True}
 operation {'completed': True, 'retrieved_both_policies': True, 'verified_totals': True, 'single_committed_report': True}
- agentos-v3-review-backend-1 Copying agentos-v3-review-backend-1:/tmp/workflow-results.json to /home/user/evalruns/compose-neural/workflows.json
- agentos-v3-review-backend-1 Copied agentos-v3-review-backend-1:/tmp/workflow-results.json to /home/user/evalruns/compose-neural/workflows.json
+ agentos-v3-review-backend-1 Copying agentos-v3-review-backend-1:/tmp/workflow-results.json to /home/user/evalruns/final-compose/neural/workflows.json
+ agentos-v3-review-backend-1 Copied agentos-v3-review-backend-1:/tmp/workflow-results.json to /home/user/evalruns/final-compose/neural/workflows.json
  Container agentos-v3-review-backend-1 Stopping 
  Container agentos-v3-review-backend-1 Stopped 
  Container agentos-v3-review-postgres-1 Restarting 

@@ -27,9 +27,9 @@
     {
       "kind": "research",
       "goal": "Research both the settlement policy and distribution policy. Which requirements apply to a management report?",
-      "id": "08b525fa-7703-47dd-a444-e55e667aeabe",
+      "id": "873e2adc-6209-4404-af13-ee254cd47253",
       "mode": "demo",
-      "seconds": 3.0556615620000684,
+      "seconds": 3.062697534000108,
       "checks": {
         "completed": true,
         "retrieved_both_policies": true
@@ -180,7 +180,7 @@
               "document_search"
             ],
             "attempts": 1,
-            "seconds": 2.680099935000044
+            "seconds": 2.85615780299986
           }
         ],
         "citations": [
@@ -269,7 +269,7 @@
             "mode": "demo",
             "profile": "offline-rules"
           },
-          "created": 1795480738.8202813
+          "created": 1795558609.848611
         },
         {
           "kind": "tool_call",
@@ -282,12 +282,12 @@
             "arguments": {},
             "step": "0",
             "approval_id": null,
-            "seconds": 2.6750709640000423,
+            "seconds": 2.8529293900000994,
             "output_fields": [
               "sources"
             ]
           },
-          "created": 1795480741.5002823
+          "created": 1795558612.709826
         },
         {
           "kind": "verification",
@@ -300,16 +300,16 @@
               "estimated_cost_usd": 0
             }
           },
-          "created": 1795480741.5194793
+          "created": 1795558612.7261107
         }
       ]
     },
     {
       "kind": "business",
       "goal": "Analyze revenue and operating costs for the full period and report the computed totals.",
-      "id": "105d43de-d9ac-40d9-8585-1182dc5f860a",
+      "id": "a2755164-5cb7-403e-bf30-6597633cb35e",
       "mode": "demo",
-      "seconds": 9.212720638999826,
+      "seconds": 9.099675054000272,
       "checks": {
         "completed": true,
         "verified_totals": true
@@ -501,7 +501,7 @@
               "business_metrics"
             ],
             "attempts": 1,
-            "seconds": 8.32338774799996
+            "seconds": 8.158015717000126
           }
         ],
         "citations": [],
@@ -556,7 +556,7 @@
             "mode": "demo",
             "profile": "offline-rules"
           },
-          "created": 1795480741.8919313
+          "created": 1795558612.9272816
         },
         {
           "kind": "tool_call",
@@ -566,12 +566,12 @@
             "arguments": {},
             "step": "0",
             "approval_id": null,
-            "seconds": 2.5776336189999256,
+            "seconds": 2.703647099999671,
             "output_fields": [
               "datasets"
             ]
           },
-          "created": 1795480744.4752614
+          "created": 1795558615.6448035
         },
         {
           "kind": "tool_call",
@@ -589,7 +589,7 @@
             },
             "step": "0",
             "approval_id": null,
-            "seconds": 2.6401178199998867,
+            "seconds": 2.7133679029998348,
             "output_fields": [
               "metric",
               "rows",
@@ -599,7 +599,7 @@
               "biggest_change"
             ]
           },
-          "created": 1795480747.1197405
+          "created": 1795558618.3600843
         },
         {
           "kind": "tool_call",
@@ -617,7 +617,7 @@
             },
             "step": "0",
             "approval_id": null,
-            "seconds": 3.0831185100000766,
+            "seconds": 2.7327643469998293,
             "output_fields": [
               "metric",
               "rows",
@@ -627,7 +627,7 @@
               "biggest_change"
             ]
           },
-          "created": 1795480750.208298
+          "created": 1795558621.0947995
         },
         {
           "kind": "verification",
@@ -640,16 +640,16 @@
               "estimated_cost_usd": 0
             }
           },
-          "created": 1795480750.2336967
+          "created": 1795558621.1072607
         }
       ]
     },
     {
       "kind": "operation",
       "goal": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
-      "id": "47febde6-7605-449e-ab39-b99cc01c9e39",
+      "id": "2720aa5f-8c9b-4fb0-8949-d1b3448b4597",
       "mode": "demo",
-      "seconds": 16.38871175999998,
+      "seconds": 12.187938468000084,
       "checks": {
         "completed": true,
         "retrieved_both_policies": true,
@@ -657,7 +657,7 @@
         "single_committed_report": true
       },
       "approval": {
-        "id": "478fc5bce0ada94d8437dcd77f0c4bc15459a43499f17f6ad36cb8cff2b3cee4",
+        "id": "92e174bd72e606a15353b607f0cf0e5495ad088b3c294836b67950baba503106",
         "tool": "create_report",
         "arguments": {
           "title": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence",
@@ -852,7 +852,7 @@
               "business_metrics"
             ],
             "attempts": 1,
-            "seconds": 11.293283198999916
+            "seconds": 8.478638833000332
           },
           {
             "step": "1",
@@ -981,16 +981,16 @@
               "document_search"
             ],
             "attempts": 1,
-            "seconds": 5.227078594999966
+            "seconds": 3.1953346209998017
           },
           {
             "step": "2",
             "agent": "action",
             "ok": true,
             "tool": "create_report",
-            "receipt": "478fc5bce0ada94d8437dcd77f0c4bc15459a43499f17f6ad36cb8cff2b3cee4",
+            "receipt": "92e174bd72e606a15353b607f0cf0e5495ad088b3c294836b67950baba503106",
             "effect": {
-              "receipt": "478fc5bce0ada94d8437dcd77f0c4bc15459a43499f17f6ad36cb8cff2b3cee4",
+              "receipt": "92e174bd72e606a15353b607f0cf0e5495ad088b3c294836b67950baba503106",
               "tool": "create_report",
               "stored": true,
               "payload": {
@@ -1151,7 +1151,22 @@
             "mode": "demo",
             "profile": "offline-rules"
           },
-          "created": 1795480751.1103642
+          "created": 1795558622.0298615
+        },
+        {
+          "kind": "tool_call",
+          "payload": {
+            "tool": "dataset_schema",
+            "argument_keys": [],
+            "arguments": {},
+            "step": "0",
+            "approval_id": null,
+            "seconds": 3.1095723789999283,
+            "output_fields": [
+              "datasets"
+            ]
+          },
+          "created": 1795558625.1454148
         },
         {
           "kind": "tool_call",
@@ -1164,27 +1179,12 @@
             "arguments": {},
             "step": "1",
             "approval_id": null,
-            "seconds": 5.217085351000151,
+            "seconds": 3.1877818840002874,
             "output_fields": [
               "sources"
             ]
           },
-          "created": 1795480756.3384218
-        },
-        {
-          "kind": "tool_call",
-          "payload": {
-            "tool": "dataset_schema",
-            "argument_keys": [],
-            "arguments": {},
-            "step": "0",
-            "approval_id": null,
-            "seconds": 5.22859336700003,
-            "output_fields": [
-              "datasets"
-            ]
-          },
-          "created": 1795480756.3497255
+          "created": 1795558625.2236946
         },
         {
           "kind": "tool_call",
@@ -1202,7 +1202,7 @@
             },
             "step": "0",
             "approval_id": null,
-            "seconds": 3.031868986000063,
+            "seconds": 2.8310435479997977,
             "output_fields": [
               "metric",
               "rows",
@@ -1212,7 +1212,7 @@
               "biggest_change"
             ]
           },
-          "created": 1795480759.387583
+          "created": 1795558627.9790552
         },
         {
           "kind": "tool_call",
@@ -1230,7 +1230,7 @@
             },
             "step": "0",
             "approval_id": null,
-            "seconds": 3.021535191000112,
+            "seconds": 2.5294943449998755,
             "output_fields": [
               "metric",
               "rows",
@@ -1240,7 +1240,7 @@
               "biggest_change"
             ]
           },
-          "created": 1795480762.4106984
+          "created": 1795558630.5103416
         },
         {
           "kind": "tool_call",
@@ -1252,8 +1252,8 @@
             ],
             "arguments": {},
             "step": "2",
-            "approval_id": "478fc5bce0ada94d8437dcd77f0c4bc15459a43499f17f6ad36cb8cff2b3cee4",
-            "seconds": 3.065575842000044,
+            "approval_id": "92e174bd72e606a15353b607f0cf0e5495ad088b3c294836b67950baba503106",
+            "seconds": 2.796883684000022,
             "output_fields": [
               "receipt",
               "tool",
@@ -1262,7 +1262,7 @@
               "external_message_sent"
             ]
           },
-          "created": 1795480766.4102154
+          "created": 1795558633.9629996
         },
         {
           "kind": "verification",
@@ -1275,7 +1275,7 @@
               "estimated_cost_usd": 0
             }
           },
-          "created": 1795480766.428927
+          "created": 1795558633.9886212
         }
       ]
     }

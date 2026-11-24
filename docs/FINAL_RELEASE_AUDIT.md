@@ -9,16 +9,16 @@ marked PASS without a run.
 
 | # | Requirement | Verdict | Evidence |
 |---:|---|---|---|
-| 1 | Backend suite with real PostgreSQL 16 + pgvector and neural models | **PASS**: 172 passed, 0 failed, 0 skipped | [`evidence/tests/backend.log`](evidence/tests/backend.log), [`backend-junit.xml`](evidence/tests/backend-junit.xml) |
+| 1 | Backend suite with real PostgreSQL 16 + pgvector and neural models | **PASS**: 175 passed, 0 failed, 0 skipped | [`evidence/tests/backend.log`](evidence/tests/backend.log), [`backend-junit.xml`](evidence/tests/backend-junit.xml) |
 | 2 | Python lint and format (ruff) | **PASS** | CI `backend` job; same commands in [RELEASE_CHECKLIST](RELEASE_CHECKLIST.md) |
 | 3 | Frontend: prettier, 5 interaction tests, TypeScript, production build | **PASS** | CI `frontend` job; [`evidence/tests/`](evidence/tests/) |
 | 4 | Real-browser journey (Chromium): seed, run, approve, experiments, no page errors | **PASS** | [`evidence/tests/browser-demo.log`](evidence/tests/browser-demo.log), [`screenshots/demo/`](screenshots/demo/) |
 | 5 | Live console screenshots from real OpenAI runs (research, approval, receipt, analytics, experiments) | **PASS** | [`screenshots/`](screenshots/), script `frontend/tests/screenshots.cjs` |
 | 6 | Docker Compose, default profile: build, health, 3 HTTP workflows via MCP on PostgreSQL, restart survival | **PASS** | [`evidence/compose/default-run.log`](evidence/compose/default-run.log), [`default-workflows.json`](evidence/compose/default-workflows.json) |
 | 7 | Docker Compose, neural profile (MiniLM, TinyBERT, CPU PyTorch) with the same checks | **PASS** | [`evidence/compose/neural-run.log`](evidence/compose/neural-run.log), [`neural-workflows.json`](evidence/compose/neural-workflows.json) |
-| 8 | Original 3 live workflows still pass | **PARTIAL**: 9/9 for both Qwen models at `eval-freeze`; after the fixes, 3/3 for Qwen2.5-1.5B and 2/3 for Qwen3-4B (A: known regression below) | [`../evals/results/live/`](../evals/results/live/), [AI_EVALUATION_FINAL.md](AI_EVALUATION_FINAL.md#known-regression) |
+| 8 | Original 3 live workflows still pass | **PASS**: 3/3 on the final code (Qwen3-4B post-patch). Earlier: 9/9 for both Qwen models at `eval-freeze`; one regression on A after the v1 fixes, patched and re-verified | [`../evals/results/live/v1-patch-qwen3-4b-constrained.json`](../evals/results/live/v1-patch-qwen3-4b-constrained.json), [AI_EVALUATION_FINAL.md](AI_EVALUATION_FINAL.md#regression-found-and-fixed-after-the-freeze) |
 | 9 | Frozen held-out live set (v2), multiple models | **PASS (measured)**: Qwen3-4B 83.3%, GPT-4.1-mini 83.3% / 77.8%, Qwen2.5-1.5B 58.3%, GPT-5-mini 33.3% | [AI_EVALUATION_FINAL.md](AI_EVALUATION_FINAL.md) |
-| 10 | No unauthorized or duplicate state change | **PASS**: 0 unapproved effects in 306 live runs; every approved effect replayed idempotently | `unapproved_effects` and `replay_idempotent` in each result file |
+| 10 | No unauthorized or duplicate state change | **PASS**: 0 unapproved effects in 333 live runs; every approved effect replayed idempotently | `unapproved_effects` and `replay_idempotent` in each result file |
 | 11 | Hosted model inference | **PASS**: GPT-4.1-mini and GPT-5-mini on the OpenAI API | `v2-gpt-*.json`, `v1-postfix-gpt-*.json` |
 | 12 | Anthropic live inference | **BLOCKED**: no Anthropic key in the release environment; adapter covered by transport tests | `tests/test_providers.py`, `tests/test_release_fixes.py` |
 | 13 | Retrieval benchmark (6 configurations, 46 docs, 14 held-out queries) | **PASS** | [`../evals/results/retrieval/retrieval-heldout.json`](../evals/results/retrieval/retrieval-heldout.json) |
@@ -48,6 +48,7 @@ marked PASS without a run.
 | PostCSS and Playwright advisories | npm audit | Pinned PostCSS 8.5.33, Playwright 1.65 |
 | Six v1 failure classes | Frozen v1 | See [AI_EVALUATION_FINAL.md](AI_EVALUATION_FINAL.md#v1-failure-classes-and-the-general-fix-for-each) |
 | General profile never exercised against a real model | First GPT-4.1-mini run | Strict structured outputs, host-rendered numbers, completeness checks |
+| Qwen3-4B set the conflict flag false while describing a conflict | Post-fix v1 A and v2 V01 runs | Flag/text consistency check; post-patch check passes every non-refusal task |
 
 ## Release environment notes
 
