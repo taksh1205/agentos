@@ -10,6 +10,10 @@ const TOKEN = process.env.AGENTOS_TOKEN || "local-demo-token";
 const PROVIDER = process.env.PROVIDER || "demo";
 const OUT = process.env.SCREENSHOT_DIR || "../docs/screenshots";
 const TIMEOUT = Number(process.env.RUN_TIMEOUT_MS || 600000);
+// Optional comma-separated subset: research,approval,analytics,experiments
+const ONLY = (
+  process.env.SHOTS || "research,approval,analytics,experiments"
+).split(",");
 
 async function api(path, body) {
   const r = await fetch(API + path, {
@@ -66,46 +70,52 @@ async function run(page, goal) {
     .waitFor();
 
   // 1. Research with conflicting policies.
-  await run(
-    page,
-    "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
-  );
-  await page
-    .getByRole("heading", { name: "Workflow result" })
-    .waitFor({ timeout: TIMEOUT });
-  await page
-    .getByRole("heading", { name: "Workflow result" })
-    .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: `${OUT}/research.png`, fullPage: true });
+  if (ONLY.includes("research")) {
+    await run(
+      page,
+      "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+    );
+    await page
+      .getByRole("heading", { name: "Workflow result" })
+      .waitFor({ timeout: TIMEOUT });
+    await page
+      .getByRole("heading", { name: "Workflow result" })
+      .scrollIntoViewIfNeeded();
+    await page.screenshot({ path: `${OUT}/research.png`, fullPage: true });
+  }
 
   // 2. Approval of an exact report proposal.
-  await run(
-    page,
-    "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
-  );
-  await page
-    .getByText("Approval requested", { exact: true })
-    .waitFor({ timeout: TIMEOUT });
-  await page
-    .getByText("Approval requested", { exact: true })
-    .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: `${OUT}/approval.png`, fullPage: true });
-  await page.getByRole("button", { name: "Approve action" }).click();
-  await page
-    .getByRole("heading", { name: "Workflow result" })
-    .waitFor({ timeout: TIMEOUT });
-  await page.getByText("committed").first().waitFor({ timeout: TIMEOUT });
-  await page.screenshot({ path: `${OUT}/receipt.png`, fullPage: true });
+  if (ONLY.includes("approval")) {
+    await run(
+      page,
+      "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+    );
+    await page
+      .getByText("Approval requested", { exact: true })
+      .waitFor({ timeout: TIMEOUT });
+    await page
+      .getByText("Approval requested", { exact: true })
+      .scrollIntoViewIfNeeded();
+    await page.screenshot({ path: `${OUT}/approval.png`, fullPage: true });
+    await page.getByRole("button", { name: "Approve action" }).click();
+    await page
+      .getByRole("heading", { name: "Workflow result" })
+      .waitFor({ timeout: TIMEOUT });
+    await page.getByText("committed").first().waitFor({ timeout: TIMEOUT });
+    await page.screenshot({ path: `${OUT}/receipt.png`, fullPage: true });
+  }
 
   // 3. Analytics with recomputed metrics.
-  await run(
-    page,
-    "Analyze February and March 2026 revenue, expenses, and profit. Calculate month-over-month changes for all three metrics, identify significant trends, and explain the findings.",
-  );
-  await page
-    .getByRole("heading", { name: "Workflow result" })
-    .waitFor({ timeout: TIMEOUT });
-  await page.screenshot({ path: `${OUT}/analytics.png`, fullPage: true });
+  if (ONLY.includes("analytics")) {
+    await run(
+      page,
+      "Analyze February and March 2026 revenue, expenses, and profit. Calculate month-over-month changes for all three metrics, identify significant trends, and explain the findings.",
+    );
+    await page
+      .getByRole("heading", { name: "Workflow result" })
+      .waitFor({ timeout: TIMEOUT });
+    await page.screenshot({ path: `${OUT}/analytics.png`, fullPage: true });
+  }
 
   // 4. Experiments dashboard.
   await page.getByRole("button", { name: "Experiments", exact: false }).click();

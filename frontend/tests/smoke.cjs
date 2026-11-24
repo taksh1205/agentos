@@ -1,5 +1,6 @@
 // Run after starting backend/frontend. npm install -D @playwright/test; npx playwright install chromium.
 const { chromium } = require("playwright");
+const OUT = process.env.SCREENSHOT_DIR || "../docs/screenshots/demo";
 const assert = require("node:assert/strict");
 (async () => {
   const browser = await chromium.launch({
@@ -27,7 +28,7 @@ const assert = require("node:assert/strict");
     .getByRole("heading", { name: "Workflow result" })
     .waitFor({ timeout: 20000 });
   await page.screenshot({
-    path: "../docs/screenshots/workspace.png",
+    path: `${OUT}/workspace.png`,
     fullPage: true,
   });
   await page.getByLabel("Workflow").selectOption("auto");
@@ -39,7 +40,7 @@ const assert = require("node:assert/strict");
     .getByText("Approval requested", { exact: true })
     .waitFor({ timeout: 20000 });
   await page.screenshot({
-    path: "../docs/screenshots/approval.png",
+    path: `${OUT}/approval.png`,
     fullPage: true,
   });
   await page.getByRole("button", { name: "Approve action" }).click();
@@ -49,7 +50,7 @@ const assert = require("node:assert/strict");
   await page.getByRole("button", { name: "Experiments", exact: false }).click();
   await page.getByRole("table").first().waitFor();
   await page.screenshot({
-    path: "../docs/screenshots/experiments.png",
+    path: `${OUT}/experiments.png`,
     fullPage: true,
   });
   assert.deepEqual(errors, []);

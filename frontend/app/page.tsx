@@ -568,10 +568,11 @@ export default function Home() {
                 </tbody>
               </table>
               <p className="note">
-                Measured local runs bundled with the repository. A run passes
-                only when every programmatic check passes: tool use, citations,
-                computed values, approval outcome, committed effects and
-                idempotent replay.
+                Measured runs bundled with the repository: local models on
+                llama.cpp and hosted models on the OpenAI API, every call real.
+                A run passes only when every programmatic check passes: tool
+                use, citations, computed values, approval outcome, committed
+                effects and idempotent replay.
               </p>
             </div>
           )}
