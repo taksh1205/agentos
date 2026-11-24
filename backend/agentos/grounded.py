@@ -133,6 +133,28 @@ def restates(question, analysis):
     return bool(terms) and len(terms - asked) <= max(1, len(terms) // 8)
 
 
+CONFLICT_WORDS = re.compile(
+    r"\b(?:conflict\w*|contradict\w*|incompatible|inconsistent|irreconcilable|"
+    r"cannot both|can't both|cannot be (?:met|satisfied) (?:together|simultaneously)|"
+    r"mutually exclusive|at odds)\b",
+    re.I,
+)
+NEGATED_CONFLICT = re.compile(
+    r"\b(?:no|not|without|neither)\s+(?:\w+\s+){0,3}(?:conflict\w*|contradict\w*|"
+    r"incompatib\w*|inconsisten\w*)",
+    re.I,
+)
+
+
+def states_conflict(analysis, cited_sources):
+    """True when the analysis asserts a conflict between passages from different documents."""
+    return (
+        len(cited_sources) >= 2
+        and bool(CONFLICT_WORDS.search(analysis))
+        and not NEGATED_CONFLICT.search(analysis)
+    )
+
+
 async def compare_passages(p, goal, shown):
     passages = {
         f"P{n}": (h["id"], sentence)
@@ -180,24 +202,30 @@ async def compare_passages(p, goal, shown):
         "evidence_incomplete": "The available evidence leaves part of the question unresolved.",
         "no_conflict_identified": "This conclusion is limited to the passages reviewed.",
     }
-    if result.conflict_found and result.recommendation in {
+    source_of = {h["id"]: h.get("source", "source") for h in shown}
+    conflict_found = result.conflict_found or states_conflict(
+        result.analysis, {source_of[c.citations[0]] for c in quotes}
+    )
+    recommendation = result.recommendation
+    uncertainty = result.uncertainty
+    if conflict_found and not result.conflict_found:
+        # The structured flag disagrees with the model's own analysis. The analysis, backed by
+        # passages from different documents, wins: never hide a stated conflict.
+        recommendation, uncertainty = "seek_joint_review", "precedence_unknown"
+    if conflict_found and recommendation in {
         "apply_consistent_requirements",
         "answer_directly",
     }:
         raise ValueError("Unresolved conflict cannot authorize implementation")
-    abstained = (
-        result.recommendation == "request_more_evidence"
-        or result.uncertainty == "evidence_incomplete"
-    )
+    abstained = recommendation == "request_more_evidence" or uncertainty == "evidence_incomplete"
     if not quotes and not abstained:
         raise ValueError("An answer must select at least one supporting passage")
     # A conflict summary must carry its selected premises into downstream reports,
     # including reports consumed without the separate citation pane.
-    source_of = {h["id"]: h.get("source", "source") for h in shown}
     conflict = (
         "Conflicting requirements: "
         + "; ".join(f'{source_of[c.citations[0]]} says "{c.quote}"' for c in quotes)
-        if result.conflict_found
+        if conflict_found
         else ""
     )
     analysis = re.sub(r"\s*[(\[]P[0-9]+[)\]]", "", result.analysis).strip()
@@ -210,8 +238,8 @@ async def compare_passages(p, goal, shown):
                 [
                     analysis,
                     conflict,
-                    recommendations[result.recommendation],
-                    uncertainties[result.uncertainty],
+                    recommendations[recommendation],
+                    uncertainties[uncertainty],
                 ],
             )
         ),

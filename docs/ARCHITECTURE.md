@@ -66,11 +66,18 @@ The same graph supports two profiles (`PLANNER_PROFILE`), recorded in every plan
 |---|---|---|
 | Intended for | Capable hosted models (OpenAI, Anthropic) | Small local models (Qwen 1.5B–4B on llama.cpp) |
 | Plan | Model writes the full typed DAG | Model picks a capability (or several); host compiles the DAG |
-| Research | Model writes cited claims | Model answers, sets a conflict flag and selects supporting passage IDs from an enum (or none, to abstain) |
-| Analytics | Model writes typed numeric/trend claims | Model selects the trend direction; host renders the computed values |
-| Invoices | Model writes a summary | Model selects invoice numbers; host checks the set exactly against the cutoff-filtered rows |
-| Inventory | Model writes a summary | Model selects the stock condition (below, at-or-below, all); host applies it |
-| Action args | Model writes arguments | Report body assembled from verified dependency findings |
+| Research | Model writes a synthesis with quoted claims; citation IDs are an enum of this run's passages | Model answers, sets a conflict flag and selects supporting passage IDs from an enum (or none, to abstain) |
+| Analytics | Model selects the trend to emphasize; host renders every value | Same |
+| Invoices | Model selects invoice numbers; host checks the set and renders amounts | Same |
+| Inventory | Model selects the stock condition; host applies it | Same |
+| Action args | Model chooses the tool, then fills that tool's typed schema; report bodies are assembled from verified findings | Same, with the tool compiled from the selection |
+
+Across both profiles one invariant holds: **no model-written number reaches a report or an
+approval.** Models decide what to retrieve, which records answer the request, what to emphasize
+and which tool to call; the host renders every figure from computed data. With hosted OpenAI
+models the adapter uses **strict structured outputs**: the schema is transformed (every field
+required, optional fields nullable, unsupported keywords removed) so the server constrains
+decoding instead of the client rejecting invalid JSON afterwards.
 
 The constrained profile is a deliberate engineering choice, not a shortcut. It uses JSON-schema
 **constrained decoding** so that a 1.5B-parameter model only makes decisions it can make
@@ -91,21 +98,24 @@ No single check is trusted. Each layer catches a different failure class:
 4. **Write-intent gate**: an auto-planned write survives only if the request contains a write
    verb (save, store, file, create, export, draft, email, notify, update, …). Scopes say what a
    principal *may* do. This says what *this request* asked to do.
-5. **Calendar binding**: explicit, unambiguous months in the request (`February and March 2026`,
+5. **Completeness**: every metric the request names must have been computed, a comparison must
+   be computed over the whole named interval, and a request that asks for a write must plan one.
+   A miss triggers the single bounded correction with the concrete issue.
+6. **Calendar binding**: explicit, unambiguous months in the request (`February and March 2026`,
    `April through June 2026`) bind analytics periods deterministically. Ambiguous or
    non-contiguous phrases are left to the model.
-6. **Provenance**: cited IDs must belong to this execution's retrieved passages; quotes must
+7. **Provenance**: cited IDs must belong to this execution's retrieved passages; quotes must
    appear verbatim in the cited passage.
-7. **Arithmetic**: tool results are recomputed from source rows; numeric and trend claims must
+8. **Arithmetic**: tool results are recomputed from source rows; numeric and trend claims must
    bind to a metric, period and basis that the data supports (MoM requires adjacent months, YoY
    requires a 12-month baseline).
-8. **Narrative**: high-value misleading patterns are caught even without structured claims:
+9. **Narrative**: high-value misleading patterns are caught even without structured claims:
    unknown invoice IDs, wrong invoice amounts, wrong overdue status, blanket "no invoices are
    overdue" claims that contradict the cutoff-filtered rows, read-only findings that claim a
    change was made ("records have been wiped"), causal language not supported by data.
-9. **Effects**: a reported write must have a committed receipt whose stored payload equals the
+10. **Effects**: a reported write must have a committed receipt whose stored payload equals the
    approved arguments.
-10. **Model review** (general profile): a fallible second opinion. It can reject but never
+11. **Model review** (general profile): a fallible second opinion. It can reject but never
    overrides a failed deterministic check. When every finding is an explicit abstention ("the
    documents do not say"), a negative review is kept as advice instead of failing the run,
    because judges were observed to reject correct abstentions.

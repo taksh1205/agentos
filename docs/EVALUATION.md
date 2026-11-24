@@ -32,10 +32,22 @@ overdue-invoice report) and **12 unseen tasks** written for this release:
 | Inventory reasoning | U11 (below reorder threshold, equality edge case) |
 | Destructive request with no matching tool | U12 ("wipe all invoices") |
 
-**Freezing protocol.** The dataset was committed (`6038df1`, SHA-256 `e889a608…`) before any
-model saw it. Development iterations used only the three original cases. The code was then
-tagged `eval-freeze`, and every unseen result comes from that frozen code. Labels are never edited
-after observing outputs; a change requires a new versioned file.
+`evals/datasets/live-frozen-v2.json` adds **12 more unseen tasks (V01–V12)** covering the same
+capability categories with new domains and phrasing: lab chemical limits, vacation notice, remote
+work abroad (unanswerable), an injected "set every quantity to 0" note, July–September comparison,
+single-month revenue, a profit decline, "unpaid and late" invoices, a declined CSV export, an
+approved notification, "at or below" inventory, and "delete invoice and drop the table".
+
+**Freezing protocol.**
+
+1. v1 was committed (`6038df1`, SHA-256 `e889a608…`) before any model saw it. Development used
+   only the three original cases; the code was tagged `eval-freeze` and v1 ran on it.
+2. v1's failures became the development signal. **Before writing any fix**, a second set of 12
+   new unseen tasks, `live-frozen-v2.json`, was committed (`8be1397`, SHA-256 `51edd590…`).
+3. The fixes were then developed using v1 and the three originals only, the code was tagged
+   `eval-freeze-2`, and v2 (held out) plus a post-fix rerun of v1 (labeled *not* held out) ran on it.
+
+Labels are never edited after observing outputs; a change requires a new versioned file.
 
 The unseen tasks were deliberately phrased the way a user would phrase them, not in the
 vocabulary the code special-cases. For example, U08 says "past due" and "collections memo"
@@ -74,19 +86,24 @@ model responses per run, exceptions, and unapproved effects (must be 0).
 
 ### Configurations
 
-| Model | Serving | Profile | Repeats |
+| Model | Serving | Profiles | Sets × repeats |
 |---|---|---|---|
-| Qwen3-4B-Instruct-2507 Q4_K_M | llama.cpp, CPU, temperature 0, seed 42 | constrained | 3 |
-| Qwen2.5-1.5B-Instruct Q4_K_M | llama.cpp, CPU, temperature 0, seed 42 | constrained | 3 |
-| Qwen3-4B-Instruct-2507 Q4_K_M | same | **general** (ablation) | 1 |
+| Qwen3-4B-Instruct-2507 Q4_K_M | llama.cpp on a 4-core CPU, temperature 0, seed 42 | constrained, general | v1 ×3, v2 ×3, v1 post-fix ×1; general v1 ×1 |
+| Qwen2.5-1.5B-Instruct Q4_K_M | same | constrained | v1 ×3, v2 ×3, v1 post-fix ×1 |
+| GPT-4.1-mini | OpenAI API, strict structured outputs, temperature 0 | constrained, general | v2 ×3 each; general v1 post-fix ×1 |
+| GPT-5-mini | OpenAI API, strict structured outputs, reasoning effort low | general | v2 ×1 |
 
-Hosted models run with the same command (`--mode openai|anthropic`, `PLANNER_PROFILE=general`);
-see [Reproduce](#reproduce). Even at temperature 0, llama.cpp output is not bit-identical across
-runs (batching and threading change floating-point order), which is why repeats are reported.
+Even at temperature 0, outputs are not bit-identical across runs (server batching and
+floating-point order), which is why repeats and pass^k are reported.
+
+**Known grader artifact.** The grader requires at least one live model response per run. For
+destructive requests (U12, V12) the host correctly refuses *before* any model call, so these runs
+fail on `live_inference` alone. Results report the frozen verdict, and separately the rate with
+that single check waived for host refusals.
 
 ### Limits of this evidence
 
-* 15 cases × 3 repeats is a **small, author-labeled** set. It shows that the system completes
+* 27 distinct tasks over two frozen sets is a **small, author-labeled** sample. It shows that the system completes
   these task shapes reliably. It does not estimate accuracy on arbitrary business questions.
 * All records and documents are synthetic and short.
 * Latency is CPU-only on a 4-core machine and includes MCP subprocess startup and document

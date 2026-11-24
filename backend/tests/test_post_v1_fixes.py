@@ -265,3 +265,50 @@ async def test_temperature_zero_only_for_non_reasoning_models(model, has_tempera
         await Provider("openai", model, http_client=client).structured(SearchQuery, "s", "p")
     assert ("temperature" in bodies[0]) == has_temperature
     assert bodies[0]["tools"][0]["function"]["strict"] is True
+
+
+# Verbatim analyses from the Qwen3-4B runs that set conflict_found=false (post-fix v1 A, v2 V01).
+QWEN_CONFLICT_ANALYSES = [
+    "The East depot's inventory policy requires a minimum of 20 reserve pallets to cover supply interruptions, while its capacity policy limits the stock to a maximum of 12 pallets to maintain fire-lane clearance. This creates a direct conflict between the inventory and capacity thresholds: the inventory policy mandates a higher reserve level, whereas the capacity policy enforces a lower one. Any reduction below 20 pallets requires approval from the inventory owner, and any exception to the 12-pallet limit must be reviewed by the capacity owner. The operational risk arises from potential supply disruptions due to insufficient reserve stock, while also violating fire safety requirements if the stock exceeds 12 pallets. The conflicting thresholds create a risk of non-compliance with both supply continuity and safety regulations. Ask the responsible policy owners to review the conflict together and document a resolution before changing operations. The available evidence leaves part of the question unresolved.",
+    "The lab cannot satisfy both the chemical storage guide and the procurement standard for ethanol in the flammable cabinet. According to P1, the lab must stock at least 80 liters of ethanol to avoid supply gaps, but P2 states that the flammable cabinet can hold at most 60 liters at any time. This creates a contradiction: the required stock of 80 liters exceeds the cabinet's maximum capacity of 60 liters. Therefore, the lab cannot meet both requirements simultaneously. The available evidence leaves part of the question unresolved.",
+]
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("analysis", QWEN_CONFLICT_ANALYSES)
+async def test_conflict_stated_in_analysis_overrides_a_false_flag(analysis):
+    shown = [
+        {"id": "a", "source": "storage-guide", "text": "The cabinet may hold at most 60 liters."},
+        {"id": "b", "source": "procurement", "text": "Each lab must stock at least 80 liters."},
+    ]
+    model = Scripted(
+        {
+            "analysis": analysis,
+            "conflict_found": False,
+            "recommendation": "answer_directly",
+            "uncertainty": "no_conflict_identified",
+            "support": ["P1", "P2"],
+        }
+    )
+    finding = await grounded.compare_passages(model, "Can both be satisfied?", shown)
+    assert finding.contradictions and "review the conflict together" in finding.summary
+
+
+@pytest.mark.asyncio
+async def test_negated_or_single_source_conflict_language_keeps_the_flag():
+    shown = [
+        {"id": "a", "source": "guide", "text": "Reports are due within 30 days."},
+        {"id": "b", "source": "handbook", "text": "Late reports need approval."},
+    ]
+    payload = {
+        "analysis": "There is no conflict: reports are due within 30 days.",
+        "conflict_found": False,
+        "recommendation": "answer_directly",
+        "uncertainty": "no_conflict_identified",
+        "support": ["P1", "P2"],
+    }
+    finding = await grounded.compare_passages(Scripted(payload), "q", shown)
+    assert not finding.contradictions
+    single = {**payload, "analysis": "The rules conflict.", "support": ["P1"]}
+    finding = await grounded.compare_passages(Scripted(single), "q", shown)
+    assert not finding.contradictions

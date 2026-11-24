@@ -14,7 +14,9 @@ number is recomputed, every quote is verified and every write waits for a human.
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 <!-- After publishing, add: ![CI](https://github.com/<you>/agentos/actions/workflows/ci.yml/badge.svg) -->
 
-![AgentOS console: a live Qwen3-4B run that found two conflicting policies, with every quote machine-verified](docs/screenshots/research.png)
+![AgentOS console: a live GPT-4.1-mini run that planned its own research, self-corrected after verification, found two conflicting policies and machine-verified every quote](docs/screenshots/research.png)
+
+<sub>Real run, not a mock-up: GPT-4.1-mini writes the plan, the verifier forces one correction, and all four quoted claims are machine-verified against their sources.</sub>
 
 </div>
 
@@ -30,7 +32,7 @@ provenance and transactions).
 | Boundary | The model… | …but the host guarantees |
 |---|---|---|
 | **Plan** | proposes steps and tools | typed DAG, capability ownership, no unrequested writes |
-| **Facts** | interprets results | numbers recomputed from source rows; quotes appear verbatim in the cited passage |
+| **Facts** | interprets results | numbers recomputed from source rows and rendered by the host; quotes appear verbatim in the cited passage |
 | **Actions** | prepares a write | nothing executes until an authorized person approves the exact arguments (SHA-256 digest); replay is idempotent |
 
 ## Results
@@ -64,11 +66,22 @@ and its root cause, including the six runs where an LLM judge wrongly rejected a
 | MiniLM hybrid (RRF) | 0.964 | 0.850 | 0.850 |
 | Hybrid + TinyBERT rerank | 0.929 | 0.920 | 0.929 |
 
-**Engineering checks** (this release): {{BACKEND_TESTS}} backend tests (PostgreSQL + pgvector +
-neural models), {{FRONTEND_TESTS}} frontend tests, a Chromium end-to-end approval journey,
+**Engineering checks** (this release): 172 backend tests (PostgreSQL + pgvector +
+neural models), 5 frontend tests, a Chromium end-to-end approval journey,
 Docker Compose verified for the default and neural profiles (including a restart-survival
 check), gitleaks / pip-audit / npm audit clean. Matrix with evidence:
 [FINAL_RELEASE_AUDIT.md](docs/FINAL_RELEASE_AUDIT.md).
+
+## See it run
+
+All screenshots are real executions against the OpenAI API, captured by
+[`frontend/tests/screenshots.cjs`](frontend/tests/screenshots.cjs).
+
+| Approval with exact arguments and digest | Committed receipt after approval |
+|---|---|
+| ![Approval card showing the exact create_report arguments and digest](docs/screenshots/approval.png) | ![Workflow result with committed receipt](docs/screenshots/receipt.png) |
+| **Analytics recomputed from source rows** | **Every bundled evaluation run** |
+| ![Feb to Mar revenue, costs and profit with host-rendered metrics table](docs/screenshots/analytics.png) | ![Experiments tab listing all live evaluation runs and the retrieval comparison](docs/screenshots/experiments.png) |
 
 ## How it works
 
@@ -96,17 +109,20 @@ flowchart LR
   SQL-template tools and **recomputes every result from source rows** before a model sees it.
 * **Action** persists one exact proposal and interrupts the graph. On approval the write runs in
   one transaction that re-checks workspace, scope, digest and cancellation, then stores a receipt.
-* **Verifier** runs before and after the action: completion, provenance, arithmetic, narrative
-  checks (e.g. a report claiming "no overdue invoices" when one is overdue), receipts, then an
-  optional model review. It requests at most one correction.
+* **Verifier** runs before and after the action: completeness (every requested metric, period and
+  write), provenance, arithmetic, narrative checks (e.g. a report claiming "no overdue invoices"
+  when one is overdue), receipts, then an optional model review. It requests at most one correction.
+
+One invariant holds in every configuration: **no model-written number reaches a report.** Models
+choose tools, evidence, emphasis and records; the host renders every figure from computed data.
 
 ### Two planner profiles: right-sizing the model's job
 
 | | `general` | `constrained` |
 |---|---|---|
 | For | Hosted frontier models | Small local models (1.5B–4B) |
-| Model writes | Full plan, cited claims, interpretations, action arguments | Enumerated decisions: capability, supporting passage IDs, trend direction, invoice IDs |
-| Host does | Validation and verification | Validation, verification, DAG compilation and templated rendering |
+| Model writes | Full typed plan, query rewrites, cited research synthesis, action tool and arguments | Enumerated decisions: capability, supporting passage IDs, trend direction, invoice IDs |
+| Host does | Validation, verification, completeness checks, number rendering | All of that, plus DAG compilation and templated rendering |
 
 The constrained profile uses JSON-schema constrained decoding so that small local models make
 only decisions they can make reliably. On the same model and tasks it also beat the general
@@ -159,7 +175,7 @@ bash scripts/verify-compose.sh                # Docker end-to-end, incl. restart
 | Host-bound MCP server and client | [`mcp_server.py`](backend/agentos/mcp_server.py), [`mcp_client.py`](backend/agentos/mcp_client.py) |
 | Namespaced hybrid retrieval on pgvector | [`backend/agentos/rag.py`](backend/agentos/rag.py) |
 | Provider adapter (OpenAI, Anthropic, llama.cpp), budgets, retries | [`backend/agentos/models.py`](backend/agentos/models.py), [`budget.py`](backend/agentos/budget.py) |
-| The frozen evaluation harness and grader | [`backend/agentos/live_eval.py`](backend/agentos/live_eval.py), [`evals/datasets/live-frozen-v1.json`](evals/datasets/live-frozen-v1.json) |
+| The frozen evaluation harness, grader and report generator | [`live_eval.py`](backend/agentos/live_eval.py), [`live_report.py`](backend/agentos/live_report.py), [`live-frozen-v2.json`](evals/datasets/live-frozen-v2.json) |
 
 ## Repository layout
 
@@ -167,7 +183,7 @@ bash scripts/verify-compose.sh                # Docker end-to-end, incl. restart
 backend/agentos/     FastAPI app, LangGraph agents, MCP server/client, RAG, verifier, evaluators
 backend/tests/       pytest suite (unit, integration, PostgreSQL, neural, provider transport)
 frontend/            Next.js console (report rendering, approvals, experiments)
-evals/datasets/      Labeled datasets, including the frozen live set
+evals/datasets/      Labeled datasets, including the frozen live sets v1 and v2
 evals/results/       Measured results (live, retrieval, offline, memory)
 docs/                Architecture, evaluation, security, demo, release audit
 docs/evidence/       Raw logs and JSON behind this release's claims
@@ -177,9 +193,9 @@ migrations/ scripts/ compose*.yaml   Database, verification and deployment
 
 ## Limitations
 
-* The live evaluation is **small and author-labeled** (15 tasks × 3 repeats). It shows that the
-  system completes these task shapes reliably on small local models. It is not a general accuracy
-  estimate.
+* The live evaluation is **small and author-labeled**: 27 distinct tasks across two frozen sets,
+  306 runs. It shows which task shapes the system completes reliably; it is not a general
+  accuracy estimate.
 * Live runs cover local Qwen models and OpenAI GPT-4.1-mini / GPT-5-mini. The Anthropic adapter
   is transport-tested only.
 * All data is synthetic. Business tools are local by design: email tools create drafts and never send.

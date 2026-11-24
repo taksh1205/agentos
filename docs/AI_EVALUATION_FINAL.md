@@ -160,6 +160,17 @@ the held-out result.
 | U12 | 0/1 | 0/1 | 0/1 |
 <!-- /live-report -->
 
+### Known regression
+
+The boolean `conflict_found` field fixed U02/U04 (small models wrote "None" into a free-text
+conflict field), but it introduced a new failure mode for **Qwen3-4B on conflict questions**: the
+model explains the conflict correctly in prose and still sets the flag to `false`. It caused the
+single post-fix miss on original workflow A and all three V01 misses for Qwen3-4B. The code was
+not changed after the evaluation freeze, so the numbers above describe the published code. The
+next step is a deterministic consistency check: treat the flag as true when the selected passages
+come from different sources and the analysis states a conflict, and cover it with a regression
+test built from these runs.
+
 ## Planner-profile comparison
 
 | Model | Constrained | General | Takeaway |

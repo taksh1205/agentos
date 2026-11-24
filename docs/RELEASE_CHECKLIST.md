@@ -3,16 +3,16 @@
 ## Recommendation
 
 **Ready to publish as a public portfolio repository.** Every check that could run in the
-release environment passed and is recorded in [FINAL_RELEASE_AUDIT.md](FINAL_RELEASE_AUDIT.md).
-The one remaining item, hosted GitHub Actions, runs automatically on the first push.
+release environment was executed and is recorded in [FINAL_RELEASE_AUDIT.md](FINAL_RELEASE_AUDIT.md),
+including the one known regression. Hosted GitHub Actions run automatically on the first push.
 
-Claims to make: reliable orchestration of verified tool calls on small local models, measured
-on a frozen set; measured retrieval quality; approval-gated, idempotent writes; Docker and CI
-reproducibility.
+Claims to make: a 4-bit 4B local model matching GPT-4.1-mini (83.3% each) on a frozen held-out
+set; 0 unapproved writes in 306 live runs; measured retrieval quality; approval-gated,
+idempotent writes; Docker and CI reproducibility.
 
 Claims **not** to make: production readiness, general autonomous reasoning, accuracy on
-arbitrary business questions, or measured hosted-model (GPT, Claude) accuracy. The hosted
-adapters are implemented and transport-tested, but no hosted live run is bundled.
+arbitrary business questions, or Claude results. OpenAI results are measured; the Anthropic
+adapter is transport-tested only.
 
 ## Publish
 
@@ -32,10 +32,9 @@ adapters are implemented and transport-tested, but no hosted live run is bundled
    `langgraph`, `rag`, `mcp`, `fastapi`, `pgvector`, `evaluation`.
 6. Pin the repository on your GitHub profile.
 
-Optional: add `OPENAI_API_KEY` as an environment variable on your machine (never commit it) and
-run the hosted command in [EVALUATION.md](EVALUATION.md#reproduce) to add a hosted-model row.
-Save the JSON under `evals/results/live/` and the console's Experiments tab shows it
-automatically.
+To add another model, run the command in [EVALUATION.md](EVALUATION.md#reproduce), save the
+JSON under `evals/results/live/`, add its name to `SECTIONS` in `agentos/live_report.py` and run
+`python -m agentos.live_report --write`. The console's Experiments tab picks it up automatically.
 
 ## Reproduce this release
 
@@ -76,7 +75,8 @@ mounts it at runtime. The release environment needed this; the override is not p
 | Gap | Why it remains | Next step |
 |---|---|---|
 | Hosted GitHub Actions not yet run | Needs the repository to exist on GitHub | First push (step 3 above) |
-| No bundled hosted-model live run | The provided OpenAI account had no remaining credits (HTTP 429 `insufficient_quota`) | Run the hosted command with a funded key |
+| Qwen3-4B conflict-flag regression | Found after the evaluation freeze; fixing it would change evaluated code | Flag/text consistency check plus a regression test, then rerun |
+| No Anthropic live run | No Anthropic key in the release environment | `--mode anthropic` with the same harness |
 | Small author-labeled live set | Labels are written by hand and every case needs its own fixtures | Grow the set with a versioned `live-frozen-v2.json` |
 | One scheduler per database | Correct restart semantics without distributed leases | Lease and heartbeat job claims for horizontal workers |
 | MCP starts a process per tool call | Simplest way to bind workspace identity per call | Pool long-lived sessions keyed by workspace and scopes |
