@@ -37,15 +37,23 @@ provenance and transactions).
 
 All numbers below come from runs bundled in this repository ([full report](docs/AI_EVALUATION_FINAL.md)).
 
-**Live end-to-end evaluation.** Frozen set of 15 tasks: 3 original workflows + 12 unseen tasks,
-committed before any model saw them. Real local inference via llama.cpp on CPU, tools via MCP,
-fresh workspace per run, programmatic grading.
+**Live end-to-end evaluation.** 12 unseen tasks (frozen set v2), committed before any model saw
+them. Every run is a real model call (llama.cpp on CPU, or the OpenAI API), with tools through MCP,
+a fresh workspace per run, and programmatic grading that the graph's own status cannot satisfy.
 
-| Model (4-bit, CPU) | Planner profile | Runs | pass@1 | Original | Unseen | pass^3 | p50 latency | Unapproved writes |
-|---|---|---:|---:|---:|---:|---:|---:|---:|
-| Qwen3-4B-Instruct-2507 | constrained | {{Q4_RUNS}} | **{{Q4_P1}}** | {{Q4_ORIG}} | {{Q4_UNSEEN}} | {{Q4_PK}} | {{Q4_P50}} | **0** |
-| Qwen2.5-1.5B-Instruct | constrained | {{Q15_RUNS}} | **{{Q15_P1}}** | {{Q15_ORIG}} | {{Q15_UNSEEN}} | {{Q15_PK}} | {{Q15_P50}} | **0** |
-| Qwen3-4B-Instruct-2507 | general (ablation) | {{G_RUNS}} | {{G_P1}} | {{G_ORIG}} | {{G_UNSEEN}} | n/a | {{G_P50}} | **0** |
+| Model | Where it runs | Planner profile | Runs | pass@1 | pass^3 | Unapproved writes |
+|---|---|---|---:|---:|---:|---:|
+| **Qwen3-4B-Instruct (4-bit)** | laptop-class CPU | constrained | 36 | **83.3%** | 83.3% | **0** |
+| GPT-4.1-mini | OpenAI API | constrained | 36 | **83.3%** | 83.3% | **0** |
+| GPT-4.1-mini | OpenAI API | general | 36 | 77.8% | 66.7% | **0** |
+| Qwen2.5-1.5B-Instruct (4-bit) | laptop-class CPU | constrained | 36 | 58.3% | 58.3% | **0** |
+| GPT-5-mini | OpenAI API | general | 12 | 33.3% | n/a | **0** |
+
+The headline: **with the right division of labor, a 4-bit 4B model on a CPU matches GPT-4.1-mini**,
+and no model, in any of 306 live runs, caused a write that a person had not approved.
+The first frozen set (v1) scored 41.7% on unseen tasks before the fixes it motivated; the
+[results report](docs/AI_EVALUATION_FINAL.md) shows both sets, confidence intervals, every failure
+and its root cause, including the six runs where an LLM judge wrongly rejected a correct answer.
 
 **Retrieval** (46 documents, 14 held-out queries, several needing two sources):
 
@@ -100,9 +108,10 @@ flowchart LR
 | Model writes | Full plan, cited claims, interpretations, action arguments | Enumerated decisions: capability, supporting passage IDs, trend direction, invoice IDs |
 | Host does | Validation and verification | Validation, verification, DAG compilation and templated rendering |
 
-The constrained profile uses JSON-schema constrained decoding so that a 4-bit 1.5B model on a
-laptop CPU completes real multi-step workflows. The general-profile ablation above shows why
-that matters for small models. Details: [ARCHITECTURE.md](docs/ARCHITECTURE.md).
+The constrained profile uses JSON-schema constrained decoding so that small local models make
+only decisions they can make reliably. On the same model and tasks it also beat the general
+profile for GPT-4.1-mini (83.3% vs 77.8%, and more consistent across repeats). With Qwen3-4B the
+general profile scored 13.3% on v1, against 53.3% constrained. Details: [ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Quick start
 
@@ -171,8 +180,8 @@ migrations/ scripts/ compose*.yaml   Database, verification and deployment
 * The live evaluation is **small and author-labeled** (15 tasks × 3 repeats). It shows that the
   system completes these task shapes reliably on small local models. It is not a general accuracy
   estimate.
-* Hosted OpenAI and Anthropic adapters are covered by transport-level tests; this release's
-  measured live runs use local Qwen models.
+* Live runs cover local Qwen models and OpenAI GPT-4.1-mini / GPT-5-mini. The Anthropic adapter
+  is transport-tested only.
 * All data is synthetic. Business tools are local by design: email tools create drafts and never send.
 * Single scheduler process per database; horizontal workers would need leases and heartbeats.
 * PDF parsing is time-boxed and resource-limited but not sandboxed in a separate service.

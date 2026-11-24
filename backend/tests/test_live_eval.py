@@ -86,3 +86,10 @@ def test_hallucinated_leave_policy_is_caught():
     assert grade(case, {**ok, "answer_text": "No parental leave policy was found."})["passed"]
     bad = {**ok, "answer_text": "New parents receive 12 weeks of paid leave."}
     assert not grade(case, bad)["passed"]
+
+
+def test_results_report_matches_bundled_result_files():
+    from agentos.live_report import ROOT, render
+
+    doc = (ROOT / "docs" / "AI_EVALUATION_FINAL.md").read_text()
+    assert all(block in doc for block in render().split("\n\n"))

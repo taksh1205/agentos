@@ -1,0 +1,94 @@
+{
+  "kind": "Verifier challenge, supplied claims; no generated answers",
+  "cases": 12,
+  "accuracy": 1.0,
+  "support_precision": 1.0,
+  "citation_support_precision": 1.0,
+  "accepted_citation_cases": 1,
+  "rows": [
+    {
+      "id": "exact",
+      "expected": "supported",
+      "actual": "supported",
+      "reason": "exact_extractive_support",
+      "correct": true
+    },
+    {
+      "id": "wrong-source",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "reason": "quote_not_in_cited_sources",
+      "correct": true
+    },
+    {
+      "id": "mixed-source",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "reason": "quote_not_in_cited_sources",
+      "correct": true
+    },
+    {
+      "id": "unknown-source",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "reason": "unknown_citation",
+      "correct": true
+    },
+    {
+      "id": "valid-trend",
+      "expected": "supported",
+      "actual": "supported",
+      "reason": "computed_metric_and_periods_match",
+      "correct": true
+    },
+    {
+      "id": "inverted",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "reason": "direction_does_not_match_data",
+      "correct": true
+    },
+    {
+      "id": "period",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "reason": "incomplete_requested_period",
+      "correct": true
+    },
+    {
+      "id": "metric-swap",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "reason": "missing_metric_binding",
+      "correct": true
+    },
+    {
+      "id": "unproven-cause",
+      "expected": "needs_review",
+      "actual": "needs_review",
+      "reason": "causation_not_established_by_numeric_coincidence",
+      "correct": true
+    },
+    {
+      "id": "receipt",
+      "expected": "supported",
+      "actual": "supported",
+      "reason": "committed_effect_receipt",
+      "correct": true
+    },
+    {
+      "id": "stale-receipt",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "reason": "missing_committed_action_receipt",
+      "correct": true
+    },
+    {
+      "id": "negation",
+      "expected": "needs_review",
+      "actual": "needs_review",
+      "reason": "possible_negation_mismatch",
+      "correct": true
+    }
+  ]
+}

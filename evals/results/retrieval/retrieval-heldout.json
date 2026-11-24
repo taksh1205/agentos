@@ -7,8 +7,8 @@
       "configuration": "lexical",
       "status": "executed",
       "embedding_descriptor": "hashing:feature-hash::384:l2:v2",
-      "model_load_seconds": 0.23174944900006267,
-      "indexing_seconds": 0.10450026699993487,
+      "model_load_seconds": 0.18992344699927344,
+      "indexing_seconds": 0.4493363600004159,
       "query_count": 14,
       "metrics": {
         "recall_at_1": 0.6071428571428571,
@@ -17,8 +17,8 @@
         "mrr": 0.7142857142857143,
         "ndcg_at_5": 0.6778830362931076
       },
-      "mean_query_seconds": 0.004763414714286033,
-      "p95_query_seconds": 0.006969645000026503,
+      "mean_query_seconds": 0.021210166571368712,
+      "p95_query_seconds": 0.036221057000147994,
       "rows": [
         {
           "query_id": "hq1",
@@ -29,7 +29,7 @@
             "refund",
             "loaner"
           ],
-          "seconds": 0.006969645000026503,
+          "seconds": 0.009780895999938366,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -45,7 +45,7 @@
             "battery-new",
             "access-east"
           ],
-          "seconds": 0.005543018000025768,
+          "seconds": 0.009660202999839385,
           "recall_at_1": 0.0,
           "recall_at_5": 0.0,
           "precision_at_5": 0.0,
@@ -61,7 +61,7 @@
             "refund",
             "ambient"
           ],
-          "seconds": 0.004464455999936945,
+          "seconds": 0.007257727999785857,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -77,7 +77,7 @@
             "access-east",
             "accessibility"
           ],
-          "seconds": 0.004390647999912289,
+          "seconds": 0.008569184000407404,
           "recall_at_1": 0.0,
           "recall_at_5": 0.0,
           "precision_at_5": 0.0,
@@ -93,7 +93,7 @@
             "access-east",
             "contract-alpha"
           ],
-          "seconds": 0.00426419400002942,
+          "seconds": 0.026110470999810786,
           "recall_at_1": 0.0,
           "recall_at_5": 0.0,
           "precision_at_5": 0.0,
@@ -109,7 +109,7 @@
             "invoice-policy",
             "support-sla"
           ],
-          "seconds": 0.005673236000006909,
+          "seconds": 0.027979862999927718,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -125,7 +125,7 @@
             "access-west",
             "malicious-source"
           ],
-          "seconds": 0.004516911999985496,
+          "seconds": 0.036221057000147994,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -141,7 +141,7 @@
             "cold-release",
             "ambient"
           ],
-          "seconds": 0.00393274400005339,
+          "seconds": 0.019622239999989688,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -157,7 +157,7 @@
             "invoice-policy",
             "report-policy"
           ],
-          "seconds": 0.003916301999993266,
+          "seconds": 0.023975174999577575,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -173,7 +173,7 @@
             "cold-arrival",
             "observability"
           ],
-          "seconds": 0.003948900000068534,
+          "seconds": 0.023996279000130016,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -189,7 +189,7 @@
             "csv-safety",
             "observability"
           ],
-          "seconds": 0.004436725000005026,
+          "seconds": 0.03191728799993143,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -205,7 +205,7 @@
             "cedar-project",
             "battery-new"
           ],
-          "seconds": 0.006335276999948292,
+          "seconds": 0.02794417200038879,
           "recall_at_1": 0.5,
           "recall_at_5": 0.5,
           "precision_at_5": 0.2,
@@ -221,7 +221,7 @@
             "onboarding",
             "contract-alpha"
           ],
-          "seconds": 0.004296038000006774,
+          "seconds": 0.02395652799987147,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -237,7 +237,7 @@
             "cold-release",
             "battery-new"
           ],
-          "seconds": 0.0039997110000058456,
+          "seconds": 0.0199512479994155,
           "recall_at_1": 0.0,
           "recall_at_5": 0.0,
           "precision_at_5": 0.0,
@@ -250,8 +250,8 @@
       "configuration": "hashing_dense",
       "status": "executed",
       "embedding_descriptor": "hashing:feature-hash::384:l2:v2",
-      "model_load_seconds": 0.007646669999985534,
-      "indexing_seconds": 0.09463515800007372,
+      "model_load_seconds": 0.13103999600025418,
+      "indexing_seconds": 1.4887328140002865,
       "query_count": 14,
       "metrics": {
         "recall_at_1": 0.2857142857142857,
@@ -260,8 +260,8 @@
         "mrr": 0.5202380952380953,
         "ndcg_at_5": 0.545002815369321
       },
-      "mean_query_seconds": 0.0045043054285948915,
-      "p95_query_seconds": 0.005520257000057427,
+      "mean_query_seconds": 0.02252814228592927,
+      "p95_query_seconds": 0.032000381000216294,
       "rows": [
         {
           "query_id": "hq1",
@@ -272,7 +272,7 @@
             "observability",
             "contradiction-a"
           ],
-          "seconds": 0.005520257000057427,
+          "seconds": 0.02409202200033178,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -288,7 +288,7 @@
             "ambient",
             "silent"
           ],
-          "seconds": 0.004598955999995269,
+          "seconds": 0.023681962999944517,
           "recall_at_1": 0.0,
           "recall_at_5": 0.0,
           "precision_at_5": 0.0,
@@ -304,7 +304,7 @@
             "contradiction-a",
             "refund"
           ],
-          "seconds": 0.004365657000107603,
+          "seconds": 0.024092241000289505,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -320,7 +320,7 @@
             "loaner",
             "battery"
           ],
-          "seconds": 0.004496105000043826,
+          "seconds": 0.023865652000495174,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -336,7 +336,7 @@
             "loaner",
             "sales-driver"
           ],
-          "seconds": 0.003937608999990516,
+          "seconds": 0.027965422999841394,
           "recall_at_1": 0.0,
           "recall_at_5": 0.0,
           "precision_at_5": 0.0,
@@ -352,7 +352,7 @@
             "loaner",
             "engineering"
           ],
-          "seconds": 0.004177107000032265,
+          "seconds": 0.028016887999910978,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -368,7 +368,7 @@
             "api-limits",
             "silent"
           ],
-          "seconds": 0.004576967000048171,
+          "seconds": 0.02396933500040177,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -384,7 +384,7 @@
             "refund",
             "translation"
           ],
-          "seconds": 0.004223732000014024,
+          "seconds": 0.02796040900011576,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -400,7 +400,7 @@
             "contradiction-b",
             "contradiction-a"
           ],
-          "seconds": 0.004495197000096596,
+          "seconds": 0.011222007000469603,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -416,7 +416,7 @@
             "support-sla",
             "billing-date"
           ],
-          "seconds": 0.005127523999931327,
+          "seconds": 0.010346979999667383,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -432,7 +432,7 @@
             "access-west",
             "contradiction-b"
           ],
-          "seconds": 0.0041887500000257205,
+          "seconds": 0.014679192000585317,
           "recall_at_1": 0.5,
           "recall_at_5": 0.5,
           "precision_at_5": 0.2,
@@ -448,7 +448,7 @@
             "engineering",
             "hr-leave"
           ],
-          "seconds": 0.004822016000048279,
+          "seconds": 0.02754691400059528,
           "recall_at_1": 0.0,
           "recall_at_5": 0.5,
           "precision_at_5": 0.2,
@@ -464,7 +464,7 @@
             "food",
             "battery"
           ],
-          "seconds": 0.004321150000009766,
+          "seconds": 0.015954585000145016,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -480,7 +480,7 @@
             "incident-runbook",
             "memory-design"
           ],
-          "seconds": 0.004209248999927695,
+          "seconds": 0.032000381000216294,
           "recall_at_1": 0.0,
           "recall_at_5": 0.0,
           "precision_at_5": 0.0,
@@ -493,8 +493,8 @@
       "configuration": "neural_dense",
       "status": "executed",
       "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
-      "model_load_seconds": 7.519913983000038,
-      "indexing_seconds": 1.269931440999926,
+      "model_load_seconds": 4.240945939999619,
+      "indexing_seconds": 2.4428136870001254,
       "query_count": 14,
       "metrics": {
         "recall_at_1": 0.7857142857142857,
@@ -503,8 +503,8 @@
         "mrr": 0.9642857142857143,
         "ndcg_at_5": 0.9736378395408184
       },
-      "mean_query_seconds": 0.027854280785740166,
-      "p95_query_seconds": 0.07082110999999713,
+      "mean_query_seconds": 0.030762459499848255,
+      "p95_query_seconds": 0.05201147700063302,
       "rows": [
         {
           "query_id": "hq1",
@@ -515,7 +515,7 @@
             "loaner-loss",
             "incident-runbook"
           ],
-          "seconds": 0.01998352700002215,
+          "seconds": 0.05201147700063302,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -531,7 +531,7 @@
             "battery",
             "travel-current"
           ],
-          "seconds": 0.018653619000019717,
+          "seconds": 0.04405758499979129,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -547,7 +547,7 @@
             "contradiction-a",
             "ambient"
           ],
-          "seconds": 0.01931527500005359,
+          "seconds": 0.0478154189995621,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -563,7 +563,7 @@
             "refund",
             "incident-runbook"
           ],
-          "seconds": 0.026814732000048025,
+          "seconds": 0.029334659999221913,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -579,7 +579,7 @@
             "security-retention",
             "battery-new"
           ],
-          "seconds": 0.07082110999999713,
+          "seconds": 0.024484063999807404,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -595,7 +595,7 @@
             "travel-old",
             "sales-driver"
           ],
-          "seconds": 0.07036340600006952,
+          "seconds": 0.02563395800007129,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -611,7 +611,7 @@
             "travel-current",
             "api-limits"
           ],
-          "seconds": 0.021187531000009585,
+          "seconds": 0.026509026999519847,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -627,7 +627,7 @@
             "invoice-policy",
             "maple-project"
           ],
-          "seconds": 0.018898858000056862,
+          "seconds": 0.025299125999481475,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -643,7 +643,7 @@
             "rounding",
             "contract-alpha"
           ],
-          "seconds": 0.01750723400004972,
+          "seconds": 0.026637046999894665,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -659,7 +659,7 @@
             "inventory-policy",
             "cold-release"
           ],
-          "seconds": 0.02077012500001274,
+          "seconds": 0.02588164700046036,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -675,7 +675,7 @@
             "cold-arrival",
             "memory-design"
           ],
-          "seconds": 0.0185820799999874,
+          "seconds": 0.028570117000526807,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -691,7 +691,7 @@
             "security-retention",
             "maple-project"
           ],
-          "seconds": 0.022074938000059774,
+          "seconds": 0.025504406000436575,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -707,7 +707,7 @@
             "observability",
             "inventory-policy"
           ],
-          "seconds": 0.025645411000027707,
+          "seconds": 0.023842592999244516,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -723,7 +723,7 @@
             "meeting-note",
             "loaner-loss"
           ],
-          "seconds": 0.019342084999948383,
+          "seconds": 0.025093306999224296,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -736,8 +736,8 @@
       "configuration": "neural_hybrid",
       "status": "executed",
       "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
-      "model_load_seconds": 0.00806123799998204,
-      "indexing_seconds": 0.8916405840000152,
+      "model_load_seconds": 0.047313153000686725,
+      "indexing_seconds": 1.1583945789998324,
       "query_count": 14,
       "metrics": {
         "recall_at_1": 0.6428571428571429,
@@ -746,8 +746,8 @@
         "mrr": 0.85,
         "ndcg_at_5": 0.8496427054388606
       },
-      "mean_query_seconds": 0.02847532699998315,
-      "p95_query_seconds": 0.12204095600009168,
+      "mean_query_seconds": 0.024323403642808574,
+      "p95_query_seconds": 0.026363574999777484,
       "rows": [
         {
           "query_id": "hq1",
@@ -758,7 +758,7 @@
             "loaner-loss",
             "inventory-policy"
           ],
-          "seconds": 0.021560012999998435,
+          "seconds": 0.02286150399959297,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -774,7 +774,7 @@
             "malicious-source",
             "loaner"
           ],
-          "seconds": 0.017608066999969196,
+          "seconds": 0.02452753899979143,
           "recall_at_1": 0.5,
           "recall_at_5": 0.5,
           "precision_at_5": 0.2,
@@ -790,7 +790,7 @@
             "food",
             "cold-release"
           ],
-          "seconds": 0.01798121399997399,
+          "seconds": 0.0239075090003098,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -806,7 +806,7 @@
             "sales-driver",
             "contract-alpha"
           ],
-          "seconds": 0.024039575999950102,
+          "seconds": 0.024767783999777748,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -822,7 +822,7 @@
             "contract-alpha",
             "loaner-loss"
           ],
-          "seconds": 0.02089277300001413,
+          "seconds": 0.025120026999502443,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -838,7 +838,7 @@
             "contract-alpha",
             "label"
           ],
-          "seconds": 0.016876046999982464,
+          "seconds": 0.023027440999612736,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -854,7 +854,7 @@
             "loaner",
             "report-policy"
           ],
-          "seconds": 0.015071449999936704,
+          "seconds": 0.026363574999777484,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -870,7 +870,7 @@
             "contract-beta",
             "support-sla"
           ],
-          "seconds": 0.017429141999969033,
+          "seconds": 0.02526955499979522,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -886,7 +886,7 @@
             "invoice-policy",
             "loaner"
           ],
-          "seconds": 0.12204095600009168,
+          "seconds": 0.023821836000024632,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -902,7 +902,7 @@
             "support-sla",
             "food"
           ],
-          "seconds": 0.035488485999962904,
+          "seconds": 0.025686400000267895,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -918,7 +918,7 @@
             "csv-safety",
             "incident-runbook"
           ],
-          "seconds": 0.028203126999983397,
+          "seconds": 0.024710767000215128,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -934,7 +934,7 @@
             "loaner",
             "malicious-source"
           ],
-          "seconds": 0.01982514499991339,
+          "seconds": 0.022470509999948263,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -950,7 +950,7 @@
             "inventory-policy",
             "onboarding"
           ],
-          "seconds": 0.018057227999975112,
+          "seconds": 0.022466252999947756,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -966,7 +966,7 @@
             "food",
             "silent"
           ],
-          "seconds": 0.023581354000043575,
+          "seconds": 0.025526951000756526,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -979,8 +979,8 @@
       "configuration": "neural_weighted_rrf",
       "status": "executed",
       "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
-      "model_load_seconds": 0.008106634999990092,
-      "indexing_seconds": 0.6794574389999752,
+      "model_load_seconds": 0.04506071800005884,
+      "indexing_seconds": 1.1099327369993262,
       "query_count": 14,
       "metrics": {
         "recall_at_1": 0.6428571428571429,
@@ -989,8 +989,8 @@
         "mrr": 0.8928571428571429,
         "ndcg_at_5": 0.9209135186224552
       },
-      "mean_query_seconds": 0.018857721214292918,
-      "p95_query_seconds": 0.025488481999900614,
+      "mean_query_seconds": 0.02498503700007859,
+      "p95_query_seconds": 0.03302199300014763,
       "rows": [
         {
           "query_id": "hq1",
@@ -1001,7 +1001,7 @@
             "loaner-loss",
             "incident-runbook"
           ],
-          "seconds": 0.020067724999989878,
+          "seconds": 0.02296971099985967,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1017,7 +1017,7 @@
             "battery",
             "loaner"
           ],
-          "seconds": 0.019371962000036547,
+          "seconds": 0.02372198200009734,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -1033,7 +1033,7 @@
             "contradiction-b",
             "contradiction-a"
           ],
-          "seconds": 0.020886359000087396,
+          "seconds": 0.02740773599998647,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1049,7 +1049,7 @@
             "security-retention",
             "refund"
           ],
-          "seconds": 0.01614713199990092,
+          "seconds": 0.025898145000610384,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1065,7 +1065,7 @@
             "incident-runbook",
             "battery-new"
           ],
-          "seconds": 0.015344839000022148,
+          "seconds": 0.02534796700001607,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1081,7 +1081,7 @@
             "travel-old",
             "invoice-policy"
           ],
-          "seconds": 0.016748483000014858,
+          "seconds": 0.023367214999780117,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1097,7 +1097,7 @@
             "travel-old",
             "loaner"
           ],
-          "seconds": 0.0187326430000212,
+          "seconds": 0.02400722800030053,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1113,7 +1113,7 @@
             "incident-runbook",
             "support-sla"
           ],
-          "seconds": 0.01654565100000127,
+          "seconds": 0.023287715000151366,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1129,7 +1129,7 @@
             "contract-alpha",
             "loaner"
           ],
-          "seconds": 0.016969336000101976,
+          "seconds": 0.023424799000167695,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1145,7 +1145,7 @@
             "memory-design",
             "food"
           ],
-          "seconds": 0.017028112000048168,
+          "seconds": 0.02554267599953164,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -1161,7 +1161,7 @@
             "csv-safety",
             "ambient"
           ],
-          "seconds": 0.017829283999958534,
+          "seconds": 0.02528284399977565,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -1177,7 +1177,7 @@
             "incident-runbook",
             "battery-new"
           ],
-          "seconds": 0.023656210000012834,
+          "seconds": 0.022464783000032185,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -1193,7 +1193,7 @@
             "inventory-policy",
             "invoice-policy"
           ],
-          "seconds": 0.025488481999900614,
+          "seconds": 0.02404572400064353,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1209,7 +1209,7 @@
             "ambient",
             "loaner-loss"
           ],
-          "seconds": 0.01919187900000452,
+          "seconds": 0.03302199300014763,
           "recall_at_1": 0.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1222,8 +1222,8 @@
       "configuration": "neural_hybrid_rerank",
       "status": "executed",
       "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
-      "model_load_seconds": 0.14657156299995222,
-      "indexing_seconds": 0.7341786219999449,
+      "model_load_seconds": 0.6739060119998612,
+      "indexing_seconds": 1.0711602829996991,
       "query_count": 14,
       "metrics": {
         "recall_at_1": 0.7857142857142857,
@@ -1232,8 +1232,8 @@
         "mrr": 0.9285714285714286,
         "ndcg_at_5": 0.9198010939527178
       },
-      "mean_query_seconds": 0.040349482071430236,
-      "p95_query_seconds": 0.07364197200001854,
+      "mean_query_seconds": 0.1277957917143015,
+      "p95_query_seconds": 1.0633068730003288,
       "rows": [
         {
           "query_id": "hq1",
@@ -1244,7 +1244,7 @@
             "inventory-policy",
             "loaner"
           ],
-          "seconds": 0.07364197200001854,
+          "seconds": 1.0633068730003288,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1260,7 +1260,7 @@
             "cold-release",
             "refund"
           ],
-          "seconds": 0.06364837400008128,
+          "seconds": 0.057886757999767724,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -1276,7 +1276,7 @@
             "food",
             "memory-design"
           ],
-          "seconds": 0.036598153999989336,
+          "seconds": 0.059287467999638466,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1292,7 +1292,7 @@
             "inventory-policy",
             "access-east"
           ],
-          "seconds": 0.030500089000042863,
+          "seconds": 0.06074862100012979,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1308,7 +1308,7 @@
             "invoice-policy",
             "security-retention"
           ],
-          "seconds": 0.03366482800004178,
+          "seconds": 0.05949139899985312,
           "recall_at_1": 0.0,
           "recall_at_5": 0.0,
           "precision_at_5": 0.0,
@@ -1324,7 +1324,7 @@
             "loaner",
             "refund"
           ],
-          "seconds": 0.03563097899996137,
+          "seconds": 0.056802402999892365,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1340,7 +1340,7 @@
             "support-sla",
             "report-policy"
           ],
-          "seconds": 0.035868474000039896,
+          "seconds": 0.06505697000011423,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1356,7 +1356,7 @@
             "contract-beta",
             "loaner-loss"
           ],
-          "seconds": 0.03153290599993852,
+          "seconds": 0.05453335399943171,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1372,7 +1372,7 @@
             "incident-runbook",
             "contract-alpha"
           ],
-          "seconds": 0.03392362099998536,
+          "seconds": 0.053406923000693496,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1388,7 +1388,7 @@
             "memory-design",
             "refund-policy"
           ],
-          "seconds": 0.03166348500008098,
+          "seconds": 0.0599152739996498,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -1404,7 +1404,7 @@
             "csv-safety",
             "ambient"
           ],
-          "seconds": 0.0315355789999785,
+          "seconds": 0.044157519000691536,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -1420,7 +1420,7 @@
             "cedar-project",
             "maple-project"
           ],
-          "seconds": 0.04592370199998186,
+          "seconds": 0.051988307000101486,
           "recall_at_1": 0.5,
           "recall_at_5": 1.0,
           "precision_at_5": 0.4,
@@ -1436,7 +1436,7 @@
             "ambient",
             "inventory-policy"
           ],
-          "seconds": 0.044681894999939686,
+          "seconds": 0.05491422399973089,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,
@@ -1452,7 +1452,7 @@
             "memory-design",
             "inventory-policy"
           ],
-          "seconds": 0.03607869099994332,
+          "seconds": 0.04764499100019748,
           "recall_at_1": 1.0,
           "recall_at_5": 1.0,
           "precision_at_5": 0.2,

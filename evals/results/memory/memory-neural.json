@@ -8,7 +8,7 @@
       "memory_enabled": false,
       "cases": 8,
       "accuracy": 0,
-      "mean_seconds": 4.972749991338787e-06,
+      "mean_seconds": 6.284499932007748e-06,
       "tokens": 0,
       "error_rate": 0
     },
@@ -16,7 +16,7 @@
       "memory_enabled": true,
       "cases": 8,
       "accuracy": 1,
-      "mean_seconds": 0.011672713500047394,
+      "mean_seconds": 0.017058511500067652,
       "tokens": 0,
       "error_rate": 0
     }
@@ -28,7 +28,7 @@
       "correct": false,
       "insufficient": true,
       "retrieved_memory_ids": [],
-      "seconds": 6.2489998526871204e-06,
+      "seconds": 7.513000127801206e-06,
       "tokens": 0,
       "error": null
     },
@@ -38,7 +38,7 @@
       "correct": false,
       "insufficient": true,
       "retrieved_memory_ids": [],
-      "seconds": 6.499999926745659e-06,
+      "seconds": 8.258999514509924e-06,
       "tokens": 0,
       "error": null
     },
@@ -48,7 +48,7 @@
       "correct": false,
       "insufficient": true,
       "retrieved_memory_ids": [],
-      "seconds": 4.197000180283794e-06,
+      "seconds": 5.9630001487676054e-06,
       "tokens": 0,
       "error": null
     },
@@ -58,7 +58,7 @@
       "correct": false,
       "insufficient": true,
       "retrieved_memory_ids": [],
-      "seconds": 4.146999799559126e-06,
+      "seconds": 4.829000317840837e-06,
       "tokens": 0,
       "error": null
     },
@@ -68,7 +68,7 @@
       "correct": false,
       "insufficient": true,
       "retrieved_memory_ids": [],
-      "seconds": 4.176999937044457e-06,
+      "seconds": 5.846999556524679e-06,
       "tokens": 0,
       "error": null
     },
@@ -78,7 +78,7 @@
       "correct": false,
       "insufficient": true,
       "retrieved_memory_ids": [],
-      "seconds": 4.717000138043659e-06,
+      "seconds": 5.70499923924217e-06,
       "tokens": 0,
       "error": null
     },
@@ -88,7 +88,7 @@
       "correct": false,
       "insufficient": true,
       "retrieved_memory_ids": [],
-      "seconds": 5.278000116959447e-06,
+      "seconds": 6.1860000641900115e-06,
       "tokens": 0,
       "error": null
     },
@@ -98,7 +98,7 @@
       "correct": false,
       "insufficient": true,
       "retrieved_memory_ids": [],
-      "seconds": 4.5169999793870375e-06,
+      "seconds": 5.974000487185549e-06,
       "tokens": 0,
       "error": null
     },
@@ -110,7 +110,7 @@
       "retrieved_memory_ids": [
         "57a05e7931a97cba013f4a7b75dba03559050e0ae1e1e54a5222797838551821"
       ],
-      "seconds": 0.011901842000042961,
+      "seconds": 0.018123758000001544,
       "tokens": 0,
       "error": null
     },
@@ -122,7 +122,7 @@
       "retrieved_memory_ids": [
         "c29a873c7035643fe16bccdb14b2be6bec54befad7f7f7431b2f2e1d7a5e15f3"
       ],
-      "seconds": 0.011373993999768572,
+      "seconds": 0.018863536000026215,
       "tokens": 0,
       "error": null
     },
@@ -134,7 +134,7 @@
       "retrieved_memory_ids": [
         "399955351c676971461565cfb6fd17a1e8d57097af8303ab54e6a328c578c595"
       ],
-      "seconds": 0.010697025999888865,
+      "seconds": 0.01924300700011372,
       "tokens": 0,
       "error": null
     },
@@ -146,7 +146,7 @@
       "retrieved_memory_ids": [
         "43a7ace9b81a4068c0ce0c0126ec5495648d08631ca59ac50ba633c88916200d"
       ],
-      "seconds": 0.010380918999999267,
+      "seconds": 0.01922925600047165,
       "tokens": 0,
       "error": null
     },
@@ -158,7 +158,7 @@
       "retrieved_memory_ids": [
         "d3e275a1e81b98f35c8bcfe224fc6e9e61948a22a3f0e7812cb4475f157b7922"
       ],
-      "seconds": 0.013609169000119437,
+      "seconds": 0.019818013000076462,
       "tokens": 0,
       "error": null
     },
@@ -170,7 +170,7 @@
       "retrieved_memory_ids": [
         "5f207bcef589f69d5af600b0b0e94007c4050f6a67b1734ce184083713e18f9e"
       ],
-      "seconds": 0.011216382000384328,
+      "seconds": 0.014725558999998611,
       "tokens": 0,
       "error": null
     },
@@ -182,7 +182,7 @@
       "retrieved_memory_ids": [
         "886426bb7f5ee1e62706923ee2d3bd1d2c233973120f4dfbc91622561a6ac0d2"
       ],
-      "seconds": 0.012424214000020584,
+      "seconds": 0.01319004600009066,
       "tokens": 0,
       "error": null
     },
@@ -194,7 +194,7 @@
       "retrieved_memory_ids": [
         "594951ecf18597a2956608f7aefc364a340f22f6b10bd25b4c6480bd5c290f8b"
       ],
-      "seconds": 0.011778162000155135,
+      "seconds": 0.013274916999762354,
       "tokens": 0,
       "error": null
     }
