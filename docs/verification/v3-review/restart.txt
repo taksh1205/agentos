@@ -1,0 +1,4 @@
+research persisted after API process restart d25dc236-d5f1-4277-a787-f57ad2ade60e
+business persisted after API process restart 1b9340c7-cb42-4200-ba3a-ca3c1e723be3
+operation persisted after API process restart 99013b2e-7f39-4121-b07f-ecb4eae804e0
+Exactly one approved effect for this run after restart

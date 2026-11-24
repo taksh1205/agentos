@@ -1,0 +1,24 @@
+{
+  "R": {
+    "goal": "Compare the retention requirements for Orion inspection images in the quality manual and the privacy schedule. Explain whether both can be followed, cite the two requirements, and recommend a next step.",
+    "kind": "A",
+    "documents": {
+      "quality-manual": "Orion quality manual. The lab must retain Orion inspection images for at least nine months to support audit appeals.",
+      "privacy-schedule": "Orion privacy schedule. The lab must delete Orion inspection images within four months to limit personal data exposure.",
+      "cafeteria-menu": "The cafeteria serves rice at lunchtime."
+    },
+    "expected": {"quotes": {"quality-manual":"at least nine months","privacy-schedule":"within four months"}, "tool":"document_search"}
+  },
+  "L": {
+    "goal": "Compare July and August 2026 operating costs and profit month over month. Which went up or down, and by how much?",
+    "kind":"B",
+    "sales":[["2026-07",96000,60000],["2026-08",97500,64500]],
+    "expected":{"months":["2026-07","2026-08"],"metrics":{"costs":[60000,64500,4500,0.075],"profit":[36000,33000,-3000,-0.08333333333333333]}}
+  },
+  "I": {
+    "goal":"Review overdue invoices as of 2026-09-15. Prepare a collections report listing the unpaid past-due balances. Store the report after approval.",
+    "kind":"C","cutoff":"2026-09-15",
+    "invoices":[["INV-731",615.50,0,"2026-09-04"],["INV-843",220,0,"2026-09-14"],["INV-902",990,1,"2026-09-03"],["INV-917",480,0,"2026-09-15"]],
+    "expected":{"balances":{"INV-731":615.50,"INV-843":220},"total":835.50,"tool":"create_report"}
+  }
+}

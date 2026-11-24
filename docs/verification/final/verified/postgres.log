@@ -1,0 +1,10 @@
+2026-11-19 10:47:41.418 UTC [26] LOG:  starting PostgreSQL 16.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 10.2.1 20210130 (Red Hat 10.2.1-11), 64-bit
+2026-11-19 10:47:41.418 UTC [26] LOG:  listening on IPv4 address "127.0.0.1", port 42735
+2026-11-19 10:47:41.419 UTC [31] LOG:  database system was shut down at 2026-11-19 10:47:41 UTC
+2026-11-19 10:47:41.421 UTC [26] LOG:  database system is ready to accept connections
+2026-11-19 10:48:58.849 UTC [26] LOG:  received smart shutdown request
+2026-11-19 10:48:58.850 UTC [26] LOG:  background worker "logical replication launcher" (PID 34) exited with exit code 1
+2026-11-19 10:48:58.850 UTC [29] LOG:  shutting down
+2026-11-19 10:48:58.851 UTC [29] LOG:  checkpoint starting: shutdown immediate
+2026-11-19 10:48:58.854 UTC [29] LOG:  checkpoint complete: wrote 340 buffers (2.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.003 s; sync files=198, longest=0.001 s, average=0.000 s; distance=1542 kB, estimate=1542 kB; lsn=0/1618810, redo lsn=0/1618810
+2026-11-19 10:48:58.856 UTC [26] LOG:  database system is shut down

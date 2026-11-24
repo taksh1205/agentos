@@ -1,0 +1,18 @@
+{
+  "scope": "Text in source archive except this scan record and generated manifest. PNGs contain synthetic UI screenshots. Binary dependencies, databases, weights and local environment files excluded. Pattern scan cannot prove absence of sensitive data.",
+  "rules": [
+    "private_key_header",
+    "provider_key",
+    "aws_access_key",
+    "signed_url"
+  ],
+  "unresolved_secret_matches": [],
+  "email_domains": [
+    "example.test"
+  ],
+  "false_positive_files_containing_Hugging_Face_function_names": [
+    "docs/verification/repair/final-pg/backend.log",
+    "docs/verification/repair/final-pg/junit.xml",
+    "docs/verification/repair/live/A.log"
+  ]
+}

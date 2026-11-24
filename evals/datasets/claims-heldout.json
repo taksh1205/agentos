@@ -1,0 +1,172 @@
+{
+  "sources": [
+    {
+      "id": "p",
+      "text": "The buyer must sign the release."
+    },
+    {
+      "id": "stock",
+      "text": "Only a supervisor may release blocked stock."
+    }
+  ],
+  "computed": {
+    "dataset": "sales",
+    "metrics": [
+      {
+        "metric": "costs",
+        "rows": [
+          {
+            "month": "2026-07",
+            "value": 50
+          },
+          {
+            "month": "2026-08",
+            "value": 65
+          }
+        ],
+        "total": 115
+      }
+    ]
+  },
+  "effects": [
+    {
+      "receipt": "r4",
+      "stored": true
+    }
+  ],
+  "cases": [
+    {
+      "id": "exact",
+      "expected": "supported",
+      "claim": {
+        "kind": "extractive",
+        "text": "The buyer must sign the release.",
+        "quote": "The buyer must sign the release.",
+        "citations": [
+          "p"
+        ]
+      }
+    },
+    {
+      "id": "wrong-source",
+      "expected": "unsupported",
+      "claim": {
+        "kind": "extractive",
+        "text": "The buyer must sign the release.",
+        "quote": "The buyer must sign the release.",
+        "citations": [
+          "stock"
+        ]
+      }
+    },
+    {
+      "id": "mixed-source",
+      "expected": "unsupported",
+      "claim": {
+        "kind": "extractive",
+        "text": "The buyer must sign the release.",
+        "quote": "The buyer must sign the release.",
+        "citations": [
+          "p",
+          "stock"
+        ]
+      }
+    },
+    {
+      "id": "unknown-source",
+      "expected": "unsupported",
+      "claim": {
+        "kind": "source",
+        "text": "The buyer must sign the release.",
+        "citations": [
+          "deleted"
+        ]
+      }
+    },
+    {
+      "id": "valid-trend",
+      "expected": "supported",
+      "claim": {
+        "kind": "trend",
+        "text": "Costs rose by 30 percent.",
+        "metric": "costs",
+        "basis": "mom",
+        "operation": "growth",
+        "value": 0.3,
+        "direction": "increase"
+      }
+    },
+    {
+      "id": "inverted",
+      "expected": "contradicted",
+      "claim": {
+        "kind": "trend",
+        "text": "Costs fell.",
+        "metric": "costs",
+        "direction": "decrease"
+      }
+    },
+    {
+      "id": "period",
+      "expected": "unsupported",
+      "claim": {
+        "kind": "numeric",
+        "text": "June through August costs total 115",
+        "metric": "costs",
+        "operation": "total",
+        "start": "2026-06",
+        "end": "2026-08",
+        "value": 115
+      }
+    },
+    {
+      "id": "metric-swap",
+      "expected": "unsupported",
+      "claim": {
+        "kind": "numeric",
+        "text": "Revenue reached 65",
+        "metric": "revenue",
+        "operation": "point",
+        "value": 65
+      }
+    },
+    {
+      "id": "unproven-cause",
+      "expected": "needs_review",
+      "claim": {
+        "kind": "causal",
+        "text": "Vendor shortages explain the increase."
+      }
+    },
+    {
+      "id": "receipt",
+      "expected": "supported",
+      "claim": {
+        "kind": "action",
+        "text": "Report saved",
+        "receipt": "r4"
+      }
+    },
+    {
+      "id": "stale-receipt",
+      "expected": "unsupported",
+      "claim": {
+        "kind": "action",
+        "text": "Report saved",
+        "receipt": "r3"
+      }
+    },
+    {
+      "id": "negation",
+      "expected": "needs_review",
+      "claim": {
+        "kind": "source",
+        "text": "The buyer must not sign the release.",
+        "quote": "The buyer must sign the release.",
+        "citations": [
+          "p"
+        ]
+      }
+    }
+  ]
+}

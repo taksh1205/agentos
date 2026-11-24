@@ -1,0 +1,9 @@
+...sssss................................................................ [ 80%]
+.................                                                        [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_neural.py:12: Set RUN_NEURAL_TESTS=1 after downloading neural models
+SKIPPED [1] tests/test_neural.py:32: Opt-in downloaded neural models
+SKIPPED [1] tests/test_postgres.py:10: PostgreSQL unavailable; CI service runs this test
+SKIPPED [1] tests/test_postgres.py:23: Real PostgreSQL connection required
+SKIPPED [1] tests/test_postgres.py:60: Real PostgreSQL connection required
+84 passed, 5 skipped in 28.11s

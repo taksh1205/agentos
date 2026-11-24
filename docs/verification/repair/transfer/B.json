@@ -1,0 +1,997 @@
+{
+  "goal": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+  "model": "qwen15-local",
+  "workspace": "release-8881ab1c-0757-4187-8975-960c49e205ee",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0-correction",
+        "agent": "data",
+        "instruction": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+        "dependencies": [],
+        "tool": "business_metrics",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "1-correction",
+        "agent": "research",
+        "instruction": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+        "dependencies": [],
+        "tool": "document_search",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "2-correction",
+        "agent": "data",
+        "instruction": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+        "dependencies": [],
+        "tool": "invoice_analysis",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": false,
+        "error": "ValueError",
+        "issues": [
+          "Analytic interpretation rejected: unsupported_numeric_assertion"
+        ],
+        "attempts": 1
+      },
+      {
+        "step": "1",
+        "agent": "research",
+        "ok": true,
+        "finding": {
+          "summary": "No passage available.",
+          "citations": [],
+          "insufficient": true,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "sources": [],
+        "tokens": 0,
+        "model_records": [],
+        "tools_used": [
+          "document_search"
+        ],
+        "attempts": 1,
+        "seconds": 6.876420918000008
+      },
+      {
+        "step": "2",
+        "agent": "data",
+        "ok": false,
+        "error": "ValueError",
+        "issues": [
+          "Analytic interpretation rejected: unsupported_invoice_number_or_amount"
+        ],
+        "attempts": 1
+      },
+      {
+        "step": "0-correction",
+        "agent": "data",
+        "ok": false,
+        "error": "ValueError",
+        "issues": [
+          "Analytic interpretation rejected: unsupported_numeric_assertion"
+        ],
+        "attempts": 1
+      },
+      {
+        "step": "1-correction",
+        "agent": "research",
+        "ok": true,
+        "finding": {
+          "summary": "No passage available.",
+          "citations": [],
+          "insufficient": true,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "sources": [],
+        "tokens": 0,
+        "model_records": [],
+        "tools_used": [
+          "document_search"
+        ],
+        "attempts": 1,
+        "seconds": 3.2709508220000316
+      },
+      {
+        "step": "2-correction",
+        "agent": "data",
+        "ok": false,
+        "error": "ValueError",
+        "issues": [
+          "Analytic interpretation rejected: unsupported_invoice_number_or_amount"
+        ],
+        "attempts": 1
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 3 steps",
+        "at": 1795130475.9161391
+      },
+      {
+        "id": "1",
+        "agent": "research",
+        "summary": "Validated approved tool results",
+        "at": 1795130482.8302948,
+        "step": "1",
+        "attempts": 1,
+        "seconds": 6.876420918000008
+      },
+      {
+        "id": "2",
+        "agent": "data",
+        "summary": "Failed after bounded retries",
+        "at": 1795130532.1108508,
+        "error": "ValueError"
+      },
+      {
+        "id": "0",
+        "agent": "data",
+        "summary": "Failed after bounded retries",
+        "at": 1795130549.4029393,
+        "error": "ValueError"
+      },
+      {
+        "id": "verify:correction",
+        "agent": "verification",
+        "summary": "Correction requested: 0, 2",
+        "at": 1795130549.4074874
+      },
+      {
+        "id": "planner:1",
+        "agent": "planner",
+        "summary": "Model: scheduled 3 steps",
+        "at": 1795130558.3976712
+      },
+      {
+        "id": "1-correction",
+        "agent": "research",
+        "summary": "Validated approved tool results",
+        "at": 1795130561.671879,
+        "step": "1-correction",
+        "attempts": 1,
+        "seconds": 3.2709508220000316
+      },
+      {
+        "id": "2-correction",
+        "agent": "data",
+        "summary": "Failed after bounded retries",
+        "at": 1795130595.2263255,
+        "error": "ValueError"
+      },
+      {
+        "id": "0-correction",
+        "agent": "data",
+        "summary": "Failed after bounded retries",
+        "at": 1795130614.0711477,
+        "error": "ValueError"
+      },
+      {
+        "id": "verification:final",
+        "agent": "verification",
+        "summary": "Checked completion, citations, calculations and committed effects",
+        "at": 1795130614.0768597
+      }
+    ]
+  },
+  "report": {
+    "status": "failed",
+    "goal": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+    "mode": "openai",
+    "refusal": null,
+    "clarification": null,
+    "grounding": {
+      "fully_checked": false,
+      "requires_review": true
+    },
+    "review": {
+      "supported": null,
+      "issues": [
+        "Deterministic checks; no semantic model judgment"
+      ]
+    },
+    "findings": [
+      {
+        "step": "1-correction",
+        "agent": "research",
+        "ok": true,
+        "finding": {
+          "summary": "No passage available.",
+          "citations": [],
+          "insufficient": true,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "sources": [],
+        "tokens": 0,
+        "model_records": [],
+        "tools_used": [
+          "document_search"
+        ],
+        "attempts": 1,
+        "seconds": 3.2709508220000316
+      }
+    ],
+    "citations": [],
+    "errors": [
+      "0-correction",
+      "2-correction"
+    ],
+    "usage": {
+      "tokens": 5563,
+      "calls": 10,
+      "estimated_cost_usd": null
+    },
+    "limitations": [
+      "Model judges can be wrong; document content is untrusted evidence."
+    ]
+  },
+  "results": [
+    {
+      "step": "0",
+      "agent": "data",
+      "ok": false,
+      "error": "ValueError",
+      "issues": [
+        "Analytic interpretation rejected: unsupported_numeric_assertion"
+      ],
+      "attempts": 1
+    },
+    {
+      "step": "1",
+      "agent": "research",
+      "ok": true,
+      "finding": {
+        "summary": "No passage available.",
+        "citations": [],
+        "insufficient": true,
+        "contradictions": [],
+        "claims": []
+      },
+      "grounding": {
+        "claims": [],
+        "errors": [],
+        "fully_checked": false,
+        "requires_review": true
+      },
+      "sources": [],
+      "tokens": 0,
+      "model_records": [],
+      "tools_used": [
+        "document_search"
+      ],
+      "attempts": 1,
+      "seconds": 6.876420918000008
+    },
+    {
+      "step": "2",
+      "agent": "data",
+      "ok": false,
+      "error": "ValueError",
+      "issues": [
+        "Analytic interpretation rejected: unsupported_invoice_number_or_amount"
+      ],
+      "attempts": 1
+    },
+    {
+      "step": "0-correction",
+      "agent": "data",
+      "ok": false,
+      "error": "ValueError",
+      "issues": [
+        "Analytic interpretation rejected: unsupported_numeric_assertion"
+      ],
+      "attempts": 1
+    },
+    {
+      "step": "1-correction",
+      "agent": "research",
+      "ok": true,
+      "finding": {
+        "summary": "No passage available.",
+        "citations": [],
+        "insufficient": true,
+        "contradictions": [],
+        "claims": []
+      },
+      "grounding": {
+        "claims": [],
+        "errors": [],
+        "fully_checked": false,
+        "requires_review": true
+      },
+      "sources": [],
+      "tokens": 0,
+      "model_records": [],
+      "tools_used": [
+        "document_search"
+      ],
+      "attempts": 1,
+      "seconds": 3.2709508220000316
+    },
+    {
+      "step": "2-correction",
+      "agent": "data",
+      "ok": false,
+      "error": "ValueError",
+      "issues": [
+        "Analytic interpretation rejected: unsupported_invoice_number_or_amount"
+      ],
+      "attempts": 1
+    }
+  ],
+  "plan": [
+    {
+      "id": "0-correction",
+      "agent": "data",
+      "instruction": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+      "dependencies": [],
+      "tool": "business_metrics",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "1-correction",
+      "agent": "research",
+      "instruction": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+      "dependencies": [],
+      "tool": "document_search",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "2-correction",
+      "agent": "data",
+      "instruction": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+      "dependencies": [],
+      "tool": "invoice_analysis",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    }
+  ],
+  "events": [
+    {
+      "id": "planner:0",
+      "agent": "planner",
+      "summary": "Model: scheduled 3 steps",
+      "at": 1795130475.9161391
+    },
+    {
+      "id": "1",
+      "agent": "research",
+      "summary": "Validated approved tool results",
+      "at": 1795130482.8302948,
+      "step": "1",
+      "attempts": 1,
+      "seconds": 6.876420918000008
+    },
+    {
+      "id": "2",
+      "agent": "data",
+      "summary": "Failed after bounded retries",
+      "at": 1795130532.1108508,
+      "error": "ValueError"
+    },
+    {
+      "id": "0",
+      "agent": "data",
+      "summary": "Failed after bounded retries",
+      "at": 1795130549.4029393,
+      "error": "ValueError"
+    },
+    {
+      "id": "verify:correction",
+      "agent": "verification",
+      "summary": "Correction requested: 0, 2",
+      "at": 1795130549.4074874
+    },
+    {
+      "id": "planner:1",
+      "agent": "planner",
+      "summary": "Model: scheduled 3 steps",
+      "at": 1795130558.3976712
+    },
+    {
+      "id": "1-correction",
+      "agent": "research",
+      "summary": "Validated approved tool results",
+      "at": 1795130561.671879,
+      "step": "1-correction",
+      "attempts": 1,
+      "seconds": 3.2709508220000316
+    },
+    {
+      "id": "2-correction",
+      "agent": "data",
+      "summary": "Failed after bounded retries",
+      "at": 1795130595.2263255,
+      "error": "ValueError"
+    },
+    {
+      "id": "0-correction",
+      "agent": "data",
+      "summary": "Failed after bounded retries",
+      "at": 1795130614.0711477,
+      "error": "ValueError"
+    },
+    {
+      "id": "verification:final",
+      "agent": "verification",
+      "summary": "Checked completion, citations, calculations and committed effects",
+      "at": 1795130614.0768597
+    }
+  ],
+  "usage": {
+    "tokens": 5563,
+    "calls": 10,
+    "estimated_cost_usd": null
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadSelection",
+      "attempt": 1,
+      "input_tokens": 263,
+      "output_tokens": 38,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 44.36194582999997,
+      "tokens": 301,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "2",
+      "approval_id": null,
+      "seconds": 2.779979351999941,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 5.1062638040000365,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "1",
+      "approval_id": null,
+      "seconds": 6.831970189000003,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 497,
+      "output_tokens": 78,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 26.708335524000063,
+      "tokens": 575,
+      "step": "2"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "invoice_analysis",
+      "argument_keys": [
+        "as_of"
+      ],
+      "arguments": {},
+      "step": "2",
+      "approval_id": null,
+      "seconds": 3.9952437160000045,
+      "output_fields": [
+        "rows",
+        "unpaid_total",
+        "as_of",
+        "overdue_rows",
+        "overdue_total"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 497,
+      "output_tokens": 78,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 31.945930523000015,
+      "tokens": 575,
+      "step": "0"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "revenue",
+        "start": "2026-01",
+        "end": "2026-03"
+      },
+      "step": "0",
+      "approval_id": null,
+      "seconds": 7.414714692000075,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "costs",
+        "start": "2026-01",
+        "end": "2026-03"
+      },
+      "step": "0",
+      "approval_id": null,
+      "seconds": 2.8134560230000716,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "profit",
+        "start": "2026-01",
+        "end": "2026-03"
+      },
+      "step": "0",
+      "approval_id": null,
+      "seconds": 5.608302079000055,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "RecordInterpretation",
+      "attempt": 1,
+      "input_tokens": 371,
+      "output_tokens": 72,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 22.60600315099998,
+      "tokens": 443,
+      "step": "2"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "margin",
+        "start": "2026-01",
+        "end": "2026-03"
+      },
+      "step": "0",
+      "approval_id": null,
+      "seconds": 3.6437614880001092,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "LedgerReading",
+      "attempt": 1,
+      "input_tokens": 854,
+      "output_tokens": 18,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 16.88594665200003,
+      "tokens": 872,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadSelection",
+      "attempt": 1,
+      "input_tokens": 290,
+      "output_tokens": 38,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 8.984545226000023,
+      "tokens": 328,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "1-correction",
+      "approval_id": null,
+      "seconds": 3.2689622670000062,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "2-correction",
+      "approval_id": null,
+      "seconds": 5.144958357000064,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 7.259907092000049,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 497,
+      "output_tokens": 82,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 12.747103534000075,
+      "tokens": 579,
+      "step": "2-correction"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "invoice_analysis",
+      "argument_keys": [
+        "as_of"
+      ],
+      "arguments": {},
+      "step": "2-correction",
+      "approval_id": null,
+      "seconds": 3.0368684620000295,
+      "output_fields": [
+        "rows",
+        "unpaid_total",
+        "as_of",
+        "overdue_rows",
+        "overdue_total"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 497,
+      "output_tokens": 78,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 23.406999053999925,
+      "tokens": 575,
+      "step": "0-correction"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "RecordInterpretation",
+      "attempt": 1,
+      "input_tokens": 371,
+      "output_tokens": 72,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 15.85400172300001,
+      "tokens": 443,
+      "step": "2-correction"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "revenue",
+        "start": "2026-01",
+        "end": "2026-03"
+      },
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 6.5752179109999815,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "costs",
+        "start": "2026-01",
+        "end": "2026-03"
+      },
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 2.5128676570000152,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "profit",
+        "start": "2026-01",
+        "end": "2026-03"
+      },
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 3.534643247999952,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "margin",
+        "start": "2026-01",
+        "end": "2026-03"
+      },
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 4.625773862999949,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "LedgerReading",
+      "attempt": 1,
+      "input_tokens": 854,
+      "output_tokens": 18,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 7.7193152910000435,
+      "tokens": 872,
+      "step": "0-correction"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 105000.0,
+      "costs": 81000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 182.6584074929999
+}

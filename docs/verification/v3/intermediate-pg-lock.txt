@@ -1,0 +1,2 @@
+2026-11-18 01:45:46.515 UTC [48] FATAL:  lock file "postmaster.pid" already exists
+2026-11-18 01:45:46.515 UTC [48] HINT:  Is another postmaster (PID 49) running in data directory "/workspace/scratch/9935952a89f5/pg-v3"?

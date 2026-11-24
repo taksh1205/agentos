@@ -1,0 +1,521 @@
+{
+  "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+  "model": "qwen15-local",
+  "workspace": "release-a2d5e9f6-e0c0-4a89-9e2f-e3619bc50cad",
+  "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0",
+        "agent": "research",
+        "instruction": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+        "dependencies": [],
+        "tool": "document_search",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "1",
+        "agent": "data",
+        "instruction": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+        "dependencies": [],
+        "tool": "business_metrics",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "2",
+        "agent": "data",
+        "instruction": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+        "dependencies": [],
+        "tool": "invoice_analysis",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "3",
+        "agent": "data",
+        "instruction": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+        "dependencies": [],
+        "tool": "inventory_retrieval",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "research",
+        "ok": false,
+        "error": "ProviderError",
+        "issues": [
+          "openai request failed after bounded retries: APIConnectionError"
+        ],
+        "attempts": 2
+      },
+      {
+        "step": "1",
+        "agent": "data",
+        "ok": false,
+        "error": "ProviderError",
+        "issues": [
+          "openai request failed after bounded retries: APIConnectionError"
+        ],
+        "attempts": 1
+      },
+      {
+        "step": "2",
+        "agent": "data",
+        "ok": false,
+        "error": "ProviderError",
+        "issues": [
+          "openai request failed after bounded retries: APIConnectionError"
+        ],
+        "attempts": 1
+      },
+      {
+        "step": "3",
+        "agent": "data",
+        "ok": false,
+        "error": "ProviderError",
+        "issues": [
+          "openai request failed after bounded retries: APIConnectionError"
+        ],
+        "attempts": 1
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 4 steps",
+        "at": 1795130342.1082144
+      },
+      {
+        "id": "3",
+        "agent": "data",
+        "summary": "Failed after bounded retries",
+        "at": 1795130355.344219,
+        "error": "ProviderError"
+      },
+      {
+        "id": "1",
+        "agent": "data",
+        "summary": "Failed after bounded retries",
+        "at": 1795130358.0793748,
+        "error": "ProviderError"
+      },
+      {
+        "id": "2",
+        "agent": "data",
+        "summary": "Failed after bounded retries",
+        "at": 1795130367.0293777,
+        "error": "ProviderError"
+      },
+      {
+        "id": "0",
+        "agent": "research",
+        "summary": "Failed after bounded retries",
+        "at": 1795130393.9145827,
+        "error": "ProviderError"
+      },
+      {
+        "id": "verify:correction",
+        "agent": "verification",
+        "summary": "Correction requested: 0, 1, 2, 3",
+        "at": 1795130394.0400577
+      }
+    ]
+  },
+  "exception": {
+    "type": "ProviderError",
+    "message": "openai request failed after bounded retries: APIConnectionError"
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadSelection",
+      "attempt": 1,
+      "input_tokens": 267,
+      "output_tokens": 78,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 100.10634678300005,
+      "tokens": 345,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "3",
+      "approval_id": null,
+      "seconds": 12.47010848900004,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.2547334899999214,
+      "tokens": null,
+      "step": "3"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.22767193800007135,
+      "tokens": null,
+      "step": "3"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.05250367300004655,
+      "tokens": null,
+      "step": "3"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "1",
+      "approval_id": null,
+      "seconds": 15.418381235000084,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.11178171599999587,
+      "tokens": null,
+      "step": "1"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.23944133600002715,
+      "tokens": null,
+      "step": "1"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.018153998000002503,
+      "tokens": null,
+      "step": "1"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "2",
+      "approval_id": null,
+      "seconds": 24.41168950100007,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.1091136520000191,
+      "tokens": null,
+      "step": "2"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.20729567599994425,
+      "tokens": null,
+      "step": "2"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.011674163999941811,
+      "tokens": null,
+      "step": "2"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 8.260120635000021,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "PolicyAnalysis",
+      "attempt": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.12093072200002553,
+      "tokens": null,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "PolicyAnalysis",
+      "attempt": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.2776700859999437,
+      "tokens": null,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "PolicyAnalysis",
+      "attempt": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.16039595999995981,
+      "tokens": null,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "ReadSelection",
+      "attempt": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.20818115400004444,
+      "tokens": null,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "ReadSelection",
+      "attempt": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.3697939400000223,
+      "tokens": null,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "ReadSelection",
+      "attempt": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.23488567800006876,
+      "tokens": null,
+      "step": "planner"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 167.99124699599997
+}

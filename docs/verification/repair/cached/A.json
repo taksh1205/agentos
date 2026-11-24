@@ -1,0 +1,1027 @@
+{
+  "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+  "model": "qwen15-local",
+  "workspace": "release-7031b7c2-41b6-467e-82b6-fd4e9b5c6d91",
+  "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0",
+        "agent": "research",
+        "instruction": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+        "dependencies": [],
+        "tool": "document_search",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "research",
+        "ok": true,
+        "finding": {
+          "summary": "The East depot's inventory and capacity policies conflict regarding the reserve stock. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (inventory policy) and may keep at most twelve reserve pallets on site to maintain fire-lane clearance (capacity policy). The policy should be reviewed or escalated to ensure consistency. The conflicting thresholds and the need for approval for reducing reserve stock indicate a lack of clarity in policy implementation.",
+          "citations": [
+            "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e",
+            "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81",
+            "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0"
+          ],
+          "insufficient": false,
+          "contradictions": [
+            "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (inventory policy) and may keep at most twelve reserve pallets on site to maintain fire-lane clearance (capacity policy)."
+          ],
+          "claims": [
+            {
+              "text": "East depot inventory policy.",
+              "citations": [
+                "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e"
+              ],
+              "kind": "extractive",
+              "quote": "East depot inventory policy.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+              "citations": [
+                "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e"
+              ],
+              "kind": "extractive",
+              "quote": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "Reducing reserve stock requires the inventory owner's approval.",
+              "citations": [
+                "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e"
+              ],
+              "kind": "extractive",
+              "quote": "Reducing reserve stock requires the inventory owner's approval.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "East depot capacity policy.",
+              "citations": [
+                "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81"
+              ],
+              "kind": "extractive",
+              "quote": "East depot capacity policy.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+              "citations": [
+                "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81"
+              ],
+              "kind": "extractive",
+              "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "The capacity owner must review any proposed exception.",
+              "citations": [
+                "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81"
+              ],
+              "kind": "extractive",
+              "quote": "The capacity owner must review any proposed exception.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "Employee travel policy.",
+              "citations": [
+                "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0"
+              ],
+              "kind": "extractive",
+              "quote": "Employee travel policy.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "Rail fares are reimbursed upon submission of receipts.",
+              "citations": [
+                "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0"
+              ],
+              "kind": "extractive",
+              "quote": "Rail fares are reimbursed upon submission of receipts.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            }
+          ]
+        },
+        "grounding": {
+          "claims": [
+            {
+              "index": 0,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 1,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 2,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 3,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 4,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 5,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 6,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 7,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            }
+          ],
+          "errors": [],
+          "fully_checked": true,
+          "requires_review": false
+        },
+        "sources": [
+          {
+            "id": "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e",
+            "document_id": "b9875d53c91dd0beae0273ecc5f73e1ea7fe97bcbed0a496831564287f02c1b9",
+            "source": "inventory-policy",
+            "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+            "score": 0.03278688524590164,
+            "dense_score": 0.6665072247873852,
+            "lexical_score": 7.38477658140061,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E1"
+          },
+          {
+            "id": "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81",
+            "document_id": "82a3957c169670e8ca3d544e533398adedf6548f4ba927ce774ce1ff3b5f7c65",
+            "source": "capacity-policy",
+            "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+            "score": 0.03225806451612903,
+            "dense_score": 0.5598155920888347,
+            "lexical_score": 5.430343504032496,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E2"
+          },
+          {
+            "id": "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0",
+            "document_id": "5b0d6c3efc2deb01a9cc9bc4dc251c714f60f68d1401da2593f0486fac5ab03c",
+            "source": "travel-policy",
+            "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+            "score": 0.015873015873015872,
+            "dense_score": 0.23496585404290052,
+            "lexical_score": 0,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E3"
+          }
+        ],
+        "tokens": 561,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "PolicyAnalysis",
+            "attempt": 1,
+            "input_tokens": 406,
+            "output_tokens": 155,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 17.00316232099999,
+            "tokens": 561
+          }
+        ],
+        "tools_used": [
+          "document_search"
+        ],
+        "attempts": 1,
+        "seconds": 27.07281313200002
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 1 steps",
+        "at": 1795197349.7496786
+      },
+      {
+        "id": "0",
+        "agent": "research",
+        "summary": "Validated approved tool results",
+        "at": 1795197376.82702,
+        "step": "0",
+        "attempts": 1,
+        "seconds": 27.07281313200002
+      },
+      {
+        "id": "verification:final",
+        "agent": "verification",
+        "summary": "Checked completion, citations, calculations and committed effects",
+        "at": 1795197425.406483
+      }
+    ]
+  },
+  "report": {
+    "status": "completed",
+    "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+    "mode": "openai",
+    "refusal": null,
+    "clarification": null,
+    "grounding": {
+      "fully_checked": true,
+      "requires_review": false
+    },
+    "review": {
+      "supported": true,
+      "issues": [
+        "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (inventory policy) and may keep at most twelve reserve pallets on site to maintain fire-lane clearance (capacity policy). The policy should be reviewed or escalated to ensure consistency. The conflicting thresholds and the need for approval for reducing reserve stock indicate a lack of clarity in policy implementation."
+      ]
+    },
+    "findings": [
+      {
+        "step": "0",
+        "agent": "research",
+        "ok": true,
+        "finding": {
+          "summary": "The East depot's inventory and capacity policies conflict regarding the reserve stock. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (inventory policy) and may keep at most twelve reserve pallets on site to maintain fire-lane clearance (capacity policy). The policy should be reviewed or escalated to ensure consistency. The conflicting thresholds and the need for approval for reducing reserve stock indicate a lack of clarity in policy implementation.",
+          "citations": [
+            "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e",
+            "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81",
+            "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0"
+          ],
+          "insufficient": false,
+          "contradictions": [
+            "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (inventory policy) and may keep at most twelve reserve pallets on site to maintain fire-lane clearance (capacity policy)."
+          ],
+          "claims": [
+            {
+              "text": "East depot inventory policy.",
+              "citations": [
+                "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e"
+              ],
+              "kind": "extractive",
+              "quote": "East depot inventory policy.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+              "citations": [
+                "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e"
+              ],
+              "kind": "extractive",
+              "quote": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "Reducing reserve stock requires the inventory owner's approval.",
+              "citations": [
+                "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e"
+              ],
+              "kind": "extractive",
+              "quote": "Reducing reserve stock requires the inventory owner's approval.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "East depot capacity policy.",
+              "citations": [
+                "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81"
+              ],
+              "kind": "extractive",
+              "quote": "East depot capacity policy.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+              "citations": [
+                "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81"
+              ],
+              "kind": "extractive",
+              "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "The capacity owner must review any proposed exception.",
+              "citations": [
+                "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81"
+              ],
+              "kind": "extractive",
+              "quote": "The capacity owner must review any proposed exception.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "Employee travel policy.",
+              "citations": [
+                "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0"
+              ],
+              "kind": "extractive",
+              "quote": "Employee travel policy.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "Rail fares are reimbursed upon submission of receipts.",
+              "citations": [
+                "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0"
+              ],
+              "kind": "extractive",
+              "quote": "Rail fares are reimbursed upon submission of receipts.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            }
+          ]
+        },
+        "grounding": {
+          "claims": [
+            {
+              "index": 0,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 1,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 2,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 3,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 4,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 5,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 6,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 7,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            }
+          ],
+          "errors": [],
+          "fully_checked": true,
+          "requires_review": false
+        },
+        "sources": [
+          {
+            "id": "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e",
+            "document_id": "b9875d53c91dd0beae0273ecc5f73e1ea7fe97bcbed0a496831564287f02c1b9",
+            "source": "inventory-policy",
+            "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+            "score": 0.03278688524590164,
+            "dense_score": 0.6665072247873852,
+            "lexical_score": 7.38477658140061,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E1"
+          },
+          {
+            "id": "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81",
+            "document_id": "82a3957c169670e8ca3d544e533398adedf6548f4ba927ce774ce1ff3b5f7c65",
+            "source": "capacity-policy",
+            "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+            "score": 0.03225806451612903,
+            "dense_score": 0.5598155920888347,
+            "lexical_score": 5.430343504032496,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E2"
+          },
+          {
+            "id": "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0",
+            "document_id": "5b0d6c3efc2deb01a9cc9bc4dc251c714f60f68d1401da2593f0486fac5ab03c",
+            "source": "travel-policy",
+            "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+            "score": 0.015873015873015872,
+            "dense_score": 0.23496585404290052,
+            "lexical_score": 0,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E3"
+          }
+        ],
+        "tokens": 561,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "PolicyAnalysis",
+            "attempt": 1,
+            "input_tokens": 406,
+            "output_tokens": 155,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 17.00316232099999,
+            "tokens": 561
+          }
+        ],
+        "tools_used": [
+          "document_search"
+        ],
+        "attempts": 1,
+        "seconds": 27.07281313200002
+      }
+    ],
+    "citations": [
+      {
+        "id": "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e",
+        "document_id": "b9875d53c91dd0beae0273ecc5f73e1ea7fe97bcbed0a496831564287f02c1b9",
+        "source": "inventory-policy",
+        "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+        "score": 0.03278688524590164,
+        "dense_score": 0.6665072247873852,
+        "lexical_score": 7.38477658140061,
+        "rerank_score": null,
+        "metadata": {},
+        "reference": "E1"
+      },
+      {
+        "id": "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81",
+        "document_id": "82a3957c169670e8ca3d544e533398adedf6548f4ba927ce774ce1ff3b5f7c65",
+        "source": "capacity-policy",
+        "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+        "score": 0.03225806451612903,
+        "dense_score": 0.5598155920888347,
+        "lexical_score": 5.430343504032496,
+        "rerank_score": null,
+        "metadata": {},
+        "reference": "E2"
+      },
+      {
+        "id": "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0",
+        "document_id": "5b0d6c3efc2deb01a9cc9bc4dc251c714f60f68d1401da2593f0486fac5ab03c",
+        "source": "travel-policy",
+        "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+        "score": 0.015873015873015872,
+        "dense_score": 0.23496585404290052,
+        "lexical_score": 0,
+        "rerank_score": null,
+        "metadata": {},
+        "reference": "E3"
+      }
+    ],
+    "errors": [],
+    "usage": {
+      "tokens": 3584,
+      "calls": 3,
+      "estimated_cost_usd": null
+    },
+    "limitations": [
+      "Model judges can be wrong; document content is untrusted evidence."
+    ]
+  },
+  "results": [
+    {
+      "step": "0",
+      "agent": "research",
+      "ok": true,
+      "finding": {
+        "summary": "The East depot's inventory and capacity policies conflict regarding the reserve stock. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (inventory policy) and may keep at most twelve reserve pallets on site to maintain fire-lane clearance (capacity policy). The policy should be reviewed or escalated to ensure consistency. The conflicting thresholds and the need for approval for reducing reserve stock indicate a lack of clarity in policy implementation.",
+        "citations": [
+          "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e",
+          "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81",
+          "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0"
+        ],
+        "insufficient": false,
+        "contradictions": [
+          "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (inventory policy) and may keep at most twelve reserve pallets on site to maintain fire-lane clearance (capacity policy)."
+        ],
+        "claims": [
+          {
+            "text": "East depot inventory policy.",
+            "citations": [
+              "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e"
+            ],
+            "kind": "extractive",
+            "quote": "East depot inventory policy.",
+            "metric": null,
+            "operation": "total",
+            "value": null,
+            "start": null,
+            "end": null,
+            "basis": "interval",
+            "direction": null,
+            "receipt": null
+          },
+          {
+            "text": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+            "citations": [
+              "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e"
+            ],
+            "kind": "extractive",
+            "quote": "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions.",
+            "metric": null,
+            "operation": "total",
+            "value": null,
+            "start": null,
+            "end": null,
+            "basis": "interval",
+            "direction": null,
+            "receipt": null
+          },
+          {
+            "text": "Reducing reserve stock requires the inventory owner's approval.",
+            "citations": [
+              "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e"
+            ],
+            "kind": "extractive",
+            "quote": "Reducing reserve stock requires the inventory owner's approval.",
+            "metric": null,
+            "operation": "total",
+            "value": null,
+            "start": null,
+            "end": null,
+            "basis": "interval",
+            "direction": null,
+            "receipt": null
+          },
+          {
+            "text": "East depot capacity policy.",
+            "citations": [
+              "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81"
+            ],
+            "kind": "extractive",
+            "quote": "East depot capacity policy.",
+            "metric": null,
+            "operation": "total",
+            "value": null,
+            "start": null,
+            "end": null,
+            "basis": "interval",
+            "direction": null,
+            "receipt": null
+          },
+          {
+            "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+            "citations": [
+              "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81"
+            ],
+            "kind": "extractive",
+            "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+            "metric": null,
+            "operation": "total",
+            "value": null,
+            "start": null,
+            "end": null,
+            "basis": "interval",
+            "direction": null,
+            "receipt": null
+          },
+          {
+            "text": "The capacity owner must review any proposed exception.",
+            "citations": [
+              "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81"
+            ],
+            "kind": "extractive",
+            "quote": "The capacity owner must review any proposed exception.",
+            "metric": null,
+            "operation": "total",
+            "value": null,
+            "start": null,
+            "end": null,
+            "basis": "interval",
+            "direction": null,
+            "receipt": null
+          },
+          {
+            "text": "Employee travel policy.",
+            "citations": [
+              "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0"
+            ],
+            "kind": "extractive",
+            "quote": "Employee travel policy.",
+            "metric": null,
+            "operation": "total",
+            "value": null,
+            "start": null,
+            "end": null,
+            "basis": "interval",
+            "direction": null,
+            "receipt": null
+          },
+          {
+            "text": "Rail fares are reimbursed upon submission of receipts.",
+            "citations": [
+              "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0"
+            ],
+            "kind": "extractive",
+            "quote": "Rail fares are reimbursed upon submission of receipts.",
+            "metric": null,
+            "operation": "total",
+            "value": null,
+            "start": null,
+            "end": null,
+            "basis": "interval",
+            "direction": null,
+            "receipt": null
+          }
+        ]
+      },
+      "grounding": {
+        "claims": [
+          {
+            "index": 0,
+            "status": "supported",
+            "reason": "exact_extractive_support"
+          },
+          {
+            "index": 1,
+            "status": "supported",
+            "reason": "exact_extractive_support"
+          },
+          {
+            "index": 2,
+            "status": "supported",
+            "reason": "exact_extractive_support"
+          },
+          {
+            "index": 3,
+            "status": "supported",
+            "reason": "exact_extractive_support"
+          },
+          {
+            "index": 4,
+            "status": "supported",
+            "reason": "exact_extractive_support"
+          },
+          {
+            "index": 5,
+            "status": "supported",
+            "reason": "exact_extractive_support"
+          },
+          {
+            "index": 6,
+            "status": "supported",
+            "reason": "exact_extractive_support"
+          },
+          {
+            "index": 7,
+            "status": "supported",
+            "reason": "exact_extractive_support"
+          }
+        ],
+        "errors": [],
+        "fully_checked": true,
+        "requires_review": false
+      },
+      "sources": [
+        {
+          "id": "e2f524e5953c2c72da9d9b025c6e964a2c91187850991a18a06129fa4a80d78e",
+          "document_id": "b9875d53c91dd0beae0273ecc5f73e1ea7fe97bcbed0a496831564287f02c1b9",
+          "source": "inventory-policy",
+          "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+          "score": 0.03278688524590164,
+          "dense_score": 0.6665072247873852,
+          "lexical_score": 7.38477658140061,
+          "rerank_score": null,
+          "metadata": {},
+          "reference": "E1"
+        },
+        {
+          "id": "54fb48f3eb83d370cd24f2db1b99fab3603aec785ee0743a8d167bb485e1ee81",
+          "document_id": "82a3957c169670e8ca3d544e533398adedf6548f4ba927ce774ce1ff3b5f7c65",
+          "source": "capacity-policy",
+          "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+          "score": 0.03225806451612903,
+          "dense_score": 0.5598155920888347,
+          "lexical_score": 5.430343504032496,
+          "rerank_score": null,
+          "metadata": {},
+          "reference": "E2"
+        },
+        {
+          "id": "d9668a215c13e77a89c1fd82ec097f779832e1a00bdf7e387edf37bdcd307fd0",
+          "document_id": "5b0d6c3efc2deb01a9cc9bc4dc251c714f60f68d1401da2593f0486fac5ab03c",
+          "source": "travel-policy",
+          "text": "Employee travel policy. Rail fares are reimbursed upon submission of receipts.",
+          "score": 0.015873015873015872,
+          "dense_score": 0.23496585404290052,
+          "lexical_score": 0,
+          "rerank_score": null,
+          "metadata": {},
+          "reference": "E3"
+        }
+      ],
+      "tokens": 561,
+      "model_records": [
+        {
+          "provider": "openai",
+          "model": "qwen15-local",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "PolicyAnalysis",
+          "attempt": 1,
+          "input_tokens": 406,
+          "output_tokens": 155,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 17.00316232099999,
+          "tokens": 561
+        }
+      ],
+      "tools_used": [
+        "document_search"
+      ],
+      "attempts": 1,
+      "seconds": 27.07281313200002
+    }
+  ],
+  "plan": [
+    {
+      "id": "0",
+      "agent": "research",
+      "instruction": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+      "dependencies": [],
+      "tool": "document_search",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    }
+  ],
+  "events": [
+    {
+      "id": "planner:0",
+      "agent": "planner",
+      "summary": "Model: scheduled 1 steps",
+      "at": 1795197349.7496786
+    },
+    {
+      "id": "0",
+      "agent": "research",
+      "summary": "Validated approved tool results",
+      "at": 1795197376.82702,
+      "step": "0",
+      "attempts": 1,
+      "seconds": 27.07281313200002
+    },
+    {
+      "id": "verification:final",
+      "agent": "verification",
+      "summary": "Checked completion, citations, calculations and committed effects",
+      "at": 1795197425.406483
+    }
+  ],
+  "usage": {
+    "tokens": 3584,
+    "calls": 3,
+    "estimated_cost_usd": null
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadSelection",
+      "attempt": 1,
+      "input_tokens": 247,
+      "output_tokens": 52,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 8.005322213999989,
+      "tokens": 299,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 10.059325977000015,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "PolicyAnalysis",
+      "attempt": 1,
+      "input_tokens": 406,
+      "output_tokens": 155,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 17.00316232099999,
+      "tokens": 561,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "Review",
+      "attempt": 1,
+      "input_tokens": 2632,
+      "output_tokens": 92,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 48.564432906000036,
+      "tokens": 2724,
+      "step": "verification"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 95.22144945600002
+}

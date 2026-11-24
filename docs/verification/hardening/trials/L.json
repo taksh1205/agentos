@@ -1,0 +1,833 @@
+{
+  "goal": "Compare July and August 2026 operating costs and profit month over month. Which went up or down, and by how much?",
+  "model": "qwen15-local",
+  "workspace": "release-a56a1ca5-73a5-4a41-a61d-9ee0289ed405",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0",
+        "agent": "data",
+        "instruction": "Compare July and August 2026 operating costs and profit month over month. Which went up or down, and by how much?",
+        "dependencies": [],
+        "tool": "business_metrics",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": true,
+        "analytics": {
+          "metrics": [
+            {
+              "metric": "costs",
+              "rows": [
+                {
+                  "month": "2026-07",
+                  "value": 60000.0
+                },
+                {
+                  "month": "2026-08",
+                  "value": 64500.0
+                }
+              ],
+              "total": 124500.0,
+              "absolute_change": 4500.0,
+              "growth": 0.075,
+              "biggest_change": {
+                "from_period": "2026-07",
+                "to_period": "2026-08",
+                "change": 4500.0
+              }
+            },
+            {
+              "metric": "profit",
+              "rows": [
+                {
+                  "month": "2026-07",
+                  "value": 36000.0
+                },
+                {
+                  "month": "2026-08",
+                  "value": 33000.0
+                }
+              ],
+              "total": 69000.0,
+              "absolute_change": -3000.0,
+              "growth": -0.08333333333333333,
+              "biggest_change": {
+                "from_period": "2026-07",
+                "to_period": "2026-08",
+                "change": -3000.0
+              }
+            }
+          ]
+        },
+        "intent": {
+          "as_of": "2026-07-01",
+          "dataset": "sales",
+          "metrics": [
+            "costs",
+            "profit"
+          ],
+          "start": "2026-07",
+          "end": "2026-08",
+          "compare_previous": false
+        },
+        "computed": {
+          "dataset": "sales",
+          "period": {
+            "start": "2026-07",
+            "end": "2026-08"
+          },
+          "metrics": [
+            {
+              "metric": "costs",
+              "rows": [
+                {
+                  "month": "2026-07",
+                  "value": 60000.0
+                },
+                {
+                  "month": "2026-08",
+                  "value": 64500.0
+                }
+              ],
+              "total": 124500.0,
+              "absolute_change": 4500.0,
+              "growth": 0.075,
+              "biggest_change": {
+                "from_period": "2026-07",
+                "to_period": "2026-08",
+                "change": 4500.0
+              }
+            },
+            {
+              "metric": "profit",
+              "rows": [
+                {
+                  "month": "2026-07",
+                  "value": 36000.0
+                },
+                {
+                  "month": "2026-08",
+                  "value": 33000.0
+                }
+              ],
+              "total": 69000.0,
+              "absolute_change": -3000.0,
+              "growth": -0.08333333333333333,
+              "biggest_change": {
+                "from_period": "2026-07",
+                "to_period": "2026-08",
+                "change": -3000.0
+              }
+            }
+          ],
+          "raw_rows": [
+            {
+              "month": "2026-07",
+              "revenue": 96000.0,
+              "costs": 60000.0
+            },
+            {
+              "month": "2026-08",
+              "revenue": 97500.0,
+              "costs": 64500.0
+            }
+          ],
+          "comparison": null
+        },
+        "interpretation": {
+          "summary": "Costs from 2026-07 to 2026-08: 60,000.00 to 64,500.00 (+4,500.00, +7.50%). Profit from 2026-07 to 2026-08: 36,000.00 to 33,000.00 (-3,000.00, -8.33%). The selected trend is the increase in costs. The records do not establish a cause.",
+          "citations": [],
+          "insufficient": false,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "tokens": 1032,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "AnalyticsIntent",
+            "attempt": 1,
+            "input_tokens": 515,
+            "output_tokens": 68,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 12.122741688999668,
+            "tokens": 583
+          },
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "LedgerReading",
+            "attempt": 1,
+            "input_tokens": 431,
+            "output_tokens": 18,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 7.310730697000054,
+            "tokens": 449
+          }
+        ],
+        "tools_used": [
+          "dataset_schema",
+          "business_metrics",
+          "business_metrics"
+        ],
+        "attempts": 1,
+        "seconds": 25.673163535000185
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 1 steps",
+        "at": 1795315939.7512941
+      },
+      {
+        "id": "0",
+        "agent": "data",
+        "summary": "Validated approved tool results",
+        "at": 1795315965.4334328,
+        "step": "0",
+        "attempts": 1,
+        "seconds": 25.673163535000185
+      },
+      {
+        "id": "verification:final",
+        "agent": "verification",
+        "summary": "Checked completion, citations, calculations and committed effects",
+        "at": 1795315981.4632123
+      }
+    ]
+  },
+  "report": {
+    "status": "completed",
+    "goal": "Compare July and August 2026 operating costs and profit month over month. Which went up or down, and by how much?",
+    "mode": "openai",
+    "refusal": null,
+    "clarification": null,
+    "grounding": {
+      "fully_checked": false,
+      "requires_review": true
+    },
+    "review": {
+      "supported": true,
+      "issues": []
+    },
+    "findings": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": true,
+        "analytics": {
+          "metrics": [
+            {
+              "metric": "costs",
+              "rows": [
+                {
+                  "month": "2026-07",
+                  "value": 60000.0
+                },
+                {
+                  "month": "2026-08",
+                  "value": 64500.0
+                }
+              ],
+              "total": 124500.0,
+              "absolute_change": 4500.0,
+              "growth": 0.075,
+              "biggest_change": {
+                "from_period": "2026-07",
+                "to_period": "2026-08",
+                "change": 4500.0
+              }
+            },
+            {
+              "metric": "profit",
+              "rows": [
+                {
+                  "month": "2026-07",
+                  "value": 36000.0
+                },
+                {
+                  "month": "2026-08",
+                  "value": 33000.0
+                }
+              ],
+              "total": 69000.0,
+              "absolute_change": -3000.0,
+              "growth": -0.08333333333333333,
+              "biggest_change": {
+                "from_period": "2026-07",
+                "to_period": "2026-08",
+                "change": -3000.0
+              }
+            }
+          ]
+        },
+        "intent": {
+          "as_of": "2026-07-01",
+          "dataset": "sales",
+          "metrics": [
+            "costs",
+            "profit"
+          ],
+          "start": "2026-07",
+          "end": "2026-08",
+          "compare_previous": false
+        },
+        "computed": {
+          "dataset": "sales",
+          "period": {
+            "start": "2026-07",
+            "end": "2026-08"
+          },
+          "metrics": [
+            {
+              "metric": "costs",
+              "rows": [
+                {
+                  "month": "2026-07",
+                  "value": 60000.0
+                },
+                {
+                  "month": "2026-08",
+                  "value": 64500.0
+                }
+              ],
+              "total": 124500.0,
+              "absolute_change": 4500.0,
+              "growth": 0.075,
+              "biggest_change": {
+                "from_period": "2026-07",
+                "to_period": "2026-08",
+                "change": 4500.0
+              }
+            },
+            {
+              "metric": "profit",
+              "rows": [
+                {
+                  "month": "2026-07",
+                  "value": 36000.0
+                },
+                {
+                  "month": "2026-08",
+                  "value": 33000.0
+                }
+              ],
+              "total": 69000.0,
+              "absolute_change": -3000.0,
+              "growth": -0.08333333333333333,
+              "biggest_change": {
+                "from_period": "2026-07",
+                "to_period": "2026-08",
+                "change": -3000.0
+              }
+            }
+          ],
+          "raw_rows": [
+            {
+              "month": "2026-07",
+              "revenue": 96000.0,
+              "costs": 60000.0
+            },
+            {
+              "month": "2026-08",
+              "revenue": 97500.0,
+              "costs": 64500.0
+            }
+          ],
+          "comparison": null
+        },
+        "interpretation": {
+          "summary": "Costs from 2026-07 to 2026-08: 60,000.00 to 64,500.00 (+4,500.00, +7.50%). Profit from 2026-07 to 2026-08: 36,000.00 to 33,000.00 (-3,000.00, -8.33%). The selected trend is the increase in costs. The records do not establish a cause.",
+          "citations": [],
+          "insufficient": false,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "tokens": 1032,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "AnalyticsIntent",
+            "attempt": 1,
+            "input_tokens": 515,
+            "output_tokens": 68,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 12.122741688999668,
+            "tokens": 583
+          },
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "LedgerReading",
+            "attempt": 1,
+            "input_tokens": 431,
+            "output_tokens": 18,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 7.310730697000054,
+            "tokens": 449
+          }
+        ],
+        "tools_used": [
+          "dataset_schema",
+          "business_metrics",
+          "business_metrics"
+        ],
+        "attempts": 1,
+        "seconds": 25.673163535000185
+      }
+    ],
+    "citations": [],
+    "errors": [],
+    "usage": {
+      "tokens": 2222,
+      "calls": 4,
+      "estimated_cost_usd": null
+    },
+    "limitations": [
+      "Model judges can be wrong; document content is untrusted evidence."
+    ]
+  },
+  "results": [
+    {
+      "step": "0",
+      "agent": "data",
+      "ok": true,
+      "analytics": {
+        "metrics": [
+          {
+            "metric": "costs",
+            "rows": [
+              {
+                "month": "2026-07",
+                "value": 60000.0
+              },
+              {
+                "month": "2026-08",
+                "value": 64500.0
+              }
+            ],
+            "total": 124500.0,
+            "absolute_change": 4500.0,
+            "growth": 0.075,
+            "biggest_change": {
+              "from_period": "2026-07",
+              "to_period": "2026-08",
+              "change": 4500.0
+            }
+          },
+          {
+            "metric": "profit",
+            "rows": [
+              {
+                "month": "2026-07",
+                "value": 36000.0
+              },
+              {
+                "month": "2026-08",
+                "value": 33000.0
+              }
+            ],
+            "total": 69000.0,
+            "absolute_change": -3000.0,
+            "growth": -0.08333333333333333,
+            "biggest_change": {
+              "from_period": "2026-07",
+              "to_period": "2026-08",
+              "change": -3000.0
+            }
+          }
+        ]
+      },
+      "intent": {
+        "as_of": "2026-07-01",
+        "dataset": "sales",
+        "metrics": [
+          "costs",
+          "profit"
+        ],
+        "start": "2026-07",
+        "end": "2026-08",
+        "compare_previous": false
+      },
+      "computed": {
+        "dataset": "sales",
+        "period": {
+          "start": "2026-07",
+          "end": "2026-08"
+        },
+        "metrics": [
+          {
+            "metric": "costs",
+            "rows": [
+              {
+                "month": "2026-07",
+                "value": 60000.0
+              },
+              {
+                "month": "2026-08",
+                "value": 64500.0
+              }
+            ],
+            "total": 124500.0,
+            "absolute_change": 4500.0,
+            "growth": 0.075,
+            "biggest_change": {
+              "from_period": "2026-07",
+              "to_period": "2026-08",
+              "change": 4500.0
+            }
+          },
+          {
+            "metric": "profit",
+            "rows": [
+              {
+                "month": "2026-07",
+                "value": 36000.0
+              },
+              {
+                "month": "2026-08",
+                "value": 33000.0
+              }
+            ],
+            "total": 69000.0,
+            "absolute_change": -3000.0,
+            "growth": -0.08333333333333333,
+            "biggest_change": {
+              "from_period": "2026-07",
+              "to_period": "2026-08",
+              "change": -3000.0
+            }
+          }
+        ],
+        "raw_rows": [
+          {
+            "month": "2026-07",
+            "revenue": 96000.0,
+            "costs": 60000.0
+          },
+          {
+            "month": "2026-08",
+            "revenue": 97500.0,
+            "costs": 64500.0
+          }
+        ],
+        "comparison": null
+      },
+      "interpretation": {
+        "summary": "Costs from 2026-07 to 2026-08: 60,000.00 to 64,500.00 (+4,500.00, +7.50%). Profit from 2026-07 to 2026-08: 36,000.00 to 33,000.00 (-3,000.00, -8.33%). The selected trend is the increase in costs. The records do not establish a cause.",
+        "citations": [],
+        "insufficient": false,
+        "contradictions": [],
+        "claims": []
+      },
+      "grounding": {
+        "claims": [],
+        "errors": [],
+        "fully_checked": false,
+        "requires_review": true
+      },
+      "tokens": 1032,
+      "model_records": [
+        {
+          "provider": "openai",
+          "model": "qwen15-local",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 515,
+          "output_tokens": 68,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 12.122741688999668,
+          "tokens": 583
+        },
+        {
+          "provider": "openai",
+          "model": "qwen15-local",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "LedgerReading",
+          "attempt": 1,
+          "input_tokens": 431,
+          "output_tokens": 18,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 7.310730697000054,
+          "tokens": 449
+        }
+      ],
+      "tools_used": [
+        "dataset_schema",
+        "business_metrics",
+        "business_metrics"
+      ],
+      "attempts": 1,
+      "seconds": 25.673163535000185
+    }
+  ],
+  "plan": [
+    {
+      "id": "0",
+      "agent": "data",
+      "instruction": "Compare July and August 2026 operating costs and profit month over month. Which went up or down, and by how much?",
+      "dependencies": [],
+      "tool": "business_metrics",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    }
+  ],
+  "events": [
+    {
+      "id": "planner:0",
+      "agent": "planner",
+      "summary": "Model: scheduled 1 steps",
+      "at": 1795315939.7512941
+    },
+    {
+      "id": "0",
+      "agent": "data",
+      "summary": "Validated approved tool results",
+      "at": 1795315965.4334328,
+      "step": "0",
+      "attempts": 1,
+      "seconds": 25.673163535000185
+    },
+    {
+      "id": "verification:final",
+      "agent": "verification",
+      "summary": "Checked completion, citations, calculations and committed effects",
+      "at": 1795315981.4632123
+    }
+  ],
+  "usage": {
+    "tokens": 2222,
+    "calls": 4,
+    "estimated_cost_usd": null
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadSelection",
+      "attempt": 1,
+      "input_tokens": 243,
+      "output_tokens": 34,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 4.308011658999931,
+      "tokens": 277,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 1.8190928010003518,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 515,
+      "output_tokens": 68,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 12.122741688999668,
+      "tokens": 583,
+      "step": "0"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "costs",
+        "start": "2026-07",
+        "end": "2026-08"
+      },
+      "step": "0",
+      "approval_id": null,
+      "seconds": 2.1846409679997123,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "profit",
+        "start": "2026-07",
+        "end": "2026-08"
+      },
+      "step": "0",
+      "approval_id": null,
+      "seconds": 2.2109424850000323,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "LedgerReading",
+      "attempt": 1,
+      "input_tokens": 431,
+      "output_tokens": 18,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 7.310730697000054,
+      "tokens": 449,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "Review",
+      "attempt": 1,
+      "input_tokens": 899,
+      "output_tokens": 14,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 16.008168308000222,
+      "tokens": 913,
+      "step": "verification"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    },
+    {
+      "month": "2026-07",
+      "revenue": 96000.0,
+      "costs": 60000.0
+    },
+    {
+      "month": "2026-08",
+      "revenue": 97500.0,
+      "costs": 64500.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 46.074431687000015
+}

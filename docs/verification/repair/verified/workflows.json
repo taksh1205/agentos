@@ -1,0 +1,1275 @@
+{
+  "configuration": {
+    "workspace": "demo",
+    "role": "admin",
+    "providers": [
+      "demo"
+    ],
+    "embedding": "hashing:feature-hash::384:l2:v2",
+    "auth_mode": "demo",
+    "capabilities": [
+      "document_search",
+      "business_metrics",
+      "dataset_schema",
+      "inventory_retrieval",
+      "invoice_analysis",
+      "create_report",
+      "export_csv",
+      "create_followup",
+      "draft_email",
+      "update_inventory",
+      "create_notification"
+    ]
+  },
+  "model": null,
+  "mode": "demo",
+  "runs": [
+    {
+      "kind": "research",
+      "goal": "Research both the settlement policy and distribution policy. Which requirements apply to a management report?",
+      "id": "f2cf7cd6-7a03-41b3-9f10-1e63db8c281b",
+      "mode": "demo",
+      "seconds": 4.091527301000042,
+      "checks": {
+        "completed": true,
+        "retrieved_both_policies": true
+      },
+      "approval": null,
+      "report": {
+        "status": "completed",
+        "goal": "Research both the settlement policy and distribution policy. Which requirements apply to a management report?",
+        "mode": "demo",
+        "refusal": null,
+        "clarification": null,
+        "grounding": {
+          "fully_checked": true,
+          "requires_review": false
+        },
+        "review": {
+          "supported": null,
+          "issues": [
+            "Deterministic checks; no semantic model judgment"
+          ]
+        },
+        "findings": [
+          {
+            "step": "0",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "A management report must name its reporting period and the reporting currency.\nManagement reports require an internal manager approval before storage. Customer distribution is outside scope.\nRevenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.",
+              "citations": [
+                "6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c",
+                "97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038",
+                "0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f"
+              ],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": [
+                {
+                  "text": "A management report must name its reporting period and the reporting currency.",
+                  "citations": [
+                    "6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c"
+                  ],
+                  "kind": "extractive",
+                  "quote": "A management report must name its reporting period and the reporting currency.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Management reports require an internal manager approval before storage. Customer distribution is outside scope.",
+                  "citations": [
+                    "97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Management reports require an internal manager approval before storage. Customer distribution is outside scope.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.",
+                  "citations": [
+                    "0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                }
+              ]
+            },
+            "grounding": {
+              "claims": [
+                {
+                  "index": 0,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 1,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 2,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                }
+              ],
+              "errors": [],
+              "fully_checked": true,
+              "requires_review": false
+            },
+            "sources": [
+              {
+                "id": "6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c",
+                "document_id": "95a79794f20d01e57d738c15e0e8695284d39f634b6336d3be727ff2489b0381",
+                "source": "Settlement policy",
+                "text": "A management report must name its reporting period and the reporting currency.",
+                "score": 0.01639344262295082,
+                "dense_score": 0.2773500981126146,
+                "lexical_score": 4.4747400202002074,
+                "rerank_score": null,
+                "metadata": {}
+              },
+              {
+                "id": "97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038",
+                "document_id": "f19091abe435b3b6ad1d9afbf090dfcfd9889485586a877c5555b24b7a39ff83",
+                "source": "Distribution policy",
+                "text": "Management reports require an internal manager approval before storage. Customer distribution is outside scope.",
+                "score": 0.016129032258064516,
+                "dense_score": 0.11785113019775793,
+                "lexical_score": 1.575984600535262,
+                "rerank_score": null,
+                "metadata": {}
+              },
+              {
+                "id": "0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f",
+                "document_id": "b3172e4fc04c450d44a65f3ea2b4182eb265c2cb3e9265162b5f07b9029b421a",
+                "source": "Demo operating policy",
+                "text": "Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.",
+                "score": 0.015873015873015872,
+                "dense_score": 0.09622504486493763,
+                "lexical_score": 0.5832161822757304,
+                "rerank_score": null,
+                "metadata": {}
+              }
+            ],
+            "tokens": 0,
+            "model_records": [],
+            "tools_used": [
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 3.059639618999995
+          }
+        ],
+        "citations": [
+          {
+            "id": "6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c",
+            "document_id": "95a79794f20d01e57d738c15e0e8695284d39f634b6336d3be727ff2489b0381",
+            "source": "Settlement policy",
+            "text": "A management report must name its reporting period and the reporting currency.",
+            "score": 0.01639344262295082,
+            "dense_score": 0.2773500981126146,
+            "lexical_score": 4.4747400202002074,
+            "rerank_score": null,
+            "metadata": {}
+          },
+          {
+            "id": "97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038",
+            "document_id": "f19091abe435b3b6ad1d9afbf090dfcfd9889485586a877c5555b24b7a39ff83",
+            "source": "Distribution policy",
+            "text": "Management reports require an internal manager approval before storage. Customer distribution is outside scope.",
+            "score": 0.016129032258064516,
+            "dense_score": 0.11785113019775793,
+            "lexical_score": 1.575984600535262,
+            "rerank_score": null,
+            "metadata": {}
+          },
+          {
+            "id": "0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f",
+            "document_id": "b3172e4fc04c450d44a65f3ea2b4182eb265c2cb3e9265162b5f07b9029b421a",
+            "source": "Demo operating policy",
+            "text": "Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.",
+            "score": 0.015873015873015872,
+            "dense_score": 0.09622504486493763,
+            "lexical_score": 0.5832161822757304,
+            "rerank_score": null,
+            "metadata": {}
+          }
+        ],
+        "errors": [],
+        "usage": {
+          "tokens": 0,
+          "calls": 0,
+          "estimated_cost_usd": 0
+        },
+        "limitations": [
+          "Model judges can be wrong; document content is untrusted evidence."
+        ]
+      },
+      "plan": [
+        {
+          "id": "0",
+          "agent": "research",
+          "instruction": "Research both the settlement policy and distribution policy. Which requirements apply to a management report?",
+          "dependencies": [],
+          "tool": null,
+          "arguments": {},
+          "completion_criteria": [
+            "Return evidence or an explicit insufficiency status"
+          ],
+          "requires_approval": false,
+          "checks": []
+        }
+      ],
+      "traces": [
+        {
+          "kind": "plan",
+          "payload": {
+            "plan": {
+              "steps": [
+                {
+                  "id": "0",
+                  "agent": "research",
+                  "instruction": "Research both the settlement policy and distribution policy. Which requirements apply to a management report?",
+                  "dependencies": [],
+                  "tool": null,
+                  "arguments": {},
+                  "completion_criteria": [
+                    "Return evidence or an explicit insufficiency status"
+                  ],
+                  "requires_approval": false,
+                  "checks": []
+                }
+              ],
+              "refusal": null,
+              "clarification": null
+            },
+            "mode": "demo"
+          },
+          "created": 1795197537.0905192
+        },
+        {
+          "kind": "tool_call",
+          "payload": {
+            "tool": "document_search",
+            "argument_keys": [
+              "k",
+              "query"
+            ],
+            "arguments": {},
+            "step": "0",
+            "approval_id": null,
+            "seconds": 3.0530171220000284,
+            "output_fields": [
+              "sources"
+            ]
+          },
+          "created": 1795197540.147209
+        },
+        {
+          "kind": "verification",
+          "payload": {
+            "status": "completed",
+            "errors": [],
+            "usage": {
+              "tokens": 0,
+              "calls": 0,
+              "estimated_cost_usd": 0
+            }
+          },
+          "created": 1795197540.1688714
+        }
+      ]
+    },
+    {
+      "kind": "business",
+      "goal": "Analyze revenue and operating costs for the full period and report the computed totals.",
+      "id": "29b888c0-007b-4da4-937a-02d3378d65fd",
+      "mode": "demo",
+      "seconds": 8.14623863099996,
+      "checks": {
+        "completed": true,
+        "verified_totals": true
+      },
+      "approval": null,
+      "report": {
+        "status": "completed",
+        "goal": "Analyze revenue and operating costs for the full period and report the computed totals.",
+        "mode": "demo",
+        "refusal": null,
+        "clarification": null,
+        "grounding": {
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "review": {
+          "supported": null,
+          "issues": [
+            "Deterministic checks; no semantic model judgment"
+          ]
+        },
+        "findings": [
+          {
+            "step": "0",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "metrics": [
+                {
+                  "metric": "revenue",
+                  "rows": [
+                    {
+                      "month": "2026-01",
+                      "value": 100000.0
+                    },
+                    {
+                      "month": "2026-02",
+                      "value": 120000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 150000.0
+                    }
+                  ],
+                  "total": 370000.0,
+                  "absolute_change": 50000.0,
+                  "growth": 0.5,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 30000.0
+                  }
+                },
+                {
+                  "metric": "costs",
+                  "rows": [
+                    {
+                      "month": "2026-01",
+                      "value": 70000.0
+                    },
+                    {
+                      "month": "2026-02",
+                      "value": 78000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 90000.0
+                    }
+                  ],
+                  "total": 238000.0,
+                  "absolute_change": 20000.0,
+                  "growth": 0.2857142857142857,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 12000.0
+                  }
+                }
+              ]
+            },
+            "intent": {
+              "as_of": null,
+              "dataset": "sales",
+              "metrics": [
+                "revenue",
+                "costs"
+              ],
+              "start": null,
+              "end": null,
+              "compare_previous": false
+            },
+            "computed": {
+              "dataset": "sales",
+              "period": {
+                "start": null,
+                "end": null
+              },
+              "metrics": [
+                {
+                  "metric": "revenue",
+                  "rows": [
+                    {
+                      "month": "2026-01",
+                      "value": 100000.0
+                    },
+                    {
+                      "month": "2026-02",
+                      "value": 120000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 150000.0
+                    }
+                  ],
+                  "total": 370000.0,
+                  "absolute_change": 50000.0,
+                  "growth": 0.5,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 30000.0
+                  }
+                },
+                {
+                  "metric": "costs",
+                  "rows": [
+                    {
+                      "month": "2026-01",
+                      "value": 70000.0
+                    },
+                    {
+                      "month": "2026-02",
+                      "value": 78000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 90000.0
+                    }
+                  ],
+                  "total": 238000.0,
+                  "absolute_change": 20000.0,
+                  "growth": 0.2857142857142857,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 12000.0
+                  }
+                }
+              ],
+              "raw_rows": [
+                {
+                  "month": "2026-01",
+                  "revenue": 100000.0,
+                  "costs": 70000.0
+                },
+                {
+                  "month": "2026-02",
+                  "revenue": 120000.0,
+                  "costs": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "revenue": 150000.0,
+                  "costs": 90000.0
+                }
+              ],
+              "comparison": null
+            },
+            "interpretation": {
+              "summary": "Computed approved dataset results; offline mode does not infer causal explanations.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 0,
+            "model_records": [],
+            "tools_used": [
+              "dataset_schema",
+              "business_metrics",
+              "business_metrics"
+            ],
+            "attempts": 1,
+            "seconds": 7.791512393999938
+          }
+        ],
+        "citations": [],
+        "errors": [],
+        "usage": {
+          "tokens": 0,
+          "calls": 0,
+          "estimated_cost_usd": 0
+        },
+        "limitations": [
+          "Model judges can be wrong; document content is untrusted evidence."
+        ]
+      },
+      "plan": [
+        {
+          "id": "0",
+          "agent": "data",
+          "instruction": "Analyze revenue and operating costs for the full period and report the computed totals.",
+          "dependencies": [],
+          "tool": null,
+          "arguments": {},
+          "completion_criteria": [
+            "Return evidence or an explicit insufficiency status"
+          ],
+          "requires_approval": false,
+          "checks": []
+        }
+      ],
+      "traces": [
+        {
+          "kind": "plan",
+          "payload": {
+            "plan": {
+              "steps": [
+                {
+                  "id": "0",
+                  "agent": "data",
+                  "instruction": "Analyze revenue and operating costs for the full period and report the computed totals.",
+                  "dependencies": [],
+                  "tool": null,
+                  "arguments": {},
+                  "completion_criteria": [
+                    "Return evidence or an explicit insufficiency status"
+                  ],
+                  "requires_approval": false,
+                  "checks": []
+                }
+              ],
+              "refusal": null,
+              "clarification": null
+            },
+            "mode": "demo"
+          },
+          "created": 1795197541.1981225
+        },
+        {
+          "kind": "tool_call",
+          "payload": {
+            "tool": "dataset_schema",
+            "argument_keys": [],
+            "arguments": {},
+            "step": "0",
+            "approval_id": null,
+            "seconds": 2.6225612270000056,
+            "output_fields": [
+              "datasets"
+            ]
+          },
+          "created": 1795197543.8257332
+        },
+        {
+          "kind": "tool_call",
+          "payload": {
+            "tool": "business_metrics",
+            "argument_keys": [
+              "metric",
+              "start",
+              "end"
+            ],
+            "arguments": {
+              "metric": "revenue",
+              "start": null,
+              "end": null
+            },
+            "step": "0",
+            "approval_id": null,
+            "seconds": 2.6009759260000465,
+            "output_fields": [
+              "metric",
+              "rows",
+              "total",
+              "absolute_change",
+              "growth",
+              "biggest_change"
+            ]
+          },
+          "created": 1795197546.4274952
+        },
+        {
+          "kind": "tool_call",
+          "payload": {
+            "tool": "business_metrics",
+            "argument_keys": [
+              "metric",
+              "start",
+              "end"
+            ],
+            "arguments": {
+              "metric": "costs",
+              "start": null,
+              "end": null
+            },
+            "step": "0",
+            "approval_id": null,
+            "seconds": 2.5603251,
+            "output_fields": [
+              "metric",
+              "rows",
+              "total",
+              "absolute_change",
+              "growth",
+              "biggest_change"
+            ]
+          },
+          "created": 1795197548.9887671
+        },
+        {
+          "kind": "verification",
+          "payload": {
+            "status": "completed",
+            "errors": [],
+            "usage": {
+              "tokens": 0,
+              "calls": 0,
+              "estimated_cost_usd": 0
+            }
+          },
+          "created": 1795197549.005927
+        }
+      ]
+    },
+    {
+      "kind": "operation",
+      "goal": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
+      "id": "4e07e191-4bba-4f54-a94f-b95f70391431",
+      "mode": "demo",
+      "seconds": 11.24037703600004,
+      "checks": {
+        "completed": true,
+        "retrieved_both_policies": true,
+        "verified_totals": true,
+        "single_committed_report": true
+      },
+      "approval": {
+        "id": "f60ecee2a786f828fe5348cb6f06f8c858865ee39e065f2420c2fe0d202fc537",
+        "tool": "create_report",
+        "arguments": {
+          "title": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
+          "body": "{\n  \"mode\": \"deterministic evidence report\",\n  \"goal\": \"Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.\",\n  \"evidence\": [\n    {\n      \"step\": \"0\",\n      \"agent\": \"data\",\n      \"interpretation\": {\n        \"summary\": \"Computed approved dataset results; offline mode does not infer causal explanations.\",\n        \"citations\": [],\n        \"insufficient\": false,\n        \"contradictions\": [],\n        \"claims\": []\n      },\n      \"computed\": {\n        \"dataset\": \"sales\",\n        \"period\": {\n          \"start\": null,\n          \"end\": null\n        },\n        \"metrics\": [\n          {\n            \"metric\": \"revenue\",\n            \"rows\": [\n              {\n                \"month\": \"2026-01\",\n                \"value\": 100000.0\n              },\n              {\n                \"month\": \"2026-02\",\n                \"value\": 120000.0\n              },\n              {\n                \"month\": \"2026-03\",\n                \"value\": 150000.0\n              }\n            ],\n            \"total\": 370000.0,\n            \"absolute_change\": 50000.0,\n            \"growth\": 0.5,\n            \"biggest_change\": {\n              \"from_period\": \"2026-02\",\n              \"to_period\": \"2026-03\",\n              \"change\": 30000.0\n            }\n          },\n          {\n            \"metric\": \"costs\",\n            \"rows\": [\n              {\n                \"month\": \"2026-01\",\n                \"value\": 70000.0\n              },\n              {\n                \"month\": \"2026-02\",\n                \"value\": 78000.0\n              },\n              {\n                \"month\": \"2026-03\",\n                \"value\": 90000.0\n              }\n            ],\n            \"total\": 238000.0,\n            \"absolute_change\": 20000.0,\n            \"growth\": 0.2857142857142857,\n            \"biggest_change\": {\n              \"from_period\": \"2026-02\",\n              \"to_period\": \"2026-03\",\n              \"change\": 12000.0\n            }\n          }\n        ],\n        \"raw_rows\": [\n          {\n            \"month\": \"2026-01\",\n            \"revenue\": 100000.0,\n            \"costs\": 70000.0\n          },\n          {\n            \"month\": \"2026-02\",\n            \"revenue\": 120000.0,\n            \"costs\": 78000.0\n          },\n          {\n            \"month\": \"2026-03\",\n            \"revenue\": 150000.0,\n            \"costs\": 90000.0\n          }\n        ],\n        \"comparison\": null\n      },\n      \"analytics\": {\n        \"metrics\": [\n          {\n            \"metric\": \"revenue\",\n            \"rows\": [\n              {\n                \"month\": \"2026-01\",\n                \"value\": 100000.0\n              },\n              {\n                \"month\": \"2026-02\",\n                \"value\": 120000.0\n              },\n              {\n                \"month\": \"2026-03\",\n                \"value\": 150000.0\n              }\n            ],\n            \"total\": 370000.0,\n            \"absolute_change\": 50000.0,\n            \"growth\": 0.5,\n            \"biggest_change\": {\n              \"from_period\": \"2026-02\",\n              \"to_period\": \"2026-03\",\n              \"change\": 30000.0\n            }\n          },\n          {\n            \"metric\": \"costs\",\n            \"rows\": [\n              {\n                \"month\": \"2026-01\",\n                \"value\": 70000.0\n              },\n              {\n                \"month\": \"2026-02\",\n                \"value\": 78000.0\n              },\n              {\n                \"month\": \"2026-03\",\n                \"value\": 90000.0\n              }\n            ],\n            \"total\": 238000.0,\n            \"absolute_change\": 20000.0,\n            \"growth\": 0.2857142857142857,\n            \"biggest_change\": {\n              \"from_period\": \"2026-02\",\n              \"to_period\": \"2026-03\",\n              \"change\": 12000.0\n            }\n          }\n        ]\n      },\n      \"sources\": []\n    },\n    {\n      \"step\": \"1\",\n      \"agent\": \"research\",\n      \"finding\": {\n        \"summary\": \"A management report must name its reporting period and the reporting currency.\\nManagement reports require an internal manager approval before storage. Customer distribution is outside scope.\\nRevenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.\",\n        \"citations\": [\n          \"6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c\",\n          \"97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038\",\n          \"0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f\"\n        ],\n        \"insufficient\": false,\n        \"contradictions\": [],\n        \"claims\": [\n          {\n            \"text\": \"A management report must name its reporting period and the reporting currency.\",\n            \"citations\": [\n              \"6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c\"\n            ],\n            \"kind\": \"extractive\",\n            \"quote\": \"A management report must name its reporting period and the reporting currency.\",\n            \"metric\": null,\n            \"operation\": \"total\",\n            \"value\": null,\n            \"start\": null,\n            \"end\": null,\n            \"basis\": \"interval\",\n            \"direction\": null,\n            \"receipt\": null\n          },\n          {\n            \"text\": \"Management reports require an internal manager approval before storage. Customer distribution is outside scope.\",\n            \"citations\": [\n              \"97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038\"\n            ],\n            \"kind\": \"extractive\",\n            \"quote\": \"Management reports require an internal manager approval before storage. Customer distribution is outside scope.\",\n            \"metric\": null,\n            \"operation\": \"total\",\n            \"value\": null,\n            \"start\": null,\n            \"end\": null,\n            \"basis\": \"interval\",\n            \"direction\": null,\n            \"receipt\": null\n          },\n          {\n            \"text\": \"Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.\",\n            \"citations\": [\n              \"0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f\"\n            ],\n            \"kind\": \"extractive\",\n            \"quote\": \"Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.\",\n            \"metric\": null,\n            \"operation\": \"total\",\n            \"value\": null,\n            \"start\": null,\n            \"end\": null,\n            \"basis\": \"interval\",\n            \"direction\": null,\n            \"receipt\": null\n          }\n        ]\n      },\n      \"sources\": [\n        {\n          \"id\": \"6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c\",\n          \"source\": \"Settlement policy\",\n          \"text\": \"A management report must name its reporting period and the reporting currency.\"\n        },\n        {\n          \"id\": \"97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038\",\n          \"source\": \"Distribution policy\",\n          \"text\": \"Management reports require an internal manager approval before storage. Customer distribution is outside scope.\"\n        },\n        {\n          \"id\": \"0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f\",\n          \"source\": \"Demo operating policy\",\n          \"text\": \"Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.\"\n        }\n      ]\n    }\n  ]\n}"
+        },
+        "digest": "7f82dbf8fa9dc58395a525d75b5d8cf79f8f29af8dda3dc8c0fc975ba7a2bcfd",
+        "status": "pending"
+      },
+      "report": {
+        "status": "completed",
+        "goal": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
+        "mode": "demo",
+        "refusal": null,
+        "clarification": null,
+        "grounding": {
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "review": {
+          "supported": null,
+          "issues": [
+            "Deterministic checks; no semantic model judgment"
+          ]
+        },
+        "findings": [
+          {
+            "step": "0",
+            "agent": "data",
+            "ok": true,
+            "analytics": {
+              "metrics": [
+                {
+                  "metric": "revenue",
+                  "rows": [
+                    {
+                      "month": "2026-01",
+                      "value": 100000.0
+                    },
+                    {
+                      "month": "2026-02",
+                      "value": 120000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 150000.0
+                    }
+                  ],
+                  "total": 370000.0,
+                  "absolute_change": 50000.0,
+                  "growth": 0.5,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 30000.0
+                  }
+                },
+                {
+                  "metric": "costs",
+                  "rows": [
+                    {
+                      "month": "2026-01",
+                      "value": 70000.0
+                    },
+                    {
+                      "month": "2026-02",
+                      "value": 78000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 90000.0
+                    }
+                  ],
+                  "total": 238000.0,
+                  "absolute_change": 20000.0,
+                  "growth": 0.2857142857142857,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 12000.0
+                  }
+                }
+              ]
+            },
+            "intent": {
+              "as_of": null,
+              "dataset": "sales",
+              "metrics": [
+                "revenue",
+                "costs"
+              ],
+              "start": null,
+              "end": null,
+              "compare_previous": false
+            },
+            "computed": {
+              "dataset": "sales",
+              "period": {
+                "start": null,
+                "end": null
+              },
+              "metrics": [
+                {
+                  "metric": "revenue",
+                  "rows": [
+                    {
+                      "month": "2026-01",
+                      "value": 100000.0
+                    },
+                    {
+                      "month": "2026-02",
+                      "value": 120000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 150000.0
+                    }
+                  ],
+                  "total": 370000.0,
+                  "absolute_change": 50000.0,
+                  "growth": 0.5,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 30000.0
+                  }
+                },
+                {
+                  "metric": "costs",
+                  "rows": [
+                    {
+                      "month": "2026-01",
+                      "value": 70000.0
+                    },
+                    {
+                      "month": "2026-02",
+                      "value": 78000.0
+                    },
+                    {
+                      "month": "2026-03",
+                      "value": 90000.0
+                    }
+                  ],
+                  "total": 238000.0,
+                  "absolute_change": 20000.0,
+                  "growth": 0.2857142857142857,
+                  "biggest_change": {
+                    "from_period": "2026-02",
+                    "to_period": "2026-03",
+                    "change": 12000.0
+                  }
+                }
+              ],
+              "raw_rows": [
+                {
+                  "month": "2026-01",
+                  "revenue": 100000.0,
+                  "costs": 70000.0
+                },
+                {
+                  "month": "2026-02",
+                  "revenue": 120000.0,
+                  "costs": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "revenue": 150000.0,
+                  "costs": 90000.0
+                }
+              ],
+              "comparison": null
+            },
+            "interpretation": {
+              "summary": "Computed approved dataset results; offline mode does not infer causal explanations.",
+              "citations": [],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": []
+            },
+            "grounding": {
+              "claims": [],
+              "errors": [],
+              "fully_checked": false,
+              "requires_review": true
+            },
+            "tokens": 0,
+            "model_records": [],
+            "tools_used": [
+              "dataset_schema",
+              "business_metrics",
+              "business_metrics"
+            ],
+            "attempts": 1,
+            "seconds": 7.4315077909999445
+          },
+          {
+            "step": "1",
+            "agent": "research",
+            "ok": true,
+            "finding": {
+              "summary": "A management report must name its reporting period and the reporting currency.\nManagement reports require an internal manager approval before storage. Customer distribution is outside scope.\nRevenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.",
+              "citations": [
+                "6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c",
+                "97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038",
+                "0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f"
+              ],
+              "insufficient": false,
+              "contradictions": [],
+              "claims": [
+                {
+                  "text": "A management report must name its reporting period and the reporting currency.",
+                  "citations": [
+                    "6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c"
+                  ],
+                  "kind": "extractive",
+                  "quote": "A management report must name its reporting period and the reporting currency.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Management reports require an internal manager approval before storage. Customer distribution is outside scope.",
+                  "citations": [
+                    "97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Management reports require an internal manager approval before storage. Customer distribution is outside scope.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                },
+                {
+                  "text": "Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.",
+                  "citations": [
+                    "0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f"
+                  ],
+                  "kind": "extractive",
+                  "quote": "Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.",
+                  "metric": null,
+                  "operation": "total",
+                  "value": null,
+                  "start": null,
+                  "end": null,
+                  "basis": "interval",
+                  "direction": null,
+                  "receipt": null
+                }
+              ]
+            },
+            "grounding": {
+              "claims": [
+                {
+                  "index": 0,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 1,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                },
+                {
+                  "index": 2,
+                  "status": "supported",
+                  "reason": "exact_extractive_support"
+                }
+              ],
+              "errors": [],
+              "fully_checked": true,
+              "requires_review": false
+            },
+            "sources": [
+              {
+                "id": "6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c",
+                "document_id": "95a79794f20d01e57d738c15e0e8695284d39f634b6336d3be727ff2489b0381",
+                "source": "Settlement policy",
+                "text": "A management report must name its reporting period and the reporting currency.",
+                "score": 0.01639344262295082,
+                "dense_score": 0.2941742027072761,
+                "lexical_score": 5.6051872948577905,
+                "rerank_score": null,
+                "metadata": {}
+              },
+              {
+                "id": "97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038",
+                "document_id": "f19091abe435b3b6ad1d9afbf090dfcfd9889485586a877c5555b24b7a39ff83",
+                "source": "Distribution policy",
+                "text": "Management reports require an internal manager approval before storage. Customer distribution is outside scope.",
+                "score": 0.016129032258064516,
+                "dense_score": 0.20833333333333337,
+                "lexical_score": 2.13087505446637,
+                "rerank_score": null,
+                "metadata": {}
+              },
+              {
+                "id": "0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f",
+                "document_id": "b3172e4fc04c450d44a65f3ea2b4182eb265c2cb3e9265162b5f07b9029b421a",
+                "source": "Demo operating policy",
+                "text": "Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.",
+                "score": 0.015873015873015872,
+                "dense_score": 0.17010345435994295,
+                "lexical_score": 1.9758545636388076,
+                "rerank_score": null,
+                "metadata": {}
+              }
+            ],
+            "tokens": 0,
+            "model_records": [],
+            "tools_used": [
+              "document_search"
+            ],
+            "attempts": 1,
+            "seconds": 2.7681589840000242
+          },
+          {
+            "step": "2",
+            "agent": "action",
+            "ok": true,
+            "tool": "create_report",
+            "receipt": "f60ecee2a786f828fe5348cb6f06f8c858865ee39e065f2420c2fe0d202fc537",
+            "effect": {
+              "receipt": "f60ecee2a786f828fe5348cb6f06f8c858865ee39e065f2420c2fe0d202fc537",
+              "tool": "create_report",
+              "stored": true,
+              "payload": {
+                "title": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
+                "body": "{\n  \"mode\": \"deterministic evidence report\",\n  \"goal\": \"Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.\",\n  \"evidence\": [\n    {\n      \"step\": \"0\",\n      \"agent\": \"data\",\n      \"interpretation\": {\n        \"summary\": \"Computed approved dataset results; offline mode does not infer causal explanations.\",\n        \"citations\": [],\n        \"insufficient\": false,\n        \"contradictions\": [],\n        \"claims\": []\n      },\n      \"computed\": {\n        \"dataset\": \"sales\",\n        \"period\": {\n          \"start\": null,\n          \"end\": null\n        },\n        \"metrics\": [\n          {\n            \"metric\": \"revenue\",\n            \"rows\": [\n              {\n                \"month\": \"2026-01\",\n                \"value\": 100000.0\n              },\n              {\n                \"month\": \"2026-02\",\n                \"value\": 120000.0\n              },\n              {\n                \"month\": \"2026-03\",\n                \"value\": 150000.0\n              }\n            ],\n            \"total\": 370000.0,\n            \"absolute_change\": 50000.0,\n            \"growth\": 0.5,\n            \"biggest_change\": {\n              \"from_period\": \"2026-02\",\n              \"to_period\": \"2026-03\",\n              \"change\": 30000.0\n            }\n          },\n          {\n            \"metric\": \"costs\",\n            \"rows\": [\n              {\n                \"month\": \"2026-01\",\n                \"value\": 70000.0\n              },\n              {\n                \"month\": \"2026-02\",\n                \"value\": 78000.0\n              },\n              {\n                \"month\": \"2026-03\",\n                \"value\": 90000.0\n              }\n            ],\n            \"total\": 238000.0,\n            \"absolute_change\": 20000.0,\n            \"growth\": 0.2857142857142857,\n            \"biggest_change\": {\n              \"from_period\": \"2026-02\",\n              \"to_period\": \"2026-03\",\n              \"change\": 12000.0\n            }\n          }\n        ],\n        \"raw_rows\": [\n          {\n            \"month\": \"2026-01\",\n            \"revenue\": 100000.0,\n            \"costs\": 70000.0\n          },\n          {\n            \"month\": \"2026-02\",\n            \"revenue\": 120000.0,\n            \"costs\": 78000.0\n          },\n          {\n            \"month\": \"2026-03\",\n            \"revenue\": 150000.0,\n            \"costs\": 90000.0\n          }\n        ],\n        \"comparison\": null\n      },\n      \"analytics\": {\n        \"metrics\": [\n          {\n            \"metric\": \"revenue\",\n            \"rows\": [\n              {\n                \"month\": \"2026-01\",\n                \"value\": 100000.0\n              },\n              {\n                \"month\": \"2026-02\",\n                \"value\": 120000.0\n              },\n              {\n                \"month\": \"2026-03\",\n                \"value\": 150000.0\n              }\n            ],\n            \"total\": 370000.0,\n            \"absolute_change\": 50000.0,\n            \"growth\": 0.5,\n            \"biggest_change\": {\n              \"from_period\": \"2026-02\",\n              \"to_period\": \"2026-03\",\n              \"change\": 30000.0\n            }\n          },\n          {\n            \"metric\": \"costs\",\n            \"rows\": [\n              {\n                \"month\": \"2026-01\",\n                \"value\": 70000.0\n              },\n              {\n                \"month\": \"2026-02\",\n                \"value\": 78000.0\n              },\n              {\n                \"month\": \"2026-03\",\n                \"value\": 90000.0\n              }\n            ],\n            \"total\": 238000.0,\n            \"absolute_change\": 20000.0,\n            \"growth\": 0.2857142857142857,\n            \"biggest_change\": {\n              \"from_period\": \"2026-02\",\n              \"to_period\": \"2026-03\",\n              \"change\": 12000.0\n            }\n          }\n        ]\n      },\n      \"sources\": []\n    },\n    {\n      \"step\": \"1\",\n      \"agent\": \"research\",\n      \"finding\": {\n        \"summary\": \"A management report must name its reporting period and the reporting currency.\\nManagement reports require an internal manager approval before storage. Customer distribution is outside scope.\\nRevenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.\",\n        \"citations\": [\n          \"6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c\",\n          \"97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038\",\n          \"0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f\"\n        ],\n        \"insufficient\": false,\n        \"contradictions\": [],\n        \"claims\": [\n          {\n            \"text\": \"A management report must name its reporting period and the reporting currency.\",\n            \"citations\": [\n              \"6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c\"\n            ],\n            \"kind\": \"extractive\",\n            \"quote\": \"A management report must name its reporting period and the reporting currency.\",\n            \"metric\": null,\n            \"operation\": \"total\",\n            \"value\": null,\n            \"start\": null,\n            \"end\": null,\n            \"basis\": \"interval\",\n            \"direction\": null,\n            \"receipt\": null\n          },\n          {\n            \"text\": \"Management reports require an internal manager approval before storage. Customer distribution is outside scope.\",\n            \"citations\": [\n              \"97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038\"\n            ],\n            \"kind\": \"extractive\",\n            \"quote\": \"Management reports require an internal manager approval before storage. Customer distribution is outside scope.\",\n            \"metric\": null,\n            \"operation\": \"total\",\n            \"value\": null,\n            \"start\": null,\n            \"end\": null,\n            \"basis\": \"interval\",\n            \"direction\": null,\n            \"receipt\": null\n          },\n          {\n            \"text\": \"Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.\",\n            \"citations\": [\n              \"0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f\"\n            ],\n            \"kind\": \"extractive\",\n            \"quote\": \"Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.\",\n            \"metric\": null,\n            \"operation\": \"total\",\n            \"value\": null,\n            \"start\": null,\n            \"end\": null,\n            \"basis\": \"interval\",\n            \"direction\": null,\n            \"receipt\": null\n          }\n        ]\n      },\n      \"sources\": [\n        {\n          \"id\": \"6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c\",\n          \"source\": \"Settlement policy\",\n          \"text\": \"A management report must name its reporting period and the reporting currency.\"\n        },\n        {\n          \"id\": \"97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038\",\n          \"source\": \"Distribution policy\",\n          \"text\": \"Management reports require an internal manager approval before storage. Customer distribution is outside scope.\"\n        },\n        {\n          \"id\": \"0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f\",\n          \"source\": \"Demo operating policy\",\n          \"text\": \"Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.\"\n        }\n      ]\n    }\n  ]\n}"
+              },
+              "external_message_sent": false
+            },
+            "tokens": 0,
+            "model_records": [],
+            "tools_used": [
+              "create_report"
+            ],
+            "attempts": 1
+          }
+        ],
+        "citations": [
+          {
+            "id": "6ab9cb3ddc42632e4f8f997029a5dbc147667d0191fb00b48d78d8d84149d84c",
+            "document_id": "95a79794f20d01e57d738c15e0e8695284d39f634b6336d3be727ff2489b0381",
+            "source": "Settlement policy",
+            "text": "A management report must name its reporting period and the reporting currency.",
+            "score": 0.01639344262295082,
+            "dense_score": 0.2941742027072761,
+            "lexical_score": 5.6051872948577905,
+            "rerank_score": null,
+            "metadata": {}
+          },
+          {
+            "id": "97188e3f8b09573f6204cf102253e1c3d4df224bb5d68f6a9e3413e41e477038",
+            "document_id": "f19091abe435b3b6ad1d9afbf090dfcfd9889485586a877c5555b24b7a39ff83",
+            "source": "Distribution policy",
+            "text": "Management reports require an internal manager approval before storage. Customer distribution is outside scope.",
+            "score": 0.016129032258064516,
+            "dense_score": 0.20833333333333337,
+            "lexical_score": 2.13087505446637,
+            "rerank_score": null,
+            "metadata": {}
+          },
+          {
+            "id": "0845d8d6b71c84221e937659b626c4324b4c5cfaf34d26e7926b28e8418d744f",
+            "document_id": "b3172e4fc04c450d44a65f3ea2b4182eb265c2cb3e9265162b5f07b9029b421a",
+            "source": "Demo operating policy",
+            "text": "Revenue rose after the launch of the enterprise subscription. Operational reports require manager approval. Inventory reorder threshold is 20 units. These are synthetic demo records.",
+            "score": 0.015873015873015872,
+            "dense_score": 0.17010345435994295,
+            "lexical_score": 1.9758545636388076,
+            "rerank_score": null,
+            "metadata": {}
+          }
+        ],
+        "errors": [],
+        "usage": {
+          "tokens": 0,
+          "calls": 0,
+          "estimated_cost_usd": 0
+        },
+        "limitations": [
+          "Model judges can be wrong; document content is untrusted evidence."
+        ]
+      },
+      "plan": [
+        {
+          "id": "0",
+          "agent": "data",
+          "instruction": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
+          "dependencies": [],
+          "tool": null,
+          "arguments": {},
+          "completion_criteria": [
+            "Return evidence or an explicit insufficiency status"
+          ],
+          "requires_approval": false,
+          "checks": []
+        },
+        {
+          "id": "1",
+          "agent": "research",
+          "instruction": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
+          "dependencies": [],
+          "tool": null,
+          "arguments": {},
+          "completion_criteria": [
+            "Return evidence or an explicit insufficiency status"
+          ],
+          "requires_approval": false,
+          "checks": []
+        },
+        {
+          "id": "2",
+          "agent": "action",
+          "instruction": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
+          "dependencies": [
+            "0",
+            "1"
+          ],
+          "tool": null,
+          "arguments": {},
+          "completion_criteria": [
+            "Return evidence or an explicit insufficiency status"
+          ],
+          "requires_approval": true,
+          "checks": []
+        }
+      ],
+      "traces": [
+        {
+          "kind": "plan",
+          "payload": {
+            "plan": {
+              "steps": [
+                {
+                  "id": "0",
+                  "agent": "data",
+                  "instruction": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
+                  "dependencies": [],
+                  "tool": null,
+                  "arguments": {},
+                  "completion_criteria": [
+                    "Return evidence or an explicit insufficiency status"
+                  ],
+                  "requires_approval": false,
+                  "checks": []
+                },
+                {
+                  "id": "1",
+                  "agent": "research",
+                  "instruction": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
+                  "dependencies": [],
+                  "tool": null,
+                  "arguments": {},
+                  "completion_criteria": [
+                    "Return evidence or an explicit insufficiency status"
+                  ],
+                  "requires_approval": false,
+                  "checks": []
+                },
+                {
+                  "id": "2",
+                  "agent": "action",
+                  "instruction": "Analyze revenue and operating costs, retrieve the policy documents and create an internal report with the figures and policy evidence.",
+                  "dependencies": [
+                    "0",
+                    "1"
+                  ],
+                  "tool": null,
+                  "arguments": {},
+                  "completion_criteria": [
+                    "Return evidence or an explicit insufficiency status"
+                  ],
+                  "requires_approval": true,
+                  "checks": []
+                }
+              ],
+              "refusal": null,
+              "clarification": null
+            },
+            "mode": "demo"
+          },
+          "created": 1795197549.341792
+        },
+        {
+          "kind": "tool_call",
+          "payload": {
+            "tool": "dataset_schema",
+            "argument_keys": [],
+            "arguments": {},
+            "step": "0",
+            "approval_id": null,
+            "seconds": 2.4590303290000293,
+            "output_fields": [
+              "datasets"
+            ]
+          },
+          "created": 1795197551.8085024
+        },
+        {
+          "kind": "tool_call",
+          "payload": {
+            "tool": "document_search",
+            "argument_keys": [
+              "k",
+              "query"
+            ],
+            "arguments": {},
+            "step": "1",
+            "approval_id": null,
+            "seconds": 2.7635439700000006,
+            "output_fields": [
+              "sources"
+            ]
+          },
+          "created": 1795197552.1131766
+        },
+        {
+          "kind": "tool_call",
+          "payload": {
+            "tool": "business_metrics",
+            "argument_keys": [
+              "metric",
+              "start",
+              "end"
+            ],
+            "arguments": {
+              "metric": "revenue",
+              "start": null,
+              "end": null
+            },
+            "step": "0",
+            "approval_id": null,
+            "seconds": 2.392315200999974,
+            "output_fields": [
+              "metric",
+              "rows",
+              "total",
+              "absolute_change",
+              "growth",
+              "biggest_change"
+            ]
+          },
+          "created": 1795197554.2031682
+        },
+        {
+          "kind": "tool_call",
+          "payload": {
+            "tool": "business_metrics",
+            "argument_keys": [
+              "metric",
+              "start",
+              "end"
+            ],
+            "arguments": {
+              "metric": "costs",
+              "start": null,
+              "end": null
+            },
+            "step": "0",
+            "approval_id": null,
+            "seconds": 2.5728197809999074,
+            "output_fields": [
+              "metric",
+              "rows",
+              "total",
+              "absolute_change",
+              "growth",
+              "biggest_change"
+            ]
+          },
+          "created": 1795197556.7775009
+        },
+        {
+          "kind": "tool_call",
+          "payload": {
+            "tool": "create_report",
+            "argument_keys": [
+              "title",
+              "body"
+            ],
+            "arguments": {},
+            "step": "2",
+            "approval_id": "f60ecee2a786f828fe5348cb6f06f8c858865ee39e065f2420c2fe0d202fc537",
+            "seconds": 2.543275784000002,
+            "output_fields": [
+              "receipt",
+              "tool",
+              "stored",
+              "payload",
+              "external_message_sent"
+            ]
+          },
+          "created": 1795197559.9980762
+        },
+        {
+          "kind": "verification",
+          "payload": {
+            "status": "completed",
+            "errors": [],
+            "usage": {
+              "tokens": 0,
+              "calls": 0,
+              "estimated_cost_usd": 0
+            }
+          },
+          "created": 1795197560.0119185
+        }
+      ]
+    }
+  ]
+}

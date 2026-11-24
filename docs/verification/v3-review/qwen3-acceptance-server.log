@@ -1,0 +1,106 @@
+0.00.002.344 I srv  llama_server: initializing ...
+0.00.024.606 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.025.501 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.028.123 I srv    load_model: loading model '/workspace/scratch/9935952a89f5/runtime-models/qwen4.gguf'
+0.00.671.292 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.12.889.306 I cmn          init: llama threadpool init, n_threads = 4
+0.13.786.000 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 8192, kv_unified = 'false'
+0.13.798.780 I srv  server_run_i: model loaded
+0.13.798.835 I srv  server_on_li: listening on http://127.0.0.1:36355
+0.24.900.077 I slot       select: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+0.24.903.540 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.31.921.000 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    256, progress = 0.71, t =   7.02 s / 36.49 tokens per second
+0.51.919.834 I slot print_timing: id  0 | task 0 | n_gen =    100, tg =   5.92 t/s, tg_3s =   5.98 t/s
+0.54.992.147 I slot print_timing: id  0 | task 0 | n_gen =    120, tg =   6.01 t/s, tg_3s =   6.51 t/s
+0.58.018.667 I slot print_timing: id  0 | task 0 | n_gen =    139, tg =   6.04 t/s, tg_3s =   6.28 t/s
+1.01.054.405 I slot print_timing: id  0 | task 0 | n_gen =    156, tg =   5.99 t/s, tg_3s =   5.60 t/s
+1.01.854.806 I slot print_timing: id  0 | task 0 | prompt eval time =   10280.31 ms /   359 tokens (   28.64 ms per token,    34.92 tokens per second)
+1.01.854.838 I slot print_timing: id  0 | task 0 |        eval time =   26670.76 ms /   161 tokens (  166.69 ms per token,     6.00 tokens per second)
+1.01.854.856 I slot print_timing: id  0 | task 0 |       total time =   36951.07 ms /   520 tokens
+1.01.854.901 I slot print_timing: id  0 | task 0 |    graphs reused =        159
+1.01.854.902 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+1.01.858.000 I slot      release: id  0 | task 0 | stop processing: n_tokens = 519, truncated = 0
+1.02.469.777 I slot       select: id  0 | task -1 | selected slot by LRU, n_tokens = 519, t_last = 2154667530
+1.02.629.649 I slot launch_slot_: id  0 | task 163 | processing task, is_child = 0
+WARNING: JSON schema conversion was incomplete: pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string; pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string
+WARNING: JSON schema conversion was incomplete: pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string; pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string
+1.23.197.012 I slot print_timing: id  0 | task 163 | n_gen =    100, tg =   6.55 t/s, tg_3s =   6.62 t/s
+1.26.229.139 I slot print_timing: id  0 | task 163 | n_gen =    119, tg =   6.50 t/s, tg_3s =   6.27 t/s
+1.29.300.522 I slot print_timing: id  0 | task 163 | n_gen =    138, tg =   6.46 t/s, tg_3s =   6.19 t/s
+1.30.006.010 I slot print_timing: id  0 | task 163 | prompt eval time =    5457.57 ms /   192 tokens (   28.42 ms per token,    35.18 tokens per second)
+1.30.006.030 I slot print_timing: id  0 | task 163 |        eval time =   21918.71 ms /   142 tokens (  155.45 ms per token,     6.43 tokens per second)
+1.30.006.031 I slot print_timing: id  0 | task 163 |       total time =   27376.28 ms /   334 tokens
+1.30.006.033 I slot print_timing: id  0 | task 163 |    graphs reused =        298
+1.30.006.033 I slot print_timing: id  0 | task 163 |   graph reallocs =          0    /     0        (same size) / (changed size)
+1.30.007.125 I slot      release: id  0 | task 163 | stop processing: n_tokens = 336, truncated = 0
+1.30.007.267 I slot       select: id  0 | task -1 | selected slot by LRU, n_tokens = 336, t_last = 2182816656
+1.30.232.570 I slot launch_slot_: id  0 | task 165 | processing task, is_child = 0
+1.36.440.855 I slot print_timing: id  0 | task 165 | prompt processing, n_tokens =    256, progress = 0.62, t =   6.21 s / 41.24 tokens per second
+1.49.123.537 I slot print_timing: id  0 | task 165 | prompt eval time =    9713.04 ms /   416 tokens (   23.35 ms per token,    42.83 tokens per second)
+1.49.123.553 I slot print_timing: id  0 | task 165 |        eval time =    9177.55 ms /    61 tokens (  152.96 ms per token,     6.54 tokens per second)
+1.49.123.554 I slot print_timing: id  0 | task 165 |       total time =   18890.59 ms /   477 tokens
+1.49.123.580 I slot print_timing: id  0 | task 165 |    graphs reused =        358
+1.49.123.580 I slot print_timing: id  0 | task 165 |   graph reallocs =          0    /     0        (same size) / (changed size)
+1.49.127.796 I slot      release: id  0 | task 165 | stop processing: n_tokens = 479, truncated = 0
+1.49.129.728 I slot       select: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.555 (> 0.100 thold), f_keep = 0.472
+1.49.202.459 I slot launch_slot_: id  0 | task 166 | processing task, is_child = 0
+WARNING: JSON schema conversion was incomplete: pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string; pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string
+WARNING: JSON schema conversion was incomplete: pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string; pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string
+2.04.586.645 I slot print_timing: id  0 | task 166 | prompt eval time =    4932.74 ms /   181 tokens (   27.25 ms per token,    36.69 tokens per second)
+2.04.586.663 I slot print_timing: id  0 | task 166 |        eval time =   10451.32 ms /    61 tokens (  174.19 ms per token,     5.74 tokens per second)
+2.04.586.664 I slot print_timing: id  0 | task 166 |       total time =   15384.07 ms /   242 tokens
+2.04.586.666 I slot print_timing: id  0 | task 166 |    graphs reused =        417
+2.04.586.692 I slot print_timing: id  0 | task 166 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2.04.586.813 I slot      release: id  0 | task 166 | stop processing: n_tokens = 467, truncated = 0
+2.04.586.862 I slot       select: id  0 | task -1 | selected slot by LRU, n_tokens = 467, t_last = 2217396343
+2.04.639.100 I slot launch_slot_: id  0 | task 408 | processing task, is_child = 0
+WARNING: JSON schema conversion was incomplete: pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string; pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string
+2.10.258.978 I slot print_timing: id  0 | task 408 | prompt processing, n_tokens =    256, progress = 0.32, t =   5.62 s / 45.56 tokens per second
+2.16.438.680 I slot print_timing: id  0 | task 408 | prompt processing, n_tokens =    512, progress = 0.63, t =  11.80 s / 43.39 tokens per second
+2.23.177.181 I slot print_timing: id  0 | task 408 | prompt processing, n_tokens =    768, progress = 0.94, t =  18.54 s / 41.43 tokens per second
+2.47.063.167 I slot print_timing: id  0 | task 408 | n_gen =    100, tg =   4.82 t/s, tg_3s =   4.87 t/s
+2.47.845.263 I slot print_timing: id  0 | task 408 | prompt eval time =   21873.43 ms /   816 tokens (   26.81 ms per token,    37.31 tokens per second)
+2.47.845.282 I slot print_timing: id  0 | task 408 |        eval time =   21332.62 ms /   104 tokens (  207.11 ms per token,     4.83 tokens per second)
+2.47.845.283 I slot print_timing: id  0 | task 408 |       total time =   43206.05 ms /   920 tokens
+2.47.845.298 I slot print_timing: id  0 | task 408 |    graphs reused =        521
+2.47.845.299 I slot print_timing: id  0 | task 408 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2.47.847.414 I slot      release: id  0 | task 408 | stop processing: n_tokens = 922, truncated = 0
+2.47.847.650 I slot       select: id  0 | task -1 | selected slot by LRU, n_tokens = 922, t_last = 2260656944
+2.48.444.470 I slot launch_slot_: id  0 | task 428 | processing task, is_child = 0
+WARNING: JSON schema conversion was incomplete: pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string; pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string
+2.54.428.740 I slot print_timing: id  0 | task 428 | prompt processing, n_tokens =    256, progress = 0.11, t =   5.98 s / 42.78 tokens per second
+3.00.357.821 I slot print_timing: id  0 | task 428 | prompt processing, n_tokens =    512, progress = 0.22, t =  11.91 s / 42.98 tokens per second
+3.06.585.835 I slot print_timing: id  0 | task 428 | prompt processing, n_tokens =    768, progress = 0.34, t =  18.14 s / 42.33 tokens per second
+3.12.826.031 I slot print_timing: id  0 | task 428 | prompt processing, n_tokens =   1024, progress = 0.45, t =  24.38 s / 42.00 tokens per second
+3.19.615.153 I slot print_timing: id  0 | task 428 | prompt processing, n_tokens =   1280, progress = 0.56, t =  31.17 s / 41.06 tokens per second
+3.25.905.116 I slot print_timing: id  0 | task 428 | prompt processing, n_tokens =   1536, progress = 0.67, t =  37.46 s / 41.00 tokens per second
+3.32.649.211 I slot print_timing: id  0 | task 428 | prompt processing, n_tokens =   1792, progress = 0.78, t =  44.20 s / 40.54 tokens per second
+3.39.359.451 I slot print_timing: id  0 | task 428 | prompt processing, n_tokens =   2048, progress = 0.90, t =  50.91 s / 40.22 tokens per second
+WARNING: JSON schema conversion was incomplete: pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string; pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string
+4.04.799.400 W srv          stop: cancel task, id_task = 428
+4.05.052.685 I slot      release: id  0 | task 428 | stop processing: n_tokens = 2364, truncated = 0
+4.05.053.111 I slot       select: id  0 | task -1 | selected slot by LRU, n_tokens = 2364, t_last = 2337862221
+4.07.072.270 W srv          stop: cancel task, id_task = 434
+WARNING: JSON schema conversion was incomplete: pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string; pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string
+4.07.257.448 I slot launch_slot_: id  0 | task 434 | processing task, is_child = 0
+4.07.257.472 I slot      release: id  0 | task 434 | stop processing: n_tokens = 922, truncated = 0
+4.07.257.590 I slot       select: id  0 | task -1 | selected slot by LRU, n_tokens = 922, t_last = 2340066992
+4.07.610.075 I slot launch_slot_: id  0 | task 542 | processing task, is_child = 0
+4.07.610.214 W slot   operator(): id  0 | task 542 | need to evaluate at least 1 token for each active slot (n_past = 419, task.n_tokens() = 419)
+4.07.610.665 W slot   operator(): id  0 | task 542 | n_past was set to 418
+4.18.077.508 I slot print_timing: id  0 | task 542 | prompt eval time =     396.67 ms /     1 tokens (  396.67 ms per token,     2.52 tokens per second)
+4.18.077.537 I slot print_timing: id  0 | task 542 |        eval time =   10070.55 ms /    61 tokens (  167.84 ms per token,     5.96 tokens per second)
+4.18.077.538 I slot print_timing: id  0 | task 542 |       total time =   10467.23 ms /    62 tokens
+4.18.077.554 I slot print_timing: id  0 | task 542 |    graphs reused =        662
+4.18.077.555 I slot print_timing: id  0 | task 542 |   graph reallocs =          0    /     0        (same size) / (changed size)
+4.18.080.120 I slot      release: id  0 | task 542 | stop processing: n_tokens = 479, truncated = 0
+4.18.080.265 I slot       select: id  0 | task -1 | selected slot by LRU, n_tokens = 479, t_last = 2350889649
+4.18.870.401 I slot launch_slot_: id  0 | task 622 | processing task, is_child = 0
+4.18.870.448 W slot   operator(): id  0 | task 622 | need to evaluate at least 1 token for each active slot (n_past = 2289, task.n_tokens() = 2289)
+4.18.870.449 W slot   operator(): id  0 | task 622 | n_past was set to 2288
+WARNING: JSON schema conversion was incomplete: pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string; pattern ^\d{4}-\d{2}$ is not supported (unsupported escape: \d), accepting any string
+4.48.163.977 I slot print_timing: id  0 | task 622 | n_gen =    100, tg =   3.41 t/s, tg_3s =   3.44 t/s
+4.51.175.258 I slot print_timing: id  0 | task 622 | n_gen =    111, tg =   3.43 t/s, tg_3s =   3.65 t/s
+4.54.259.044 I slot print_timing: id  0 | task 622 | n_gen =    123, tg =   3.47 t/s, tg_3s =   3.89 t/s
+4.57.356.843 I slot print_timing: id  0 | task 622 | n_gen =    135, tg =   3.50 t/s, tg_3s =   3.87 t/s
+5.00.391.760 I slot print_timing: id  0 | task 622 | n_gen =    146, tg =   3.51 t/s, tg_3s =   3.62 t/s

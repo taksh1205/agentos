@@ -1,0 +1,3 @@
+research {'completed': True, 'retrieved_both_policies': True}
+business {'completed': True, 'verified_totals': True}
+operation {'completed': True, 'retrieved_both_policies': True, 'verified_totals': True, 'single_committed_report': True}

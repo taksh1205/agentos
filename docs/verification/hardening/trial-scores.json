@@ -1,0 +1,135 @@
+{
+  "rows": [
+    {
+      "case": "I",
+      "file": "I-1795316112610706164.json",
+      "checks": {
+        "completed": true,
+        "inference": true,
+        "argument_bindings": true,
+        "correct_tool": true,
+        "approval": true,
+        "exactly_once": true
+      },
+      "passed": true,
+      "elapsed_seconds": 25.050236211000083,
+      "responses": 5,
+      "attempts": 5,
+      "known_tokens": 3000,
+      "workspace": "release-80955023-f1dd-4729-8b9c-0932f35d074b"
+    },
+    {
+      "case": "I",
+      "file": "I.json",
+      "checks": {
+        "completed": true,
+        "inference": true,
+        "argument_bindings": true,
+        "correct_tool": true,
+        "approval": true,
+        "exactly_once": true
+      },
+      "passed": true,
+      "elapsed_seconds": 55.2997491189999,
+      "responses": 5,
+      "attempts": 5,
+      "known_tokens": 2981,
+      "workspace": "release-c8bc8794-6ff4-404a-a28c-4489e78a99a1"
+    },
+    {
+      "case": "L",
+      "file": "L-1795316090118572894.json",
+      "checks": {
+        "completed": true,
+        "inference": true,
+        "tools": true,
+        "metric_set": true,
+        "costs": true,
+        "profit": true
+      },
+      "passed": true,
+      "elapsed_seconds": 18.272218028000225,
+      "responses": 4,
+      "attempts": 4,
+      "known_tokens": 2222,
+      "workspace": "release-e2008c46-6701-4f03-afdd-12b2f40ca548"
+    },
+    {
+      "case": "L",
+      "file": "L.json",
+      "checks": {
+        "completed": true,
+        "inference": true,
+        "tools": true,
+        "metric_set": true,
+        "costs": true,
+        "profit": true
+      },
+      "passed": true,
+      "elapsed_seconds": 46.074431687000015,
+      "responses": 4,
+      "attempts": 4,
+      "known_tokens": 2222,
+      "workspace": "release-a56a1ca5-73a5-4a41-a61d-9ee0289ed405"
+    },
+    {
+      "case": "R",
+      "file": "R-1795316141423548214.json",
+      "checks": {
+        "completed": true,
+        "inference": true,
+        "source_precision": true,
+        "quality-manual": true,
+        "privacy-schedule": true,
+        "neural_tool": true
+      },
+      "passed": true,
+      "elapsed_seconds": 50.65636146199995,
+      "responses": 3,
+      "attempts": 3,
+      "known_tokens": 2571,
+      "workspace": "release-543a9d3d-5d94-4a37-88f5-8799cee9bcdb"
+    },
+    {
+      "case": "R",
+      "file": "R.json",
+      "checks": {
+        "completed": true,
+        "inference": true,
+        "source_precision": true,
+        "quality-manual": true,
+        "privacy-schedule": true,
+        "neural_tool": true
+      },
+      "passed": true,
+      "elapsed_seconds": 45.98814782599993,
+      "responses": 3,
+      "attempts": 3,
+      "known_tokens": 2513,
+      "workspace": "release-8ab347db-cf8a-403d-8930-135321d2a6c7"
+    }
+  ],
+  "groups": {
+    "R": {
+      "executed": 2,
+      "passed": 2,
+      "p50_seconds": 48.32225464399994,
+      "p95_seconds": 50.65636146199995,
+      "known_tokens": 5084
+    },
+    "L": {
+      "executed": 2,
+      "passed": 2,
+      "p50_seconds": 32.17332485750012,
+      "p95_seconds": 46.074431687000015,
+      "known_tokens": 4444
+    },
+    "I": {
+      "executed": 2,
+      "passed": 2,
+      "p50_seconds": 40.17499266499999,
+      "p95_seconds": 55.2997491189999,
+      "known_tokens": 5981
+    }
+  }
+}

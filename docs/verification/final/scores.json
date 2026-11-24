@@ -1,0 +1,58 @@
+{
+  "A": {
+    "checks": {
+      "terminal_report_completed": false,
+      "received_live_model_response": true,
+      "neural_search": true,
+      "both_policies_cited": false,
+      "support_quotes_from_both": false,
+      "contradiction_reported": false
+    },
+    "machine_verdict": "FAIL",
+    "model_attempts": 13,
+    "responses": 12,
+    "known_tokens": 9710,
+    "attempts_without_usage": 1,
+    "elapsed_seconds": 300.038254112,
+    "estimated_cost_usd": null,
+    "artifact": "docs/verification/final/cited/A.json"
+  },
+  "B": {
+    "checks": {
+      "terminal_report_completed": false,
+      "received_live_model_response": true,
+      "revenue_periods_values_and_change": false,
+      "costs_periods_values_and_change": false,
+      "profit_periods_values_and_change": false,
+      "requested_tools": true
+    },
+    "machine_verdict": "FAIL",
+    "model_attempts": 6,
+    "responses": 6,
+    "known_tokens": 5221,
+    "attempts_without_usage": 0,
+    "elapsed_seconds": 125.79351144700013,
+    "estimated_cost_usd": null,
+    "artifact": "docs/verification/final/periods/B.json"
+  },
+  "C": {
+    "checks": {
+      "terminal_report_completed": false,
+      "received_live_model_response": true,
+      "correct_overdue_records": false,
+      "no_effect_before_approval": true,
+      "approval_bound": false,
+      "exactly_one_persisted_effect": false,
+      "persisted_approved_arguments_and_replay_match": false,
+      "invoice_and_report_tools": false
+    },
+    "machine_verdict": "FAIL",
+    "model_attempts": 10,
+    "responses": 10,
+    "known_tokens": 14066,
+    "attempts_without_usage": 0,
+    "elapsed_seconds": 247.075554614,
+    "estimated_cost_usd": null,
+    "artifact": "docs/verification/final/records/C.json"
+  }
+}

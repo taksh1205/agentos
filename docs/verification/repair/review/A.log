@@ -1,0 +1,698 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 29872.31it/s]
+[11/20/26 17:55:07] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+[11/20/26 17:55:12] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:55:13] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:55:15] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:55:19] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:55:27] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 5/5].
+                    WARNING  Retrying in 8s [Retry 5/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:55:35] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4369.82it/s]
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:55:36] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:55:38] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:55:42] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+[11/20/26 17:55:50] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+[11/20/26 17:55:54] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:55:55] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:55:57] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:56:01] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:56:09] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 5/5].
+                    WARNING  Retrying in 8s [Retry 5/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:56:17] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3488.28it/s]
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+[11/20/26 17:56:18] WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:56:19] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:56:21] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:56:25] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+[11/20/26 17:56:33] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+[11/20/26 17:56:39] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:56:40] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:56:42] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:56:46] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:56:54] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 5/5].
+                    WARNING  Retrying in 8s [Retry 5/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:57:02] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5127.63it/s]
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:57:03] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:57:05] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:57:09] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+[11/20/26 17:57:18] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+[11/20/26 17:57:24] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:57:25] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:57:27] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:57:31] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:57:39] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 5/5].
+                    WARNING  Retrying in 8s [Retry 5/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:57:47] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10418.49it/s]
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+[11/20/26 17:57:48] WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:57:49] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:57:51] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:57:55] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+[11/20/26 17:58:02] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+[11/20/26 17:58:08] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:58:09] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:58:11] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:58:15] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:58:23] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 5/5].
+                    WARNING  Retrying in 8s [Retry 5/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:58:31] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4144.65it/s]
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:58:32] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:58:34] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:58:38] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+[11/20/26 17:58:44] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+[11/20/26 17:58:51] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:58:52] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:58:54] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:58:58] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:59:06] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Retrying in 8s [Retry 5/5].
+                    WARNING  Retrying in 8s [Retry 5/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+[11/20/26 17:59:14] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             HEAD                                               
+                             https://huggingface.co/sentence-transf             
+                             ormers/all-MiniLM-L6-v2/resolve/main/a             
+                             dapter_config.json                                 
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3962.23it/s]
+Could not reach the Hub ([Errno -3] Temporary failure in name resolution). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
+                    WARNING  Could not reach the Hub ([Errno -3]  hf_api.py:3662
+                             Temporary failure in name                          
+                             resolution). Using cached commit                   
+                             hash for                                           
+                             'sentence-transformers/all-MiniLM-L6               
+                             -v2'.                                              
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+                    WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 1s [Retry 1/5].
+                    WARNING  Retrying in 1s [Retry 1/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:59:15] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 2s [Retry 2/5].
+                    WARNING  Retrying in 2s [Retry 2/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:59:17] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 4s [Retry 3/5].
+                    WARNING  Retrying in 4s [Retry 3/5].            _http.py:564
+'[Errno -3] Temporary failure in name resolution' thrown while requesting GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates
+[11/20/26 17:59:21] WARNING  '[Errno -3] Temporary failure in name  _http.py:551
+                             resolution' thrown while requesting                
+                             GET                                                
+                             https://huggingface.co/api/models/sent             
+                             ence-transformers/all-MiniLM-L6-v2/tre             
+                             e/main/additional_chat_templates                   
+Retrying in 8s [Retry 4/5].
+                    WARNING  Retrying in 8s [Retry 4/5].            _http.py:564

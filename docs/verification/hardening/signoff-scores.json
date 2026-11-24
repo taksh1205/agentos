@@ -1,0 +1,64 @@
+{
+  "A": {
+    "artifact": "docs/verification/hardening/signoff/A.json",
+    "checks": {
+      "terminal_report_completed": true,
+      "received_live_model_response": true,
+      "neural_search": true,
+      "both_policies_cited": true,
+      "no_unrelated_citations": true,
+      "support_quotes_from_both": true,
+      "contradiction_reported": true,
+      "both_thresholds_in_answer": true,
+      "only_document_tools": true
+    },
+    "machine_verdict": "REQUIRES_SEMANTIC_REVIEW",
+    "model_attempts": 3,
+    "responses": 3,
+    "known_tokens": 2178,
+    "attempts_without_usage": 0,
+    "elapsed_seconds": 44.63654457299981,
+    "estimated_cost_usd": null
+  },
+  "B": {
+    "artifact": "docs/verification/hardening/signoff/B.json",
+    "checks": {
+      "terminal_report_completed": true,
+      "received_live_model_response": true,
+      "revenue_periods_values_and_change": true,
+      "revenue_rendered_values_and_change": true,
+      "costs_periods_values_and_change": true,
+      "costs_rendered_values_and_change": true,
+      "profit_periods_values_and_change": true,
+      "profit_rendered_values_and_change": true,
+      "requested_tools": true
+    },
+    "machine_verdict": "REQUIRES_SEMANTIC_REVIEW",
+    "model_attempts": 5,
+    "responses": 5,
+    "known_tokens": 3012,
+    "attempts_without_usage": 0,
+    "elapsed_seconds": 42.32602570200015,
+    "estimated_cost_usd": null
+  },
+  "C": {
+    "artifact": "docs/verification/hardening/signoff/C.json",
+    "checks": {
+      "terminal_report_completed": true,
+      "received_live_model_response": true,
+      "correct_overdue_records": true,
+      "no_effect_before_approval": true,
+      "approval_bound": true,
+      "exactly_one_persisted_effect": true,
+      "persisted_approved_arguments_and_replay_match": true,
+      "invoice_and_report_tools": true
+    },
+    "machine_verdict": "REQUIRES_SEMANTIC_REVIEW",
+    "model_attempts": 5,
+    "responses": 5,
+    "known_tokens": 2777,
+    "attempts_without_usage": 0,
+    "elapsed_seconds": 30.218608323000353,
+    "estimated_cost_usd": null
+  }
+}

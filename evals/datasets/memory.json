@@ -1,0 +1,82 @@
+[
+  {
+    "id": "m0",
+    "turns": [
+      "Project Cedar has owner Elena. Decision: Elena.",
+      "Who owns that project?"
+    ],
+    "expected_value": "Elena",
+    "stored_fact": "Project Cedar has owner Elena. Decision: Elena.",
+    "provenance": "synthetic conversation m0"
+  },
+  {
+    "id": "m1",
+    "turns": [
+      "Project Maple has lead Omar. Decision: Omar.",
+      "Who is responsible for that project?"
+    ],
+    "expected_value": "Omar",
+    "stored_fact": "Project Maple has lead Omar. Decision: Omar.",
+    "provenance": "synthetic conversation m1"
+  },
+  {
+    "id": "m2",
+    "turns": [
+      "Our travel lodging reimbursement cap is 180 dollars. Decision: 180 dollars.",
+      "What is the lodging cap we discussed?"
+    ],
+    "expected_value": "180 dollars",
+    "stored_fact": "Our travel lodging reimbursement cap is 180 dollars. Decision: 180 dollars.",
+    "provenance": "synthetic conversation m2"
+  },
+  {
+    "id": "m3",
+    "turns": [
+      "Enterprise support response target is two hours. Decision: two hours.",
+      "What response target did we agree to use?"
+    ],
+    "expected_value": "two hours",
+    "stored_fact": "Enterprise support response target is two hours. Decision: two hours.",
+    "provenance": "synthetic conversation m3"
+  },
+  {
+    "id": "m4",
+    "turns": [
+      "Authentication log retention is 90 days. Decision: 90 days.",
+      "What log retention period did we choose?"
+    ],
+    "expected_value": "90 days",
+    "stored_fact": "Authentication log retention is 90 days. Decision: 90 days.",
+    "provenance": "synthetic conversation m4"
+  },
+  {
+    "id": "m5",
+    "turns": [
+      "The checkpoint review is Thursday. Decision: Thursday.",
+      "When is the checkpoint we discussed?"
+    ],
+    "expected_value": "Thursday",
+    "stored_fact": "The checkpoint review is Thursday. Decision: Thursday.",
+    "provenance": "synthetic conversation m5"
+  },
+  {
+    "id": "m6",
+    "turns": [
+      "The previously requested export dataset is sales. Decision: sales.",
+      "Which dataset should I export as previously requested?"
+    ],
+    "expected_value": "sales",
+    "stored_fact": "The previously requested export dataset is sales. Decision: sales.",
+    "provenance": "synthetic conversation m6"
+  },
+  {
+    "id": "m7",
+    "turns": [
+      "We chose the Beta vendor for the follow-up. Decision: Beta.",
+      "Which vendor did we decide to contact?"
+    ],
+    "expected_value": "Beta",
+    "stored_fact": "We chose the Beta vendor for the follow-up. Decision: Beta.",
+    "provenance": "synthetic conversation m7"
+  }
+]

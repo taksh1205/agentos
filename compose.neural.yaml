@@ -1,0 +1,18 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      args:
+        INSTALL_EXTRAS: postgres,ml,telemetry
+    environment:
+      EMBEDDING_BACKEND: neural
+      EMBEDDING_MODEL: sentence-transformers/all-MiniLM-L6-v2
+      EMBEDDING_REVISION: ${EMBEDDING_REVISION:-1110a243fdf4706b3f48f1d95db1a4f5529b4d41}
+      RETRIEVAL_METHOD: ${RETRIEVAL_METHOD:-dense}
+      RERANK_MODEL: cross-encoder/ms-marco-TinyBERT-L-2-v2
+      RERANK_REVISION: ${RERANK_REVISION:-81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc}
+    volumes:
+      - neural_models:/home/agentos/.cache/huggingface
+volumes:
+  neural_models:

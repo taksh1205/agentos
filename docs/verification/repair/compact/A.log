@@ -1,0 +1,29 @@
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5756.49it/s]
+[11/19/26 23:19:13] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+[11/19/26 23:19:17] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+[11/19/26 23:19:20] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+[11/19/26 23:19:26] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+[11/19/26 23:19:42] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2684.03it/s]
+[11/19/26 23:19:47] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+[11/19/26 23:19:51] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7935.15it/s]
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   

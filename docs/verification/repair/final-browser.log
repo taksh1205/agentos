@@ -1,0 +1,18 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> agentos-console@0.3.0 test:browser
+> node tests/smoke.cjs
+
+browserType.launch: Executable doesn't exist at /home/agent/.cache/ms-playwright/chromium_headless_shell-1161/chrome-linux/headless_shell
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     npx playwright install                                              ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝
+    at /workspace/scratch/9935952a89f5/v3/agentos/frontend/tests/smoke.cjs:5:34
+    at Object.<anonymous> (/workspace/scratch/9935952a89f5/v3/agentos/frontend/tests/smoke.cjs:60:3) {
+  name: 'Error'
+}

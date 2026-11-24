@@ -1,0 +1,1860 @@
+{
+  "kind": "independent retrieval; synthetic hand-authored labels",
+  "documents": 32,
+  "queries": 22,
+  "results": [
+    {
+      "configuration": "lexical",
+      "status": "executed",
+      "embedding_descriptor": "hashing:feature-hash::384:l2:v2",
+      "model_load_seconds": 0.06436792199974661,
+      "indexing_seconds": 0.07736307999994096,
+      "query_count": 22,
+      "metrics": {
+        "recall_at_1": 0.7272727272727273,
+        "recall_at_5": 0.8636363636363636,
+        "precision_at_5": 0.2090909090909091,
+        "mrr": 0.8939393939393939,
+        "ndcg_at_5": 0.8524597965346303
+      },
+      "mean_query_seconds": 0.0026046593636486,
+      "p95_query_seconds": 0.002792901999782771,
+      "rows": [
+        {
+          "query_id": "q01",
+          "ranked_sources": [
+            "sales-driver",
+            "food",
+            "weather",
+            "csv-safety",
+            "contradiction-b"
+          ],
+          "seconds": 0.0034871259999817994,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8262346571285599
+        },
+        {
+          "query_id": "q02",
+          "ranked_sources": [
+            "meeting-note",
+            "support-sla",
+            "cost-driver",
+            "incident-runbook",
+            "maple-project"
+          ],
+          "seconds": 0.0027273569999124447,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.3333333333333333,
+          "ndcg_at_5": 0.5
+        },
+        {
+          "query_id": "q03",
+          "ranked_sources": [
+            "report-policy",
+            "csv-safety",
+            "refund-policy",
+            "security-retention",
+            "sales-driver"
+          ],
+          "seconds": 0.002562564000072598,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q04",
+          "ranked_sources": [
+            "travel-old",
+            "weather",
+            "support-sla",
+            "csv-safety",
+            "inventory-policy"
+          ],
+          "seconds": 0.00259593299961125,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.27541155237618664
+        },
+        {
+          "query_id": "q05",
+          "ranked_sources": [
+            "security-retention",
+            "cost-driver"
+          ],
+          "seconds": 0.0026541189999989,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q06",
+          "ranked_sources": [
+            "hr-leave",
+            "billing-date",
+            "security-retention",
+            "refund-policy",
+            "contract-beta"
+          ],
+          "seconds": 0.002792901999782771,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q07",
+          "ranked_sources": [
+            "inventory-policy",
+            "contradiction-b",
+            "contradiction-a",
+            "cedar-project",
+            "incident-runbook"
+          ],
+          "seconds": 0.0025540510000610084,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q08",
+          "ranked_sources": [
+            "invoice-policy",
+            "sales-driver",
+            "contract-alpha",
+            "onboarding",
+            "inventory-policy"
+          ],
+          "seconds": 0.002708046999941871,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8262346571285599
+        },
+        {
+          "query_id": "q09",
+          "ranked_sources": [
+            "incident-runbook",
+            "security-retention",
+            "invoice-policy",
+            "contract-alpha",
+            "inventory-policy"
+          ],
+          "seconds": 0.0025722680002218112,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q10",
+          "ranked_sources": [
+            "cedar-project",
+            "maple-project",
+            "contradiction-b",
+            "contradiction-a",
+            "cost-driver"
+          ],
+          "seconds": 0.0025136819999715954,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q11",
+          "ranked_sources": [
+            "maple-project",
+            "contradiction-b",
+            "contradiction-a",
+            "incident-runbook",
+            "food"
+          ],
+          "seconds": 0.0024651300000186893,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q12",
+          "ranked_sources": [
+            "refund-policy",
+            "maple-project",
+            "cedar-project",
+            "contradiction-b",
+            "contradiction-a"
+          ],
+          "seconds": 0.0024705380001250887,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q13",
+          "ranked_sources": [
+            "contradiction-b",
+            "contradiction-a",
+            "api-limits",
+            "cedar-project",
+            "inventory-policy"
+          ],
+          "seconds": 0.002592427999843494,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q14",
+          "ranked_sources": [
+            "support-sla",
+            "incident-runbook",
+            "observability",
+            "sales-driver",
+            "security-retention"
+          ],
+          "seconds": 0.002628671000366012,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q15",
+          "ranked_sources": [
+            "invoice-policy",
+            "contract-alpha",
+            "cost-driver",
+            "security-retention",
+            "inventory-policy"
+          ],
+          "seconds": 0.002426393000405369,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "q16",
+          "ranked_sources": [
+            "billing-date",
+            "sales-driver",
+            "maple-project",
+            "deployment",
+            "meeting-note"
+          ],
+          "seconds": 0.002481333999639901,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q17",
+          "ranked_sources": [
+            "contract-beta",
+            "contract-alpha",
+            "billing-date",
+            "food",
+            "meeting-note"
+          ],
+          "seconds": 0.002484930000264285,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q18",
+          "ranked_sources": [
+            "engineering",
+            "inventory-policy",
+            "maple-project",
+            "contradiction-b",
+            "contradiction-a"
+          ],
+          "seconds": 0.0024749549997977738,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q19",
+          "ranked_sources": [
+            "csv-safety",
+            "refund-policy",
+            "report-policy"
+          ],
+          "seconds": 0.002626987999974517,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q20",
+          "ranked_sources": [
+            "engineering",
+            "refund-policy",
+            "observability",
+            "contradiction-b",
+            "contradiction-a"
+          ],
+          "seconds": 0.002573449999999866,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.3333333333333333,
+          "ndcg_at_5": 0.5
+        },
+        {
+          "query_id": "q21",
+          "ranked_sources": [
+            "contract-alpha",
+            "contract-beta",
+            "maple-project",
+            "cedar-project",
+            "travel-current"
+          ],
+          "seconds": 0.0023679969999648165,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q22",
+          "ranked_sources": [
+            "malicious-source",
+            "contract-alpha",
+            "invoice-policy",
+            "memory-design",
+            "weather"
+          ],
+          "seconds": 0.0025416430003133428,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8262346571285599
+        }
+      ]
+    },
+    {
+      "configuration": "hashing_dense",
+      "status": "executed",
+      "embedding_descriptor": "hashing:feature-hash::384:l2:v2",
+      "model_load_seconds": 0.004738528000416409,
+      "indexing_seconds": 0.031384027999592945,
+      "query_count": 22,
+      "metrics": {
+        "recall_at_1": 0.38636363636363635,
+        "recall_at_5": 0.75,
+        "precision_at_5": 0.18181818181818182,
+        "mrr": 0.6166666666666667,
+        "ndcg_at_5": 0.607414074426238
+      },
+      "mean_query_seconds": 0.0025912593181477528,
+      "p95_query_seconds": 0.002897867999763548,
+      "rows": [
+        {
+          "query_id": "q01",
+          "ranked_sources": [
+            "food",
+            "memory-design",
+            "observability",
+            "sales-driver",
+            "weather"
+          ],
+          "seconds": 0.002897867999763548,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 0.25,
+          "ndcg_at_5": 0.35583989829307827
+        },
+        {
+          "query_id": "q02",
+          "ranked_sources": [
+            "meeting-note",
+            "incident-runbook",
+            "cost-driver",
+            "support-sla",
+            "contradiction-b"
+          ],
+          "seconds": 0.002477868999903876,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.3333333333333333,
+          "ndcg_at_5": 0.5
+        },
+        {
+          "query_id": "q03",
+          "ranked_sources": [
+            "hr-leave",
+            "csv-safety",
+            "sales-driver",
+            "cost-driver",
+            "refund-policy"
+          ],
+          "seconds": 0.0024792310000520956,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "q04",
+          "ranked_sources": [
+            "travel-old",
+            "report-policy",
+            "weather",
+            "malicious-source",
+            "support-sla"
+          ],
+          "seconds": 0.0024925510001594375,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.27541155237618664
+        },
+        {
+          "query_id": "q05",
+          "ranked_sources": [
+            "security-retention",
+            "engineering",
+            "csv-safety",
+            "meeting-note",
+            "malicious-source"
+          ],
+          "seconds": 0.002418340999611246,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q06",
+          "ranked_sources": [
+            "refund-policy",
+            "hr-leave",
+            "security-retention",
+            "onboarding",
+            "csv-safety"
+          ],
+          "seconds": 0.002462085999923147,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714574
+        },
+        {
+          "query_id": "q07",
+          "ranked_sources": [
+            "cedar-project",
+            "contradiction-b",
+            "contradiction-a",
+            "maple-project",
+            "inventory-policy"
+          ],
+          "seconds": 0.002598796999791375,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.2,
+          "ndcg_at_5": 0.38685280723454163
+        },
+        {
+          "query_id": "q08",
+          "ranked_sources": [
+            "invoice-policy",
+            "onboarding",
+            "memory-design",
+            "hr-leave",
+            "contract-alpha"
+          ],
+          "seconds": 0.002501334000044153,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8262346571285599
+        },
+        {
+          "query_id": "q09",
+          "ranked_sources": [
+            "invoice-policy",
+            "incident-runbook",
+            "accessibility",
+            "inventory-policy",
+            "report-policy"
+          ],
+          "seconds": 0.002557917000103771,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714574
+        },
+        {
+          "query_id": "q10",
+          "ranked_sources": [
+            "cedar-project",
+            "maple-project",
+            "contradiction-b",
+            "contradiction-a",
+            "deployment"
+          ],
+          "seconds": 0.0030513429996972263,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q11",
+          "ranked_sources": [
+            "maple-project",
+            "inventory-policy",
+            "incident-runbook",
+            "contradiction-b",
+            "contradiction-a"
+          ],
+          "seconds": 0.0024825560003591818,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q12",
+          "ranked_sources": [
+            "contradiction-b",
+            "contradiction-a",
+            "maple-project",
+            "cedar-project",
+            "deployment"
+          ],
+          "seconds": 0.0026414599997224286,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "q13",
+          "ranked_sources": [
+            "contradiction-b",
+            "contradiction-a",
+            "cedar-project",
+            "maple-project",
+            "deployment"
+          ],
+          "seconds": 0.0024476339999637275,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q14",
+          "ranked_sources": [
+            "support-sla",
+            "sales-driver",
+            "report-policy",
+            "meeting-note",
+            "memory-design"
+          ],
+          "seconds": 0.0023992830001589027,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q15",
+          "ranked_sources": [
+            "engineering",
+            "cost-driver",
+            "accessibility",
+            "meeting-note",
+            "invoice-policy"
+          ],
+          "seconds": 0.0024647599998388614,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "q16",
+          "ranked_sources": [
+            "billing-date",
+            "malicious-source",
+            "cedar-project",
+            "maple-project",
+            "deployment"
+          ],
+          "seconds": 0.002623674000005849,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q17",
+          "ranked_sources": [
+            "contract-beta",
+            "billing-date",
+            "engineering",
+            "meeting-note",
+            "observability"
+          ],
+          "seconds": 0.0026722659999904863,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.6131471927654584
+        },
+        {
+          "query_id": "q18",
+          "ranked_sources": [
+            "api-limits",
+            "cost-driver",
+            "meeting-note",
+            "engineering",
+            "inventory-policy"
+          ],
+          "seconds": 0.002611967000120785,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.25,
+          "ndcg_at_5": 0.4306765580733931
+        },
+        {
+          "query_id": "q19",
+          "ranked_sources": [
+            "csv-safety",
+            "support-sla",
+            "accessibility",
+            "meeting-note",
+            "memory-design"
+          ],
+          "seconds": 0.002387466000072891,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q20",
+          "ranked_sources": [
+            "cost-driver",
+            "accessibility",
+            "refund-policy",
+            "engineering",
+            "observability"
+          ],
+          "seconds": 0.002768197000023065,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.2,
+          "ndcg_at_5": 0.38685280723454163
+        },
+        {
+          "query_id": "q21",
+          "ranked_sources": [
+            "maple-project",
+            "cedar-project",
+            "contract-alpha",
+            "contradiction-b",
+            "contradiction-a"
+          ],
+          "seconds": 0.0027933739997934026,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.3333333333333333,
+          "ndcg_at_5": 0.5
+        },
+        {
+          "query_id": "q22",
+          "ranked_sources": [
+            "malicious-source",
+            "contract-alpha",
+            "travel-old",
+            "cedar-project",
+            "meeting-note"
+          ],
+          "seconds": 0.002777731000151107,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8262346571285599
+        }
+      ]
+    },
+    {
+      "configuration": "neural_dense",
+      "status": "executed",
+      "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+      "model_load_seconds": 9.876768138999978,
+      "indexing_seconds": 0.6303916279998703,
+      "query_count": 22,
+      "metrics": {
+        "recall_at_1": 0.8636363636363636,
+        "recall_at_5": 0.9772727272727273,
+        "precision_at_5": 0.24545454545454548,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.9828610108235939
+      },
+      "mean_query_seconds": 0.01745531022726771,
+      "p95_query_seconds": 0.021962713999982952,
+      "rows": [
+        {
+          "query_id": "q01",
+          "ranked_sources": [
+            "sales-driver",
+            "cost-driver",
+            "meeting-note",
+            "maple-project",
+            "billing-date"
+          ],
+          "seconds": 0.01607942100008586,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8262346571285599
+        },
+        {
+          "query_id": "q02",
+          "ranked_sources": [
+            "cost-driver",
+            "sales-driver",
+            "travel-current",
+            "meeting-note",
+            "travel-old"
+          ],
+          "seconds": 0.018219041000065772,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q03",
+          "ranked_sources": [
+            "report-policy",
+            "sales-driver",
+            "cost-driver",
+            "refund-policy",
+            "invoice-policy"
+          ],
+          "seconds": 0.016744519999974727,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q04",
+          "ranked_sources": [
+            "travel-old",
+            "travel-current",
+            "meeting-note",
+            "contradiction-a",
+            "hr-leave"
+          ],
+          "seconds": 0.016487871000208543,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.7967075809905066
+        },
+        {
+          "query_id": "q05",
+          "ranked_sources": [
+            "security-retention",
+            "observability",
+            "refund-policy",
+            "report-policy",
+            "hr-leave"
+          ],
+          "seconds": 0.01749079899991557,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q06",
+          "ranked_sources": [
+            "hr-leave",
+            "travel-current",
+            "travel-old",
+            "support-sla",
+            "contract-alpha"
+          ],
+          "seconds": 0.01687038499994742,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q07",
+          "ranked_sources": [
+            "inventory-policy",
+            "contradiction-a",
+            "contradiction-b",
+            "support-sla",
+            "cedar-project"
+          ],
+          "seconds": 0.017332957000235183,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q08",
+          "ranked_sources": [
+            "invoice-policy",
+            "report-policy",
+            "maple-project",
+            "contract-alpha",
+            "billing-date"
+          ],
+          "seconds": 0.017153912999674503,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q09",
+          "ranked_sources": [
+            "incident-runbook",
+            "observability",
+            "onboarding",
+            "support-sla",
+            "contradiction-b"
+          ],
+          "seconds": 0.022983398000178568,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q10",
+          "ranked_sources": [
+            "cedar-project",
+            "contradiction-b",
+            "contradiction-a",
+            "inventory-policy",
+            "onboarding"
+          ],
+          "seconds": 0.021962713999982952,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q11",
+          "ranked_sources": [
+            "maple-project",
+            "invoice-policy",
+            "billing-date",
+            "report-policy",
+            "support-sla"
+          ],
+          "seconds": 0.018770463000237214,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q12",
+          "ranked_sources": [
+            "refund-policy",
+            "travel-current",
+            "travel-old",
+            "invoice-policy",
+            "support-sla"
+          ],
+          "seconds": 0.01915651199988133,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q13",
+          "ranked_sources": [
+            "contradiction-a",
+            "contradiction-b",
+            "inventory-policy",
+            "api-limits",
+            "cedar-project"
+          ],
+          "seconds": 0.021049529999800143,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q14",
+          "ranked_sources": [
+            "support-sla",
+            "engineering",
+            "onboarding",
+            "inventory-policy",
+            "sales-driver"
+          ],
+          "seconds": 0.020156534999841824,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q15",
+          "ranked_sources": [
+            "sales-definition",
+            "sales-driver",
+            "cost-driver",
+            "csv-safety",
+            "travel-current"
+          ],
+          "seconds": 0.019970329999978276,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q16",
+          "ranked_sources": [
+            "billing-date",
+            "invoice-policy",
+            "maple-project",
+            "contract-alpha",
+            "report-policy"
+          ],
+          "seconds": 0.01543530200024179,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q17",
+          "ranked_sources": [
+            "contract-beta",
+            "contract-alpha",
+            "security-retention",
+            "support-sla",
+            "onboarding"
+          ],
+          "seconds": 0.014438633999816375,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q18",
+          "ranked_sources": [
+            "engineering",
+            "onboarding",
+            "memory-design",
+            "security-retention",
+            "api-limits"
+          ],
+          "seconds": 0.01414334900027825,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q19",
+          "ranked_sources": [
+            "csv-safety",
+            "report-policy",
+            "inventory-policy",
+            "malicious-source",
+            "sales-definition"
+          ],
+          "seconds": 0.013956453999981022,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q20",
+          "ranked_sources": [
+            "observability",
+            "incident-runbook",
+            "onboarding",
+            "engineering",
+            "malicious-source"
+          ],
+          "seconds": 0.01416571199979444,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q21",
+          "ranked_sources": [
+            "contract-alpha",
+            "contract-beta",
+            "travel-current",
+            "travel-old",
+            "refund-policy"
+          ],
+          "seconds": 0.014682061999792495,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q22",
+          "ranked_sources": [
+            "malicious-source",
+            "observability",
+            "incident-runbook",
+            "report-policy",
+            "onboarding"
+          ],
+          "seconds": 0.016766922999977396,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        }
+      ]
+    },
+    {
+      "configuration": "neural_hybrid",
+      "status": "executed",
+      "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+      "model_load_seconds": 0.004684268000346492,
+      "indexing_seconds": 0.5731285169999865,
+      "query_count": 22,
+      "metrics": {
+        "recall_at_1": 0.8181818181818182,
+        "recall_at_5": 0.8863636363636364,
+        "precision_at_5": 0.2181818181818182,
+        "mrr": 0.9545454545454546,
+        "ndcg_at_5": 0.9041736954522709
+      },
+      "mean_query_seconds": 0.016090996681813605,
+      "p95_query_seconds": 0.01887876299997515,
+      "rows": [
+        {
+          "query_id": "q01",
+          "ranked_sources": [
+            "sales-driver",
+            "cost-driver",
+            "weather",
+            "food",
+            "billing-date"
+          ],
+          "seconds": 0.014321391999601474,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8262346571285599
+        },
+        {
+          "query_id": "q02",
+          "ranked_sources": [
+            "cost-driver",
+            "meeting-note",
+            "support-sla",
+            "maple-project",
+            "contradiction-b"
+          ],
+          "seconds": 0.015243147999626672,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q03",
+          "ranked_sources": [
+            "report-policy",
+            "sales-driver",
+            "refund-policy",
+            "cost-driver",
+            "security-retention"
+          ],
+          "seconds": 0.017511439000372775,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q04",
+          "ranked_sources": [
+            "travel-old",
+            "support-sla",
+            "hr-leave",
+            "contradiction-a",
+            "contradiction-b"
+          ],
+          "seconds": 0.016199717000290548,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.27541155237618664
+        },
+        {
+          "query_id": "q05",
+          "ranked_sources": [
+            "security-retention",
+            "cost-driver",
+            "observability",
+            "refund-policy",
+            "report-policy"
+          ],
+          "seconds": 0.020916844000112178,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q06",
+          "ranked_sources": [
+            "hr-leave",
+            "contract-beta",
+            "contract-alpha",
+            "billing-date",
+            "security-retention"
+          ],
+          "seconds": 0.014054128000225319,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q07",
+          "ranked_sources": [
+            "inventory-policy",
+            "contradiction-a",
+            "contradiction-b",
+            "cedar-project",
+            "support-sla"
+          ],
+          "seconds": 0.015303727999707917,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q08",
+          "ranked_sources": [
+            "invoice-policy",
+            "contract-alpha",
+            "report-policy",
+            "support-sla",
+            "sales-driver"
+          ],
+          "seconds": 0.01494987600017339,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.9639404333166532
+        },
+        {
+          "query_id": "q09",
+          "ranked_sources": [
+            "incident-runbook",
+            "security-retention",
+            "onboarding",
+            "support-sla",
+            "invoice-policy"
+          ],
+          "seconds": 0.01815475700004754,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q10",
+          "ranked_sources": [
+            "cedar-project",
+            "contradiction-b",
+            "contradiction-a",
+            "maple-project",
+            "inventory-policy"
+          ],
+          "seconds": 0.01887876299997515,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q11",
+          "ranked_sources": [
+            "maple-project",
+            "contradiction-b",
+            "contradiction-a",
+            "travel-current",
+            "contract-alpha"
+          ],
+          "seconds": 0.014818764000210649,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q12",
+          "ranked_sources": [
+            "refund-policy",
+            "maple-project",
+            "travel-current",
+            "travel-old",
+            "cost-driver"
+          ],
+          "seconds": 0.01644637999970655,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q13",
+          "ranked_sources": [
+            "contradiction-a",
+            "contradiction-b",
+            "api-limits",
+            "inventory-policy",
+            "cedar-project"
+          ],
+          "seconds": 0.015706430999671284,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q14",
+          "ranked_sources": [
+            "support-sla",
+            "observability",
+            "sales-driver",
+            "incident-runbook",
+            "onboarding"
+          ],
+          "seconds": 0.015211340999940148,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q15",
+          "ranked_sources": [
+            "cost-driver",
+            "inventory-policy",
+            "contract-alpha",
+            "invoice-policy",
+            "report-policy"
+          ],
+          "seconds": 0.016565645999889966,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "q16",
+          "ranked_sources": [
+            "billing-date",
+            "maple-project",
+            "sales-driver",
+            "contract-beta",
+            "cost-driver"
+          ],
+          "seconds": 0.015552414000012504,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q17",
+          "ranked_sources": [
+            "contract-beta",
+            "contract-alpha",
+            "billing-date",
+            "onboarding",
+            "memory-design"
+          ],
+          "seconds": 0.01632127600032618,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q18",
+          "ranked_sources": [
+            "engineering",
+            "inventory-policy",
+            "maple-project",
+            "contradiction-a",
+            "cedar-project"
+          ],
+          "seconds": 0.014983264999955281,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q19",
+          "ranked_sources": [
+            "csv-safety",
+            "report-policy",
+            "refund-policy",
+            "inventory-policy",
+            "malicious-source"
+          ],
+          "seconds": 0.014911679999840999,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q20",
+          "ranked_sources": [
+            "observability",
+            "engineering",
+            "incident-runbook",
+            "contradiction-b",
+            "csv-safety"
+          ],
+          "seconds": 0.015471936000267306,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q21",
+          "ranked_sources": [
+            "contract-alpha",
+            "contract-beta",
+            "travel-current",
+            "maple-project",
+            "refund-policy"
+          ],
+          "seconds": 0.015026630000193109,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q22",
+          "ranked_sources": [
+            "malicious-source",
+            "incident-runbook",
+            "security-retention",
+            "invoice-policy",
+            "memory-design"
+          ],
+          "seconds": 0.01745237199975236,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8262346571285599
+        }
+      ]
+    },
+    {
+      "configuration": "neural_hybrid_rerank",
+      "status": "executed",
+      "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+      "model_load_seconds": 0.7500052639998103,
+      "indexing_seconds": 0.5589846620000571,
+      "query_count": 22,
+      "metrics": {
+        "recall_at_1": 0.8636363636363636,
+        "recall_at_5": 0.9772727272727273,
+        "precision_at_5": 0.24545454545454548,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.9772985719994892
+      },
+      "mean_query_seconds": 0.036792434227250356,
+      "p95_query_seconds": 0.04163253299975622,
+      "rows": [
+        {
+          "query_id": "q01",
+          "ranked_sources": [
+            "sales-driver",
+            "billing-date",
+            "cost-driver",
+            "contradiction-b",
+            "contradiction-a"
+          ],
+          "seconds": 0.05009425899970665,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8262346571285599
+        },
+        {
+          "query_id": "q02",
+          "ranked_sources": [
+            "cost-driver",
+            "incident-runbook",
+            "sales-driver",
+            "sales-definition",
+            "meeting-note"
+          ],
+          "seconds": 0.04163253299975622,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q03",
+          "ranked_sources": [
+            "report-policy",
+            "sales-driver",
+            "invoice-policy",
+            "refund-policy",
+            "onboarding"
+          ],
+          "seconds": 0.03743684800019764,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q04",
+          "ranked_sources": [
+            "travel-old",
+            "travel-current",
+            "hr-leave",
+            "support-sla",
+            "sales-driver"
+          ],
+          "seconds": 0.0348080819999268,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.7967075809905066
+        },
+        {
+          "query_id": "q05",
+          "ranked_sources": [
+            "security-retention",
+            "incident-runbook",
+            "refund-policy",
+            "hr-leave",
+            "support-sla"
+          ],
+          "seconds": 0.037244179000026634,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q06",
+          "ranked_sources": [
+            "hr-leave",
+            "contract-alpha",
+            "billing-date",
+            "refund-policy",
+            "contract-beta"
+          ],
+          "seconds": 0.036829217999638786,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q07",
+          "ranked_sources": [
+            "inventory-policy",
+            "contradiction-a",
+            "contradiction-b",
+            "cedar-project",
+            "refund-policy"
+          ],
+          "seconds": 0.03872728299984374,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q08",
+          "ranked_sources": [
+            "invoice-policy",
+            "sales-driver",
+            "malicious-source",
+            "report-policy",
+            "billing-date"
+          ],
+          "seconds": 0.03943725900035133,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.944847956559586
+        },
+        {
+          "query_id": "q09",
+          "ranked_sources": [
+            "incident-runbook",
+            "security-retention",
+            "report-policy",
+            "contract-alpha",
+            "onboarding"
+          ],
+          "seconds": 0.038853389999985666,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q10",
+          "ranked_sources": [
+            "cedar-project",
+            "maple-project",
+            "contradiction-b",
+            "sales-driver",
+            "contradiction-a"
+          ],
+          "seconds": 0.0346547570002258,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q11",
+          "ranked_sources": [
+            "maple-project",
+            "deployment",
+            "cedar-project",
+            "sales-definition",
+            "report-policy"
+          ],
+          "seconds": 0.03408570700003111,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q12",
+          "ranked_sources": [
+            "refund-policy",
+            "meeting-note",
+            "inventory-policy",
+            "api-limits",
+            "deployment"
+          ],
+          "seconds": 0.032730181999795604,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q13",
+          "ranked_sources": [
+            "contradiction-a",
+            "contradiction-b",
+            "inventory-policy",
+            "api-limits",
+            "cedar-project"
+          ],
+          "seconds": 0.03357057899984284,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q14",
+          "ranked_sources": [
+            "support-sla",
+            "inventory-policy",
+            "incident-runbook",
+            "sales-driver",
+            "security-retention"
+          ],
+          "seconds": 0.03452617700031624,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q15",
+          "ranked_sources": [
+            "sales-definition",
+            "csv-safety",
+            "invoice-policy",
+            "cost-driver",
+            "inventory-policy"
+          ],
+          "seconds": 0.03130974999976388,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q16",
+          "ranked_sources": [
+            "billing-date",
+            "maple-project",
+            "sales-driver",
+            "contradiction-a",
+            "contradiction-b"
+          ],
+          "seconds": 0.03598684799999319,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q17",
+          "ranked_sources": [
+            "contract-beta",
+            "contract-alpha",
+            "billing-date",
+            "engineering",
+            "memory-design"
+          ],
+          "seconds": 0.03590838199988866,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q18",
+          "ranked_sources": [
+            "engineering",
+            "inventory-policy",
+            "memory-design",
+            "api-limits",
+            "deployment"
+          ],
+          "seconds": 0.031210253000153898,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q19",
+          "ranked_sources": [
+            "csv-safety",
+            "report-policy",
+            "refund-policy",
+            "observability",
+            "inventory-policy"
+          ],
+          "seconds": 0.03989867900008903,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q20",
+          "ranked_sources": [
+            "observability",
+            "contradiction-b",
+            "engineering",
+            "refund-policy",
+            "contradiction-a"
+          ],
+          "seconds": 0.03440769200005889,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q21",
+          "ranked_sources": [
+            "contract-alpha",
+            "contract-beta",
+            "cost-driver",
+            "incident-runbook",
+            "billing-date"
+          ],
+          "seconds": 0.037977840999701584,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "q22",
+          "ranked_sources": [
+            "malicious-source",
+            "memory-design",
+            "report-policy",
+            "refund-policy",
+            "observability"
+          ],
+          "seconds": 0.03810365500021362,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.9327783893101107
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "No answer generation is scored here. Small authored corpus; generalization is unproven. Neural model download failures are not replaced with hashing scores."
+  ]
+}

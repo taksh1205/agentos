@@ -1,0 +1,163 @@
+{
+  "goal": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+  "model": "qwen3-4b-local",
+  "workspace": "release-3e4e14d5-9f07-4119-83d3-79a3d4220e13",
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "OrderedPlan",
+      "attempt": 1,
+      "input_tokens": 398,
+      "output_tokens": 135,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 50.509084058999974,
+      "tokens": 533,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 3.34015256400005,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 495,
+      "output_tokens": 64,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 27.857582011999966,
+      "tokens": 559,
+      "step": "0"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "invoice_analysis",
+      "argument_keys": [
+        "as_of"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 2.0863347309999654,
+      "output_fields": [
+        "rows",
+        "unpaid_total",
+        "as_of",
+        "overdue_rows",
+        "overdue_total"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "Finding",
+      "attempt": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APITimeoutError",
+      "seconds": 120.22374497499993,
+      "tokens": null,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "Finding",
+      "attempt": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APITimeoutError",
+      "seconds": 120.34935387600001,
+      "tokens": null,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "Finding",
+      "attempt": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 95.61448404600003,
+      "tokens": null,
+      "step": "0"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 420.14707453799997
+}

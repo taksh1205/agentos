@@ -1,0 +1,13 @@
+INFO:     Started server process [369]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:36388 (Press CTRL+C to quit)
+INFO:     127.0.0.1:58024 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58028 - "GET /runs/e599bb75-cb20-41b8-9c9c-eb6008bb4a1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58028 - "GET /runs/7bca1502-e83b-4b95-a49d-dd4db31ec98d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58028 - "GET /runs/9abb133c-5e6e-4bb9-822b-4ba46c94f247 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58028 - "GET /inbox HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [369]

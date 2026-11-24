@@ -1,0 +1,5 @@
+2026-11-18 01:47:59.975 UTC [68] LOG:  starting PostgreSQL 16.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 10.2.1 20210130 (Red Hat 10.2.1-11), 64-bit
+2026-11-18 01:47:59.975 UTC [68] LOG:  listening on IPv4 address "127.0.0.1", port 42735
+2026-11-18 01:47:59.979 UTC [72] LOG:  database system was shut down at 2026-11-18 01:47:59 UTC
+2026-11-18 01:47:59.982 UTC [68] LOG:  database system is ready to accept connections
+2026-11-18 01:49:26.944 UTC [68] LOG:  received smart shutdown request

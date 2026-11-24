@@ -1,0 +1,268 @@
+{
+  "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+  "model": "qwen15-local",
+  "workspace": "release-84a03708-c8c6-4926-bf86-fd9295e2a337",
+  "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0-correction",
+        "agent": "research",
+        "instruction": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+        "dependencies": [],
+        "tool": "document_search",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "research",
+        "ok": false,
+        "error": "TimeoutError",
+        "issues": [
+          ""
+        ],
+        "attempts": 3
+      },
+      {
+        "step": "0-correction",
+        "agent": "research",
+        "ok": false,
+        "error": "TimeoutError",
+        "issues": [
+          ""
+        ],
+        "attempts": 3
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 1 steps",
+        "at": 1795197305.2709253
+      },
+      {
+        "id": "0",
+        "agent": "research",
+        "summary": "Failed after bounded retries",
+        "at": 1795197432.0546598,
+        "error": "TimeoutError"
+      },
+      {
+        "id": "verify:correction",
+        "agent": "verification",
+        "summary": "Correction requested: 0",
+        "at": 1795197432.0843406
+      },
+      {
+        "id": "planner:1",
+        "agent": "planner",
+        "summary": "Model: scheduled 1 steps",
+        "at": 1795197436.9325106
+      },
+      {
+        "id": "0-correction",
+        "agent": "research",
+        "summary": "Failed after bounded retries",
+        "at": 1795197563.7719626,
+        "error": "TimeoutError"
+      },
+      {
+        "id": "verification:final",
+        "agent": "verification",
+        "summary": "Checked completion, citations, calculations and committed effects",
+        "at": 1795197563.800525
+      }
+    ]
+  },
+  "report": {
+    "status": "failed",
+    "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+    "mode": "openai",
+    "refusal": null,
+    "clarification": null,
+    "grounding": {
+      "fully_checked": false,
+      "requires_review": false
+    },
+    "review": {
+      "supported": null,
+      "issues": [
+        "Deterministic checks; no semantic model judgment"
+      ]
+    },
+    "findings": [],
+    "citations": [],
+    "errors": [
+      "0-correction"
+    ],
+    "usage": {
+      "tokens": 601,
+      "calls": 2,
+      "estimated_cost_usd": null
+    },
+    "limitations": [
+      "Model judges can be wrong; document content is untrusted evidence."
+    ]
+  },
+  "results": [
+    {
+      "step": "0",
+      "agent": "research",
+      "ok": false,
+      "error": "TimeoutError",
+      "issues": [
+        ""
+      ],
+      "attempts": 3
+    },
+    {
+      "step": "0-correction",
+      "agent": "research",
+      "ok": false,
+      "error": "TimeoutError",
+      "issues": [
+        ""
+      ],
+      "attempts": 3
+    }
+  ],
+  "plan": [
+    {
+      "id": "0-correction",
+      "agent": "research",
+      "instruction": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+      "dependencies": [],
+      "tool": "document_search",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    }
+  ],
+  "events": [
+    {
+      "id": "planner:0",
+      "agent": "planner",
+      "summary": "Model: scheduled 1 steps",
+      "at": 1795197305.2709253
+    },
+    {
+      "id": "0",
+      "agent": "research",
+      "summary": "Failed after bounded retries",
+      "at": 1795197432.0546598,
+      "error": "TimeoutError"
+    },
+    {
+      "id": "verify:correction",
+      "agent": "verification",
+      "summary": "Correction requested: 0",
+      "at": 1795197432.0843406
+    },
+    {
+      "id": "planner:1",
+      "agent": "planner",
+      "summary": "Model: scheduled 1 steps",
+      "at": 1795197436.9325106
+    },
+    {
+      "id": "0-correction",
+      "agent": "research",
+      "summary": "Failed after bounded retries",
+      "at": 1795197563.7719626,
+      "error": "TimeoutError"
+    },
+    {
+      "id": "verification:final",
+      "agent": "verification",
+      "summary": "Checked completion, citations, calculations and committed effects",
+      "at": 1795197563.800525
+    }
+  ],
+  "usage": {
+    "tokens": 601,
+    "calls": 2,
+    "estimated_cost_usd": null
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadSelection",
+      "attempt": 1,
+      "input_tokens": 247,
+      "output_tokens": 52,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 14.371555854999997,
+      "tokens": 299,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadSelection",
+      "attempt": 1,
+      "input_tokens": 250,
+      "output_tokens": 52,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 4.817348517000028,
+      "tokens": 302,
+      "step": "planner"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 313.240625865
+}

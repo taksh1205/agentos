@@ -1,0 +1,44 @@
+INFO:     Started server process [357]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:39972 - "OPTIONS /runs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "GET /runs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "OPTIONS /experiments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /experiments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "OPTIONS /evaluations/retrieval HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "GET /evaluations/retrieval HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "OPTIONS /demo/seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "POST /demo/seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "POST /runs HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:39972 - "OPTIONS /runs/eceded55-c865-442a-82db-cb4077ba91f8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "GET /runs/eceded55-c865-442a-82db-cb4077ba91f8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "OPTIONS /runs/eceded55-c865-442a-82db-cb4077ba91f8/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /runs/eceded55-c865-442a-82db-cb4077ba91f8/traces HTTP/1.1" 200 OK
+{"event": "run_finished", "run_id": "eceded55-c865-442a-82db-cb4077ba91f8", "workspace": "demo", "status": "completed"}
+INFO:     127.0.0.1:39972 - "GET /runs/eceded55-c865-442a-82db-cb4077ba91f8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /runs/eceded55-c865-442a-82db-cb4077ba91f8/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /runs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /experiments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /evaluations/retrieval HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "POST /runs HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:39972 - "OPTIONS /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "GET /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "OPTIONS /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe/traces HTTP/1.1" 200 OK
+{"event": "run_finished", "run_id": "1eecfc6c-c75b-4c72-8d4c-065ed4495fbe", "workspace": "demo", "status": "awaiting_approval"}
+INFO:     127.0.0.1:39972 - "GET /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /runs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /experiments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "GET /evaluations/retrieval HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39972 - "OPTIONS /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe/approval HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "POST /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe/approval HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:39982 - "GET /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "GET /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe/traces HTTP/1.1" 200 OK
+{"event": "run_finished", "run_id": "1eecfc6c-c75b-4c72-8d4c-065ed4495fbe", "workspace": "demo", "status": "completed"}
+INFO:     127.0.0.1:39982 - "GET /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "GET /runs/1eecfc6c-c75b-4c72-8d4c-065ed4495fbe/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "GET /runs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "GET /experiments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39982 - "GET /evaluations/retrieval HTTP/1.1" 200 OK

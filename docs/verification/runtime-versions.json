@@ -1,0 +1,19 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "fastapi": "0.163.2",
+    "langgraph": "1.2.22",
+    "langgraph-checkpoint-postgres": "3.2.1",
+    "sqlalchemy": "2.1.9",
+    "psycopg": "3.3.9",
+    "pgvector": "0.5.1",
+    "openai": "3.53.0",
+    "anthropic": "2.10.0",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.15.0",
+    "transformers": "5.23.0",
+    "pytest": "9.2.0",
+    "ruff": "0.17.5"
+  },
+  "live_provider_credentials_present": false
+}

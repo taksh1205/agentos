@@ -1,0 +1,26 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "node": "v24.22.1",
+  "packages": {
+    "fastapi": "0.163.2",
+    "openai": "3.53.0",
+    "anthropic": "2.10.0",
+    "torch": "2.6.0+cpu",
+    "sentence-transformers": "5.7.0",
+    "transformers": "5.23.0",
+    "huggingface-hub": "2.4.0",
+    "langgraph": "1.2.22",
+    "mcp": "1.30.0",
+    "pgserver": "0.1.4",
+    "sqlalchemy": "2.1.9",
+    "pypdf": "6.21.4",
+    "numpy": "2.5.5"
+  },
+  "docker": false,
+  "live_provider_credentials": {
+    "OPENAI_API_KEY": false,
+    "ANTHROPIC_API_KEY": false
+  },
+  "live_inference_requests": 0
+}

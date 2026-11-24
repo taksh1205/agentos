@@ -1,0 +1,79 @@
+{
+  "configuration": {
+    "mode": "demo",
+    "model": null,
+    "memory": true,
+    "embedding": "hashing:feature-hash::384:l2:v2"
+  },
+  "scenarios": 2,
+  "completed": 2,
+  "task_success_rate": 1,
+  "routing_accuracy": 1,
+  "tool_selection_accuracy": 1,
+  "planning_validity": 1,
+  "p50_seconds": 0.02508624999973108,
+  "p95_seconds": 0.029113144999882934,
+  "total_tokens": 0,
+  "estimated_cost_usd": 0,
+  "error_rate": 0,
+  "retry_count": 0,
+  "recall_at_5": null,
+  "mrr": null,
+  "notes": "Agent metrics use authored expectations. Retrieval metrics are separate. Offline rules are not model reasoning. Semantic claim metrics remain unlabeled/null.",
+  "rows": [
+    {
+      "id": "a01",
+      "origin": "hand-authored",
+      "goal": "What is the enterprise weekday response target?",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "completed": true,
+      "task_success": true,
+      "planning_valid": true,
+      "routing_correct": true,
+      "tool_selection_correct": true,
+      "tool_arguments_correct": null,
+      "computed_values_correct": true,
+      "observed_values": {},
+      "actual_tools": [
+        "document_search"
+      ],
+      "recovery_success": null,
+      "retry_count": 0,
+      "seconds": 0.029113144999882934,
+      "tokens": 0,
+      "estimated_cost_usd": 0,
+      "error": null,
+      "answer_faithfulness": null,
+      "semantic_citation_correctness": null,
+      "judge_notes": "No human claim-level truth labels supplied; no semantic score invented."
+    },
+    {
+      "id": "a02",
+      "origin": "hand-authored",
+      "goal": "Compare Alpha and Beta vendor renewal terms using documents",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "completed": true,
+      "task_success": true,
+      "planning_valid": true,
+      "routing_correct": true,
+      "tool_selection_correct": true,
+      "tool_arguments_correct": null,
+      "computed_values_correct": true,
+      "observed_values": {},
+      "actual_tools": [
+        "document_search"
+      ],
+      "recovery_success": null,
+      "retry_count": 0,
+      "seconds": 0.021059354999579227,
+      "tokens": 0,
+      "estimated_cost_usd": 0,
+      "error": null,
+      "answer_faithfulness": null,
+      "semantic_citation_correctness": null,
+      "judge_notes": "No human claim-level truth labels supplied; no semantic score invented."
+    }
+  ]
+}

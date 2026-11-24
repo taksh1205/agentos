@@ -1,0 +1,86 @@
+[
+  {
+    "id": "a02",
+    "goal": "Compare Alpha and Beta vendor renewal terms using documents",
+    "workflow": "research",
+    "expected_agents": [
+      "research"
+    ],
+    "expected_tools": [
+      "document_search"
+    ],
+    "expected_values": {},
+    "expected_status": "completed",
+    "approval": "approve",
+    "inject_failure": false,
+    "empty_corpus": false,
+    "label_notes": "Human-authored expectations; offline baseline may fail natural-language intent/period extraction.",
+    "expected_sources": [
+      "contract-alpha",
+      "contract-beta"
+    ],
+    "required_answer_fragments": [
+      "annual",
+      "quarter"
+    ]
+  },
+  {
+    "id": "a05",
+    "goal": "Analyze revenue",
+    "workflow": "business",
+    "expected_agents": [
+      "data"
+    ],
+    "expected_tools": [
+      "business_metrics"
+    ],
+    "expected_values": {
+      "revenue": 370000
+    },
+    "expected_status": "completed",
+    "approval": "approve",
+    "inject_failure": false,
+    "empty_corpus": false,
+    "label_notes": "Human-authored expectations; offline baseline may fail natural-language intent/period extraction."
+  },
+  {
+    "id": "a15",
+    "goal": "Create a local notification for the team",
+    "workflow": "operations",
+    "expected_agents": [
+      "action"
+    ],
+    "expected_tools": [
+      "create_notification"
+    ],
+    "expected_values": {},
+    "expected_status": "completed",
+    "approval": "approve",
+    "inject_failure": false,
+    "empty_corpus": false,
+    "label_notes": "Human-authored expectations; offline baseline may fail natural-language intent/period extraction."
+  },
+  {
+    "id": "combined",
+    "goal": "Compute revenue and operating costs, retrieve the internal reporting rules, and save the figures and policy in an internal report for approval.",
+    "expected_agents": [
+      "research",
+      "data",
+      "action"
+    ],
+    "expected_tools": [
+      "document_search",
+      "business_metrics",
+      "create_report"
+    ],
+    "expected_sources": [
+      "report-policy"
+    ],
+    "expected_values": {
+      "revenue": 370000,
+      "costs": 238000
+    },
+    "expected_status": "completed",
+    "approval": "approve"
+  }
+]

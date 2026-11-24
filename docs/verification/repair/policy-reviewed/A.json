@@ -1,0 +1,596 @@
+{
+  "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+  "model": "qwen15-local",
+  "workspace": "release-28f395e7-c194-42d9-ae26-85b98383ca62",
+  "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0",
+        "agent": "research",
+        "instruction": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+        "dependencies": [],
+        "tool": "document_search",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "research",
+        "ok": true,
+        "finding": {
+          "summary": "Inventory and capacity policies for the East depot's reserve stock are conflicting. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (P1) and at most twelve reserve pallets on site to maintain fire-lane clearance (P5). Ask the responsible policy owners to review the conflict together and document a resolution before changing operations. The cited passages do not establish which requirement takes precedence.",
+          "citations": [
+            "04e0b92127ae8f7c68036ade953e2b4e897ef062f987724a30d06a6785ea0b8e",
+            "0ed3011394d9c7a6e94c5c52547fc2e723dd844a4c39542c7e92fba7a3690001"
+          ],
+          "insufficient": false,
+          "contradictions": [
+            "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (P1) and at most twelve reserve pallets on site to maintain fire-lane clearance (P5)."
+          ],
+          "claims": [
+            {
+              "text": "East depot inventory policy.",
+              "citations": [
+                "04e0b92127ae8f7c68036ade953e2b4e897ef062f987724a30d06a6785ea0b8e"
+              ],
+              "kind": "extractive",
+              "quote": "East depot inventory policy.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+              "citations": [
+                "0ed3011394d9c7a6e94c5c52547fc2e723dd844a4c39542c7e92fba7a3690001"
+              ],
+              "kind": "extractive",
+              "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            }
+          ]
+        },
+        "grounding": {
+          "claims": [
+            {
+              "index": 0,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 1,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            }
+          ],
+          "errors": [],
+          "fully_checked": true,
+          "requires_review": false
+        },
+        "sources": [
+          {
+            "id": "04e0b92127ae8f7c68036ade953e2b4e897ef062f987724a30d06a6785ea0b8e",
+            "document_id": "3d4203029d78a10b01ee727da229a1afa565ce15aed0780e6ec6c47cbff939a3",
+            "source": "inventory-policy",
+            "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+            "score": 0.03278688524590164,
+            "dense_score": 0.6665072247873852,
+            "lexical_score": 7.38477658140061,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E1"
+          },
+          {
+            "id": "0ed3011394d9c7a6e94c5c52547fc2e723dd844a4c39542c7e92fba7a3690001",
+            "document_id": "ed56f5d17e3ab4c883470a4dc35663f71b3b169e6ded09a9b872dee49f190f08",
+            "source": "capacity-policy",
+            "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+            "score": 0.03225806451612903,
+            "dense_score": 0.5598155920888347,
+            "lexical_score": 5.430343504032496,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E2"
+          }
+        ],
+        "tokens": 515,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "PolicyAnalysis",
+            "attempt": 1,
+            "input_tokens": 410,
+            "output_tokens": 105,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 12.659455839000088,
+            "tokens": 515
+          }
+        ],
+        "tools_used": [
+          "document_search"
+        ],
+        "attempts": 1,
+        "seconds": 19.755472562000023
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 1 steps",
+        "at": 1795197581.110339
+      },
+      {
+        "id": "0",
+        "agent": "research",
+        "summary": "Validated approved tool results",
+        "at": 1795197600.8695915,
+        "step": "0",
+        "attempts": 1,
+        "seconds": 19.755472562000023
+      },
+      {
+        "id": "verification:final",
+        "agent": "verification",
+        "summary": "Checked completion, citations, calculations and committed effects",
+        "at": 1795197617.775814
+      }
+    ]
+  },
+  "report": {
+    "status": "completed",
+    "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+    "mode": "openai",
+    "refusal": null,
+    "clarification": null,
+    "grounding": {
+      "fully_checked": true,
+      "requires_review": false
+    },
+    "review": {
+      "supported": true,
+      "issues": []
+    },
+    "findings": [
+      {
+        "step": "0",
+        "agent": "research",
+        "ok": true,
+        "finding": {
+          "summary": "Inventory and capacity policies for the East depot's reserve stock are conflicting. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (P1) and at most twelve reserve pallets on site to maintain fire-lane clearance (P5). Ask the responsible policy owners to review the conflict together and document a resolution before changing operations. The cited passages do not establish which requirement takes precedence.",
+          "citations": [
+            "04e0b92127ae8f7c68036ade953e2b4e897ef062f987724a30d06a6785ea0b8e",
+            "0ed3011394d9c7a6e94c5c52547fc2e723dd844a4c39542c7e92fba7a3690001"
+          ],
+          "insufficient": false,
+          "contradictions": [
+            "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (P1) and at most twelve reserve pallets on site to maintain fire-lane clearance (P5)."
+          ],
+          "claims": [
+            {
+              "text": "East depot inventory policy.",
+              "citations": [
+                "04e0b92127ae8f7c68036ade953e2b4e897ef062f987724a30d06a6785ea0b8e"
+              ],
+              "kind": "extractive",
+              "quote": "East depot inventory policy.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            },
+            {
+              "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+              "citations": [
+                "0ed3011394d9c7a6e94c5c52547fc2e723dd844a4c39542c7e92fba7a3690001"
+              ],
+              "kind": "extractive",
+              "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+              "metric": null,
+              "operation": "total",
+              "value": null,
+              "start": null,
+              "end": null,
+              "basis": "interval",
+              "direction": null,
+              "receipt": null
+            }
+          ]
+        },
+        "grounding": {
+          "claims": [
+            {
+              "index": 0,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            },
+            {
+              "index": 1,
+              "status": "supported",
+              "reason": "exact_extractive_support"
+            }
+          ],
+          "errors": [],
+          "fully_checked": true,
+          "requires_review": false
+        },
+        "sources": [
+          {
+            "id": "04e0b92127ae8f7c68036ade953e2b4e897ef062f987724a30d06a6785ea0b8e",
+            "document_id": "3d4203029d78a10b01ee727da229a1afa565ce15aed0780e6ec6c47cbff939a3",
+            "source": "inventory-policy",
+            "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+            "score": 0.03278688524590164,
+            "dense_score": 0.6665072247873852,
+            "lexical_score": 7.38477658140061,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E1"
+          },
+          {
+            "id": "0ed3011394d9c7a6e94c5c52547fc2e723dd844a4c39542c7e92fba7a3690001",
+            "document_id": "ed56f5d17e3ab4c883470a4dc35663f71b3b169e6ded09a9b872dee49f190f08",
+            "source": "capacity-policy",
+            "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+            "score": 0.03225806451612903,
+            "dense_score": 0.5598155920888347,
+            "lexical_score": 5.430343504032496,
+            "rerank_score": null,
+            "metadata": {},
+            "reference": "E2"
+          }
+        ],
+        "tokens": 515,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "PolicyAnalysis",
+            "attempt": 1,
+            "input_tokens": 410,
+            "output_tokens": 105,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 12.659455839000088,
+            "tokens": 515
+          }
+        ],
+        "tools_used": [
+          "document_search"
+        ],
+        "attempts": 1,
+        "seconds": 19.755472562000023
+      }
+    ],
+    "citations": [
+      {
+        "id": "04e0b92127ae8f7c68036ade953e2b4e897ef062f987724a30d06a6785ea0b8e",
+        "document_id": "3d4203029d78a10b01ee727da229a1afa565ce15aed0780e6ec6c47cbff939a3",
+        "source": "inventory-policy",
+        "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+        "score": 0.03278688524590164,
+        "dense_score": 0.6665072247873852,
+        "lexical_score": 7.38477658140061,
+        "rerank_score": null,
+        "metadata": {},
+        "reference": "E1"
+      },
+      {
+        "id": "0ed3011394d9c7a6e94c5c52547fc2e723dd844a4c39542c7e92fba7a3690001",
+        "document_id": "ed56f5d17e3ab4c883470a4dc35663f71b3b169e6ded09a9b872dee49f190f08",
+        "source": "capacity-policy",
+        "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+        "score": 0.03225806451612903,
+        "dense_score": 0.5598155920888347,
+        "lexical_score": 5.430343504032496,
+        "rerank_score": null,
+        "metadata": {},
+        "reference": "E2"
+      }
+    ],
+    "errors": [],
+    "usage": {
+      "tokens": 2223,
+      "calls": 3,
+      "estimated_cost_usd": null
+    },
+    "limitations": [
+      "Model judges can be wrong; document content is untrusted evidence."
+    ]
+  },
+  "results": [
+    {
+      "step": "0",
+      "agent": "research",
+      "ok": true,
+      "finding": {
+        "summary": "Inventory and capacity policies for the East depot's reserve stock are conflicting. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (P1) and at most twelve reserve pallets on site to maintain fire-lane clearance (P5). Ask the responsible policy owners to review the conflict together and document a resolution before changing operations. The cited passages do not establish which requirement takes precedence.",
+        "citations": [
+          "04e0b92127ae8f7c68036ade953e2b4e897ef062f987724a30d06a6785ea0b8e",
+          "0ed3011394d9c7a6e94c5c52547fc2e723dd844a4c39542c7e92fba7a3690001"
+        ],
+        "insufficient": false,
+        "contradictions": [
+          "The East depot must keep at least twenty reserve pallets on site to cover supply interruptions (P1) and at most twelve reserve pallets on site to maintain fire-lane clearance (P5)."
+        ],
+        "claims": [
+          {
+            "text": "East depot inventory policy.",
+            "citations": [
+              "04e0b92127ae8f7c68036ade953e2b4e897ef062f987724a30d06a6785ea0b8e"
+            ],
+            "kind": "extractive",
+            "quote": "East depot inventory policy.",
+            "metric": null,
+            "operation": "total",
+            "value": null,
+            "start": null,
+            "end": null,
+            "basis": "interval",
+            "direction": null,
+            "receipt": null
+          },
+          {
+            "text": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+            "citations": [
+              "0ed3011394d9c7a6e94c5c52547fc2e723dd844a4c39542c7e92fba7a3690001"
+            ],
+            "kind": "extractive",
+            "quote": "The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance.",
+            "metric": null,
+            "operation": "total",
+            "value": null,
+            "start": null,
+            "end": null,
+            "basis": "interval",
+            "direction": null,
+            "receipt": null
+          }
+        ]
+      },
+      "grounding": {
+        "claims": [
+          {
+            "index": 0,
+            "status": "supported",
+            "reason": "exact_extractive_support"
+          },
+          {
+            "index": 1,
+            "status": "supported",
+            "reason": "exact_extractive_support"
+          }
+        ],
+        "errors": [],
+        "fully_checked": true,
+        "requires_review": false
+      },
+      "sources": [
+        {
+          "id": "04e0b92127ae8f7c68036ade953e2b4e897ef062f987724a30d06a6785ea0b8e",
+          "document_id": "3d4203029d78a10b01ee727da229a1afa565ce15aed0780e6ec6c47cbff939a3",
+          "source": "inventory-policy",
+          "text": "East depot inventory policy. The East depot must keep at least twenty reserve pallets on site to cover supply interruptions. Reducing reserve stock requires the inventory owner's approval.",
+          "score": 0.03278688524590164,
+          "dense_score": 0.6665072247873852,
+          "lexical_score": 7.38477658140061,
+          "rerank_score": null,
+          "metadata": {},
+          "reference": "E1"
+        },
+        {
+          "id": "0ed3011394d9c7a6e94c5c52547fc2e723dd844a4c39542c7e92fba7a3690001",
+          "document_id": "ed56f5d17e3ab4c883470a4dc35663f71b3b169e6ded09a9b872dee49f190f08",
+          "source": "capacity-policy",
+          "text": "East depot capacity policy. The East depot may keep at most twelve reserve pallets on site to maintain fire-lane clearance. The capacity owner must review any proposed exception.",
+          "score": 0.03225806451612903,
+          "dense_score": 0.5598155920888347,
+          "lexical_score": 5.430343504032496,
+          "rerank_score": null,
+          "metadata": {},
+          "reference": "E2"
+        }
+      ],
+      "tokens": 515,
+      "model_records": [
+        {
+          "provider": "openai",
+          "model": "qwen15-local",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "PolicyAnalysis",
+          "attempt": 1,
+          "input_tokens": 410,
+          "output_tokens": 105,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 12.659455839000088,
+          "tokens": 515
+        }
+      ],
+      "tools_used": [
+        "document_search"
+      ],
+      "attempts": 1,
+      "seconds": 19.755472562000023
+    }
+  ],
+  "plan": [
+    {
+      "id": "0",
+      "agent": "research",
+      "instruction": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+      "dependencies": [],
+      "tool": "document_search",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    }
+  ],
+  "events": [
+    {
+      "id": "planner:0",
+      "agent": "planner",
+      "summary": "Model: scheduled 1 steps",
+      "at": 1795197581.110339
+    },
+    {
+      "id": "0",
+      "agent": "research",
+      "summary": "Validated approved tool results",
+      "at": 1795197600.8695915,
+      "step": "0",
+      "attempts": 1,
+      "seconds": 19.755472562000023
+    },
+    {
+      "id": "verification:final",
+      "agent": "verification",
+      "summary": "Checked completion, citations, calculations and committed effects",
+      "at": 1795197617.775814
+    }
+  ],
+  "usage": {
+    "tokens": 2223,
+    "calls": 3,
+    "estimated_cost_usd": null
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadSelection",
+      "attempt": 1,
+      "input_tokens": 247,
+      "output_tokens": 52,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 6.048278807999964,
+      "tokens": 299,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 7.089843784000095,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "PolicyAnalysis",
+      "attempt": 1,
+      "input_tokens": 410,
+      "output_tokens": 105,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 12.659455839000088,
+      "tokens": 515,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "Review",
+      "attempt": 1,
+      "input_tokens": 1395,
+      "output_tokens": 14,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 16.894478875000004,
+      "tokens": 1409,
+      "step": "verification"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 52.183680977999984
+}

@@ -1,0 +1,863 @@
+{
+  "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+  "model": "qwen2.5-1.5b-local",
+  "workspace": "release-91b8941b-96d9-4a03-8146-80c634fcec5b",
+  "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0-correction",
+        "agent": "research",
+        "instruction": "Search for the inventory and capacity policies for the East depot's reserve stock.",
+        "dependencies": [],
+        "tool": "document_search",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "1-correction",
+        "agent": "data",
+        "instruction": "Retrieve the current inventory and capacity metrics for the East depot.",
+        "dependencies": [
+          "0-correction"
+        ],
+        "tool": "business_metrics",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "2-correction",
+        "agent": "data",
+        "instruction": "Analyze the invoices related to the East depot's reserve stock to identify any discrepancies or issues.",
+        "dependencies": [
+          "0-correction",
+          "1-correction"
+        ],
+        "tool": "invoice_analysis",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "3-correction",
+        "agent": "data",
+        "instruction": "Retrieve the inventory levels for the East depot's reserve stock.",
+        "dependencies": [
+          "0-correction",
+          "1-correction",
+          "2-correction"
+        ],
+        "tool": "inventory_retrieval",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "4-correction",
+        "agent": "data",
+        "instruction": "Retrieve the capacity levels for the East depot's reserve stock.",
+        "dependencies": [
+          "0-correction",
+          "1-correction",
+          "2-correction",
+          "3-correction"
+        ],
+        "tool": "inventory_retrieval",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "5-correction",
+        "agent": "data",
+        "instruction": "Analyze the invoices related to the East depot's reserve stock to identify any discrepancies or issues.",
+        "dependencies": [
+          "0-correction",
+          "1-correction",
+          "2-correction",
+          "3-correction",
+          "4-correction"
+        ],
+        "tool": "invoice_analysis",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "6-correction",
+        "agent": "data",
+        "instruction": "Retrieve the inventory levels for the East depot's reserve stock.",
+        "dependencies": [
+          "0-correction",
+          "1-correction",
+          "2-correction",
+          "3-correction",
+          "4-correction",
+          "5-correction"
+        ],
+        "tool": "inventory_retrieval",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "7-correction",
+        "agent": "data",
+        "instruction": "Retrieve the capacity levels for the East depot's reserve stock.",
+        "dependencies": [
+          "0-correction",
+          "1-correction",
+          "2-correction",
+          "3-correction",
+          "4-correction",
+          "5-correction",
+          "6-correction"
+        ],
+        "tool": "inventory_retrieval",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "8-correction",
+        "agent": "data",
+        "instruction": "Retrieve the current inventory and capacity metrics for the East depot.",
+        "dependencies": [
+          "0-correction",
+          "1-correction",
+          "2-correction",
+          "3-correction",
+          "4-correction",
+          "5-correction",
+          "6-correction",
+          "7-correction"
+        ],
+        "tool": "business_metrics",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "9-correction",
+        "agent": "data",
+        "instruction": "Analyze the invoices related to the East depot's reserve stock to identify any discrepancies or issues.",
+        "dependencies": [
+          "0-correction",
+          "1-correction",
+          "2-correction",
+          "3-correction",
+          "4-correction",
+          "5-correction",
+          "6-correction",
+          "7-correction",
+          "8-correction"
+        ],
+        "tool": "invoice_analysis",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "10-correction",
+        "agent": "data",
+        "instruction": "Retrieve the inventory levels for the East depot's reserve stock.",
+        "dependencies": [
+          "0-correction",
+          "1-correction",
+          "2-correction",
+          "3-correction",
+          "4-correction",
+          "5-correction",
+          "6-correction",
+          "7-correction",
+          "8-correction",
+          "9-correction"
+        ],
+        "tool": "inventory_retrieval",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "11-correction",
+        "agent": "data",
+        "instruction": "Retrieve the capacity levels for the East depot's reserve stock.",
+        "dependencies": [
+          "0-correction",
+          "1-correction",
+          "2-correction",
+          "3-correction",
+          "4-correction",
+          "5-correction",
+          "6-correction",
+          "7-correction",
+          "8-correction",
+          "9-correction",
+          "10-correction"
+        ],
+        "tool": "inventory_retrieval",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "research",
+        "ok": false,
+        "error": "ValueError",
+        "issues": [
+          "Unknown citation"
+        ],
+        "attempts": 1
+      },
+      {
+        "step": "0-correction",
+        "agent": "research",
+        "ok": false,
+        "error": "ValueError",
+        "issues": [
+          "Unknown citation"
+        ],
+        "attempts": 1
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 4 steps",
+        "at": 1795049664.8514955
+      },
+      {
+        "id": "0",
+        "agent": "research",
+        "summary": "Failed after bounded retries",
+        "at": 1795049722.264174,
+        "error": "ValueError"
+      },
+      {
+        "id": "verify:correction",
+        "agent": "verification",
+        "summary": "Correction requested: 0, 1, 2, 3",
+        "at": 1795049722.2680802
+      },
+      {
+        "id": "planner:1",
+        "agent": "planner",
+        "summary": "Model: scheduled 12 steps",
+        "at": 1795049751.2283504
+      },
+      {
+        "id": "0-correction",
+        "agent": "research",
+        "summary": "Failed after bounded retries",
+        "at": 1795049800.1118064,
+        "error": "ValueError"
+      },
+      {
+        "id": "verification:final",
+        "agent": "verification",
+        "summary": "Checked completion, citations, calculations and committed effects",
+        "at": 1795049800.1171715
+      }
+    ]
+  },
+  "report": {
+    "status": "failed",
+    "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+    "mode": "openai",
+    "refusal": null,
+    "clarification": null,
+    "grounding": {
+      "fully_checked": false,
+      "requires_review": false
+    },
+    "review": {
+      "supported": null,
+      "issues": [
+        "Deterministic checks; no semantic model judgment"
+      ]
+    },
+    "findings": [],
+    "citations": [],
+    "errors": [
+      "0-correction",
+      "1-correction",
+      "2-correction",
+      "3-correction",
+      "4-correction",
+      "5-correction",
+      "6-correction",
+      "7-correction",
+      "8-correction",
+      "9-correction",
+      "10-correction",
+      "11-correction"
+    ],
+    "usage": {
+      "tokens": 3248,
+      "calls": 6,
+      "estimated_cost_usd": null
+    },
+    "limitations": [
+      "Model judges can be wrong; document content is untrusted evidence."
+    ]
+  },
+  "results": [
+    {
+      "step": "0",
+      "agent": "research",
+      "ok": false,
+      "error": "ValueError",
+      "issues": [
+        "Unknown citation"
+      ],
+      "attempts": 1
+    },
+    {
+      "step": "0-correction",
+      "agent": "research",
+      "ok": false,
+      "error": "ValueError",
+      "issues": [
+        "Unknown citation"
+      ],
+      "attempts": 1
+    }
+  ],
+  "plan": [
+    {
+      "id": "0-correction",
+      "agent": "research",
+      "instruction": "Search for the inventory and capacity policies for the East depot's reserve stock.",
+      "dependencies": [],
+      "tool": "document_search",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "1-correction",
+      "agent": "data",
+      "instruction": "Retrieve the current inventory and capacity metrics for the East depot.",
+      "dependencies": [
+        "0-correction"
+      ],
+      "tool": "business_metrics",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "2-correction",
+      "agent": "data",
+      "instruction": "Analyze the invoices related to the East depot's reserve stock to identify any discrepancies or issues.",
+      "dependencies": [
+        "0-correction",
+        "1-correction"
+      ],
+      "tool": "invoice_analysis",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "3-correction",
+      "agent": "data",
+      "instruction": "Retrieve the inventory levels for the East depot's reserve stock.",
+      "dependencies": [
+        "0-correction",
+        "1-correction",
+        "2-correction"
+      ],
+      "tool": "inventory_retrieval",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "4-correction",
+      "agent": "data",
+      "instruction": "Retrieve the capacity levels for the East depot's reserve stock.",
+      "dependencies": [
+        "0-correction",
+        "1-correction",
+        "2-correction",
+        "3-correction"
+      ],
+      "tool": "inventory_retrieval",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "5-correction",
+      "agent": "data",
+      "instruction": "Analyze the invoices related to the East depot's reserve stock to identify any discrepancies or issues.",
+      "dependencies": [
+        "0-correction",
+        "1-correction",
+        "2-correction",
+        "3-correction",
+        "4-correction"
+      ],
+      "tool": "invoice_analysis",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "6-correction",
+      "agent": "data",
+      "instruction": "Retrieve the inventory levels for the East depot's reserve stock.",
+      "dependencies": [
+        "0-correction",
+        "1-correction",
+        "2-correction",
+        "3-correction",
+        "4-correction",
+        "5-correction"
+      ],
+      "tool": "inventory_retrieval",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "7-correction",
+      "agent": "data",
+      "instruction": "Retrieve the capacity levels for the East depot's reserve stock.",
+      "dependencies": [
+        "0-correction",
+        "1-correction",
+        "2-correction",
+        "3-correction",
+        "4-correction",
+        "5-correction",
+        "6-correction"
+      ],
+      "tool": "inventory_retrieval",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "8-correction",
+      "agent": "data",
+      "instruction": "Retrieve the current inventory and capacity metrics for the East depot.",
+      "dependencies": [
+        "0-correction",
+        "1-correction",
+        "2-correction",
+        "3-correction",
+        "4-correction",
+        "5-correction",
+        "6-correction",
+        "7-correction"
+      ],
+      "tool": "business_metrics",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "9-correction",
+      "agent": "data",
+      "instruction": "Analyze the invoices related to the East depot's reserve stock to identify any discrepancies or issues.",
+      "dependencies": [
+        "0-correction",
+        "1-correction",
+        "2-correction",
+        "3-correction",
+        "4-correction",
+        "5-correction",
+        "6-correction",
+        "7-correction",
+        "8-correction"
+      ],
+      "tool": "invoice_analysis",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "10-correction",
+      "agent": "data",
+      "instruction": "Retrieve the inventory levels for the East depot's reserve stock.",
+      "dependencies": [
+        "0-correction",
+        "1-correction",
+        "2-correction",
+        "3-correction",
+        "4-correction",
+        "5-correction",
+        "6-correction",
+        "7-correction",
+        "8-correction",
+        "9-correction"
+      ],
+      "tool": "inventory_retrieval",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "11-correction",
+      "agent": "data",
+      "instruction": "Retrieve the capacity levels for the East depot's reserve stock.",
+      "dependencies": [
+        "0-correction",
+        "1-correction",
+        "2-correction",
+        "3-correction",
+        "4-correction",
+        "5-correction",
+        "6-correction",
+        "7-correction",
+        "8-correction",
+        "9-correction",
+        "10-correction"
+      ],
+      "tool": "inventory_retrieval",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    }
+  ],
+  "events": [
+    {
+      "id": "planner:0",
+      "agent": "planner",
+      "summary": "Model: scheduled 4 steps",
+      "at": 1795049664.8514955
+    },
+    {
+      "id": "0",
+      "agent": "research",
+      "summary": "Failed after bounded retries",
+      "at": 1795049722.264174,
+      "error": "ValueError"
+    },
+    {
+      "id": "verify:correction",
+      "agent": "verification",
+      "summary": "Correction requested: 0, 1, 2, 3",
+      "at": 1795049722.2680802
+    },
+    {
+      "id": "planner:1",
+      "agent": "planner",
+      "summary": "Model: scheduled 12 steps",
+      "at": 1795049751.2283504
+    },
+    {
+      "id": "0-correction",
+      "agent": "research",
+      "summary": "Failed after bounded retries",
+      "at": 1795049800.1118064,
+      "error": "ValueError"
+    },
+    {
+      "id": "verification:final",
+      "agent": "verification",
+      "summary": "Checked completion, citations, calculations and committed effects",
+      "at": 1795049800.1171715
+    }
+  ],
+  "usage": {
+    "tokens": 3248,
+    "calls": 6,
+    "estimated_cost_usd": null
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadOnlyPlan",
+      "attempt": 1,
+      "input_tokens": 359,
+      "output_tokens": 157,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 13.528228921999926,
+      "tokens": 516,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "SearchQuery",
+      "attempt": 1,
+      "input_tokens": 161,
+      "output_tokens": 59,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 5.451647442999956,
+      "tokens": 220,
+      "step": "0"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 8.305967120000105,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 8.334244294999962,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 7.4966486979999445,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 6.88290265899991,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "CitedSynthesis",
+      "attempt": 1,
+      "input_tokens": 466,
+      "output_tokens": 248,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 20.925321696999845,
+      "tokens": 714,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadOnlyPlan",
+      "attempt": 1,
+      "input_tokens": 373,
+      "output_tokens": 490,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 28.95258937099993,
+      "tokens": 863,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "SearchQuery",
+      "attempt": 1,
+      "input_tokens": 162,
+      "output_tokens": 58,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 3.4150763630000256,
+      "tokens": 220,
+      "step": "0-correction"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 8.710543357000006,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 7.262804363999976,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 7.343972878000159,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "document_search",
+      "argument_keys": [
+        "k",
+        "query"
+      ],
+      "arguments": {},
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 6.698042844000156,
+      "output_fields": [
+        "sources"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "CitedSynthesis",
+      "attempt": 1,
+      "input_tokens": 467,
+      "output_tokens": 248,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 15.437910482000007,
+      "tokens": 715,
+      "step": "0-correction"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 160.55715491399997
+}

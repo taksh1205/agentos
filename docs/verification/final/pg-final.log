@@ -1,0 +1,6 @@
+2026-11-19 00:44:23.356 UTC [23] LOG:  starting PostgreSQL 16.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 10.2.1 20210130 (Red Hat 10.2.1-11), 64-bit
+2026-11-19 00:44:23.356 UTC [23] LOG:  listening on IPv4 address "127.0.0.1", port 42735
+2026-11-19 00:44:23.357 UTC [28] LOG:  database system was shut down at 2026-11-19 00:44:23 UTC
+2026-11-19 00:44:23.360 UTC [23] LOG:  database system is ready to accept connections
+2026-11-19 00:44:24.355 UTC [33] FATAL:  database "agent" does not exist
+2026-11-19 00:45:07.042 UTC [23] LOG:  received smart shutdown request

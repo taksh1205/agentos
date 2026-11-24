@@ -1,0 +1,14 @@
+[
+  {
+    "id": "receipt-smoke",
+    "goal": "Create one local notification with the exact message Inventory review starts Friday.",
+    "expected_agents": [
+      "action"
+    ],
+    "expected_tools": [
+      "create_notification"
+    ],
+    "expected_status": "completed",
+    "approval": "approve"
+  }
+]

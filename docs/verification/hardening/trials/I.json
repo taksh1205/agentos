@@ -1,0 +1,916 @@
+{
+  "goal": "Review overdue invoices as of 2026-09-15. Prepare a collections report listing the unpaid past-due balances. Store the report after approval.",
+  "model": "qwen15-local",
+  "workspace": "release-c8bc8794-6ff4-404a-a28c-4489e78a99a1",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0",
+        "agent": "data",
+        "instruction": "Review overdue invoices as of 2026-09-15. Prepare a collections report listing the unpaid past-due balances. Store the report after approval.",
+        "dependencies": [],
+        "tool": "invoice_analysis",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "write",
+        "agent": "action",
+        "instruction": "Review overdue invoices as of 2026-09-15. Prepare a collections report listing the unpaid past-due balances. Store the report after approval.",
+        "dependencies": [
+          "0"
+        ],
+        "tool": "create_report",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": true,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": true,
+        "analytics": {
+          "rows": [
+            {
+              "number": "INV-731",
+              "amount": 615.5,
+              "paid": 0,
+              "due": "2026-09-04"
+            },
+            {
+              "number": "INV-843",
+              "amount": 220.0,
+              "paid": 0,
+              "due": "2026-09-14"
+            },
+            {
+              "number": "INV-902",
+              "amount": 990.0,
+              "paid": 1,
+              "due": "2026-09-03"
+            },
+            {
+              "number": "INV-917",
+              "amount": 480.0,
+              "paid": 0,
+              "due": "2026-09-15"
+            }
+          ],
+          "unpaid_total": 1315.5,
+          "as_of": "2026-09-15",
+          "overdue_rows": [
+            {
+              "number": "INV-731",
+              "amount": 615.5,
+              "paid": 0,
+              "due": "2026-09-04"
+            },
+            {
+              "number": "INV-843",
+              "amount": 220.0,
+              "paid": 0,
+              "due": "2026-09-14"
+            }
+          ],
+          "overdue_total": 835.5
+        },
+        "intent": {
+          "as_of": "2026-09-15",
+          "dataset": "invoices",
+          "metrics": [
+            "revenue"
+          ],
+          "start": null,
+          "end": null,
+          "compare_previous": false
+        },
+        "computed": {
+          "rows": [
+            {
+              "number": "INV-731",
+              "amount": 615.5,
+              "paid": 0,
+              "due": "2026-09-04"
+            },
+            {
+              "number": "INV-843",
+              "amount": 220.0,
+              "paid": 0,
+              "due": "2026-09-14"
+            },
+            {
+              "number": "INV-902",
+              "amount": 990.0,
+              "paid": 1,
+              "due": "2026-09-03"
+            },
+            {
+              "number": "INV-917",
+              "amount": 480.0,
+              "paid": 0,
+              "due": "2026-09-15"
+            }
+          ],
+          "unpaid_total": 1315.5,
+          "as_of": "2026-09-15",
+          "overdue_rows": [
+            {
+              "number": "INV-731",
+              "amount": 615.5,
+              "paid": 0,
+              "due": "2026-09-04"
+            },
+            {
+              "number": "INV-843",
+              "amount": 220.0,
+              "paid": 0,
+              "due": "2026-09-14"
+            }
+          ],
+          "overdue_total": 835.5
+        },
+        "interpretation": {
+          "summary": "As of 2026-09-15, overdue total is $835.50. INV-731 is overdue for $615.50. INV-843 is overdue for $220.00. Review for follow-up.",
+          "citations": [],
+          "insufficient": false,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "tokens": 872,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "AnalyticsIntent",
+            "attempt": 1,
+            "input_tokens": 511,
+            "output_tokens": 64,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 13.469357813999977,
+            "tokens": 575
+          },
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "InvoiceReading",
+            "attempt": 1,
+            "input_tokens": 265,
+            "output_tokens": 32,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 7.101604339999994,
+            "tokens": 297
+          }
+        ],
+        "tools_used": [
+          "dataset_schema",
+          "invoice_analysis"
+        ],
+        "attempts": 1,
+        "seconds": 25.035870108999916
+      },
+      {
+        "step": "write",
+        "agent": "action",
+        "ok": true,
+        "tool": "create_report",
+        "receipt": "789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44",
+        "effect": {
+          "receipt": "789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44",
+          "tool": "create_report",
+          "stored": true,
+          "payload": {
+            "title": "Review overdue invoices as of 2026-09-15",
+            "body": "As of 2026-09-15, overdue total is $835.50. INV-731 is overdue for $615.50. INV-843 is overdue for $220.00. Review for follow-up."
+          },
+          "external_message_sent": false
+        },
+        "tokens": 0,
+        "model_records": [],
+        "tools_used": [
+          "create_report"
+        ],
+        "attempts": 1
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 2 steps",
+        "at": 1795315991.7006252
+      },
+      {
+        "id": "0",
+        "agent": "data",
+        "summary": "Validated approved tool results",
+        "at": 1795316016.7555168,
+        "step": "0",
+        "attempts": 1,
+        "seconds": 25.035870108999916
+      },
+      {
+        "id": "preflight:88d8581664fa5b2b02cb83456627866df2e8446c659c6909e2c205918bb3ff2c",
+        "agent": "verification",
+        "summary": "Evidence checked before proposing an action",
+        "at": 1795316028.520581
+      },
+      {
+        "id": "write",
+        "agent": "action",
+        "summary": "Approved mutation committed and audited",
+        "at": 1795316032.2085688,
+        "tool": "create_report"
+      },
+      {
+        "id": "verification:final",
+        "agent": "verification",
+        "summary": "Checked completion, citations, calculations and committed effects",
+        "at": 1795316037.2328131
+      }
+    ]
+  },
+  "proposal": {
+    "id": "789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44",
+    "tool": "create_report",
+    "arguments": {
+      "title": "Review overdue invoices as of 2026-09-15",
+      "body": "As of 2026-09-15, overdue total is $835.50. INV-731 is overdue for $615.50. INV-843 is overdue for $220.00. Review for follow-up."
+    },
+    "digest": "c1c6f1a2ea79a0809271eadd645e95a3f703ba5627a9b16c3e5b7fa03e3b6710",
+    "status": "pending"
+  },
+  "effects_before": [],
+  "test_operator_approved": true,
+  "replay": {
+    "receipt": "789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44",
+    "tool": "create_report",
+    "stored": true,
+    "payload": {
+      "title": "Review overdue invoices as of 2026-09-15",
+      "body": "As of 2026-09-15, overdue total is $835.50. INV-731 is overdue for $615.50. INV-843 is overdue for $220.00. Review for follow-up."
+    },
+    "external_message_sent": false
+  },
+  "report": {
+    "status": "completed",
+    "goal": "Review overdue invoices as of 2026-09-15. Prepare a collections report listing the unpaid past-due balances. Store the report after approval.",
+    "mode": "openai",
+    "refusal": null,
+    "clarification": null,
+    "grounding": {
+      "fully_checked": false,
+      "requires_review": true
+    },
+    "review": {
+      "supported": true,
+      "issues": []
+    },
+    "findings": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": true,
+        "analytics": {
+          "rows": [
+            {
+              "number": "INV-731",
+              "amount": 615.5,
+              "paid": 0,
+              "due": "2026-09-04"
+            },
+            {
+              "number": "INV-843",
+              "amount": 220.0,
+              "paid": 0,
+              "due": "2026-09-14"
+            },
+            {
+              "number": "INV-902",
+              "amount": 990.0,
+              "paid": 1,
+              "due": "2026-09-03"
+            },
+            {
+              "number": "INV-917",
+              "amount": 480.0,
+              "paid": 0,
+              "due": "2026-09-15"
+            }
+          ],
+          "unpaid_total": 1315.5,
+          "as_of": "2026-09-15",
+          "overdue_rows": [
+            {
+              "number": "INV-731",
+              "amount": 615.5,
+              "paid": 0,
+              "due": "2026-09-04"
+            },
+            {
+              "number": "INV-843",
+              "amount": 220.0,
+              "paid": 0,
+              "due": "2026-09-14"
+            }
+          ],
+          "overdue_total": 835.5
+        },
+        "intent": {
+          "as_of": "2026-09-15",
+          "dataset": "invoices",
+          "metrics": [
+            "revenue"
+          ],
+          "start": null,
+          "end": null,
+          "compare_previous": false
+        },
+        "computed": {
+          "rows": [
+            {
+              "number": "INV-731",
+              "amount": 615.5,
+              "paid": 0,
+              "due": "2026-09-04"
+            },
+            {
+              "number": "INV-843",
+              "amount": 220.0,
+              "paid": 0,
+              "due": "2026-09-14"
+            },
+            {
+              "number": "INV-902",
+              "amount": 990.0,
+              "paid": 1,
+              "due": "2026-09-03"
+            },
+            {
+              "number": "INV-917",
+              "amount": 480.0,
+              "paid": 0,
+              "due": "2026-09-15"
+            }
+          ],
+          "unpaid_total": 1315.5,
+          "as_of": "2026-09-15",
+          "overdue_rows": [
+            {
+              "number": "INV-731",
+              "amount": 615.5,
+              "paid": 0,
+              "due": "2026-09-04"
+            },
+            {
+              "number": "INV-843",
+              "amount": 220.0,
+              "paid": 0,
+              "due": "2026-09-14"
+            }
+          ],
+          "overdue_total": 835.5
+        },
+        "interpretation": {
+          "summary": "As of 2026-09-15, overdue total is $835.50. INV-731 is overdue for $615.50. INV-843 is overdue for $220.00. Review for follow-up.",
+          "citations": [],
+          "insufficient": false,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "tokens": 872,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "AnalyticsIntent",
+            "attempt": 1,
+            "input_tokens": 511,
+            "output_tokens": 64,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 13.469357813999977,
+            "tokens": 575
+          },
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "InvoiceReading",
+            "attempt": 1,
+            "input_tokens": 265,
+            "output_tokens": 32,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 7.101604339999994,
+            "tokens": 297
+          }
+        ],
+        "tools_used": [
+          "dataset_schema",
+          "invoice_analysis"
+        ],
+        "attempts": 1,
+        "seconds": 25.035870108999916
+      },
+      {
+        "step": "write",
+        "agent": "action",
+        "ok": true,
+        "tool": "create_report",
+        "receipt": "789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44",
+        "effect": {
+          "receipt": "789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44",
+          "tool": "create_report",
+          "stored": true,
+          "payload": {
+            "title": "Review overdue invoices as of 2026-09-15",
+            "body": "As of 2026-09-15, overdue total is $835.50. INV-731 is overdue for $615.50. INV-843 is overdue for $220.00. Review for follow-up."
+          },
+          "external_message_sent": false
+        },
+        "tokens": 0,
+        "model_records": [],
+        "tools_used": [
+          "create_report"
+        ],
+        "attempts": 1
+      }
+    ],
+    "citations": [],
+    "errors": [],
+    "usage": {
+      "tokens": 2981,
+      "calls": 5,
+      "estimated_cost_usd": null
+    },
+    "limitations": [
+      "Model judges can be wrong; document content is untrusted evidence."
+    ]
+  },
+  "results": [
+    {
+      "step": "0",
+      "agent": "data",
+      "ok": true,
+      "analytics": {
+        "rows": [
+          {
+            "number": "INV-731",
+            "amount": 615.5,
+            "paid": 0,
+            "due": "2026-09-04"
+          },
+          {
+            "number": "INV-843",
+            "amount": 220.0,
+            "paid": 0,
+            "due": "2026-09-14"
+          },
+          {
+            "number": "INV-902",
+            "amount": 990.0,
+            "paid": 1,
+            "due": "2026-09-03"
+          },
+          {
+            "number": "INV-917",
+            "amount": 480.0,
+            "paid": 0,
+            "due": "2026-09-15"
+          }
+        ],
+        "unpaid_total": 1315.5,
+        "as_of": "2026-09-15",
+        "overdue_rows": [
+          {
+            "number": "INV-731",
+            "amount": 615.5,
+            "paid": 0,
+            "due": "2026-09-04"
+          },
+          {
+            "number": "INV-843",
+            "amount": 220.0,
+            "paid": 0,
+            "due": "2026-09-14"
+          }
+        ],
+        "overdue_total": 835.5
+      },
+      "intent": {
+        "as_of": "2026-09-15",
+        "dataset": "invoices",
+        "metrics": [
+          "revenue"
+        ],
+        "start": null,
+        "end": null,
+        "compare_previous": false
+      },
+      "computed": {
+        "rows": [
+          {
+            "number": "INV-731",
+            "amount": 615.5,
+            "paid": 0,
+            "due": "2026-09-04"
+          },
+          {
+            "number": "INV-843",
+            "amount": 220.0,
+            "paid": 0,
+            "due": "2026-09-14"
+          },
+          {
+            "number": "INV-902",
+            "amount": 990.0,
+            "paid": 1,
+            "due": "2026-09-03"
+          },
+          {
+            "number": "INV-917",
+            "amount": 480.0,
+            "paid": 0,
+            "due": "2026-09-15"
+          }
+        ],
+        "unpaid_total": 1315.5,
+        "as_of": "2026-09-15",
+        "overdue_rows": [
+          {
+            "number": "INV-731",
+            "amount": 615.5,
+            "paid": 0,
+            "due": "2026-09-04"
+          },
+          {
+            "number": "INV-843",
+            "amount": 220.0,
+            "paid": 0,
+            "due": "2026-09-14"
+          }
+        ],
+        "overdue_total": 835.5
+      },
+      "interpretation": {
+        "summary": "As of 2026-09-15, overdue total is $835.50. INV-731 is overdue for $615.50. INV-843 is overdue for $220.00. Review for follow-up.",
+        "citations": [],
+        "insufficient": false,
+        "contradictions": [],
+        "claims": []
+      },
+      "grounding": {
+        "claims": [],
+        "errors": [],
+        "fully_checked": false,
+        "requires_review": true
+      },
+      "tokens": 872,
+      "model_records": [
+        {
+          "provider": "openai",
+          "model": "qwen15-local",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 511,
+          "output_tokens": 64,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 13.469357813999977,
+          "tokens": 575
+        },
+        {
+          "provider": "openai",
+          "model": "qwen15-local",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "InvoiceReading",
+          "attempt": 1,
+          "input_tokens": 265,
+          "output_tokens": 32,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 7.101604339999994,
+          "tokens": 297
+        }
+      ],
+      "tools_used": [
+        "dataset_schema",
+        "invoice_analysis"
+      ],
+      "attempts": 1,
+      "seconds": 25.035870108999916
+    },
+    {
+      "step": "write",
+      "agent": "action",
+      "ok": true,
+      "tool": "create_report",
+      "receipt": "789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44",
+      "effect": {
+        "receipt": "789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44",
+        "tool": "create_report",
+        "stored": true,
+        "payload": {
+          "title": "Review overdue invoices as of 2026-09-15",
+          "body": "As of 2026-09-15, overdue total is $835.50. INV-731 is overdue for $615.50. INV-843 is overdue for $220.00. Review for follow-up."
+        },
+        "external_message_sent": false
+      },
+      "tokens": 0,
+      "model_records": [],
+      "tools_used": [
+        "create_report"
+      ],
+      "attempts": 1
+    }
+  ],
+  "plan": [
+    {
+      "id": "0",
+      "agent": "data",
+      "instruction": "Review overdue invoices as of 2026-09-15. Prepare a collections report listing the unpaid past-due balances. Store the report after approval.",
+      "dependencies": [],
+      "tool": "invoice_analysis",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "write",
+      "agent": "action",
+      "instruction": "Review overdue invoices as of 2026-09-15. Prepare a collections report listing the unpaid past-due balances. Store the report after approval.",
+      "dependencies": [
+        "0"
+      ],
+      "tool": "create_report",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": true,
+      "checks": []
+    }
+  ],
+  "events": [
+    {
+      "id": "planner:0",
+      "agent": "planner",
+      "summary": "Model: scheduled 2 steps",
+      "at": 1795315991.7006252
+    },
+    {
+      "id": "0",
+      "agent": "data",
+      "summary": "Validated approved tool results",
+      "at": 1795316016.7555168,
+      "step": "0",
+      "attempts": 1,
+      "seconds": 25.035870108999916
+    },
+    {
+      "id": "preflight:88d8581664fa5b2b02cb83456627866df2e8446c659c6909e2c205918bb3ff2c",
+      "agent": "verification",
+      "summary": "Evidence checked before proposing an action",
+      "at": 1795316028.520581
+    },
+    {
+      "id": "write",
+      "agent": "action",
+      "summary": "Approved mutation committed and audited",
+      "at": 1795316032.2085688,
+      "tool": "create_report"
+    },
+    {
+      "id": "verification:final",
+      "agent": "verification",
+      "summary": "Checked completion, citations, calculations and committed effects",
+      "at": 1795316037.2328131
+    }
+  ],
+  "usage": {
+    "tokens": 2981,
+    "calls": 5,
+    "estimated_cost_usd": null
+  },
+  "effects_after": [
+    {
+      "approval_id": "789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44",
+      "tool": "create_report",
+      "result": "{\"receipt\": \"789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44\", \"tool\": \"create_report\", \"stored\": true, \"payload\": {\"title\": \"Review overdue invoices as of 2026-09-15\", \"body\": \"As of 2026-09-15, overdue total is $835.50. INV-731 is overdue for $615.50. INV-843 is overdue for $220.00. Review for follow-up.\"}, \"external_message_sent\": false}"
+    }
+  ],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReportSelection",
+      "attempt": 1,
+      "input_tokens": 277,
+      "output_tokens": 36,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 6.670577632000004,
+      "tokens": 313,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 2.3091539049996754,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 511,
+      "output_tokens": 64,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 13.469357813999977,
+      "tokens": 575,
+      "step": "0"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "invoice_analysis",
+      "argument_keys": [
+        "as_of"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 2.126422145000106,
+      "output_fields": [
+        "rows",
+        "unpaid_total",
+        "as_of",
+        "overdue_rows",
+        "overdue_total"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "InvoiceReading",
+      "attempt": 1,
+      "input_tokens": 265,
+      "output_tokens": 32,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 7.101604339999994,
+      "tokens": 297,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "Review",
+      "attempt": 1,
+      "input_tokens": 792,
+      "output_tokens": 14,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 11.730931973999759,
+      "tokens": 806,
+      "step": "verification"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "create_report",
+      "argument_keys": [
+        "title",
+        "body"
+      ],
+      "arguments": {},
+      "step": "write",
+      "approval_id": "789c79f49f0d1d3239ded275922e82aa1ef3c7cf15bd00ef4987dc6aab5bdf44",
+      "seconds": 3.579625022000073,
+      "output_fields": [
+        "receipt",
+        "tool",
+        "stored",
+        "payload",
+        "external_message_sent"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "Review",
+      "attempt": 1,
+      "input_tokens": 976,
+      "output_tokens": 14,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 5.006092676000208,
+      "tokens": 990,
+      "step": "verification"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-731",
+      "amount": 615.5,
+      "paid": 0,
+      "due": "2026-09-04"
+    },
+    {
+      "number": "INV-843",
+      "amount": 220.0,
+      "paid": 0,
+      "due": "2026-09-14"
+    },
+    {
+      "number": "INV-902",
+      "amount": 990.0,
+      "paid": 1,
+      "due": "2026-09-03"
+    },
+    {
+      "number": "INV-917",
+      "amount": 480.0,
+      "paid": 0,
+      "due": "2026-09-15"
+    }
+  ],
+  "elapsed_seconds": 55.2997491189999
+}

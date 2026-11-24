@@ -1,0 +1,89 @@
+INFO:     Started server process [282]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:36369 (Press CTRL+C to quit)
+INFO:     127.0.0.1:33188 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "POST /demo/seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "POST /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "POST /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "POST /runs HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:33200 - "GET /runs/f2cf7cd6-7a03-41b3-9f10-1e63db8c281b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/f2cf7cd6-7a03-41b3-9f10-1e63db8c281b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/f2cf7cd6-7a03-41b3-9f10-1e63db8c281b HTTP/1.1" 200 OK
+[11/20/26 17:58:59] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:33200 - "GET /runs/f2cf7cd6-7a03-41b3-9f10-1e63db8c281b HTTP/1.1" 200 OK
+{"event": "run_finished", "run_id": "f2cf7cd6-7a03-41b3-9f10-1e63db8c281b", "workspace": "demo", "status": "completed"}
+INFO:     127.0.0.1:33200 - "GET /runs/f2cf7cd6-7a03-41b3-9f10-1e63db8c281b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/f2cf7cd6-7a03-41b3-9f10-1e63db8c281b/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "POST /runs HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:33200 - "GET /runs/29b888c0-007b-4da4-937a-02d3378d65fd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/29b888c0-007b-4da4-937a-02d3378d65fd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/29b888c0-007b-4da4-937a-02d3378d65fd HTTP/1.1" 200 OK
+[11/20/26 17:59:03] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:33200 - "GET /runs/29b888c0-007b-4da4-937a-02d3378d65fd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/29b888c0-007b-4da4-937a-02d3378d65fd HTTP/1.1" 200 OK
+[11/20/26 17:59:06] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:33200 - "GET /runs/29b888c0-007b-4da4-937a-02d3378d65fd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/29b888c0-007b-4da4-937a-02d3378d65fd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/29b888c0-007b-4da4-937a-02d3378d65fd HTTP/1.1" 200 OK
+[11/20/26 17:59:08] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+{"event": "run_finished", "run_id": "29b888c0-007b-4da4-937a-02d3378d65fd", "workspace": "demo", "status": "completed"}
+INFO:     127.0.0.1:33200 - "GET /runs/29b888c0-007b-4da4-937a-02d3378d65fd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/29b888c0-007b-4da4-937a-02d3378d65fd/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "POST /runs HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+[11/20/26 17:59:11] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+[11/20/26 17:59:11] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+[11/20/26 17:59:13] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+[11/20/26 17:59:16] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+{"event": "run_finished", "run_id": "4e07e191-4bba-4f54-a94f-b95f70391431", "workspace": "demo", "status": "awaiting_approval"}
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /inbox HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "POST /runs/4e07e191-4bba-4f54-a94f-b95f70391431/approval HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+[11/20/26 17:59:19] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+{"event": "run_finished", "run_id": "4e07e191-4bba-4f54-a94f-b95f70391431", "workspace": "demo", "status": "completed"}
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /inbox HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33200 - "GET /runs/4e07e191-4bba-4f54-a94f-b95f70391431/traces HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [282]

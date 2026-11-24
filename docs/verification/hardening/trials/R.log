@@ -1,0 +1,10 @@
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4019.18it/s]
+[11/22/26 02:54:16] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+[11/22/26 02:54:20] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5740.28it/s]
+[11/22/26 02:54:21] INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   

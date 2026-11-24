@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: agentos
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-only-change-me}
+      POSTGRES_DB: agentos
+    volumes: ["postgres:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agentos"]
+      interval: 5s
+      retries: 15
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATABASE_URL: postgresql+psycopg://agentos:${POSTGRES_PASSWORD:-local-only-change-me}@postgres/agentos
+      CHECKPOINT_PATH: /data/checkpoints.db
+      API_KEYS: ${API_KEYS:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      USE_MCP: "true"
+      AUTH_MODE: demo
+      DEPLOYMENT: local
+      EMBEDDING_BACKEND: ${EMBEDDING_BACKEND:-hashing}
+      CHECKPOINT_DATABASE_URL: postgresql://agentos:${POSTGRES_PASSWORD:-local-only-change-me}@postgres/agentos
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: ["checkpoints:/data"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+  frontend:
+    build: ./frontend
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on: [backend]
+volumes:
+  postgres:
+  checkpoints:

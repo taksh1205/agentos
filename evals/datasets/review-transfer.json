@@ -1,0 +1,126 @@
+[
+  {
+    "id": "t01",
+    "goal": "What were costs from February through March?",
+    "expected_agents": [
+      "data"
+    ],
+    "expected_tools": [
+      "business_metrics"
+    ],
+    "expected_status": "completed",
+    "expected_values": {
+      "costs": 168000
+    },
+    "expected_arguments": {
+      "metric": "costs",
+      "start": "2026-02",
+      "end": "2026-03"
+    }
+  },
+  {
+    "id": "t02",
+    "goal": "Calculate profit for 2026-01 only, then store the result in a management memo.",
+    "expected_agents": [
+      "data",
+      "action"
+    ],
+    "expected_tools": [
+      "business_metrics",
+      "create_report"
+    ],
+    "expected_status": "completed",
+    "approval": "approve",
+    "expected_values": {
+      "profit": 30000
+    }
+  },
+  {
+    "id": "t03",
+    "goal": "Analyze revenue since February 2026.",
+    "expected_agents": [
+      "data"
+    ],
+    "expected_tools": [
+      "business_metrics"
+    ],
+    "expected_status": "completed",
+    "expected_values": {
+      "revenue": 270000
+    }
+  },
+  {
+    "id": "t04",
+    "goal": "What amount is outstanding across unpaid invoices?",
+    "expected_agents": [
+      "data"
+    ],
+    "expected_tools": [
+      "invoice_analysis"
+    ],
+    "expected_status": "completed",
+    "expected_values": {
+      "unpaid_total": 3300
+    }
+  },
+  {
+    "id": "t05",
+    "goal": "File a report about costs for 2026-03. I will decline its storage.",
+    "expected_agents": [
+      "data",
+      "action"
+    ],
+    "expected_tools": [
+      "business_metrics"
+    ],
+    "expected_status": "completed",
+    "approval": "deny",
+    "expected_values": {
+      "costs": 90000
+    }
+  },
+  {
+    "id": "t06",
+    "goal": "Compare the two East warehouse maximum headcount bulletins. Is there one agreed limit?",
+    "expected_agents": [
+      "research"
+    ],
+    "expected_tools": [
+      "document_search"
+    ],
+    "expected_status": "completed",
+    "expected_sources": [
+      "contradiction-a",
+      "contradiction-b"
+    ],
+    "expected_contradiction": true
+  },
+  {
+    "id": "t07",
+    "goal": "Use the Alpha contract to quantify its cancellation fee.",
+    "expected_agents": [
+      "research"
+    ],
+    "expected_tools": [
+      "document_search"
+    ],
+    "expected_status": "completed",
+    "expected_insufficient": true,
+    "expected_sources": [
+      "contract-alpha"
+    ]
+  },
+  {
+    "id": "t08",
+    "goal": "Research an empty workspace for its elevator emergency instructions.",
+    "expected_agents": [
+      "research"
+    ],
+    "expected_tools": [
+      "document_search"
+    ],
+    "expected_status": "completed",
+    "empty_corpus": true,
+    "expected_insufficient": true
+  }
+]

@@ -1,0 +1,451 @@
+{
+  "goal": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+  "model": "qwen2.5-1.5b-local",
+  "workspace": "release-c08a2c5f-a066-4368-adc2-cf85f1d492d0",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0-correction",
+        "agent": "data",
+        "instruction": "Analyze overdue invoices as of 2026-04-01",
+        "dependencies": [],
+        "tool": "invoice_analysis",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "1-correction",
+        "agent": "action",
+        "instruction": "Prepare an internal follow-up report identifying overdue invoice numbers and amounts",
+        "dependencies": [
+          "0-correction"
+        ],
+        "tool": "create_report",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": true,
+        "checks": []
+      },
+      {
+        "id": "2-correction",
+        "agent": "action",
+        "instruction": "Save that report after my approval",
+        "dependencies": [
+          "0-correction",
+          "1-correction"
+        ],
+        "tool": "create_followup",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": true,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": false,
+        "error": "ValidationError",
+        "issues": [
+          "2 validation errors for Claim\nstart\n  String should match pattern '^[0-9]{4}-[0-9]{2}$' [type=string_pattern_mismatch, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch\nend\n  String should match pattern '^[0-9]{4}-[0-9]{2}$' [type=string_pattern_mismatch, input_value='2026-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch"
+        ],
+        "attempts": 1
+      },
+      {
+        "step": "0-correction",
+        "agent": "data",
+        "ok": false,
+        "error": "ValidationError",
+        "issues": [
+          "2 validation errors for Claim\nstart\n  String should match pattern '^[0-9]{4}-[0-9]{2}$' [type=string_pattern_mismatch, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch\nend\n  String should match pattern '^[0-9]{4}-[0-9]{2}$' [type=string_pattern_mismatch, input_value='2026-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch"
+        ],
+        "attempts": 1
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 3 steps",
+        "at": 1795084281.7479649
+      },
+      {
+        "id": "0",
+        "agent": "data",
+        "summary": "Failed after bounded retries",
+        "at": 1795084326.1953752,
+        "error": "ValidationError"
+      },
+      {
+        "id": "verify:correction",
+        "agent": "verification",
+        "summary": "Correction requested: 0, 1, 2",
+        "at": 1795084326.1986785
+      },
+      {
+        "id": "planner:1",
+        "agent": "planner",
+        "summary": "Model: scheduled 3 steps",
+        "at": 1795084335.7669287
+      },
+      {
+        "id": "0-correction",
+        "agent": "data",
+        "summary": "Failed after bounded retries",
+        "at": 1795084365.127894,
+        "error": "ValidationError"
+      },
+      {
+        "id": "verification:final",
+        "agent": "verification",
+        "summary": "Checked completion, citations, calculations and committed effects",
+        "at": 1795084365.133509
+      }
+    ]
+  },
+  "report": {
+    "status": "failed",
+    "goal": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+    "mode": "openai",
+    "refusal": null,
+    "clarification": null,
+    "grounding": {
+      "fully_checked": false,
+      "requires_review": false
+    },
+    "review": {
+      "supported": null,
+      "issues": [
+        "Deterministic checks; no semantic model judgment"
+      ]
+    },
+    "findings": [],
+    "citations": [],
+    "errors": [
+      "0-correction",
+      "1-correction",
+      "2-correction"
+    ],
+    "usage": {
+      "tokens": 4024,
+      "calls": 6,
+      "estimated_cost_usd": null
+    },
+    "limitations": [
+      "Model judges can be wrong; document content is untrusted evidence."
+    ]
+  },
+  "results": [
+    {
+      "step": "0",
+      "agent": "data",
+      "ok": false,
+      "error": "ValidationError",
+      "issues": [
+        "2 validation errors for Claim\nstart\n  String should match pattern '^[0-9]{4}-[0-9]{2}$' [type=string_pattern_mismatch, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch\nend\n  String should match pattern '^[0-9]{4}-[0-9]{2}$' [type=string_pattern_mismatch, input_value='2026-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch"
+      ],
+      "attempts": 1
+    },
+    {
+      "step": "0-correction",
+      "agent": "data",
+      "ok": false,
+      "error": "ValidationError",
+      "issues": [
+        "2 validation errors for Claim\nstart\n  String should match pattern '^[0-9]{4}-[0-9]{2}$' [type=string_pattern_mismatch, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch\nend\n  String should match pattern '^[0-9]{4}-[0-9]{2}$' [type=string_pattern_mismatch, input_value='2026-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch"
+      ],
+      "attempts": 1
+    }
+  ],
+  "plan": [
+    {
+      "id": "0-correction",
+      "agent": "data",
+      "instruction": "Analyze overdue invoices as of 2026-04-01",
+      "dependencies": [],
+      "tool": "invoice_analysis",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "1-correction",
+      "agent": "action",
+      "instruction": "Prepare an internal follow-up report identifying overdue invoice numbers and amounts",
+      "dependencies": [
+        "0-correction"
+      ],
+      "tool": "create_report",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": true,
+      "checks": []
+    },
+    {
+      "id": "2-correction",
+      "agent": "action",
+      "instruction": "Save that report after my approval",
+      "dependencies": [
+        "0-correction",
+        "1-correction"
+      ],
+      "tool": "create_followup",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": true,
+      "checks": []
+    }
+  ],
+  "events": [
+    {
+      "id": "planner:0",
+      "agent": "planner",
+      "summary": "Model: scheduled 3 steps",
+      "at": 1795084281.7479649
+    },
+    {
+      "id": "0",
+      "agent": "data",
+      "summary": "Failed after bounded retries",
+      "at": 1795084326.1953752,
+      "error": "ValidationError"
+    },
+    {
+      "id": "verify:correction",
+      "agent": "verification",
+      "summary": "Correction requested: 0, 1, 2",
+      "at": 1795084326.1986785
+    },
+    {
+      "id": "planner:1",
+      "agent": "planner",
+      "summary": "Model: scheduled 3 steps",
+      "at": 1795084335.7669287
+    },
+    {
+      "id": "0-correction",
+      "agent": "data",
+      "summary": "Failed after bounded retries",
+      "at": 1795084365.127894,
+      "error": "ValidationError"
+    },
+    {
+      "id": "verification:final",
+      "agent": "verification",
+      "summary": "Checked completion, citations, calculations and committed effects",
+      "at": 1795084365.133509
+    }
+  ],
+  "usage": {
+    "tokens": 4024,
+    "calls": 6,
+    "estimated_cost_usd": null
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "OrderedPlan",
+      "attempt": 1,
+      "input_tokens": 398,
+      "output_tokens": 124,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 14.78191693300002,
+      "tokens": 522,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 3.844998748999984,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 497,
+      "output_tokens": 64,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 10.371697151999996,
+      "tokens": 561,
+      "step": "0"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "invoice_analysis",
+      "argument_keys": [
+        "as_of"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 2.9491073729999755,
+      "output_fields": [
+        "rows",
+        "unpaid_total",
+        "as_of",
+        "overdue_rows",
+        "overdue_total"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ComputedInterpretation",
+      "attempt": 1,
+      "input_tokens": 559,
+      "output_tokens": 294,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 27.265081304000006,
+      "tokens": 853,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "OrderedPlan",
+      "attempt": 1,
+      "input_tokens": 558,
+      "output_tokens": 124,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 9.56189427999999,
+      "tokens": 682,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 2.2440356769999994,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 497,
+      "output_tokens": 64,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 4.056340406000004,
+      "tokens": 561,
+      "step": "0-correction"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "invoice_analysis",
+      "argument_keys": [
+        "as_of"
+      ],
+      "arguments": {},
+      "step": "0-correction",
+      "approval_id": null,
+      "seconds": 2.395044540000015,
+      "output_fields": [
+        "rows",
+        "unpaid_total",
+        "as_of",
+        "overdue_rows",
+        "overdue_total"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen2.5-1.5b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ComputedInterpretation",
+      "attempt": 1,
+      "input_tokens": 559,
+      "output_tokens": 286,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 20.64520385199998,
+      "tokens": 845,
+      "step": "0-correction"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 98.241350372
+}

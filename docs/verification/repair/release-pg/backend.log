@@ -1,0 +1,70 @@
+F....................................................................... [ 60%]
+................................................                         [100%]
+=================================== FAILURES ===================================
+_________________ test_decline_with_changed_months_and_amounts _________________
+
+    @pytest.mark.asyncio
+    async def test_decline_with_changed_months_and_amounts():
+        evidence = {
+            "dataset": "sales",
+            "metrics": [
+                {
+                    "metric": "profit",
+                    "rows": [{"month": "2025-08", "value": 12000}, {"month": "2025-09", "value": 9000}],
+                    "absolute_change": -3000,
+                    "growth": -0.25,
+                }
+            ],
+        }
+>       answer = await grounded.interpret_sales(
+            Response({"focus": "profit", "direction": "decrease"}), "Compare profit", evidence
+        )
+
+tests/test_bound_interpretations.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+p = <test_bound_interpretations.Response object at 0x7fed32078290>
+goal = 'Compare profit'
+data = {'dataset': 'sales', 'metrics': [{'metric': 'profit', 'rows': [{'month': '2025-08', 'value': 12000}, {'month': '2025-09', 'value': 9000}], 'absolute_change': -3000, 'growth': -0.25}]}
+
+    async def interpret_sales(p, goal, data):
+        metrics = data["metrics"]
+        if not metrics or not all(m["rows"] and m["absolute_change"] is not None for m in metrics):
+            return Finding(summary="Insufficient period data.", insufficient=True)
+        reading = await p.structured(
+            LedgerReading,
+            "Identify a significant measured trend. Select one supplied metric and its observed direction.",
+            json.dumps({"request": goal, "metrics": metrics}),
+        )
+        lines = []
+        focus = None
+        for m in metrics:
+            first, last = m["rows"][0], m["rows"][-1]
+            delta = m["absolute_change"]
+            direction = "increase" if delta > 0 else "decrease" if delta < 0 else "flat"
+            if m["metric"] == reading.focus and direction == reading.direction:
+                focus = m["metric"]
+            pct = f"{m['growth']:+.2%}" if m["growth"] is not None else "undefined relative change"
+            lines.append(
+                f"{m['metric'].capitalize()} from {first['month']} to {last['month']}: {first['value']:,.2f} to {last['value']:,.2f} ({delta:+,.2f}, {pct})."
+            )
+        if not focus:
+            raise ValueError("Model trend contradicted the ledger")
+        recommendations = {
+            "seek_joint_review": "Ask the responsible policy owners to review the conflict together and document a resolution before changing operations.",
+            "apply_consistent_requirements": "Apply the consistent requirements described in the cited passages.",
+            "request_more_evidence": "Request the missing policy evidence before deciding.",
+        }
+        uncertainties = {
+            "precedence_unknown": "The cited passages do not establish which requirement takes precedence.",
+            "evidence_incomplete": "The available evidence leaves part of the question unresolved.",
+            "no_conflict_identified": "This conclusion is limited to the passages reviewed.",
+        }
+>       if result.conflict and result.recommendation == "apply_consistent_requirements":
+           ^^^^^^
+E       NameError: name 'result' is not defined
+
+agentos/grounded.py:189: NameError
+=========================== short test summary info ============================
+FAILED tests/test_bound_interpretations.py::test_decline_with_changed_months_and_amounts
+1 failed, 119 passed in 37.18s

@@ -1,0 +1,108 @@
+{
+  "goal": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+  "model": "qwen15-local",
+  "workspace": "release-550f3519-7e1e-4190-8fe7-df1b1347a0c3",
+  "last_checkpoint": {
+    "results": [],
+    "events": []
+  },
+  "exception": {
+    "type": "ProviderError",
+    "message": "openai request failed after bounded retries: APIConnectionError"
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "Selection",
+      "attempt": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.807024049000006,
+      "tokens": null,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "Selection",
+      "attempt": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.21045340399996348,
+      "tokens": null,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "Selection",
+      "attempt": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.013414884999974674,
+      "tokens": null,
+      "step": "planner"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 1.0941021340000816
+}

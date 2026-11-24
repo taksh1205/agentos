@@ -1,0 +1,838 @@
+{
+  "goal": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+  "model": "qwen15-local",
+  "workspace": "release-11bfe182-e819-4579-a4a7-2864e2afb53e",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0",
+        "agent": "data",
+        "instruction": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+        "dependencies": [],
+        "tool": "invoice_analysis",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "write",
+        "agent": "action",
+        "instruction": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+        "dependencies": [
+          "0"
+        ],
+        "tool": "create_report",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": true,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": true,
+        "analytics": {
+          "rows": [
+            {
+              "number": "INV-001",
+              "amount": 2500.0,
+              "paid": 0,
+              "due": "2026-03-31"
+            },
+            {
+              "number": "INV-002",
+              "amount": 1200.0,
+              "paid": 1,
+              "due": "2026-02-28"
+            },
+            {
+              "number": "INV-003",
+              "amount": 800.0,
+              "paid": 0,
+              "due": "2026-04-15"
+            }
+          ],
+          "unpaid_total": 3300.0,
+          "as_of": "2026-04-01",
+          "overdue_rows": [
+            {
+              "number": "INV-001",
+              "amount": 2500.0,
+              "paid": 0,
+              "due": "2026-03-31"
+            }
+          ],
+          "overdue_total": 2500.0
+        },
+        "intent": {
+          "as_of": "2026-04-01",
+          "dataset": "invoices",
+          "metrics": [
+            "revenue"
+          ],
+          "start": null,
+          "end": null,
+          "compare_previous": false
+        },
+        "computed": {
+          "rows": [
+            {
+              "number": "INV-001",
+              "amount": 2500.0,
+              "paid": 0,
+              "due": "2026-03-31"
+            },
+            {
+              "number": "INV-002",
+              "amount": 1200.0,
+              "paid": 1,
+              "due": "2026-02-28"
+            },
+            {
+              "number": "INV-003",
+              "amount": 800.0,
+              "paid": 0,
+              "due": "2026-04-15"
+            }
+          ],
+          "unpaid_total": 3300.0,
+          "as_of": "2026-04-01",
+          "overdue_rows": [
+            {
+              "number": "INV-001",
+              "amount": 2500.0,
+              "paid": 0,
+              "due": "2026-03-31"
+            }
+          ],
+          "overdue_total": 2500.0
+        },
+        "interpretation": {
+          "summary": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up.",
+          "citations": [],
+          "insufficient": false,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "tokens": 834,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "AnalyticsIntent",
+            "attempt": 1,
+            "input_tokens": 517,
+            "output_tokens": 64,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 21.66524431900001,
+            "tokens": 581
+          },
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "InvoiceReading",
+            "attempt": 1,
+            "input_tokens": 228,
+            "output_tokens": 25,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 5.345551615999966,
+            "tokens": 253
+          }
+        ],
+        "tools_used": [
+          "dataset_schema",
+          "invoice_analysis"
+        ],
+        "attempts": 1,
+        "seconds": 32.12946013199996
+      },
+      {
+        "step": "write",
+        "agent": "action",
+        "ok": true,
+        "tool": "create_report",
+        "receipt": "61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540",
+        "effect": {
+          "receipt": "61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540",
+          "tool": "create_report",
+          "stored": true,
+          "payload": {
+            "title": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my appro",
+            "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+          },
+          "external_message_sent": false
+        },
+        "tokens": 0,
+        "model_records": [],
+        "tools_used": [
+          "create_report"
+        ],
+        "attempts": 1
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 2 steps",
+        "at": 1795197377.7153351
+      },
+      {
+        "id": "0",
+        "agent": "data",
+        "summary": "Validated approved tool results",
+        "at": 1795197409.853672,
+        "step": "0",
+        "attempts": 1,
+        "seconds": 32.12946013199996
+      },
+      {
+        "id": "preflight:b1f815d2e22cddb53b66b5f0b462f0c627ad17d479b5c1e4b6911b47a9b3f734",
+        "agent": "verification",
+        "summary": "Evidence checked before proposing an action",
+        "at": 1795197420.0325553
+      },
+      {
+        "id": "write",
+        "agent": "action",
+        "summary": "Approved mutation committed and audited",
+        "at": 1795197422.2819853,
+        "tool": "create_report"
+      },
+      {
+        "id": "verification:final",
+        "agent": "verification",
+        "summary": "Checked completion, citations, calculations and committed effects",
+        "at": 1795197427.4293714
+      }
+    ]
+  },
+  "proposal": {
+    "id": "61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540",
+    "tool": "create_report",
+    "arguments": {
+      "title": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my appro",
+      "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+    },
+    "digest": "0778a57e92178b6915f7725c81b3866233d1277a9c496cd67f4fa4d0354887b7",
+    "status": "pending"
+  },
+  "effects_before": [],
+  "test_operator_approved": true,
+  "replay": {
+    "receipt": "61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540",
+    "tool": "create_report",
+    "stored": true,
+    "payload": {
+      "title": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my appro",
+      "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+    },
+    "external_message_sent": false
+  },
+  "report": {
+    "status": "completed",
+    "goal": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+    "mode": "openai",
+    "refusal": null,
+    "clarification": null,
+    "grounding": {
+      "fully_checked": false,
+      "requires_review": true
+    },
+    "review": {
+      "supported": true,
+      "issues": []
+    },
+    "findings": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": true,
+        "analytics": {
+          "rows": [
+            {
+              "number": "INV-001",
+              "amount": 2500.0,
+              "paid": 0,
+              "due": "2026-03-31"
+            },
+            {
+              "number": "INV-002",
+              "amount": 1200.0,
+              "paid": 1,
+              "due": "2026-02-28"
+            },
+            {
+              "number": "INV-003",
+              "amount": 800.0,
+              "paid": 0,
+              "due": "2026-04-15"
+            }
+          ],
+          "unpaid_total": 3300.0,
+          "as_of": "2026-04-01",
+          "overdue_rows": [
+            {
+              "number": "INV-001",
+              "amount": 2500.0,
+              "paid": 0,
+              "due": "2026-03-31"
+            }
+          ],
+          "overdue_total": 2500.0
+        },
+        "intent": {
+          "as_of": "2026-04-01",
+          "dataset": "invoices",
+          "metrics": [
+            "revenue"
+          ],
+          "start": null,
+          "end": null,
+          "compare_previous": false
+        },
+        "computed": {
+          "rows": [
+            {
+              "number": "INV-001",
+              "amount": 2500.0,
+              "paid": 0,
+              "due": "2026-03-31"
+            },
+            {
+              "number": "INV-002",
+              "amount": 1200.0,
+              "paid": 1,
+              "due": "2026-02-28"
+            },
+            {
+              "number": "INV-003",
+              "amount": 800.0,
+              "paid": 0,
+              "due": "2026-04-15"
+            }
+          ],
+          "unpaid_total": 3300.0,
+          "as_of": "2026-04-01",
+          "overdue_rows": [
+            {
+              "number": "INV-001",
+              "amount": 2500.0,
+              "paid": 0,
+              "due": "2026-03-31"
+            }
+          ],
+          "overdue_total": 2500.0
+        },
+        "interpretation": {
+          "summary": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up.",
+          "citations": [],
+          "insufficient": false,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "tokens": 834,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "AnalyticsIntent",
+            "attempt": 1,
+            "input_tokens": 517,
+            "output_tokens": 64,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 21.66524431900001,
+            "tokens": 581
+          },
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "InvoiceReading",
+            "attempt": 1,
+            "input_tokens": 228,
+            "output_tokens": 25,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 5.345551615999966,
+            "tokens": 253
+          }
+        ],
+        "tools_used": [
+          "dataset_schema",
+          "invoice_analysis"
+        ],
+        "attempts": 1,
+        "seconds": 32.12946013199996
+      },
+      {
+        "step": "write",
+        "agent": "action",
+        "ok": true,
+        "tool": "create_report",
+        "receipt": "61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540",
+        "effect": {
+          "receipt": "61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540",
+          "tool": "create_report",
+          "stored": true,
+          "payload": {
+            "title": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my appro",
+            "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+          },
+          "external_message_sent": false
+        },
+        "tokens": 0,
+        "model_records": [],
+        "tools_used": [
+          "create_report"
+        ],
+        "attempts": 1
+      }
+    ],
+    "citations": [],
+    "errors": [],
+    "usage": {
+      "tokens": 2806,
+      "calls": 5,
+      "estimated_cost_usd": null
+    },
+    "limitations": [
+      "Model judges can be wrong; document content is untrusted evidence."
+    ]
+  },
+  "results": [
+    {
+      "step": "0",
+      "agent": "data",
+      "ok": true,
+      "analytics": {
+        "rows": [
+          {
+            "number": "INV-001",
+            "amount": 2500.0,
+            "paid": 0,
+            "due": "2026-03-31"
+          },
+          {
+            "number": "INV-002",
+            "amount": 1200.0,
+            "paid": 1,
+            "due": "2026-02-28"
+          },
+          {
+            "number": "INV-003",
+            "amount": 800.0,
+            "paid": 0,
+            "due": "2026-04-15"
+          }
+        ],
+        "unpaid_total": 3300.0,
+        "as_of": "2026-04-01",
+        "overdue_rows": [
+          {
+            "number": "INV-001",
+            "amount": 2500.0,
+            "paid": 0,
+            "due": "2026-03-31"
+          }
+        ],
+        "overdue_total": 2500.0
+      },
+      "intent": {
+        "as_of": "2026-04-01",
+        "dataset": "invoices",
+        "metrics": [
+          "revenue"
+        ],
+        "start": null,
+        "end": null,
+        "compare_previous": false
+      },
+      "computed": {
+        "rows": [
+          {
+            "number": "INV-001",
+            "amount": 2500.0,
+            "paid": 0,
+            "due": "2026-03-31"
+          },
+          {
+            "number": "INV-002",
+            "amount": 1200.0,
+            "paid": 1,
+            "due": "2026-02-28"
+          },
+          {
+            "number": "INV-003",
+            "amount": 800.0,
+            "paid": 0,
+            "due": "2026-04-15"
+          }
+        ],
+        "unpaid_total": 3300.0,
+        "as_of": "2026-04-01",
+        "overdue_rows": [
+          {
+            "number": "INV-001",
+            "amount": 2500.0,
+            "paid": 0,
+            "due": "2026-03-31"
+          }
+        ],
+        "overdue_total": 2500.0
+      },
+      "interpretation": {
+        "summary": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up.",
+        "citations": [],
+        "insufficient": false,
+        "contradictions": [],
+        "claims": []
+      },
+      "grounding": {
+        "claims": [],
+        "errors": [],
+        "fully_checked": false,
+        "requires_review": true
+      },
+      "tokens": 834,
+      "model_records": [
+        {
+          "provider": "openai",
+          "model": "qwen15-local",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 517,
+          "output_tokens": 64,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 21.66524431900001,
+          "tokens": 581
+        },
+        {
+          "provider": "openai",
+          "model": "qwen15-local",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "InvoiceReading",
+          "attempt": 1,
+          "input_tokens": 228,
+          "output_tokens": 25,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 5.345551615999966,
+          "tokens": 253
+        }
+      ],
+      "tools_used": [
+        "dataset_schema",
+        "invoice_analysis"
+      ],
+      "attempts": 1,
+      "seconds": 32.12946013199996
+    },
+    {
+      "step": "write",
+      "agent": "action",
+      "ok": true,
+      "tool": "create_report",
+      "receipt": "61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540",
+      "effect": {
+        "receipt": "61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540",
+        "tool": "create_report",
+        "stored": true,
+        "payload": {
+          "title": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my appro",
+          "body": "As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up."
+        },
+        "external_message_sent": false
+      },
+      "tokens": 0,
+      "model_records": [],
+      "tools_used": [
+        "create_report"
+      ],
+      "attempts": 1
+    }
+  ],
+  "plan": [
+    {
+      "id": "0",
+      "agent": "data",
+      "instruction": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+      "dependencies": [],
+      "tool": "invoice_analysis",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    },
+    {
+      "id": "write",
+      "agent": "action",
+      "instruction": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+      "dependencies": [
+        "0"
+      ],
+      "tool": "create_report",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": true,
+      "checks": []
+    }
+  ],
+  "events": [
+    {
+      "id": "planner:0",
+      "agent": "planner",
+      "summary": "Model: scheduled 2 steps",
+      "at": 1795197377.7153351
+    },
+    {
+      "id": "0",
+      "agent": "data",
+      "summary": "Validated approved tool results",
+      "at": 1795197409.853672,
+      "step": "0",
+      "attempts": 1,
+      "seconds": 32.12946013199996
+    },
+    {
+      "id": "preflight:b1f815d2e22cddb53b66b5f0b462f0c627ad17d479b5c1e4b6911b47a9b3f734",
+      "agent": "verification",
+      "summary": "Evidence checked before proposing an action",
+      "at": 1795197420.0325553
+    },
+    {
+      "id": "write",
+      "agent": "action",
+      "summary": "Approved mutation committed and audited",
+      "at": 1795197422.2819853,
+      "tool": "create_report"
+    },
+    {
+      "id": "verification:final",
+      "agent": "verification",
+      "summary": "Checked completion, citations, calculations and committed effects",
+      "at": 1795197427.4293714
+    }
+  ],
+  "usage": {
+    "tokens": 2806,
+    "calls": 5,
+    "estimated_cost_usd": null
+  },
+  "effects_after": [
+    {
+      "approval_id": "61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540",
+      "tool": "create_report",
+      "result": "{\"receipt\": \"61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540\", \"tool\": \"create_report\", \"stored\": true, \"payload\": {\"title\": \"Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my appro\", \"body\": \"As of 2026-04-01, overdue total is $2,500.00. INV-001 is overdue for $2,500.00. Review for follow-up.\"}, \"external_message_sent\": false}"
+    }
+  ],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "Selection",
+      "attempt": 1,
+      "input_tokens": 295,
+      "output_tokens": 33,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 6.696254446000012,
+      "tokens": 328,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 3.0636960089999548,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 517,
+      "output_tokens": 64,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 21.66524431900001,
+      "tokens": 581,
+      "step": "0"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "invoice_analysis",
+      "argument_keys": [
+        "as_of"
+      ],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 2.018524613000011,
+      "output_fields": [
+        "rows",
+        "unpaid_total",
+        "as_of",
+        "overdue_rows",
+        "overdue_total"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "InvoiceReading",
+      "attempt": 1,
+      "input_tokens": 228,
+      "output_tokens": 25,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 5.345551615999966,
+      "tokens": 253,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "Review",
+      "attempt": 1,
+      "input_tokens": 708,
+      "output_tokens": 14,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 10.143537680999998,
+      "tokens": 722,
+      "step": "verification"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "create_report",
+      "argument_keys": [
+        "title",
+        "body"
+      ],
+      "arguments": {},
+      "step": "write",
+      "approval_id": "61c526fdd94c7d4b39c219c9b776cff9cb56f9bd4031d948b435e49c7af44540",
+      "seconds": 2.206321801999991,
+      "output_fields": [
+        "receipt",
+        "tool",
+        "stored",
+        "payload",
+        "external_message_sent"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "Review",
+      "attempt": 1,
+      "input_tokens": 908,
+      "output_tokens": 14,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 5.136499001999994,
+      "tokens": 922,
+      "step": "verification"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 59.402628718000074
+}

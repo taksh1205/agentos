@@ -1,0 +1,184 @@
+...FF..................................................................  [100%]
+=================================== FAILURES ===================================
+___________________ test_real_neural_retrieval_and_reranking ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-1/test_real_neural_retrieval_and0')
+
+    @pytest.mark.skipif(
+        os.getenv("RUN_NEURAL_TESTS") != "1",
+        reason="Set RUN_NEURAL_TESTS=1 after downloading neural models",
+    )
+    def test_real_neural_retrieval_and_reranking(tmp_path):
+>       rag = Retrieval(
+            Store("sqlite:///" + str(tmp_path / "neural")),
+            backend="neural",
+            rerank="cross-encoder/ms-marco-TinyBERT-L-2-v2",
+        )
+
+tests/test_neural.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+agentos/rag.py:98: in __init__
+    neural_model(self.model_name, self.revision) if self.backend == "neural" else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+agentos/rag.py:21: in neural_model
+    from sentence_transformers import SentenceTransformer
+../../../.venv/lib/python3.12/site-packages/sentence_transformers/__init__.py:15: in <module>
+    from sentence_transformers.base.sampler import DefaultBatchSampler, MultiDatasetDefaultBatchSampler
+../../../.venv/lib/python3.12/site-packages/sentence_transformers/base/__init__.py:4: in <module>
+    from .model import BaseModel
+../../../.venv/lib/python3.12/site-packages/sentence_transformers/base/model.py:34: in <module>
+    from sentence_transformers.base.peft_mixin import PeftAdapterMixin
+../../../.venv/lib/python3.12/site-packages/sentence_transformers/base/peft_mixin.py:5: in <module>
+    from transformers.integrations.peft import PeftAdapterMixin as PeftAdapterMixinTransformers
+../../../.venv/lib/python3.12/site-packages/transformers/integrations/peft.py:23: in <module>
+    from ..conversion_mapping import get_model_conversion_mapping
+../../../.venv/lib/python3.12/site-packages/transformers/conversion_mapping.py:21: in <module>
+    from .core_model_loading import (
+../../../.venv/lib/python3.12/site-packages/transformers/core_model_loading.py:37: in <module>
+    from .utils.loading_report import LoadStateDictInfo
+../../../.venv/lib/python3.12/site-packages/transformers/utils/loading_report.py:22: in <module>
+    from ..distributed.pipeline_parallel import PipelineStage
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    # Copyright 2026 The HuggingFace Team. All rights reserved.
+    #
+    # Licensed under the Apache License, Version 2.0 (the "License");
+    # you may not use this file except in compliance with the License.
+    # You may obtain a copy of the License at
+    #
+    #     http://www.apache.org/licenses/LICENSE-2.0
+    #
+    # Unless required by applicable law or agreed to in writing, software
+    # distributed under the License is distributed on an "AS IS" BASIS,
+    # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    # See the License for the specific language governing permissions and
+    # limitations under the License.
+    from __future__ import annotations
+    
+    import inspect
+    from functools import wraps
+    from typing import TYPE_CHECKING
+    
+    from ..modeling_outputs import CausalLMOutputWithPast
+    from ..utils import is_torch_available, is_torch_distributed_available
+    
+    
+    if TYPE_CHECKING:
+        import torch.nn as nn
+    
+    if is_torch_available():
+        import torch
+        import torch.nn as nn
+    
+    if is_torch_distributed_available():
+        import torch.distributed as dist
+    
+    
+    def _bind_forward_kwargs(forward_signature: inspect.Signature, args: tuple, kwargs: dict) -> dict:
+        bound = forward_signature.bind_partial(*args, **kwargs)
+        bound.apply_defaults()
+        return dict(bound.arguments)
+    
+    
+>   class PipelineIdentityLayer(nn.Identity):
+                                ^^
+E   NameError: name 'nn' is not defined
+
+../../../.venv/lib/python3.12/site-packages/transformers/distributed/pipeline_parallel.py:41: NameError
+----------------------------- Captured stderr call -----------------------------
+[transformers] Disabling PyTorch because PyTorch >= 2.6 is required but found 2.5.1+cpu
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+______________________ test_neural_rag_through_langgraph _______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-1/test_neural_rag_through_langgr0')
+
+    @pytest.mark.asyncio
+    @pytest.mark.skipif(os.getenv("RUN_NEURAL_TESTS") != "1", reason="Opt-in downloaded neural models")
+    async def test_neural_rag_through_langgraph(tmp_path):
+        from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
+    
+        from agentos.graph import build_graph
+    
+        store = Store("sqlite:///" + str(tmp_path / "graph"))
+>       rag = Retrieval(store, backend="neural", rerank="cross-encoder/ms-marco-TinyBERT-L-2-v2")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_neural.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+agentos/rag.py:98: in __init__
+    neural_model(self.model_name, self.revision) if self.backend == "neural" else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+agentos/rag.py:21: in neural_model
+    from sentence_transformers import SentenceTransformer
+../../../.venv/lib/python3.12/site-packages/sentence_transformers/__init__.py:16: in <module>
+    from sentence_transformers.cross_encoder import (
+../../../.venv/lib/python3.12/site-packages/sentence_transformers/cross_encoder/__init__.py:4: in <module>
+    from .model import CrossEncoder
+../../../.venv/lib/python3.12/site-packages/sentence_transformers/cross_encoder/model.py:20: in <module>
+    from sentence_transformers.base.model import BaseModel
+../../../.venv/lib/python3.12/site-packages/sentence_transformers/base/__init__.py:4: in <module>
+    from .model import BaseModel
+../../../.venv/lib/python3.12/site-packages/sentence_transformers/base/model.py:34: in <module>
+    from sentence_transformers.base.peft_mixin import PeftAdapterMixin
+../../../.venv/lib/python3.12/site-packages/sentence_transformers/base/peft_mixin.py:5: in <module>
+    from transformers.integrations.peft import PeftAdapterMixin as PeftAdapterMixinTransformers
+../../../.venv/lib/python3.12/site-packages/transformers/integrations/peft.py:23: in <module>
+    from ..conversion_mapping import get_model_conversion_mapping
+../../../.venv/lib/python3.12/site-packages/transformers/conversion_mapping.py:21: in <module>
+    from .core_model_loading import (
+../../../.venv/lib/python3.12/site-packages/transformers/core_model_loading.py:37: in <module>
+    from .utils.loading_report import LoadStateDictInfo
+../../../.venv/lib/python3.12/site-packages/transformers/utils/loading_report.py:22: in <module>
+    from ..distributed.pipeline_parallel import PipelineStage
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    # Copyright 2026 The HuggingFace Team. All rights reserved.
+    #
+    # Licensed under the Apache License, Version 2.0 (the "License");
+    # you may not use this file except in compliance with the License.
+    # You may obtain a copy of the License at
+    #
+    #     http://www.apache.org/licenses/LICENSE-2.0
+    #
+    # Unless required by applicable law or agreed to in writing, software
+    # distributed under the License is distributed on an "AS IS" BASIS,
+    # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    # See the License for the specific language governing permissions and
+    # limitations under the License.
+    from __future__ import annotations
+    
+    import inspect
+    from functools import wraps
+    from typing import TYPE_CHECKING
+    
+    from ..modeling_outputs import CausalLMOutputWithPast
+    from ..utils import is_torch_available, is_torch_distributed_available
+    
+    
+    if TYPE_CHECKING:
+        import torch.nn as nn
+    
+    if is_torch_available():
+        import torch
+        import torch.nn as nn
+    
+    if is_torch_distributed_available():
+        import torch.distributed as dist
+    
+    
+    def _bind_forward_kwargs(forward_signature: inspect.Signature, args: tuple, kwargs: dict) -> dict:
+        bound = forward_signature.bind_partial(*args, **kwargs)
+        bound.apply_defaults()
+        return dict(bound.arguments)
+    
+    
+>   class PipelineIdentityLayer(nn.Identity):
+                                ^^
+E   NameError: name 'nn' is not defined
+
+../../../.venv/lib/python3.12/site-packages/transformers/distributed/pipeline_parallel.py:41: NameError
+=========================== short test summary info ============================
+FAILED tests/test_neural.py::test_real_neural_retrieval_and_reranking - NameE...
+FAILED tests/test_neural.py::test_neural_rag_through_langgraph - NameError: n...
+2 failed, 69 passed in 20.37s

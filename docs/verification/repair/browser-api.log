@@ -1,0 +1,45 @@
+INFO:     Started server process [6]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:46332 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "OPTIONS /runs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "GET /runs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "OPTIONS /experiments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /experiments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "OPTIONS /evaluations/retrieval HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "GET /evaluations/retrieval HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "OPTIONS /demo/seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "POST /demo/seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "POST /runs HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:45034 - "OPTIONS /runs/c129eeb9-2519-4f70-9b12-6d7cc1ed8634 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "GET /runs/c129eeb9-2519-4f70-9b12-6d7cc1ed8634 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "OPTIONS /runs/c129eeb9-2519-4f70-9b12-6d7cc1ed8634/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /runs/c129eeb9-2519-4f70-9b12-6d7cc1ed8634/traces HTTP/1.1" 200 OK
+{"event": "run_finished", "run_id": "c129eeb9-2519-4f70-9b12-6d7cc1ed8634", "workspace": "demo", "status": "completed"}
+INFO:     127.0.0.1:45034 - "GET /runs/c129eeb9-2519-4f70-9b12-6d7cc1ed8634 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /runs/c129eeb9-2519-4f70-9b12-6d7cc1ed8634/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /runs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /experiments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /evaluations/retrieval HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "POST /runs HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:45034 - "OPTIONS /runs/a3569720-8362-429a-9d11-8b29dd0c169f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "GET /runs/a3569720-8362-429a-9d11-8b29dd0c169f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "OPTIONS /runs/a3569720-8362-429a-9d11-8b29dd0c169f/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /runs/a3569720-8362-429a-9d11-8b29dd0c169f/traces HTTP/1.1" 200 OK
+{"event": "run_finished", "run_id": "a3569720-8362-429a-9d11-8b29dd0c169f", "workspace": "demo", "status": "awaiting_approval"}
+INFO:     127.0.0.1:45034 - "GET /runs/a3569720-8362-429a-9d11-8b29dd0c169f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /runs/a3569720-8362-429a-9d11-8b29dd0c169f/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /runs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /experiments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET /evaluations/retrieval HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "OPTIONS /runs/a3569720-8362-429a-9d11-8b29dd0c169f/approval HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "POST /runs/a3569720-8362-429a-9d11-8b29dd0c169f/approval HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:45050 - "GET /runs/a3569720-8362-429a-9d11-8b29dd0c169f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "GET /runs/a3569720-8362-429a-9d11-8b29dd0c169f/traces HTTP/1.1" 200 OK
+{"event": "run_finished", "run_id": "a3569720-8362-429a-9d11-8b29dd0c169f", "workspace": "demo", "status": "completed"}
+INFO:     127.0.0.1:45050 - "GET /runs/a3569720-8362-429a-9d11-8b29dd0c169f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "GET /runs/a3569720-8362-429a-9d11-8b29dd0c169f/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "GET /runs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "GET /experiments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45050 - "GET /evaluations/retrieval HTTP/1.1" 200 OK

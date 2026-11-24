@@ -1,0 +1,118 @@
+INFO:     Started server process [272]
+INFO:     Waiting for application startup.
+Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6529.23it/s]
+No modules.json found for cross-encoder/ms-marco-TinyBERT-L-2-v2, initializing a new CrossEncoder model.
+Loading weights:   0%|          | 0/41 [00:00<?, ?it/s]Loading weights: 100%|██████████| 41/41 [00:00<00:00, 4186.75it/s]
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:36355 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52010 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "POST /demo/seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "POST /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "POST /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "POST /runs HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb HTTP/1.1" 200 OK
+[11/18/26 01:48:52] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb HTTP/1.1" 200 OK
+[11/18/26 01:48:57] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4999.86it/s]
+                    INFO     No modules.json found for             model.py:1011
+                             cross-encoder/ms-marco-TinyBERT-L-2-v              
+                             2, initializing a new CrossEncoder                 
+                             model.                                             
+Loading weights:   0%|          | 0/41 [00:00<?, ?it/s]Loading weights: 100%|██████████| 41/41 [00:00<00:00, 3702.74it/s]
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb HTTP/1.1" 200 OK
+{"event": "run_finished", "run_id": "bde2d138-7a03-4991-b6fe-96a7fbc08adb", "workspace": "demo", "status": "completed"}
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/bde2d138-7a03-4991-b6fe-96a7fbc08adb/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "POST /runs HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52022 - "GET /runs/e90172ae-4046-4279-8151-b56d1aa1e973 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/e90172ae-4046-4279-8151-b56d1aa1e973 HTTP/1.1" 200 OK
+[11/18/26 01:49:00] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:52022 - "GET /runs/e90172ae-4046-4279-8151-b56d1aa1e973 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/e90172ae-4046-4279-8151-b56d1aa1e973 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/e90172ae-4046-4279-8151-b56d1aa1e973 HTTP/1.1" 200 OK
+[11/18/26 01:49:03] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:52022 - "GET /runs/e90172ae-4046-4279-8151-b56d1aa1e973 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/e90172ae-4046-4279-8151-b56d1aa1e973 HTTP/1.1" 200 OK
+[11/18/26 01:49:05] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+{"event": "run_finished", "run_id": "e90172ae-4046-4279-8151-b56d1aa1e973", "workspace": "demo", "status": "completed"}
+INFO:     127.0.0.1:52022 - "GET /runs/e90172ae-4046-4279-8151-b56d1aa1e973 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/e90172ae-4046-4279-8151-b56d1aa1e973/traces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "POST /runs HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+[11/18/26 01:49:08] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+[11/18/26 01:49:08] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+[11/18/26 01:49:11] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+[11/18/26 01:49:12] INFO     Loading SentenceTransformer model     model.py:1022
+                             from                                               
+                             sentence-transformers/all-MiniLM-L6-v              
+                             2.                                                 
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4503.33it/s]
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+[11/18/26 01:49:13] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+[11/18/26 01:49:13] INFO     No modules.json found for             model.py:1011
+                             cross-encoder/ms-marco-TinyBERT-L-2-v              
+                             2, initializing a new CrossEncoder                 
+                             model.                                             
+Loading weights:   0%|          | 0/41 [00:00<?, ?it/s]Loading weights: 100%|██████████| 41/41 [00:00<00:00, 4688.29it/s]
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+{"event": "run_finished", "run_id": "6ef34595-b427-44a1-b330-6e95e04b7d72", "workspace": "demo", "status": "awaiting_approval"}
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /inbox HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "POST /runs/6ef34595-b427-44a1-b330-6e95e04b7d72/approval HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+[11/18/26 01:49:17] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+{"event": "run_finished", "run_id": "6ef34595-b427-44a1-b330-6e95e04b7d72", "workspace": "demo", "status": "completed"}
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /inbox HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "GET /runs/6ef34595-b427-44a1-b330-6e95e04b7d72/traces HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [272]

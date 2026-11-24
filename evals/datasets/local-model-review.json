@@ -1,0 +1,59 @@
+[
+  {
+    "id": "a02",
+    "goal": "Compare Alpha and Beta vendor renewal terms using documents",
+    "workflow": "research",
+    "expected_agents": [
+      "research"
+    ],
+    "expected_tools": [
+      "document_search"
+    ],
+    "expected_values": {},
+    "expected_status": "completed",
+    "approval": "approve",
+    "inject_failure": false,
+    "empty_corpus": false,
+    "label_notes": "Human-authored expectations; offline baseline may fail natural-language intent/period extraction.",
+    "expected_sources": [
+      "contract-alpha",
+      "contract-beta"
+    ]
+  },
+  {
+    "id": "a05",
+    "goal": "Analyze revenue",
+    "workflow": "business",
+    "expected_agents": [
+      "data"
+    ],
+    "expected_tools": [
+      "business_metrics"
+    ],
+    "expected_values": {
+      "revenue": 370000
+    },
+    "expected_status": "completed",
+    "approval": "approve",
+    "inject_failure": false,
+    "empty_corpus": false,
+    "label_notes": "Human-authored expectations; offline baseline may fail natural-language intent/period extraction."
+  },
+  {
+    "id": "a15",
+    "goal": "Create a local notification for the team",
+    "workflow": "operations",
+    "expected_agents": [
+      "action"
+    ],
+    "expected_tools": [
+      "create_notification"
+    ],
+    "expected_values": {},
+    "expected_status": "completed",
+    "approval": "approve",
+    "inject_failure": false,
+    "empty_corpus": false,
+    "label_notes": "Human-authored expectations; offline baseline may fail natural-language intent/period extraction."
+  }
+]

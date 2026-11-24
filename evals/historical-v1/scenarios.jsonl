@@ -1,0 +1,1200 @@
+{"id": 0, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 2, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 3, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 4, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 5, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 6, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 7, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 8, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 9, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 10, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 11, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 12, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 13, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 14, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 15, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 16, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 17, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 18, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 19, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 20, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 21, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 22, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 23, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 24, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 25, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 26, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 27, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 28, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 29, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 30, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 31, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 32, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 33, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 34, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 35, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 36, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 37, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 38, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 39, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 40, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 41, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 42, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 43, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 44, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 45, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 46, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 47, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 48, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 49, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 50, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 51, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 52, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 53, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 54, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 55, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 56, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 57, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 58, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 59, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 60, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 61, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 62, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 63, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 64, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 65, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 66, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 67, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 68, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 69, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 70, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 71, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 72, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 73, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 74, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 75, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 76, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 77, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 78, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 79, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 80, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 81, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 82, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 83, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 84, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 85, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 86, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 87, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 88, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 89, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 90, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 91, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 92, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 93, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 94, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 95, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 96, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 97, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 98, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 99, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 100, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 101, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 102, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 103, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 104, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 105, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 106, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 107, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 108, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 109, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 110, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 111, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 112, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 113, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 114, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 115, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 116, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 117, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 118, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 119, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 120, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 121, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 122, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 123, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 124, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 125, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 126, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 127, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 128, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 129, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 130, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 131, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 132, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 133, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 134, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 135, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 136, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 137, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 138, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 139, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 140, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 141, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 142, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 143, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 144, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 145, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 146, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 147, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 148, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 149, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 150, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 151, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 152, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 153, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 154, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 155, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 156, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 157, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 158, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 159, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 160, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 161, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 162, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 163, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 164, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 165, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 166, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 167, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 168, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 169, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 170, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 171, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 172, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 173, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 174, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 175, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 176, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 177, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 178, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 179, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 180, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 181, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 182, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 183, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 184, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 185, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 186, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 187, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 188, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 189, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 190, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 191, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 192, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 193, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 194, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 195, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 196, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 197, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 198, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 199, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 200, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 201, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 202, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 203, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 204, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 205, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 206, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 207, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 208, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 209, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 210, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 211, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 212, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 213, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 214, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 215, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 216, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 217, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 218, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 219, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 220, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 221, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 222, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 223, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 224, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 225, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 226, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 227, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 228, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 229, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 230, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 231, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 232, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 233, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 234, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 235, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 236, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 237, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 238, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 239, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 240, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 241, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 242, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 243, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 244, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 245, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 246, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 247, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 248, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 249, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 250, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 251, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 252, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 253, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 254, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 255, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 256, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 257, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 258, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 259, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 260, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 261, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 262, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 263, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 264, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 265, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 266, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 267, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 268, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 269, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 270, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 271, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 272, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 273, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 274, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 275, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 276, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 277, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 278, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 279, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 280, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 281, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 282, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 283, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 284, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 285, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 286, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 287, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 288, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 289, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 290, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 291, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 292, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 293, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 294, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 295, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 296, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 297, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 298, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 299, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 300, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 301, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 302, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 303, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 304, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 305, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 306, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 307, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 308, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 309, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 310, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 311, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 312, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 313, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 314, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 315, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 316, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 317, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 318, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 319, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 320, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 321, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 322, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 323, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 324, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 325, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 326, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 327, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 328, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 329, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 330, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 331, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 332, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 333, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 334, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 335, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 336, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 337, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 338, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 339, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 340, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 341, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 342, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 343, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 344, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 345, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 346, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 347, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 348, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 349, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 350, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 351, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 352, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 353, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 354, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 355, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 356, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 357, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 358, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 359, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 360, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 361, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 362, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 363, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 364, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 365, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 366, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 367, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 368, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 369, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 370, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 371, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 372, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 373, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 374, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 375, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 376, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 377, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 378, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 379, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 380, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 381, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 382, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 383, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 384, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 385, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 386, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 387, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 388, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 389, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 390, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 391, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 392, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 393, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 394, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 395, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 396, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 397, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 398, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 399, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 400, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 401, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 402, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 403, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 404, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 405, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 406, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 407, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 408, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 409, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 410, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 411, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 412, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 413, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 414, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 415, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 416, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 417, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 418, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 419, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 420, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 421, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 422, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 423, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 424, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 425, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 426, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 427, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 428, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 429, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 430, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 431, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 432, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 433, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 434, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 435, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 436, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 437, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 438, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 439, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 440, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 441, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 442, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 443, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 444, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 445, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 446, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 447, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 448, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 449, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 450, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 451, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 452, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 453, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 454, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 455, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 456, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 457, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 458, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 459, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 460, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 461, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 462, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 463, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 464, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 465, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 466, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 467, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 468, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 469, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 470, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 471, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 472, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 473, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 474, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 475, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 476, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 477, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 478, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 479, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 480, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 481, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 482, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 483, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 484, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 485, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 486, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 487, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 488, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 489, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 490, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 491, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 492, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 493, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 494, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 495, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 496, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 497, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 498, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 499, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 500, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 501, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 502, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 503, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 504, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 505, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 506, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 507, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 508, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 509, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 510, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 511, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 512, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 513, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 514, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 515, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 516, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 517, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 518, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 519, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 520, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 521, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 522, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 523, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 524, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 525, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 526, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 527, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 528, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 529, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 530, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 531, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 532, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 533, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 534, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 535, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 536, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 537, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 538, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 539, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 540, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 541, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 542, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 543, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 544, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 545, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 546, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 547, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 548, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 549, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 550, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 551, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 552, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 553, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 554, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 555, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 556, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 557, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 558, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 559, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 560, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 561, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 562, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 563, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 564, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 565, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 566, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 567, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 568, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 569, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 570, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 571, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 572, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 573, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 574, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 575, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 576, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 577, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 578, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 579, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 580, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 581, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 582, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 583, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 584, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 585, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 586, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 587, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 588, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 589, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 590, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 591, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 592, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 593, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 594, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 595, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 596, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 597, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 598, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 599, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 600, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 601, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 602, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 603, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 604, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 605, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 606, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 607, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 608, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 609, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 610, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 611, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 612, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 613, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 614, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 615, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 616, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 617, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 618, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 619, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 620, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 621, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 622, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 623, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 624, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 625, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 626, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 627, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 628, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 629, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 630, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 631, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 632, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 633, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 634, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 635, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 636, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 637, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 638, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 639, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 640, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 641, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 642, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 643, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 644, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 645, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 646, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 647, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 648, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 649, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 650, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 651, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 652, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 653, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 654, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 655, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 656, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 657, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 658, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 659, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 660, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 661, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 662, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 663, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 664, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 665, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 666, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 667, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 668, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 669, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 670, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 671, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 672, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 673, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 674, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 675, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 676, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 677, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 678, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 679, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 680, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 681, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 682, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 683, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 684, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 685, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 686, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 687, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 688, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 689, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 690, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 691, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 692, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 693, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 694, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 695, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 696, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 697, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 698, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 699, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 700, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 701, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 702, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 703, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 704, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 705, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 706, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 707, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 708, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 709, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 710, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 711, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 712, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 713, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 714, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 715, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 716, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 717, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 718, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 719, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 720, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 721, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 722, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 723, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 724, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 725, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 726, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 727, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 728, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 729, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 730, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 731, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 732, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 733, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 734, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 735, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 736, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 737, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 738, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 739, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 740, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 741, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 742, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 743, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 744, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 745, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 746, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 747, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 748, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 749, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 750, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 751, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 752, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 753, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 754, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 755, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 756, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 757, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 758, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 759, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 760, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 761, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 762, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 763, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 764, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 765, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 766, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 767, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 768, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 769, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 770, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 771, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 772, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 773, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 774, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 775, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 776, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 777, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 778, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 779, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 780, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 781, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 782, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 783, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 784, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 785, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 786, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 787, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 788, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 789, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 790, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 791, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 792, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 793, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 794, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 795, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 796, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 797, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 798, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 799, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 800, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 801, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 802, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 803, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 804, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 805, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 806, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 807, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 808, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 809, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 810, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 811, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 812, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 813, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 814, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 815, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 816, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 817, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 818, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 819, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 820, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 821, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 822, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 823, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 824, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 825, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 826, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 827, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 828, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 829, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 830, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 831, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 832, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 833, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 834, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 835, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 836, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 837, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 838, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 839, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 840, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 841, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 842, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 843, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 844, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 845, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 846, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 847, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 848, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 849, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 850, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 851, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 852, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 853, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 854, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 855, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 856, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 857, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 858, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 859, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 860, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 861, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 862, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 863, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 864, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 865, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 866, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 867, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 868, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 869, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 870, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 871, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 872, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 873, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 874, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 875, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 876, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 877, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 878, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 879, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 880, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 881, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 882, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 883, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 884, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 885, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 886, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 887, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 888, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 889, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 890, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 891, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 892, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 893, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 894, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 895, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 896, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 897, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 898, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 899, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 900, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 901, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 902, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 903, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 904, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 905, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 906, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 907, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 908, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 909, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 910, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 911, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 912, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 913, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 914, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 915, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 916, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 917, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 918, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 919, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 920, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 921, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 922, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 923, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 924, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 925, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 926, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 927, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 928, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 929, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 930, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 931, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 932, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 933, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 934, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 935, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 936, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 937, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 938, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 939, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 940, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 941, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 942, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 943, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 944, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 945, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 946, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 947, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 948, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 949, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 950, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 951, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 952, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 953, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 954, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 955, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 956, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 957, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 958, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 959, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 960, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 961, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 962, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 963, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 964, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 965, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 966, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 967, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 968, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 969, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 970, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 971, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 972, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 973, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 974, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 975, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 976, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 977, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 978, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 979, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 980, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 981, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 982, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 983, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 984, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 985, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 986, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 987, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 988, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 989, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 990, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 991, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 992, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 993, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 994, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 995, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 996, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 997, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 998, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 999, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1000, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1001, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1002, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1003, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1004, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1005, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1006, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1007, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1008, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1009, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1010, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1011, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1012, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1013, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1014, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1015, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1016, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1017, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1018, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1019, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1020, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1021, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1022, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1023, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1024, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1025, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1026, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1027, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1028, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1029, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1030, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1031, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1032, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1033, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1034, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1035, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1036, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1037, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1038, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1039, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1040, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1041, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1042, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1043, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1044, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1045, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1046, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1047, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1048, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1049, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1050, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1051, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1052, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1053, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1054, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1055, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1056, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1057, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1058, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1059, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1060, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1061, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1062, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1063, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1064, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1065, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1066, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1067, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1068, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1069, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1070, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1071, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1072, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1073, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1074, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1075, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1076, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1077, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1078, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1079, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1080, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1081, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1082, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1083, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1084, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1085, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1086, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1087, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1088, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1089, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1090, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1091, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1092, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1093, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1094, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1095, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1096, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1097, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1098, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1099, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1100, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1101, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1102, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1103, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1104, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1105, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1106, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1107, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1108, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1109, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1110, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1111, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1112, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1113, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1114, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1115, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1116, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1117, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1118, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1119, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1120, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1121, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1122, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1123, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1124, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1125, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1126, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1127, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1128, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1129, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1130, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1131, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1132, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1133, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1134, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1135, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1136, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1137, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1138, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1139, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1140, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1141, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1142, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1143, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1144, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1145, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1146, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1147, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1148, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1149, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1150, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1151, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1152, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1153, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1154, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1155, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1156, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1157, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1158, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1159, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1160, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1161, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1162, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1163, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1164, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1165, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1166, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1167, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1168, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1169, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1170, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1171, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1172, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1173, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1174, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1175, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1176, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1177, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1178, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1179, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1180, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1181, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1182, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1183, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1184, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1185, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1186, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1187, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1188, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1189, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1190, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1191, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1192, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1193, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1194, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1195, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1196, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}
+{"id": 1197, "workflow": "business", "goal": "Analyze enterprise revenue", "expected_agents": ["data", "research"]}
+{"id": 1198, "workflow": "research", "goal": "Research enterprise subscription policy", "expected_agents": ["research"]}
+{"id": 1199, "workflow": "operations", "goal": "Create enterprise operations report", "expected_agents": ["research", "action"]}

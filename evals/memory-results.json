@@ -1,0 +1,202 @@
+{
+  "mode": "demo",
+  "model": null,
+  "embedding_backend": "hashing",
+  "measurement": "two-turn fact recall; offline answers use explicit extraction, not inference",
+  "groups": [
+    {
+      "memory_enabled": false,
+      "cases": 8,
+      "accuracy": 0,
+      "mean_seconds": 1.9364999843674013e-06,
+      "tokens": 0,
+      "error_rate": 0
+    },
+    {
+      "memory_enabled": true,
+      "cases": 8,
+      "accuracy": 1,
+      "mean_seconds": 0.0006420216248557153,
+      "tokens": 0,
+      "error_rate": 0
+    }
+  ],
+  "rows": [
+    {
+      "id": "m0",
+      "memory_enabled": false,
+      "correct": false,
+      "insufficient": true,
+      "retrieved_memory_ids": [],
+      "seconds": 2.7939995561609976e-06,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m1",
+      "memory_enabled": false,
+      "correct": false,
+      "insufficient": true,
+      "retrieved_memory_ids": [],
+      "seconds": 3.0050000532355625e-06,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m2",
+      "memory_enabled": false,
+      "correct": false,
+      "insufficient": true,
+      "retrieved_memory_ids": [],
+      "seconds": 1.672000053076772e-06,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m3",
+      "memory_enabled": false,
+      "correct": false,
+      "insufficient": true,
+      "retrieved_memory_ids": [],
+      "seconds": 1.7120000848080963e-06,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m4",
+      "memory_enabled": false,
+      "correct": false,
+      "insufficient": true,
+      "retrieved_memory_ids": [],
+      "seconds": 1.4730003385921009e-06,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m5",
+      "memory_enabled": false,
+      "correct": false,
+      "insufficient": true,
+      "retrieved_memory_ids": [],
+      "seconds": 1.7219999790540896e-06,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m6",
+      "memory_enabled": false,
+      "correct": false,
+      "insufficient": true,
+      "retrieved_memory_ids": [],
+      "seconds": 1.5219998203974683e-06,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m7",
+      "memory_enabled": false,
+      "correct": false,
+      "insufficient": true,
+      "retrieved_memory_ids": [],
+      "seconds": 1.5919999896141235e-06,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m0",
+      "memory_enabled": true,
+      "correct": true,
+      "insufficient": false,
+      "retrieved_memory_ids": [
+        "57a05e7931a97cba013f4a7b75dba03559050e0ae1e1e54a5222797838551821"
+      ],
+      "seconds": 0.0010786409998218005,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m1",
+      "memory_enabled": true,
+      "correct": true,
+      "insufficient": false,
+      "retrieved_memory_ids": [
+        "c29a873c7035643fe16bccdb14b2be6bec54befad7f7f7431b2f2e1d7a5e15f3"
+      ],
+      "seconds": 0.0005635410002469143,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m2",
+      "memory_enabled": true,
+      "correct": true,
+      "insufficient": false,
+      "retrieved_memory_ids": [
+        "399955351c676971461565cfb6fd17a1e8d57097af8303ab54e6a328c578c595"
+      ],
+      "seconds": 0.0006209959997249825,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m3",
+      "memory_enabled": true,
+      "correct": true,
+      "insufficient": false,
+      "retrieved_memory_ids": [
+        "43a7ace9b81a4068c0ce0c0126ec5495648d08631ca59ac50ba633c88916200d"
+      ],
+      "seconds": 0.0005541569998968043,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m4",
+      "memory_enabled": true,
+      "correct": true,
+      "insufficient": false,
+      "retrieved_memory_ids": [
+        "d3e275a1e81b98f35c8bcfe224fc6e9e61948a22a3f0e7812cb4475f157b7922"
+      ],
+      "seconds": 0.00051198499977545,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m5",
+      "memory_enabled": true,
+      "correct": true,
+      "insufficient": false,
+      "retrieved_memory_ids": [
+        "5f207bcef589f69d5af600b0b0e94007c4050f6a67b1734ce184083713e18f9e"
+      ],
+      "seconds": 0.0006662219998361252,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m6",
+      "memory_enabled": true,
+      "correct": true,
+      "insufficient": false,
+      "retrieved_memory_ids": [
+        "886426bb7f5ee1e62706923ee2d3bd1d2c233973120f4dfbc91622561a6ac0d2"
+      ],
+      "seconds": 0.0005979309999020188,
+      "tokens": 0,
+      "error": null
+    },
+    {
+      "id": "m7",
+      "memory_enabled": true,
+      "correct": true,
+      "insufficient": false,
+      "retrieved_memory_ids": [
+        "594951ecf18597a2956608f7aefc364a340f22f6b10bd25b4c6480bd5c290f8b"
+      ],
+      "seconds": 0.0005426999996416271,
+      "tokens": 0,
+      "error": null
+    }
+  ]
+}

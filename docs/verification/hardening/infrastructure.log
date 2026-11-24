@@ -1,0 +1,6 @@
+docker CLI absent
+Docker socket absent
+podman absent
+local Actions runner absent
+Source archive has no git remote
+Compose verifier shell syntax passed

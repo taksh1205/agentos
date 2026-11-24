@@ -1,0 +1,12 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> agentos-console@0.3.0 test:browser
+> node tests/smoke.cjs
+
+locator.waitFor: Timeout 20000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('heading', { name: 'Workflow result' }) to be visible[22m
+
+    at /workspace/scratch/9935952a89f5/v3/agentos/frontend/tests/smoke.cjs:28:6 {
+  name: 'TimeoutError'
+}

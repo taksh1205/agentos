@@ -1,0 +1,980 @@
+{
+  "goal": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+  "model": "qwen15-local",
+  "workspace": "release-10495635-f58e-47a2-b5d5-1b42de8d2304",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0",
+        "agent": "data",
+        "instruction": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+        "dependencies": [],
+        "tool": "business_metrics",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": true,
+        "analytics": {
+          "metrics": [
+            {
+              "metric": "revenue",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 120000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 105000.0
+                }
+              ],
+              "total": 225000.0,
+              "absolute_change": -15000.0,
+              "growth": -0.125,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": -15000.0
+              }
+            },
+            {
+              "metric": "costs",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 81000.0
+                }
+              ],
+              "total": 159000.0,
+              "absolute_change": 3000.0,
+              "growth": 0.038461538461538464,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": 3000.0
+              }
+            },
+            {
+              "metric": "profit",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 42000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 24000.0
+                }
+              ],
+              "total": 66000.0,
+              "absolute_change": -18000.0,
+              "growth": -0.42857142857142855,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": -18000.0
+              }
+            }
+          ]
+        },
+        "intent": {
+          "as_of": "2026-02-01",
+          "dataset": "sales",
+          "metrics": [
+            "revenue",
+            "costs",
+            "profit"
+          ],
+          "start": "2026-02",
+          "end": "2026-03",
+          "compare_previous": false
+        },
+        "computed": {
+          "dataset": "sales",
+          "period": {
+            "start": "2026-02",
+            "end": "2026-03"
+          },
+          "metrics": [
+            {
+              "metric": "revenue",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 120000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 105000.0
+                }
+              ],
+              "total": 225000.0,
+              "absolute_change": -15000.0,
+              "growth": -0.125,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": -15000.0
+              }
+            },
+            {
+              "metric": "costs",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 81000.0
+                }
+              ],
+              "total": 159000.0,
+              "absolute_change": 3000.0,
+              "growth": 0.038461538461538464,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": 3000.0
+              }
+            },
+            {
+              "metric": "profit",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 42000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 24000.0
+                }
+              ],
+              "total": 66000.0,
+              "absolute_change": -18000.0,
+              "growth": -0.42857142857142855,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": -18000.0
+              }
+            }
+          ],
+          "raw_rows": [
+            {
+              "month": "2026-02",
+              "revenue": 120000.0,
+              "costs": 78000.0
+            },
+            {
+              "month": "2026-03",
+              "revenue": 105000.0,
+              "costs": 81000.0
+            }
+          ],
+          "comparison": null
+        },
+        "interpretation": {
+          "summary": "Revenue from 2026-02 to 2026-03: 120,000.00 to 105,000.00 (-15,000.00, -12.50%). Costs from 2026-02 to 2026-03: 78,000.00 to 81,000.00 (+3,000.00, +3.85%). Profit from 2026-02 to 2026-03: 42,000.00 to 24,000.00 (-18,000.00, -42.86%). The selected trend is the decrease in revenue. The records do not establish a cause.",
+          "citations": [],
+          "insufficient": false,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "tokens": 1181,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "AnalyticsIntent",
+            "attempt": 1,
+            "input_tokens": 497,
+            "output_tokens": 78,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 39.988801047999914,
+            "tokens": 575
+          },
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "LedgerReading",
+            "attempt": 1,
+            "input_tokens": 587,
+            "output_tokens": 19,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 11.140230147000011,
+            "tokens": 606
+          }
+        ],
+        "tools_used": [
+          "dataset_schema",
+          "business_metrics",
+          "business_metrics",
+          "business_metrics"
+        ],
+        "attempts": 1,
+        "seconds": 62.873818612000036
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 1 steps",
+        "at": 1795197776.5001874
+      },
+      {
+        "id": "0",
+        "agent": "data",
+        "summary": "Validated approved tool results",
+        "at": 1795197839.3811643,
+        "step": "0",
+        "attempts": 1,
+        "seconds": 62.873818612000036
+      },
+      {
+        "id": "verification:final",
+        "agent": "verification",
+        "summary": "Checked completion, citations, calculations and committed effects",
+        "at": 1795197861.3205802
+      }
+    ]
+  },
+  "report": {
+    "status": "completed",
+    "goal": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+    "mode": "openai",
+    "refusal": null,
+    "clarification": null,
+    "grounding": {
+      "fully_checked": false,
+      "requires_review": true
+    },
+    "review": {
+      "supported": true,
+      "issues": []
+    },
+    "findings": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": true,
+        "analytics": {
+          "metrics": [
+            {
+              "metric": "revenue",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 120000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 105000.0
+                }
+              ],
+              "total": 225000.0,
+              "absolute_change": -15000.0,
+              "growth": -0.125,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": -15000.0
+              }
+            },
+            {
+              "metric": "costs",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 81000.0
+                }
+              ],
+              "total": 159000.0,
+              "absolute_change": 3000.0,
+              "growth": 0.038461538461538464,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": 3000.0
+              }
+            },
+            {
+              "metric": "profit",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 42000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 24000.0
+                }
+              ],
+              "total": 66000.0,
+              "absolute_change": -18000.0,
+              "growth": -0.42857142857142855,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": -18000.0
+              }
+            }
+          ]
+        },
+        "intent": {
+          "as_of": "2026-02-01",
+          "dataset": "sales",
+          "metrics": [
+            "revenue",
+            "costs",
+            "profit"
+          ],
+          "start": "2026-02",
+          "end": "2026-03",
+          "compare_previous": false
+        },
+        "computed": {
+          "dataset": "sales",
+          "period": {
+            "start": "2026-02",
+            "end": "2026-03"
+          },
+          "metrics": [
+            {
+              "metric": "revenue",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 120000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 105000.0
+                }
+              ],
+              "total": 225000.0,
+              "absolute_change": -15000.0,
+              "growth": -0.125,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": -15000.0
+              }
+            },
+            {
+              "metric": "costs",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 78000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 81000.0
+                }
+              ],
+              "total": 159000.0,
+              "absolute_change": 3000.0,
+              "growth": 0.038461538461538464,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": 3000.0
+              }
+            },
+            {
+              "metric": "profit",
+              "rows": [
+                {
+                  "month": "2026-02",
+                  "value": 42000.0
+                },
+                {
+                  "month": "2026-03",
+                  "value": 24000.0
+                }
+              ],
+              "total": 66000.0,
+              "absolute_change": -18000.0,
+              "growth": -0.42857142857142855,
+              "biggest_change": {
+                "from_period": "2026-02",
+                "to_period": "2026-03",
+                "change": -18000.0
+              }
+            }
+          ],
+          "raw_rows": [
+            {
+              "month": "2026-02",
+              "revenue": 120000.0,
+              "costs": 78000.0
+            },
+            {
+              "month": "2026-03",
+              "revenue": 105000.0,
+              "costs": 81000.0
+            }
+          ],
+          "comparison": null
+        },
+        "interpretation": {
+          "summary": "Revenue from 2026-02 to 2026-03: 120,000.00 to 105,000.00 (-15,000.00, -12.50%). Costs from 2026-02 to 2026-03: 78,000.00 to 81,000.00 (+3,000.00, +3.85%). Profit from 2026-02 to 2026-03: 42,000.00 to 24,000.00 (-18,000.00, -42.86%). The selected trend is the decrease in revenue. The records do not establish a cause.",
+          "citations": [],
+          "insufficient": false,
+          "contradictions": [],
+          "claims": []
+        },
+        "grounding": {
+          "claims": [],
+          "errors": [],
+          "fully_checked": false,
+          "requires_review": true
+        },
+        "tokens": 1181,
+        "model_records": [
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "AnalyticsIntent",
+            "attempt": 1,
+            "input_tokens": 497,
+            "output_tokens": 78,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 39.988801047999914,
+            "tokens": 575
+          },
+          {
+            "provider": "openai",
+            "model": "qwen15-local",
+            "prompt_version": "agentos-v3.1",
+            "usage_known": true,
+            "response_received": true,
+            "schema": "LedgerReading",
+            "attempt": 1,
+            "input_tokens": 587,
+            "output_tokens": 19,
+            "estimated_cost_usd": null,
+            "protocol": "json_schema",
+            "seconds": 11.140230147000011,
+            "tokens": 606
+          }
+        ],
+        "tools_used": [
+          "dataset_schema",
+          "business_metrics",
+          "business_metrics",
+          "business_metrics"
+        ],
+        "attempts": 1,
+        "seconds": 62.873818612000036
+      }
+    ],
+    "citations": [],
+    "errors": [],
+    "usage": {
+      "tokens": 2591,
+      "calls": 4,
+      "estimated_cost_usd": null
+    },
+    "limitations": [
+      "Model judges can be wrong; document content is untrusted evidence."
+    ]
+  },
+  "results": [
+    {
+      "step": "0",
+      "agent": "data",
+      "ok": true,
+      "analytics": {
+        "metrics": [
+          {
+            "metric": "revenue",
+            "rows": [
+              {
+                "month": "2026-02",
+                "value": 120000.0
+              },
+              {
+                "month": "2026-03",
+                "value": 105000.0
+              }
+            ],
+            "total": 225000.0,
+            "absolute_change": -15000.0,
+            "growth": -0.125,
+            "biggest_change": {
+              "from_period": "2026-02",
+              "to_period": "2026-03",
+              "change": -15000.0
+            }
+          },
+          {
+            "metric": "costs",
+            "rows": [
+              {
+                "month": "2026-02",
+                "value": 78000.0
+              },
+              {
+                "month": "2026-03",
+                "value": 81000.0
+              }
+            ],
+            "total": 159000.0,
+            "absolute_change": 3000.0,
+            "growth": 0.038461538461538464,
+            "biggest_change": {
+              "from_period": "2026-02",
+              "to_period": "2026-03",
+              "change": 3000.0
+            }
+          },
+          {
+            "metric": "profit",
+            "rows": [
+              {
+                "month": "2026-02",
+                "value": 42000.0
+              },
+              {
+                "month": "2026-03",
+                "value": 24000.0
+              }
+            ],
+            "total": 66000.0,
+            "absolute_change": -18000.0,
+            "growth": -0.42857142857142855,
+            "biggest_change": {
+              "from_period": "2026-02",
+              "to_period": "2026-03",
+              "change": -18000.0
+            }
+          }
+        ]
+      },
+      "intent": {
+        "as_of": "2026-02-01",
+        "dataset": "sales",
+        "metrics": [
+          "revenue",
+          "costs",
+          "profit"
+        ],
+        "start": "2026-02",
+        "end": "2026-03",
+        "compare_previous": false
+      },
+      "computed": {
+        "dataset": "sales",
+        "period": {
+          "start": "2026-02",
+          "end": "2026-03"
+        },
+        "metrics": [
+          {
+            "metric": "revenue",
+            "rows": [
+              {
+                "month": "2026-02",
+                "value": 120000.0
+              },
+              {
+                "month": "2026-03",
+                "value": 105000.0
+              }
+            ],
+            "total": 225000.0,
+            "absolute_change": -15000.0,
+            "growth": -0.125,
+            "biggest_change": {
+              "from_period": "2026-02",
+              "to_period": "2026-03",
+              "change": -15000.0
+            }
+          },
+          {
+            "metric": "costs",
+            "rows": [
+              {
+                "month": "2026-02",
+                "value": 78000.0
+              },
+              {
+                "month": "2026-03",
+                "value": 81000.0
+              }
+            ],
+            "total": 159000.0,
+            "absolute_change": 3000.0,
+            "growth": 0.038461538461538464,
+            "biggest_change": {
+              "from_period": "2026-02",
+              "to_period": "2026-03",
+              "change": 3000.0
+            }
+          },
+          {
+            "metric": "profit",
+            "rows": [
+              {
+                "month": "2026-02",
+                "value": 42000.0
+              },
+              {
+                "month": "2026-03",
+                "value": 24000.0
+              }
+            ],
+            "total": 66000.0,
+            "absolute_change": -18000.0,
+            "growth": -0.42857142857142855,
+            "biggest_change": {
+              "from_period": "2026-02",
+              "to_period": "2026-03",
+              "change": -18000.0
+            }
+          }
+        ],
+        "raw_rows": [
+          {
+            "month": "2026-02",
+            "revenue": 120000.0,
+            "costs": 78000.0
+          },
+          {
+            "month": "2026-03",
+            "revenue": 105000.0,
+            "costs": 81000.0
+          }
+        ],
+        "comparison": null
+      },
+      "interpretation": {
+        "summary": "Revenue from 2026-02 to 2026-03: 120,000.00 to 105,000.00 (-15,000.00, -12.50%). Costs from 2026-02 to 2026-03: 78,000.00 to 81,000.00 (+3,000.00, +3.85%). Profit from 2026-02 to 2026-03: 42,000.00 to 24,000.00 (-18,000.00, -42.86%). The selected trend is the decrease in revenue. The records do not establish a cause.",
+        "citations": [],
+        "insufficient": false,
+        "contradictions": [],
+        "claims": []
+      },
+      "grounding": {
+        "claims": [],
+        "errors": [],
+        "fully_checked": false,
+        "requires_review": true
+      },
+      "tokens": 1181,
+      "model_records": [
+        {
+          "provider": "openai",
+          "model": "qwen15-local",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 497,
+          "output_tokens": 78,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 39.988801047999914,
+          "tokens": 575
+        },
+        {
+          "provider": "openai",
+          "model": "qwen15-local",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "LedgerReading",
+          "attempt": 1,
+          "input_tokens": 587,
+          "output_tokens": 19,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 11.140230147000011,
+          "tokens": 606
+        }
+      ],
+      "tools_used": [
+        "dataset_schema",
+        "business_metrics",
+        "business_metrics",
+        "business_metrics"
+      ],
+      "attempts": 1,
+      "seconds": 62.873818612000036
+    }
+  ],
+  "plan": [
+    {
+      "id": "0",
+      "agent": "data",
+      "instruction": "For February and March 2026, compare sales revenue, costs and profit. Explain the month-over-month movement using the ledger.",
+      "dependencies": [],
+      "tool": "business_metrics",
+      "arguments": {},
+      "completion_criteria": [],
+      "requires_approval": false,
+      "checks": []
+    }
+  ],
+  "events": [
+    {
+      "id": "planner:0",
+      "agent": "planner",
+      "summary": "Model: scheduled 1 steps",
+      "at": 1795197776.5001874
+    },
+    {
+      "id": "0",
+      "agent": "data",
+      "summary": "Validated approved tool results",
+      "at": 1795197839.3811643,
+      "step": "0",
+      "attempts": 1,
+      "seconds": 62.873818612000036
+    },
+    {
+      "id": "verification:final",
+      "agent": "verification",
+      "summary": "Checked completion, citations, calculations and committed effects",
+      "at": 1795197861.3205802
+    }
+  ],
+  "usage": {
+    "tokens": 2591,
+    "calls": 4,
+    "estimated_cost_usd": null
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "ReadSelection",
+      "attempt": 1,
+      "input_tokens": 243,
+      "output_tokens": 26,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 5.479244775000097,
+      "tokens": 269,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 2.2947584979999647,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 497,
+      "output_tokens": 78,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 39.988801047999914,
+      "tokens": 575,
+      "step": "0"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "revenue",
+        "start": "2026-02",
+        "end": "2026-03"
+      },
+      "step": "0",
+      "approval_id": null,
+      "seconds": 3.2545350189999454,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "costs",
+        "start": "2026-02",
+        "end": "2026-03"
+      },
+      "step": "0",
+      "approval_id": null,
+      "seconds": 3.1903917150000325,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "tool_call",
+      "tool": "business_metrics",
+      "argument_keys": [
+        "metric",
+        "start",
+        "end"
+      ],
+      "arguments": {
+        "metric": "profit",
+        "start": "2026-02",
+        "end": "2026-03"
+      },
+      "step": "0",
+      "approval_id": null,
+      "seconds": 2.9749021849999053,
+      "output_fields": [
+        "metric",
+        "rows",
+        "total",
+        "absolute_change",
+        "growth",
+        "biggest_change"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "LedgerReading",
+      "attempt": 1,
+      "input_tokens": 587,
+      "output_tokens": 19,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 11.140230147000011,
+      "tokens": 606,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen15-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "Review",
+      "attempt": 1,
+      "input_tokens": 1127,
+      "output_tokens": 14,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 21.752738406999924,
+      "tokens": 1141,
+      "step": "verification"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 105000.0,
+      "costs": 81000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 90.37745399099992
+}

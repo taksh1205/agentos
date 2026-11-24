@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "terminal_report_completed": true,
+    "received_live_model_response": true,
+    "revenue_periods_values_and_change": true,
+    "revenue_rendered_values_and_change": true,
+    "costs_periods_values_and_change": true,
+    "costs_rendered_values_and_change": true,
+    "profit_periods_values_and_change": true,
+    "profit_rendered_values_and_change": true,
+    "requested_tools": true
+  },
+  "machine_verdict": "REQUIRES_SEMANTIC_REVIEW",
+  "model_attempts": 4,
+  "responses": 4,
+  "known_tokens": 2591,
+  "attempts_without_usage": 0,
+  "elapsed_seconds": 90.37745399099992,
+  "estimated_cost_usd": null
+}

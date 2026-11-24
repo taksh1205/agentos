@@ -1,0 +1,248 @@
+{
+  "goal": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+  "model": "qwen3-4b-local",
+  "workspace": "release-d50b12eb-a907-48c7-804f-a2bad4013457",
+  "last_checkpoint": {
+    "plan": [
+      {
+        "id": "0",
+        "agent": "data",
+        "instruction": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+        "dependencies": [],
+        "tool": "invoice_analysis",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": false,
+        "checks": []
+      },
+      {
+        "id": "write",
+        "agent": "action",
+        "instruction": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+        "dependencies": [
+          "0"
+        ],
+        "tool": "create_report",
+        "arguments": {},
+        "completion_criteria": [],
+        "requires_approval": true,
+        "checks": []
+      }
+    ],
+    "results": [
+      {
+        "step": "0",
+        "agent": "data",
+        "ok": false,
+        "error": "ProviderError",
+        "issues": [
+          "openai request failed after bounded retries: APIConnectionError"
+        ],
+        "attempts": 1
+      }
+    ],
+    "events": [
+      {
+        "id": "planner:0",
+        "agent": "planner",
+        "summary": "Model: scheduled 2 steps",
+        "at": 1795130149.5570838
+      },
+      {
+        "id": "0",
+        "agent": "data",
+        "summary": "Failed after bounded retries",
+        "at": 1795130185.697811,
+        "error": "ProviderError"
+      },
+      {
+        "id": "verify:correction",
+        "agent": "verification",
+        "summary": "Correction requested: 0, write",
+        "at": 1795130185.7067719
+      }
+    ]
+  },
+  "exception": {
+    "type": "ProviderError",
+    "message": "openai request failed after bounded retries: APIConnectionError"
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": true,
+      "response_received": true,
+      "schema": "Selection",
+      "attempt": 1,
+      "input_tokens": 315,
+      "output_tokens": 20,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "seconds": 48.47190895999995,
+      "tokens": 335,
+      "step": "planner"
+    },
+    {
+      "kind": "tool_call",
+      "tool": "dataset_schema",
+      "argument_keys": [],
+      "arguments": {},
+      "step": "0",
+      "approval_id": null,
+      "seconds": 3.006301377999989,
+      "output_fields": [
+        "datasets"
+      ]
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 32.84558568199998,
+      "tokens": null,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.24413068100000146,
+      "tokens": null,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "AnalyticsIntent",
+      "attempt": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.016392649999943387,
+      "tokens": null,
+      "step": "0"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "Selection",
+      "attempt": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.11833236500001476,
+      "tokens": null,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "Selection",
+      "attempt": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.22531587800006037,
+      "tokens": null,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "Selection",
+      "attempt": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.014683493999996244,
+      "tokens": null,
+      "step": "planner"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 85.09029705499995
+}

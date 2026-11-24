@@ -1,0 +1,1468 @@
+{
+  "kind": "independent retrieval; synthetic hand-authored labels",
+  "documents": 46,
+  "queries": 14,
+  "results": [
+    {
+      "configuration": "lexical",
+      "status": "executed",
+      "embedding_descriptor": "hashing:feature-hash::384:l2:v2",
+      "model_load_seconds": 0.0805514440000934,
+      "indexing_seconds": 0.1165904510000928,
+      "query_count": 14,
+      "metrics": {
+        "recall_at_1": 0.6071428571428571,
+        "recall_at_5": 0.6785714285714286,
+        "precision_at_5": 0.17142857142857143,
+        "mrr": 0.7142857142857143,
+        "ndcg_at_5": 0.6778830362931076
+      },
+      "mean_query_seconds": 0.006891295428626368,
+      "p95_query_seconds": 0.008515993000173694,
+      "rows": [
+        {
+          "query_id": "hq1",
+          "ranked_sources": [
+            "battery",
+            "inventory-policy",
+            "cold-release",
+            "refund",
+            "loaner"
+          ],
+          "seconds": 0.007449635000057242,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq2",
+          "ranked_sources": [
+            "sales-driver",
+            "invoice-policy",
+            "access-west",
+            "battery-new",
+            "access-east"
+          ],
+          "seconds": 0.007559894999985772,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "hq3",
+          "ranked_sources": [
+            "access-west",
+            "access-east",
+            "cold-release",
+            "refund",
+            "ambient"
+          ],
+          "seconds": 0.008515993000173694,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq4",
+          "ranked_sources": [
+            "loaner-loss",
+            "cold-arrival",
+            "sales-driver",
+            "access-east",
+            "accessibility"
+          ],
+          "seconds": 0.006356910000022253,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "hq5",
+          "ranked_sources": [
+            "loaner",
+            "inventory-policy",
+            "invoice-policy",
+            "access-east",
+            "contract-alpha"
+          ],
+          "seconds": 0.006585817000086536,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "hq6",
+          "ranked_sources": [
+            "rounding",
+            "loaner",
+            "label",
+            "invoice-policy",
+            "support-sla"
+          ],
+          "seconds": 0.007549135000090246,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq7",
+          "ranked_sources": [
+            "access-east",
+            "api-limits",
+            "report-policy",
+            "access-west",
+            "malicious-source"
+          ],
+          "seconds": 0.007176805999961289,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq8",
+          "ranked_sources": [
+            "translation",
+            "refund",
+            "loaner-loss",
+            "cold-release",
+            "ambient"
+          ],
+          "seconds": 0.006082763999984309,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq9",
+          "ranked_sources": [
+            "refund",
+            "refund-policy",
+            "hr-leave",
+            "invoice-policy",
+            "report-policy"
+          ],
+          "seconds": 0.006256043000121281,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq10",
+          "ranked_sources": [
+            "ambient",
+            "memory-design",
+            "support-sla",
+            "cold-arrival",
+            "observability"
+          ],
+          "seconds": 0.006254865000073551,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8772153153380493
+        },
+        {
+          "query_id": "hq11",
+          "ranked_sources": [
+            "battery-new",
+            "battery",
+            "access-west",
+            "csv-safety",
+            "observability"
+          ],
+          "seconds": 0.006754054000111864,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq12",
+          "ranked_sources": [
+            "loaner-loss",
+            "cold-release",
+            "maple-project",
+            "cedar-project",
+            "battery-new"
+          ],
+          "seconds": 0.0074529050000364805,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.6131471927654584
+        },
+        {
+          "query_id": "hq13",
+          "ranked_sources": [
+            "label",
+            "accessibility",
+            "weather",
+            "onboarding",
+            "contract-alpha"
+          ],
+          "seconds": 0.0062225270000908495,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq14",
+          "ranked_sources": [
+            "incident-runbook",
+            "ambient",
+            "refund",
+            "cold-release",
+            "battery-new"
+          ],
+          "seconds": 0.006260786999973789,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        }
+      ]
+    },
+    {
+      "configuration": "hashing_dense",
+      "status": "executed",
+      "embedding_descriptor": "hashing:feature-hash::384:l2:v2",
+      "model_load_seconds": 0.005658343000050081,
+      "indexing_seconds": 0.1039055339999777,
+      "query_count": 14,
+      "metrics": {
+        "recall_at_1": 0.2857142857142857,
+        "recall_at_5": 0.7142857142857143,
+        "precision_at_5": 0.17142857142857143,
+        "mrr": 0.5202380952380953,
+        "ndcg_at_5": 0.545002815369321
+      },
+      "mean_query_seconds": 0.00844032735712322,
+      "p95_query_seconds": 0.030984974999910264,
+      "rows": [
+        {
+          "query_id": "hq1",
+          "ranked_sources": [
+            "contradiction-b",
+            "battery",
+            "engineering",
+            "observability",
+            "contradiction-a"
+          ],
+          "seconds": 0.006736550999903557,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575
+        },
+        {
+          "query_id": "hq2",
+          "ranked_sources": [
+            "api-limits",
+            "security-retention",
+            "rounding",
+            "ambient",
+            "silent"
+          ],
+          "seconds": 0.030984974999910264,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "hq3",
+          "ranked_sources": [
+            "access-west",
+            "cold-arrival",
+            "contradiction-b",
+            "contradiction-a",
+            "refund"
+          ],
+          "seconds": 0.008805324999912045,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq4",
+          "ranked_sources": [
+            "contradiction-b",
+            "loaner-loss",
+            "cold-arrival",
+            "loaner",
+            "battery"
+          ],
+          "seconds": 0.006680002999928547,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.25,
+          "ndcg_at_5": 0.43067655807339306
+        },
+        {
+          "query_id": "hq5",
+          "ranked_sources": [
+            "invoice-policy",
+            "report-policy",
+            "accessibility",
+            "loaner",
+            "sales-driver"
+          ],
+          "seconds": 0.006575212000143438,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "hq6",
+          "ranked_sources": [
+            "label",
+            "rounding",
+            "access-east",
+            "loaner",
+            "engineering"
+          ],
+          "seconds": 0.008552826999903118,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575
+        },
+        {
+          "query_id": "hq7",
+          "ranked_sources": [
+            "access-east",
+            "cold-arrival",
+            "loaner-loss",
+            "api-limits",
+            "silent"
+          ],
+          "seconds": 0.007015921999936836,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq8",
+          "ranked_sources": [
+            "memory-design",
+            "malicious-source",
+            "maple-project",
+            "refund",
+            "translation"
+          ],
+          "seconds": 0.006163653999919916,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.2,
+          "ndcg_at_5": 0.38685280723454163
+        },
+        {
+          "query_id": "hq9",
+          "ranked_sources": [
+            "refund",
+            "access-east",
+            "travel-old",
+            "contradiction-b",
+            "contradiction-a"
+          ],
+          "seconds": 0.005827645000181292,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq10",
+          "ranked_sources": [
+            "ambient",
+            "cold-arrival",
+            "memory-design",
+            "support-sla",
+            "billing-date"
+          ],
+          "seconds": 0.005624291000003723,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq11",
+          "ranked_sources": [
+            "battery-new",
+            "loaner-loss",
+            "translation",
+            "access-west",
+            "contradiction-b"
+          ],
+          "seconds": 0.005914371000017127,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.6131471927654584
+        },
+        {
+          "query_id": "hq12",
+          "ranked_sources": [
+            "incident-runbook",
+            "battery",
+            "loaner-loss",
+            "engineering",
+            "hr-leave"
+          ],
+          "seconds": 0.006926793000047837,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 0.3333333333333333,
+          "ndcg_at_5": 0.3065735963827292
+        },
+        {
+          "query_id": "hq13",
+          "ranked_sources": [
+            "silent",
+            "label",
+            "report-policy",
+            "food",
+            "battery"
+          ],
+          "seconds": 0.0062822370000503724,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575
+        },
+        {
+          "query_id": "hq14",
+          "ranked_sources": [
+            "battery",
+            "food",
+            "security-retention",
+            "incident-runbook",
+            "memory-design"
+          ],
+          "seconds": 0.0060747769998670265,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        }
+      ]
+    },
+    {
+      "configuration": "neural_dense",
+      "status": "executed",
+      "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+      "model_load_seconds": 4.5756453499998315,
+      "indexing_seconds": 0.9590876170000229,
+      "query_count": 14,
+      "metrics": {
+        "recall_at_1": 0.7857142857142857,
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.2571428571428572,
+        "mrr": 0.9642857142857143,
+        "ndcg_at_5": 0.9736378395408184
+      },
+      "mean_query_seconds": 0.02403312257147913,
+      "p95_query_seconds": 0.030009487000143054,
+      "rows": [
+        {
+          "query_id": "hq1",
+          "ranked_sources": [
+            "battery",
+            "battery-new",
+            "loaner",
+            "loaner-loss",
+            "incident-runbook"
+          ],
+          "seconds": 0.022536342999956105,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq2",
+          "ranked_sources": [
+            "cold-release",
+            "cold-arrival",
+            "ambient",
+            "battery",
+            "travel-current"
+          ],
+          "seconds": 0.025606506000031004,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq3",
+          "ranked_sources": [
+            "access-west",
+            "access-east",
+            "contradiction-b",
+            "contradiction-a",
+            "ambient"
+          ],
+          "seconds": 0.02258088000007774,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq4",
+          "ranked_sources": [
+            "loaner",
+            "loaner-loss",
+            "support-sla",
+            "refund",
+            "incident-runbook"
+          ],
+          "seconds": 0.023178959000006216,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq5",
+          "ranked_sources": [
+            "loaner",
+            "loaner-loss",
+            "incident-runbook",
+            "security-retention",
+            "battery-new"
+          ],
+          "seconds": 0.023032256000078632,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575
+        },
+        {
+          "query_id": "hq6",
+          "ranked_sources": [
+            "rounding",
+            "inventory-policy",
+            "travel-current",
+            "travel-old",
+            "sales-driver"
+          ],
+          "seconds": 0.025551508000035028,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq7",
+          "ranked_sources": [
+            "access-east",
+            "access-west",
+            "travel-old",
+            "travel-current",
+            "api-limits"
+          ],
+          "seconds": 0.0231567119999454,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq8",
+          "ranked_sources": [
+            "translation",
+            "access-east",
+            "billing-date",
+            "invoice-policy",
+            "maple-project"
+          ],
+          "seconds": 0.020434356000123444,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq9",
+          "ranked_sources": [
+            "refund",
+            "refund-policy",
+            "support-sla",
+            "rounding",
+            "contract-alpha"
+          ],
+          "seconds": 0.0188788210000439,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq10",
+          "ranked_sources": [
+            "ambient",
+            "cold-arrival",
+            "deployment",
+            "inventory-policy",
+            "cold-release"
+          ],
+          "seconds": 0.02392426799997338,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq11",
+          "ranked_sources": [
+            "battery-new",
+            "battery",
+            "ambient",
+            "cold-arrival",
+            "memory-design"
+          ],
+          "seconds": 0.024795623000045452,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq12",
+          "ranked_sources": [
+            "loaner",
+            "loaner-loss",
+            "incident-runbook",
+            "security-retention",
+            "maple-project"
+          ],
+          "seconds": 0.02325397800018436,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq13",
+          "ranked_sources": [
+            "label",
+            "ambient",
+            "accessibility",
+            "observability",
+            "inventory-policy"
+          ],
+          "seconds": 0.029524019000064072,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq14",
+          "ranked_sources": [
+            "silent",
+            "food",
+            "incident-runbook",
+            "meeting-note",
+            "loaner-loss"
+          ],
+          "seconds": 0.030009487000143054,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        }
+      ]
+    },
+    {
+      "configuration": "neural_hybrid",
+      "status": "executed",
+      "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+      "model_load_seconds": 0.010825257999840687,
+      "indexing_seconds": 1.1094459580001512,
+      "query_count": 14,
+      "metrics": {
+        "recall_at_1": 0.6428571428571429,
+        "recall_at_5": 0.9642857142857143,
+        "precision_at_5": 0.24285714285714288,
+        "mrr": 0.85,
+        "ndcg_at_5": 0.8496427054388606
+      },
+      "mean_query_seconds": 0.03215518535713662,
+      "p95_query_seconds": 0.058264151999992464,
+      "rows": [
+        {
+          "query_id": "hq1",
+          "ranked_sources": [
+            "battery",
+            "loaner",
+            "battery-new",
+            "loaner-loss",
+            "inventory-policy"
+          ],
+          "seconds": 0.027232485000013185,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq2",
+          "ranked_sources": [
+            "cold-release",
+            "battery-new",
+            "invoice-policy",
+            "malicious-source",
+            "loaner"
+          ],
+          "seconds": 0.058264151999992464,
+          "recall_at_1": 0.5,
+          "recall_at_5": 0.5,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.6131471927654584
+        },
+        {
+          "query_id": "hq3",
+          "ranked_sources": [
+            "access-west",
+            "access-east",
+            "ambient",
+            "food",
+            "cold-release"
+          ],
+          "seconds": 0.02589729900000748,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq4",
+          "ranked_sources": [
+            "loaner-loss",
+            "loaner",
+            "security-retention",
+            "sales-driver",
+            "contract-alpha"
+          ],
+          "seconds": 0.03555564999987837,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575
+        },
+        {
+          "query_id": "hq5",
+          "ranked_sources": [
+            "loaner",
+            "invoice-policy",
+            "security-retention",
+            "contract-alpha",
+            "loaner-loss"
+          ],
+          "seconds": 0.024123542000097586,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.2,
+          "ndcg_at_5": 0.38685280723454163
+        },
+        {
+          "query_id": "hq6",
+          "ranked_sources": [
+            "rounding",
+            "invoice-policy",
+            "refund",
+            "contract-alpha",
+            "label"
+          ],
+          "seconds": 0.029941393999934007,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq7",
+          "ranked_sources": [
+            "access-east",
+            "access-west",
+            "api-limits",
+            "loaner",
+            "report-policy"
+          ],
+          "seconds": 0.02435168200008775,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq8",
+          "ranked_sources": [
+            "translation",
+            "invoice-policy",
+            "access-east",
+            "contract-beta",
+            "support-sla"
+          ],
+          "seconds": 0.03418573499993727,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq9",
+          "ranked_sources": [
+            "refund",
+            "refund-policy",
+            "support-sla",
+            "invoice-policy",
+            "loaner"
+          ],
+          "seconds": 0.023016803000018626,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq10",
+          "ranked_sources": [
+            "ambient",
+            "cold-arrival",
+            "memory-design",
+            "support-sla",
+            "food"
+          ],
+          "seconds": 0.026076310999997077,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq11",
+          "ranked_sources": [
+            "battery-new",
+            "battery",
+            "access-west",
+            "csv-safety",
+            "incident-runbook"
+          ],
+          "seconds": 0.04372961900003247,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq12",
+          "ranked_sources": [
+            "loaner-loss",
+            "maple-project",
+            "battery-new",
+            "loaner",
+            "malicious-source"
+          ],
+          "seconds": 0.03947651299995414,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8772153153380493
+        },
+        {
+          "query_id": "hq13",
+          "ranked_sources": [
+            "label",
+            "accessibility",
+            "ambient",
+            "inventory-policy",
+            "onboarding"
+          ],
+          "seconds": 0.02664816200012865,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq14",
+          "ranked_sources": [
+            "incident-runbook",
+            "ambient",
+            "cold-release",
+            "food",
+            "silent"
+          ],
+          "seconds": 0.03167324799983362,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.2,
+          "ndcg_at_5": 0.38685280723454163
+        }
+      ]
+    },
+    {
+      "configuration": "neural_weighted_rrf",
+      "status": "executed",
+      "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+      "model_load_seconds": 0.005822742999953334,
+      "indexing_seconds": 0.9878702040000462,
+      "query_count": 14,
+      "metrics": {
+        "recall_at_1": 0.6428571428571429,
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.2571428571428572,
+        "mrr": 0.8928571428571429,
+        "ndcg_at_5": 0.9209135186224552
+      },
+      "mean_query_seconds": 0.023554077714298467,
+      "p95_query_seconds": 0.028598479000038424,
+      "rows": [
+        {
+          "query_id": "hq1",
+          "ranked_sources": [
+            "battery",
+            "battery-new",
+            "loaner",
+            "loaner-loss",
+            "incident-runbook"
+          ],
+          "seconds": 0.023404947000017273,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq2",
+          "ranked_sources": [
+            "cold-release",
+            "cold-arrival",
+            "ambient",
+            "battery",
+            "loaner"
+          ],
+          "seconds": 0.028598479000038424,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq3",
+          "ranked_sources": [
+            "access-west",
+            "access-east",
+            "ambient",
+            "contradiction-b",
+            "contradiction-a"
+          ],
+          "seconds": 0.026146281999899657,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq4",
+          "ranked_sources": [
+            "loaner-loss",
+            "loaner",
+            "incident-runbook",
+            "security-retention",
+            "refund"
+          ],
+          "seconds": 0.02238413899999614,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575
+        },
+        {
+          "query_id": "hq5",
+          "ranked_sources": [
+            "loaner",
+            "loaner-loss",
+            "security-retention",
+            "incident-runbook",
+            "battery-new"
+          ],
+          "seconds": 0.022289478999937273,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575
+        },
+        {
+          "query_id": "hq6",
+          "ranked_sources": [
+            "rounding",
+            "inventory-policy",
+            "travel-current",
+            "travel-old",
+            "invoice-policy"
+          ],
+          "seconds": 0.022478765999949246,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq7",
+          "ranked_sources": [
+            "access-east",
+            "access-west",
+            "api-limits",
+            "travel-old",
+            "loaner"
+          ],
+          "seconds": 0.02294104500015237,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq8",
+          "ranked_sources": [
+            "translation",
+            "access-east",
+            "invoice-policy",
+            "incident-runbook",
+            "support-sla"
+          ],
+          "seconds": 0.019271694000053685,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq9",
+          "ranked_sources": [
+            "refund",
+            "refund-policy",
+            "support-sla",
+            "contract-alpha",
+            "loaner"
+          ],
+          "seconds": 0.022347930000023553,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq10",
+          "ranked_sources": [
+            "ambient",
+            "cold-arrival",
+            "deployment",
+            "memory-design",
+            "food"
+          ],
+          "seconds": 0.025364988000092126,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq11",
+          "ranked_sources": [
+            "battery-new",
+            "battery",
+            "access-west",
+            "csv-safety",
+            "ambient"
+          ],
+          "seconds": 0.025263319000032425,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq12",
+          "ranked_sources": [
+            "loaner-loss",
+            "loaner",
+            "maple-project",
+            "incident-runbook",
+            "battery-new"
+          ],
+          "seconds": 0.021486093000021356,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq13",
+          "ranked_sources": [
+            "label",
+            "accessibility",
+            "ambient",
+            "inventory-policy",
+            "invoice-policy"
+          ],
+          "seconds": 0.022887764999950377,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq14",
+          "ranked_sources": [
+            "incident-runbook",
+            "silent",
+            "food",
+            "ambient",
+            "loaner-loss"
+          ],
+          "seconds": 0.02489216200001465,
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575
+        }
+      ]
+    },
+    {
+      "configuration": "neural_hybrid_rerank",
+      "status": "executed",
+      "embedding_descriptor": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+      "model_load_seconds": 0.1933071060000202,
+      "indexing_seconds": 1.245198149000089,
+      "query_count": 14,
+      "metrics": {
+        "recall_at_1": 0.7857142857142857,
+        "recall_at_5": 0.9285714285714286,
+        "precision_at_5": 0.24285714285714288,
+        "mrr": 0.9285714285714286,
+        "ndcg_at_5": 0.9198010939527178
+      },
+      "mean_query_seconds": 0.0632857362142626,
+      "p95_query_seconds": 0.12799263700003394,
+      "rows": [
+        {
+          "query_id": "hq1",
+          "ranked_sources": [
+            "battery",
+            "contradiction-a",
+            "access-east",
+            "inventory-policy",
+            "loaner"
+          ],
+          "seconds": 0.11141024099993047,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq2",
+          "ranked_sources": [
+            "cold-arrival",
+            "invoice-policy",
+            "refund-policy",
+            "cold-release",
+            "refund"
+          ],
+          "seconds": 0.0673040359999959,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8772153153380493
+        },
+        {
+          "query_id": "hq3",
+          "ranked_sources": [
+            "access-west",
+            "access-east",
+            "ambient",
+            "food",
+            "memory-design"
+          ],
+          "seconds": 0.05642244299997401,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq4",
+          "ranked_sources": [
+            "loaner",
+            "security-retention",
+            "food",
+            "inventory-policy",
+            "access-east"
+          ],
+          "seconds": 0.058242052999958105,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq5",
+          "ranked_sources": [
+            "loaner",
+            "inventory-policy",
+            "report-policy",
+            "invoice-policy",
+            "security-retention"
+          ],
+          "seconds": 0.05176196900015384,
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "precision_at_5": 0.0,
+          "mrr": 0,
+          "ndcg_at_5": 0.0
+        },
+        {
+          "query_id": "hq6",
+          "ranked_sources": [
+            "rounding",
+            "inventory-policy",
+            "contract-alpha",
+            "loaner",
+            "refund"
+          ],
+          "seconds": 0.04482353299999886,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq7",
+          "ranked_sources": [
+            "access-east",
+            "access-west",
+            "api-limits",
+            "support-sla",
+            "report-policy"
+          ],
+          "seconds": 0.04541417299992645,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq8",
+          "ranked_sources": [
+            "translation",
+            "contract-alpha",
+            "refund",
+            "contract-beta",
+            "loaner-loss"
+          ],
+          "seconds": 0.04611876299986761,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq9",
+          "ranked_sources": [
+            "refund",
+            "refund-policy",
+            "hr-leave",
+            "incident-runbook",
+            "contract-alpha"
+          ],
+          "seconds": 0.04889310399994429,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq10",
+          "ranked_sources": [
+            "ambient",
+            "cold-arrival",
+            "deployment",
+            "memory-design",
+            "refund-policy"
+          ],
+          "seconds": 0.052661690999912025,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq11",
+          "ranked_sources": [
+            "battery",
+            "battery-new",
+            "contradiction-a",
+            "csv-safety",
+            "ambient"
+          ],
+          "seconds": 0.04889457199988101,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq12",
+          "ranked_sources": [
+            "loaner",
+            "loaner-loss",
+            "billing-date",
+            "cedar-project",
+            "maple-project"
+          ],
+          "seconds": 0.12799263700003394,
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.4,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq13",
+          "ranked_sources": [
+            "label",
+            "observability",
+            "report-policy",
+            "ambient",
+            "inventory-policy"
+          ],
+          "seconds": 0.06718637400012994,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        },
+        {
+          "query_id": "hq14",
+          "ranked_sources": [
+            "silent",
+            "incident-runbook",
+            "food",
+            "memory-design",
+            "inventory-policy"
+          ],
+          "seconds": 0.05887471799997002,
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "No answer generation is scored here. Small authored corpus; generalization is unproven. Neural model download failures are not replaced with hashing scores."
+  ]
+}

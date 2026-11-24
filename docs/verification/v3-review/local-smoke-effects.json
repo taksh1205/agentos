@@ -1,0 +1,11 @@
+[
+  {
+    "receipt": "567147b4942c09eb0f4c0485679727d6260b978da1848012ef8f5181a4dc26b2",
+    "tool": "create_notification",
+    "stored": true,
+    "payload": {
+      "message": "Inventory review starts Friday."
+    },
+    "external_message_sent": false
+  }
+]

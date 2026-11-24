@@ -1,0 +1,21 @@
+/workspace/scratch/9935952a89f5/.venv/lib/python3.12/site-packages/platformdirs/api.py:420: RuntimeDirWarning: XDG_RUNTIME_DIR /home/agent/.local/run has mode 0755, not 0700, falling back to /tmp/runtime-1000
+  return Path(self.user_runtime_dir)
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+  File "/workspace/scratch/9935952a89f5/.venv/lib/python3.12/site-packages/pgserver/postgres_server.py", line 291, in get_server
+    return PostgresServer(pgdata, cleanup_mode=cleanup_mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/9935952a89f5/.venv/lib/python3.12/site-packages/pgserver/postgres_server.py", line 64, in __init__
+    self.ensure_postgres_running()
+  File "/workspace/scratch/9935952a89f5/.venv/lib/python3.12/site-packages/pgserver/postgres_server.py", line 150, in ensure_postgres_running
+    socket_dir = find_suitable_socket_dir(self.pgdata, self.runtime_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/9935952a89f5/.venv/lib/python3.12/site-packages/pgserver/utils.py", line 258, in find_suitable_socket_dir
+    if socket_name_length_ok(path / '.s.PGSQL.5432'):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/9935952a89f5/.venv/lib/python3.12/site-packages/pgserver/utils.py", line 222, in socket_name_length_ok
+    sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py", line 233, in __init__
+    _socket.socket.__init__(self, family, type, proto, fileno)
+PermissionError: [Errno 1] Operation not permitted

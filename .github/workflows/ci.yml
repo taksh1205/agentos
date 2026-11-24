@@ -1,0 +1,75 @@
+name: verify-agentos-v3
+on: [push, pull_request]
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_PASSWORD: test
+          POSTGRES_USER: agentos
+          POSTGRES_DB: agentos
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U agentos"
+          --health-interval 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r backend/requirements-lock.txt && pip install --no-deps -e backend
+      - run: cd backend && ruff check agentos tests && ruff format --check agentos tests
+      - run: cd backend && pytest -q
+        env:
+          TEST_POSTGRES_URL: postgresql+psycopg://agentos:test@localhost/agentos
+      - run: cd backend && python -m agentos.evaluate --n 24 --output ../evals/ci-agent-results.json
+      - name: Check independently labeled offline routing and tool expectations
+        working-directory: backend
+        run: |
+          python -m agentos.evaluate --mode demo --dataset ../evals/datasets/agents-heldout.json --output ../evals/ci-heldout.json
+          python -c "import json; r=json.load(open('../evals/ci-heldout.json')); assert r['scenarios']==9 and r['task_success_rate']==1 and r['tool_selection_accuracy']==1"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deterministic-evaluation
+          path: evals/ci-*.json
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: cd frontend && npm ci && npm test && npm run build && npm run typecheck
+  neural:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r backend/requirements-lock.txt && pip install -e 'backend[ml]' -c backend/neural-constraints.txt
+      - run: cd backend && RUN_NEURAL_TESTS=1 pytest tests/test_neural.py -q
+      - run: cd backend && python -m agentos.retrieval_eval --neural --output ../evals/ci-retrieval-results.json
+      - name: Require all retrieval configurations to execute
+        run: python -c "import json; rows=json.load(open('evals/ci-retrieval-results.json'))['results']; assert len(rows)==6 and all(r['status']=='executed' for r in rows)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: neural-retrieval-evaluation
+          path: evals/ci-retrieval-results.json
+
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: scripts/verify-compose.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: compose-evidence
+          path: docs/verification/compose-local/

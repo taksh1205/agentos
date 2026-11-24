@@ -1,0 +1,104 @@
+{
+  "goal": "Compare the inventory and capacity policies for the East depot's reserve stock. Identify the conflicting thresholds, explain the operational risk, and give a cited recommendation with uncertainties.",
+  "model": "qwen3-4b-local",
+  "workspace": "release-5e55553b-190f-45ff-9555-93aa8272b5bf",
+  "exception": {
+    "type": "ProviderError",
+    "message": "openai request failed after bounded retries: APIConnectionError"
+  },
+  "effects_after": [],
+  "model_and_tool_traces": [
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "CapabilityPlan",
+      "attempt": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 39.985755008999945,
+      "tokens": null,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "CapabilityPlan",
+      "attempt": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.2402384410000309,
+      "tokens": null,
+      "step": "planner"
+    },
+    {
+      "kind": "model",
+      "provider": "openai",
+      "model": "qwen3-4b-local",
+      "prompt_version": "agentos-v3.1",
+      "usage_known": false,
+      "response_received": false,
+      "schema": "CapabilityPlan",
+      "attempt": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": null,
+      "protocol": "json_schema",
+      "error": "APIConnectionError",
+      "seconds": 0.015661317999956736,
+      "tokens": null,
+      "step": "planner"
+    }
+  ],
+  "source_sales": [
+    {
+      "month": "2026-01",
+      "revenue": 100000.0,
+      "costs": 70000.0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 120000.0,
+      "costs": 78000.0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 150000.0,
+      "costs": 90000.0
+    }
+  ],
+  "source_invoices": [
+    {
+      "number": "INV-001",
+      "amount": 2500.0,
+      "paid": 0,
+      "due": "2026-03-31"
+    },
+    {
+      "number": "INV-002",
+      "amount": 1200.0,
+      "paid": 1,
+      "due": "2026-02-28"
+    },
+    {
+      "number": "INV-003",
+      "amount": 800.0,
+      "paid": 0,
+      "due": "2026-04-15"
+    }
+  ],
+  "elapsed_seconds": 51.314360448
+}

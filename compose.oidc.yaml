@@ -1,0 +1,10 @@
+# Apply with your own trusted OIDC issuer and audience. Demo tokens are rejected.
+services:
+  backend:
+    environment:
+      AUTH_MODE: oidc
+      DEPLOYMENT: shared
+      OIDC_ISSUER: ${OIDC_ISSUER:?Set OIDC_ISSUER}
+      OIDC_AUDIENCE: ${OIDC_AUDIENCE:?Set OIDC_AUDIENCE}
+      OIDC_JWKS_URL: ${OIDC_JWKS_URL:?Set HTTPS OIDC_JWKS_URL}
+      API_KEYS: ""
