@@ -1,0 +1,453 @@
+{
+  "configuration": {
+    "dataset": "agentos-live-frozen-v1",
+    "mode": "openai",
+    "model": "qwen3-4b-instruct-2507",
+    "model_sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597",
+    "inference_server": "llama.cpp commit c74c71a",
+    "planner_profile": "general",
+    "structured_output": "json_schema",
+    "embedding": "neural:sentence-transformers/all-MiniLM-L6-v2:1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384:l2:v2",
+    "retrieval_method": "dense",
+    "use_mcp": true,
+    "repeats": 1,
+    "git_commit": "3e0cdae"
+  },
+  "summary": {
+    "runs": 3,
+    "pass_at_1": 0,
+    "pass_all_1": 0,
+    "groups": {
+      "original": {
+        "cases": 3,
+        "runs": 3,
+        "pass_at_1": 0,
+        "pass_all_1": 0
+      }
+    },
+    "p50_seconds": 340.8795670929999,
+    "p95_seconds": 428.0375706310001,
+    "mean_tokens_per_run": 4415,
+    "total_tokens": null,
+    "mean_model_responses_per_run": 2.6666666666666665,
+    "exceptions": 2,
+    "unapproved_effects": 0,
+    "cases": {
+      "A": {
+        "group": "original",
+        "runs": 1,
+        "passed": 0,
+        "pass_all_k": false,
+        "failed_checks": [
+          "cited_sources",
+          "contradiction",
+          "fact_0",
+          "fact_1",
+          "no_exception",
+          "status",
+          "tools_required"
+        ],
+        "median_seconds": 340.8795670929999
+      },
+      "B": {
+        "group": "original",
+        "runs": 1,
+        "passed": 0,
+        "pass_all_k": false,
+        "failed_checks": [
+          "fact_0",
+          "fact_1",
+          "fact_2",
+          "fact_3",
+          "fact_4",
+          "fact_5",
+          "no_exception",
+          "status",
+          "tools_required"
+        ],
+        "median_seconds": 126.26031399900012
+      },
+      "C": {
+        "group": "original",
+        "runs": 1,
+        "passed": 0,
+        "pass_all_k": false,
+        "failed_checks": [
+          "approved_by_operator",
+          "effects",
+          "fact_0",
+          "fact_1",
+          "proposal_tool",
+          "replay_idempotent",
+          "status",
+          "tools_required"
+        ],
+        "median_seconds": 428.0375706310001
+      }
+    }
+  },
+  "runs": [
+    {
+      "case": "A",
+      "group": "original",
+      "workspace": "live-A-70cdcc21db",
+      "proposals": [],
+      "exception": {
+        "type": "ProviderError",
+        "message": "openai structured response failed: JSONDecodeError"
+      },
+      "seconds": 340.8795670929999,
+      "effects": [],
+      "report": {},
+      "plan": null,
+      "tools_called": [],
+      "model_attempts": 2,
+      "model_responses": 1,
+      "tokens": null,
+      "model_records": [
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "qwen3-4b-instruct-2507",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": false,
+          "response_received": false,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "error": "APITimeoutError",
+          "seconds": 180.53079603600008,
+          "tokens": null,
+          "step": "planner"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "qwen3-4b-instruct-2507",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 2,
+          "input_tokens": 917,
+          "output_tokens": 768,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "error": "JSONDecodeError",
+          "seconds": 160.30560838200017,
+          "tokens": 1685,
+          "step": "planner"
+        }
+      ],
+      "answer_text": "",
+      "grade": {
+        "passed": false,
+        "checks": {
+          "no_exception": false,
+          "status": false,
+          "live_inference": true,
+          "tools_required": false,
+          "no_write_proposed": true,
+          "contradiction": false,
+          "cited_sources": false,
+          "no_distractor_citations": true,
+          "fact_0": false,
+          "fact_1": false
+        }
+      },
+      "repeat": 1
+    },
+    {
+      "case": "B",
+      "group": "original",
+      "workspace": "live-B-bd7223ba7d",
+      "proposals": [],
+      "exception": {
+        "type": "ProviderError",
+        "message": "openai structured response failed: JSONDecodeError"
+      },
+      "seconds": 126.26031399900012,
+      "effects": [],
+      "report": {},
+      "plan": null,
+      "tools_called": [],
+      "model_attempts": 1,
+      "model_responses": 1,
+      "tokens": 1689,
+      "model_records": [
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "qwen3-4b-instruct-2507",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 921,
+          "output_tokens": 768,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "error": "JSONDecodeError",
+          "seconds": 126.22404870499986,
+          "tokens": 1689,
+          "step": "planner"
+        }
+      ],
+      "answer_text": "",
+      "grade": {
+        "passed": false,
+        "checks": {
+          "no_exception": false,
+          "status": false,
+          "live_inference": true,
+          "tools_required": false,
+          "no_write_proposed": true,
+          "fact_0": false,
+          "fact_1": false,
+          "fact_2": false,
+          "fact_3": false,
+          "fact_4": false,
+          "fact_5": false
+        }
+      },
+      "repeat": 1
+    },
+    {
+      "case": "C",
+      "group": "original",
+      "workspace": "live-C-0c13c3731a",
+      "proposals": [],
+      "seconds": 428.0375706310001,
+      "effects": [],
+      "report": {
+        "status": "failed",
+        "goal": "Analyze overdue invoices as of 2026-04-01. Prepare an internal follow-up report identifying overdue invoice numbers and amounts. Save that report after my approval.",
+        "mode": "openai",
+        "profile": "general",
+        "refusal": null,
+        "clarification": null,
+        "grounding": {
+          "fully_checked": false,
+          "requires_review": false
+        },
+        "review": {
+          "supported": null,
+          "issues": [
+            "Deterministic checks; no semantic model judgment"
+          ]
+        },
+        "findings": [],
+        "citations": [],
+        "errors": [
+          "invoice_analysis_20260401-correction",
+          "create_report_draft-correction",
+          "completion_tool_missing",
+          "completion_metric_missing"
+        ],
+        "usage": {
+          "tokens": 7141,
+          "calls": 6,
+          "estimated_cost_usd": null
+        },
+        "limitations": [
+          "Model judges can be wrong; document content is untrusted evidence."
+        ]
+      },
+      "plan": [
+        {
+          "id": "invoice_analysis_20260401-correction",
+          "agent": "data",
+          "instruction": "Analyze invoices as of 2026-04-01 to identify overdue invoices, including invoice numbers and amounts.",
+          "dependencies": [],
+          "tool": "invoice_analysis",
+          "arguments": {
+            "as_of": "2026-04-01"
+          },
+          "completion_criteria": [
+            "List of overdue invoices with numbers and amounts"
+          ],
+          "requires_approval": false,
+          "checks": [
+            {
+              "kind": "tool",
+              "metric": null,
+              "expected": null,
+              "minimum": 1,
+              "tool": "invoice_analysis"
+            },
+            {
+              "kind": "metric",
+              "metric": "revenue",
+              "expected": 0.0,
+              "minimum": 1,
+              "tool": null
+            }
+          ]
+        },
+        {
+          "id": "create_report_draft-correction",
+          "agent": "action",
+          "instruction": "Create a draft internal follow-up report identifying overdue invoice numbers and amounts from the invoice analysis result. The report should include a clear summary of overdue invoices and their total amounts.",
+          "dependencies": [
+            "invoice_analysis_20260401-correction"
+          ],
+          "tool": "create_report",
+          "arguments": {
+            "title": "Internal Follow-Up Report: Overdue Invoices as of 2026-04-01",
+            "body": "This report lists overdue invoices as of 2026-04-01. Each entry includes the invoice number and amount. Total overdue amount is summarized at the end."
+          },
+          "completion_criteria": [
+            "Report body contains invoice numbers and amounts",
+            "Report includes a summary of total overdue amount"
+          ],
+          "requires_approval": true,
+          "checks": [
+            {
+              "kind": "action_receipt",
+              "metric": null,
+              "expected": null,
+              "minimum": 1,
+              "tool": "create_report"
+            }
+          ]
+        }
+      ],
+      "tools_called": [
+        "dataset_schema",
+        "invoice_analysis",
+        "dataset_schema",
+        "invoice_analysis"
+      ],
+      "model_attempts": 6,
+      "model_responses": 6,
+      "tokens": 7141,
+      "model_records": [
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "qwen3-4b-instruct-2507",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 923,
+          "output_tokens": 428,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 70.71783291300017,
+          "tokens": 1351,
+          "step": "planner"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "qwen3-4b-instruct-2507",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 500,
+          "output_tokens": 71,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 16.375741278000078,
+          "tokens": 571,
+          "step": "invoice_analysis_20260401"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "qwen3-4b-instruct-2507",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Finding",
+          "attempt": 1,
+          "input_tokens": 879,
+          "output_tokens": 768,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "error": "JSONDecodeError",
+          "seconds": 134.66737136600022,
+          "tokens": 1647,
+          "step": "invoice_analysis_20260401"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "qwen3-4b-instruct-2507",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Plan",
+          "attempt": 1,
+          "input_tokens": 1014,
+          "output_tokens": 420,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 69.134018319,
+          "tokens": 1434,
+          "step": "planner"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "qwen3-4b-instruct-2507",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "AnalyticsIntent",
+          "attempt": 1,
+          "input_tokens": 494,
+          "output_tokens": 64,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 11.499520003999805,
+          "tokens": 558,
+          "step": "invoice_analysis_20260401-correction"
+        },
+        {
+          "kind": "model",
+          "provider": "openai",
+          "model": "qwen3-4b-instruct-2507",
+          "prompt_version": "agentos-v3.1",
+          "usage_known": true,
+          "response_received": true,
+          "schema": "Finding",
+          "attempt": 1,
+          "input_tokens": 871,
+          "output_tokens": 709,
+          "estimated_cost_usd": null,
+          "protocol": "json_schema",
+          "seconds": 118.53921832700007,
+          "tokens": 1580,
+          "step": "invoice_analysis_20260401-correction"
+        }
+      ],
+      "answer_text": "",
+      "grade": {
+        "passed": false,
+        "checks": {
+          "no_exception": true,
+          "status": false,
+          "live_inference": true,
+          "tools_required": false,
+          "proposal_tool": false,
+          "effects": false,
+          "approved_by_operator": false,
+          "replay_idempotent": false,
+          "fact_0": false,
+          "fact_1": false,
+          "forbidden_0": true
+        }
+      },
+      "repeat": 1
+    }
+  ]
+}
