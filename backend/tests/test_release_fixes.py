@@ -251,3 +251,44 @@ async def test_exhausted_quota_is_not_retried(monkeypatch):
                 SearchQuery, "s", "p"
             )
     assert len(calls) == 1
+
+
+def test_unrequested_writes_are_removed_from_auto_plans():
+    from agentos.coordination import drop_unrequested_writes, requests_write
+    from agentos.models import Plan, Step
+
+    plan = Plan(
+        steps=[
+            Step(id="0", agent="data", instruction="i", tool="business_metrics"),
+            Step(id="w", agent="action", instruction="i", tool="create_report", dependencies=["0"]),
+            Step(
+                id="n",
+                agent="action",
+                instruction="i",
+                tool="create_notification",
+                dependencies=["w"],
+            ),
+        ]
+    )
+    goal = "Analyze February and March 2026 revenue month over month."
+    assert not requests_write(goal)
+    kept, dropped = drop_unrequested_writes(plan, goal)
+    assert [s.id for s in kept.steps] == ["0"] and dropped == ["n", "w"]
+    # An explicit request keeps the write.
+    kept, dropped = drop_unrequested_writes(plan, goal + " Save the report after approval.")
+    assert len(kept.steps) == 3 and dropped == []
+    # A plan made only of unrequested writes becomes an explicit refusal, never a mutation.
+    only = Plan(steps=[Step(id="x", agent="action", instruction="i", tool="update_inventory")])
+    refused, _ = drop_unrequested_writes(only, "Wipe the database")
+    assert refused.refusal and not refused.steps
+
+
+def test_explicit_periods_bind_only_unambiguous_text():
+    from agentos.graph import explicit_periods
+
+    months = ["2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06"]
+    assert explicit_periods("February and March 2026", months) == ("2026-02", "2026-03")
+    assert explicit_periods("from April through June 2026", months) == ("2026-04", "2026-06")
+    assert explicit_periods("margin in May 2026", months) == ("2026-05", "2026-05")
+    assert explicit_periods("Analyze revenue", months) is None
+    assert explicit_periods("Compare January and March", months) is None  # not contiguous

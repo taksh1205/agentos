@@ -19,8 +19,10 @@ from .coordination import (
     completion_issues,
     context_packet,
     dependency_results,
+    drop_unrequested_writes,
     evidence_fingerprint,
     expand_capability_plan,
+    requests_write,
     validate_capabilities,
 )
 from .models import (
@@ -229,6 +231,15 @@ def offline_intent(goal, available=()):
     return AnalyticsIntent(metrics=metrics, start=start, end=end)
 
 
+def explicit_periods(text, available):
+    """(start, end) named in text, or None when absent or ambiguous."""
+    try:
+        start, end = period_bounds(text, available)
+    except ValueError:
+        return None
+    return (start, end) if start or end else None
+
+
 def build_graph(store, rag, checkpointer, provider_factory=Provider):
     service = ToolService(store, rag)
 
@@ -309,7 +320,9 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
                 "correction_issues": s.get("correction_issues", []),
             }
             choice = await p.structured(
-                grounded.selection_schema(s["goal"], "action:write" in authorize(s)),
+                grounded.selection_schema(
+                    s["goal"], "action:write" in authorize(s) and requests_write(s["goal"])
+                ),
                 "Choose the primary evidence source. Policy requirements, including inventory policies, come from document_search. Sales and operating expenses come from business_metrics; billing records from invoice_analysis; current stock quantities from inventory_retrieval. Choose multiple_sources only if different evidence types are explicitly requested. Two documents are one evidence type. Choose one write only when explicitly requested. A stored report uses create_report.",
                 json.dumps(packet),
             )
@@ -373,6 +386,10 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
                 refusal=plan.refusal,
                 clarification=plan.clarification,
             )
+        dropped = []
+        if s.get("workflow", "auto") == "auto":
+            # Legacy explicit workflows select their agents directly and are exempt.
+            plan, dropped = drop_unrequested_writes(plan, s["goal"])
         validate_capabilities(plan)
         for step in plan.steps:
             if step.tool and step.tool not in CAPABILITIES:
@@ -398,7 +415,8 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
             "events": [
                 event(
                     "planner",
-                    f"{'Model' if p else 'Offline rules'}: scheduled {len(plan.steps)} steps",
+                    f"{'Model' if p else 'Offline rules'}: scheduled {len(plan.steps)} steps"
+                    + (f"; removed unrequested write steps {dropped}" if dropped else ""),
                     f"planner:{s.get('failures', 0)}",
                 )
             ],
@@ -555,18 +573,24 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
             )
             if cutoff:
                 intent = intent.model_copy(update={"as_of": cutoff.group(1)})
-        if intent.dataset == "sales" and p and len(s["plan"]) == 1:
-            if constrained(s):
+        period_source = "model" if p else "offline_rules"
+        if intent.dataset == "sales" and p:
+            data_steps = [x for x in s["plan"] if x["agent"] == "data"]
+            if constrained(s) and len(data_steps) == 1:
                 named = grounded.requested_metrics(s["goal"])
                 if named:
                     intent = intent.model_copy(update={"metrics": named})
-            # Bind an explicit month-over-month request to the user's calendar range.
-            if re.search(r"month[- ]over[- ]month|\bMoM\b", s["goal"], re.I):
-                start, end = period_bounds(s["goal"], schemas["datasets"]["sales"]["periods"])
-                if start and end:
-                    intent = intent.model_copy(
-                        update={"start": start, "end": end, "compare_previous": False}
-                    )
+            # Calendar arithmetic is deterministic. When the request names its months,
+            # the parser (which refuses ambiguous text) binds them instead of the model.
+            periods = schemas["datasets"]["sales"]["periods"]
+            bounds = explicit_periods(step["instruction"], periods)
+            if bounds is None and len(data_steps) == 1:
+                bounds = explicit_periods(s["goal"], periods)
+            if bounds and (bounds[0], bounds[1]) != (intent.start, intent.end):
+                intent = intent.model_copy(
+                    update={"start": bounds[0], "end": bounds[1], "compare_previous": False}
+                )
+                period_source = "request_text"
         if intent.dataset == "sales":
             computed = []
             for metric in intent.metrics:
@@ -629,6 +653,7 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
             "ok": True,
             "analytics": analytics,
             "intent": intent.model_dump(),
+            "period_source": period_source,
             "computed": evidence,
             "interpretation": interpretation.model_dump(),
             "grounding": grounding,

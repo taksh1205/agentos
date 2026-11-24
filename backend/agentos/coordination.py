@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import re
 
 from .tools import CAPABILITIES, MUTATIONS, SCHEMAS
 
@@ -163,3 +164,43 @@ def expand_capability_plan(candidate):
     plan = Plan(steps=steps, clarification=candidate.clarification, refusal=candidate.refusal)
     validate_capabilities(plan)
     return plan
+
+
+# Verbs a user employs when they want something persisted or sent. Reads never need them.
+WRITE_INTENT = re.compile(
+    r"\b(?:save|saving|store|persist|file|record|create|export|draft|write|email|send|"
+    r"notify|notification|update|schedule)\b",
+    re.I,
+)
+
+
+def requests_write(goal):
+    """Least privilege per request: a write is only plannable when the user asked for one.
+
+    Scopes say what a principal *may* do; this says what this request *asked* to do. A model
+    that adds an unrequested report to a read-only question is corrected before approval.
+    """
+    return bool(WRITE_INTENT.search(goal))
+
+
+def drop_unrequested_writes(plan, goal):
+    """Remove action steps (and anything depending on them) when no write was requested."""
+    from .models import Plan
+
+    if requests_write(goal) or not any(step.agent == "action" for step in plan.steps):
+        return plan, []
+    removed = {step.id for step in plan.steps if step.agent == "action"}
+    changed = True
+    while changed:
+        changed = False
+        for step in plan.steps:
+            if step.id not in removed and removed & set(step.dependencies):
+                removed.add(step.id)
+                changed = True
+    kept = [step for step in plan.steps if step.id not in removed]
+    if not kept:
+        return (
+            Plan(refusal="No approved read or write operation matches this request."),
+            sorted(removed),
+        )
+    return plan.model_copy(update={"steps": kept}), sorted(removed)
