@@ -1,0 +1,8 @@
+# Extend the default rules. File-hash manifests contain 64-hex digests keyed by file
+# names such as "api.py", which the generic API-key rule reports as false positives.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "SHA-256 file manifests"
+paths = ['''(^|/)[A-Z0-9_]*MANIFEST[A-Z0-9_]*\.json$''']

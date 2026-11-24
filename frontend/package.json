@@ -24,10 +24,13 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "jsdom": "^31.0.1",
-    "playwright": "^1.51.1",
+    "playwright": "^1.57.0",
     "prettier": "^3.10.1",
     "tailwindcss": "^4.1.0",
     "typescript": "^5.9.0",
     "vitest": "^5.1.0"
+  },
+  "overrides": {
+    "postcss": "^8.5.33"
   }
 }

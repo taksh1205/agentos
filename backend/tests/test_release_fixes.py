@@ -292,3 +292,23 @@ def test_explicit_periods_bind_only_unambiguous_text():
     assert explicit_periods("margin in May 2026", months) == ("2026-05", "2026-05")
     assert explicit_periods("Analyze revenue", months) is None
     assert explicit_periods("Compare January and March", months) is None  # not contiguous
+
+
+def test_client_model_choice_requires_operator_allowlist(monkeypatch):
+    from fastapi import HTTPException
+
+    from agentos.api import check_model_choice
+
+    monkeypatch.delenv("ALLOWED_MODELS", raising=False)
+    monkeypatch.setenv("DEPLOYMENT", "local")
+    check_model_choice("openai", "any-local-model")  # permissive local demo
+    check_model_choice("demo", "ignored")
+    monkeypatch.setenv("DEPLOYMENT", "shared")
+    with pytest.raises(HTTPException) as denied:
+        check_model_choice("openai", "gpt-expensive")
+    assert denied.value.status_code == 403
+    check_model_choice("openai", None)  # server default model is always allowed
+    monkeypatch.setenv("ALLOWED_MODELS", "gpt-4.1-mini, claude-haiku-4-5")
+    check_model_choice("openai", "gpt-4.1-mini")
+    with pytest.raises(HTTPException):
+        check_model_choice("anthropic", "claude-opus-4-1")

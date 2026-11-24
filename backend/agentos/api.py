@@ -186,10 +186,29 @@ async def upload(file: UploadFile = File(...), user=Depends(identity)):
     return {"ids": ids}
 
 
+def check_model_choice(mode, model):
+    """Clients may pick a model only from the operator's allowlist.
+
+    A free-form model ID lets any editor select an arbitrarily expensive model. Local
+    demos stay permissive; any shared deployment must configure ALLOWED_MODELS.
+    """
+    if mode == "demo" or not model:
+        return
+    configured = os.getenv("ALLOWED_MODELS", "").strip()
+    if not configured:
+        if os.getenv("DEPLOYMENT", "local") != "local":
+            raise HTTPException(403, "Set ALLOWED_MODELS before accepting client model choices")
+        return
+    allowed = {m.strip() for m in configured.split(",") if m.strip()}
+    if model not in allowed:
+        raise HTTPException(403, "Model is not on the operator allowlist")
+
+
 @app.post("/runs", status_code=202)
 async def run(body: TaskRequest, user=Depends(identity)):
     if user["role"] not in {"admin", "editor"}:
         raise HTTPException(403)
+    check_model_choice(body.mode, body.model)
     run_id = str(uuid.uuid4())
     w = user["workspace"]
     initial = {
@@ -402,7 +421,7 @@ async def job_dispatcher():
                     raise
 
             launch(process(), run_id)
-        await asyncio.sleep(0.03)
+        await asyncio.sleep(0.2)
 
 
 @app.post("/runs/{run_id}/cancel")
