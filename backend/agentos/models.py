@@ -275,6 +275,21 @@ class BudgetExceeded(ProviderError):
     pass
 
 
+def tool_choice_mode():
+    """'named' forces the emit_result tool; 'required' lets servers that reject named
+    choices (some OpenAI-compatible local servers) require any tool call."""
+    value = os.getenv("MODEL_TOOL_CHOICE") or os.getenv("OPENAI_TOOL_CHOICE") or "named"
+    if value not in {"named", "required"}:
+        raise ValueError("MODEL_TOOL_CHOICE must be 'named' or 'required'")
+    return value
+
+
+def is_reasoning_model(model):
+    """OpenAI reasoning families spend hidden reasoning tokens inside the output budget."""
+    name = (model or "").lower()
+    return name.startswith(("gpt-5", "o1", "o3", "o4"))
+
+
 class Provider:
     """SDK tool calling with strict client-side validation, bounded retries and accounting.
 
@@ -310,8 +325,15 @@ class Provider:
             if self.mode == "openai" and os.getenv("OPENAI_STRUCTURED_OUTPUT") == "json_schema"
             else 1
         )
+        official_openai = self.mode == "openai" and not os.getenv("OPENAI_BASE_URL")
+        reasoning = official_openai and is_reasoning_model(self.model)
+        # Reasoning tokens are billed as output but never returned; reserve headroom.
+        headroom = int(os.getenv("MODEL_REASONING_HEADROOM", "4096")) if reasoning else 0
         estimate = (
-            len((system + payload + schema_text * schema_copies).encode()) + output_limit + 256
+            len((system + payload + schema_text * schema_copies).encode())
+            + output_limit
+            + headroom
+            + 256
         )
         fallbacks = json.loads(os.getenv("MODEL_FALLBACKS", "{}")).get(self.model, [])
         models = [self.model] + fallbacks[:1]
@@ -364,7 +386,7 @@ class Provider:
                             wire_system = system
                             choice = (
                                 "required"
-                                if os.getenv("OPENAI_TOOL_CHOICE") == "required"
+                                if tool_choice_mode() == "required"
                                 else {"type": "function", "function": {"name": "emit_result"}}
                             )
                             options = {
@@ -383,6 +405,17 @@ class Provider:
                         else:
                             raise ValueError("Unsupported OpenAI structured output protocol")
                         record["protocol"] = protocol
+                        if official_openai:
+                            # The official API replaced max_tokens; reasoning models reject it.
+                            options["max_completion_tokens"] = output_limit + headroom
+                            if is_reasoning_model(model):
+                                options["reasoning_effort"] = os.getenv(
+                                    "OPENAI_REASONING_EFFORT", "low"
+                                )
+                                record["reasoning_effort"] = options["reasoning_effort"]
+                        else:
+                            # OpenAI-compatible servers (llama.cpp, vLLM) accept max_tokens.
+                            options["max_tokens"] = output_limit
                         response = await asyncio.wait_for(
                             client.chat.completions.create(
                                 model=model,
@@ -390,7 +423,6 @@ class Provider:
                                     {"role": "system", "content": wire_system},
                                     {"role": "user", "content": payload},
                                 ],
-                                max_tokens=output_limit,
                                 **options,
                             ),
                             timeout + 10,
@@ -402,6 +434,9 @@ class Provider:
                                 output_tokens=response.usage.completion_tokens,
                                 usage_known=True,
                             )
+                            details = getattr(response.usage, "completion_tokens_details", None)
+                            if getattr(details, "reasoning_tokens", None) is not None:
+                                record["reasoning_tokens"] = details.reasoning_tokens
                         if not response.choices:
                             raise ProviderError("No completion choices")
                         message = response.choices[0].message
@@ -438,8 +473,9 @@ class Provider:
                                         "input_schema": schema.model_json_schema(),
                                     }
                                 ],
-                                tool_choice="required"
-                                if os.getenv("OPENAI_TOOL_CHOICE") == "required"
+                                # Anthropic spells "must call some tool" as {"type": "any"}.
+                                tool_choice={"type": "any"}
+                                if tool_choice_mode() == "required"
                                 else {"type": "tool", "name": "emit_result"},
                                 max_tokens=output_limit,
                             ),
@@ -470,7 +506,11 @@ class Provider:
                     last = exc
                     record["error"] = type(exc).__name__
                     code = getattr(exc, "status_code", None)
-                    transient = (
+                    # Exhausted billing quota is permanent; retrying only burns time.
+                    quota = "insufficient_quota" in str(getattr(exc, "body", "") or "") or (
+                        "no credits" in str(exc).lower()
+                    )
+                    transient = not quota and (
                         isinstance(exc, (TimeoutError, httpx.TransportError))
                         or code in {408, 409, 429, 500, 502, 503, 504}
                         or type(exc).__name__ in {"APITimeoutError", "APIConnectionError"}

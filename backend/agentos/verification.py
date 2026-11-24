@@ -173,6 +173,18 @@ def assess_claim(claim, sources, computed=None, effects=None):
     return ("needs_review", "paraphrase_entailment_not_deterministically_proven")
 
 
+BLANKET_NONE_OVERDUE = re.compile(
+    r"\b(?:no|zero|none of the)\s+(?:\w+\s+){0,2}invoices?\s+(?:\w+\s+){0,3}"
+    r"(?:overdue|past[- ]due|outstanding)|\b(?:no|zero)\s+(?:overdue|past[- ]due)\b"
+    r"|\bnothing\s+(?:is|was)\s+(?:overdue|past[- ]due)|\bnone\s+(?:are|were|is)\s+"
+    r"(?:overdue|past[- ]due)|\ball invoices (?:are|were|have been) paid\b",
+    re.I,
+)
+EXCEPTION_PHRASE = re.compile(
+    r"\b(?:other|additional|further|besides|except|apart from|aside from)\b", re.I
+)
+
+
 def narrative_issues(text, computed=None, sources=None):
     """Catch high-value misleading patterns even if a model omits structured claims."""
     issues = []
@@ -197,6 +209,15 @@ def narrative_issues(text, computed=None, sources=None):
             row = rows_by_id.get(match[1].upper())
             if row and (row in computed["overdue_rows"]) != (match[2] is None):
                 issues.append("invoice_overdue_status_mismatch")
+        # Blanket status statements carry no identifier or amount, so the binding
+        # checks above cannot see them. Compare them with the cutoff-filtered rows.
+        # "No other invoices are overdue besides INV-001" is a correct exception statement.
+        none_overdue = any(
+            BLANKET_NONE_OVERDUE.search(sentence) and not EXCEPTION_PHRASE.search(sentence)
+            for sentence in re.split(r"(?<=[.!?;])\s+|\n+", text)
+        )
+        if none_overdue and computed["overdue_rows"]:
+            issues.append("invoice_overdue_status_mismatch")
         if unsupported_numbers(text, computed):
             issues.append("unsupported_invoice_number_or_amount")
     if _metrics(computed):

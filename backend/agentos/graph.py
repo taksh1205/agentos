@@ -41,6 +41,33 @@ from .offline import REPORT_WRITE, extractive_finding, period_bounds
 from .tools import CAPABILITIES, MUTATIONS, SCHEMAS, ToolService, approve_proposal, propose
 from .verification import assess_finding, narrative_issues
 
+PROFILES = {"general", "constrained"}
+
+
+def planner_profile():
+    """Select how much of each decision a live model owns.
+
+    ``general``: the model writes a typed dependency plan, query rewrites, cited claims,
+    interpretations and action arguments (intended for capable hosted models).
+    ``constrained``: the model makes enumerated decisions (capability, supporting passage,
+    trend direction, record selection) that the host compiles and renders. This keeps
+    small local models inside schemas they can follow reliably. Both profiles share the
+    same tools, approval gate and deterministic verifier.
+    """
+    legacy = "constrained" if os.getenv("OPENAI_PLAN_PROFILE") == "capability" else "general"
+    profile = os.getenv("PLANNER_PROFILE", legacy).strip().lower()
+    if profile not in PROFILES:
+        raise ValueError("PLANNER_PROFILE must be 'general' or 'constrained'")
+    return profile
+
+
+def run_profile(s):
+    return "offline-rules" if s.get("mode", "demo") == "demo" else planner_profile()
+
+
+def constrained(s):
+    return s.get("mode", "demo") != "demo" and planner_profile() == "constrained"
+
 
 def merge_results(left: list[dict], right: list[dict]) -> list[dict]:
     """Logical step identity is stable across replay; newest attempt replaces old."""
@@ -274,7 +301,7 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
             else []
         )
         p = provider(s, "planner") if s["mode"] != "demo" else None
-        if p and s["mode"] == "openai" and os.getenv("OPENAI_PLAN_PROFILE") == "capability":
+        if p and constrained(s):
             packet = {
                 "goal": s["goal"],
                 "prior": prior,
@@ -357,7 +384,10 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
                     raise PermissionError("Plan requires action:write scope")
                 step.requires_approval = True
         store.trace(
-            s["workspace"], s["run_id"], "plan", {"plan": plan.model_dump(), "mode": s["mode"]}
+            s["workspace"],
+            s["run_id"],
+            "plan",
+            {"plan": plan.model_dump(), "mode": s["mode"], "profile": run_profile(s)},
         )
         return {
             "plan": [step.model_dump() for step in plan.steps],
@@ -381,7 +411,7 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
             if step.get("tool") == "document_search"
             else None
         ) or step["instruction"]
-        compact = p and s["mode"] == "openai" and os.getenv("OPENAI_PLAN_PROFILE") == "capability"
+        compact = p and constrained(s)
         if compact:
             queries = [query]
         elif p:
@@ -429,7 +459,7 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
             shown = [
                 {"id": h["reference"], "source": h["source"], "text": h["text"]} for h in bounded
             ]
-            compact = s["mode"] == "openai" and os.getenv("OPENAI_PLAN_PROFILE") == "capability"
+            compact = constrained(s)
             synthesis = (
                 await grounded.compare_passages(p, step["instruction"], shown)
                 if compact
@@ -526,7 +556,7 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
             if cutoff:
                 intent = intent.model_copy(update={"as_of": cutoff.group(1)})
         if intent.dataset == "sales" and p and len(s["plan"]) == 1:
-            if s["mode"] == "openai" and os.getenv("OPENAI_PLAN_PROFILE") == "capability":
+            if constrained(s):
                 named = grounded.requested_metrics(s["goal"])
                 if named:
                     intent = intent.model_copy(update={"metrics": named})
@@ -559,7 +589,7 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
                 {"as_of": intent.as_of} if intent.dataset == "invoices" else {},
             )
             evidence = analytics
-        compact = s["mode"] == "openai" and os.getenv("OPENAI_PLAN_PROFILE") == "capability"
+        compact = constrained(s)
         if compact and intent.dataset == "sales":
             interpretation = await grounded.interpret_sales(p, step["instruction"], evidence)
         elif compact and intent.dataset == "invoices" and "overdue" in s["goal"].casefold():
@@ -678,7 +708,7 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
         elif (
             p
             and step.get("tool") == "create_report"
-            and os.getenv("OPENAI_PLAN_PROFILE") == "capability"
+            and constrained(s)
             and dependency_results(s, step)
         ):
             sections = [
@@ -692,9 +722,7 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
                     "body": "\n\n".join(sections),
                 },
             )
-        elif (
-            p and step.get("tool") in MUTATIONS and os.getenv("OPENAI_PLAN_PROFILE") == "capability"
-        ):
+        elif p and step.get("tool") in MUTATIONS and constrained(s):
             name = step["tool"]
             arguments = await p.structured(
                 SCHEMAS[name],
@@ -999,6 +1027,7 @@ def build_graph(store, rag, checkpointer, provider_factory=Provider):
             "status": status,
             "goal": s["goal"],
             "mode": s["mode"],
+            "profile": run_profile(s),
             "refusal": s.get("refusal"),
             "clarification": s.get("clarification"),
             "grounding": {

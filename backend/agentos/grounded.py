@@ -92,6 +92,34 @@ class PolicyReading(StrictModel):
     uncertainty: Literal["precedence_unknown", "evidence_incomplete", "no_conflict_identified"]
 
 
+CLAUSE_VERBS = re.compile(
+    r"\b(?:must|may|shall|should|will|can|cannot|is|are|was|were|be|requires?|has|have|"
+    r"keeps?|retains?|deletes?|applies|allows?|prohibits?|needs?)\b",
+    re.I,
+)
+
+
+def is_heading(sentence):
+    """A document title line ("Orion privacy schedule.") is not a requirement.
+
+    Short verbless fragments are dropped so they cannot be selected as support or be
+    pasted into the summary. Any sentence with a modal or main verb is kept.
+    """
+    words = re.findall(r"[\w'-]+", sentence)
+    return (
+        0 < len(words) <= 6
+        and words[0].lower() not in {"the", "a", "an", "this", "these", "all", "each"}
+        and not CLAUSE_VERBS.search(sentence)
+    )
+
+
+def restates(question, analysis):
+    """True when the model's analysis only echoes the user's request."""
+    terms = set(re.findall(r"[a-z0-9]{3,}", analysis.lower()))
+    asked = set(re.findall(r"[a-z0-9]{3,}", question.lower()))
+    return bool(terms) and len(terms - asked) <= max(1, len(terms) // 8)
+
+
 async def compare_passages(p, goal, shown):
     passages = {
         f"P{n}": (h["id"], sentence)
@@ -99,11 +127,8 @@ async def compare_passages(p, goal, shown):
             (
                 (hit, part)
                 for hit in shown
-                for part in re.split(r"(?<=[.!?])\s+", hit["text"])
-                if part.strip()
-                and not re.fullmatch(
-                    r"[\w -]+\b(?:policy|manual|handbook|guidelines?)\.", part.strip(), re.I
-                )
+                for index, part in enumerate(re.split(r"(?<=[.!?])\s+", hit["text"]))
+                if part.strip() and not (index == 0 and is_heading(part))
             ),
             1,
         )
@@ -142,17 +167,22 @@ async def compare_passages(p, goal, shown):
         raise ValueError("Unresolved conflict cannot authorize implementation")
     # A conflict summary must carry its selected premises into downstream reports,
     # including reports consumed without the separate citation pane.
+    source_of = {h["id"]: h.get("source", "source") for h in shown}
     conflict = (
-        "Conflicting requirements: " + " ".join(claim.quote for claim in quotes)
+        "Conflicting requirements: "
+        + "; ".join(f'{source_of[c.citations[0]]} says "{c.quote}"' for c in quotes)
         if result.conflict
         else ""
     )
+    analysis = re.sub(r"\s*[(\[]P[0-9]+[)\]]", "", result.analysis).strip()
+    if restates(goal, analysis):
+        analysis = ""
     return Finding(
         summary=" ".join(
             filter(
                 None,
                 [
-                    re.sub(r"\s*[(\[]P[0-9]+[)\]]", "", result.analysis),
+                    analysis,
                     conflict,
                     recommendations[result.recommendation],
                     uncertainties[result.uncertainty],
