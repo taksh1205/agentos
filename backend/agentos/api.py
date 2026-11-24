@@ -497,3 +497,26 @@ def retrieval_evaluation(user=Depends(identity)):
     if not path.exists():
         return {"source": "local_artifact", "data": None}
     return {"source": "bundled_measured_local_run", "data": json.loads(path.read_text())}
+
+
+@app.get("/evaluations/live")
+def live_evaluation(user=Depends(identity)):
+    """Bundled frozen live-model results (summaries only; raw traces stay in the repo)."""
+    from pathlib import Path
+
+    folder = Path(__file__).resolve().parents[2] / "evals" / "results" / "live"
+    rows = []
+    for path in sorted(folder.glob("*.json")) if folder.exists() else []:
+        data = json.loads(path.read_text())
+        if "summary" not in data:
+            continue
+        summary = {k: v for k, v in data["summary"].items() if k != "cases"}
+        rows.append(
+            {
+                "file": path.name,
+                "configuration": data["configuration"],
+                "summary": summary,
+                "cases": data["summary"].get("cases", {}),
+            }
+        )
+    return {"source": "bundled_measured_runs", "results": rows}

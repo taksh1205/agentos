@@ -5,6 +5,11 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 compose=(docker compose -p agentos-v3-review -f compose.yaml)
 if [[ "${NEURAL:-0}" == 1 ]]; then compose+=(-f compose.neural.yaml); fi
+# Extra override files, colon-separated (e.g. a CA override behind a TLS-intercepting proxy).
+if [[ -n "${COMPOSE_OVERRIDES:-}" ]]; then
+    IFS=: read -r -a extra <<<"$COMPOSE_OVERRIDES"
+    for file in "${extra[@]}"; do compose+=(-f "$file"); done
+fi
 out="${OUTPUT_DIR:-docs/verification/compose-local}"
 mkdir -p "$out"
 "${compose[@]}" up -d --build --wait

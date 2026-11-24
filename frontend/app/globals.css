@@ -494,3 +494,128 @@ footer span {
   font-size: 12px;
   margin: 18px 0;
 }
+
+/* Rendered report, verification badges and approval card */
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  margin-right: 8px;
+  white-space: nowrap;
+}
+.badge.verified {
+  color: #bcf596;
+  border-color: #3f6b35;
+  background: #17241a;
+}
+.badge.review {
+  color: #f5d996;
+  border-color: #6b5a35;
+  background: #241f17;
+}
+.badge.rejected {
+  color: #f5a196;
+  border-color: #6b3a35;
+  background: #241817;
+}
+.badge.muted {
+  color: var(--muted);
+}
+.report-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 12px;
+}
+.finding {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  background: #0f161b;
+}
+.finding h4 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.finding h4 code,
+.approval code {
+  color: #cfe3d8;
+  background: #1a252d;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.agent-tag {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--green);
+}
+.finding .summary {
+  line-height: 1.65;
+  margin: 0 0 10px;
+}
+.claims {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+.claims li {
+  padding: 8px 0;
+  border-top: 1px dashed var(--line);
+  line-height: 1.55;
+}
+.claims small {
+  display: inline;
+  margin-left: 8px;
+}
+.cite {
+  font-size: 11px;
+  color: #9fd0ff;
+  border: 1px solid #2a4a66;
+  border-radius: 5px;
+  padding: 1px 6px;
+  margin-left: 8px;
+  cursor: help;
+}
+.callout {
+  border-left: 3px solid #f5d996;
+  background: #1d1a12;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+table.compact td,
+table.compact th {
+  padding: 7px 10px;
+  font-size: 12px;
+}
+.approval dl {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px 14px;
+  margin: 14px 0;
+}
+.approval dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+.approval dd {
+  margin: 0;
+}
+.approval dd pre {
+  margin: 0;
+  max-height: 260px;
+}
+@media (max-width: 760px) {
+  .approval dl {
+    grid-template-columns: 1fr;
+  }
+}

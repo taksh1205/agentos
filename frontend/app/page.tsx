@@ -1,17 +1,20 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
+import { ApprovalCard, ReportView, type Report } from "./report";
 type Run = {
   id?: string;
   goal?: string;
   status?: string;
   events?: { agent: string; summary: string; at: number }[];
-  report?: {
-    grounding?: { requires_review: boolean };
-    clarification?: string;
-    findings: unknown[];
-    citations: { id: string; source: string; text: string }[];
-  };
-  approval?: { proposal?: { id?: string } }[];
+  report?: Report;
+  approval?: {
+    proposal?: {
+      id?: string;
+      tool?: string;
+      arguments?: Record<string, unknown>;
+      digest?: string;
+    };
+  }[];
   error?: string;
   plan?: {
     id: string;
@@ -20,7 +23,11 @@ type Run = {
     tool?: string;
     completion_criteria?: string[];
   }[];
-  usage?: { tokens: number | null; calls: number; estimated_cost_usd: number | null };
+  usage?: {
+    tokens: number | null;
+    calls: number;
+    estimated_cost_usd: number | null;
+  };
 };
 type RetrievalRun = {
   configuration: string;
@@ -45,6 +52,19 @@ type Experiment = {
   p95_seconds?: number;
   p50_seconds: number;
 };
+type LiveEval = {
+  file: string;
+  configuration: { model: string; planner_profile: string; repeats: number };
+  summary: {
+    runs: number;
+    pass_at_1: number;
+    groups: Record<string, { pass_at_1: number; runs: number }>;
+    p50_seconds: number;
+    p95_seconds: number;
+    mean_tokens_per_run: number | null;
+    unapproved_effects: number;
+  } & Record<string, unknown>;
+};
 const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 export default function Home() {
   const [token, setToken] = useState("local-demo-token"),
@@ -66,7 +86,8 @@ export default function Home() {
       { kind: string; payload: Record<string, unknown>; created: number }[]
     >([]),
     [pollTick, setPollTick] = useState(0),
-    [retrieval, setRetrieval] = useState<RetrievalRun[]>([]);
+    [retrieval, setRetrieval] = useState<RetrievalRun[]>([]),
+    [live, setLive] = useState<LiveEval[]>([]);
   const request = useCallback(
     async (path: string, method = "GET", body?: unknown) => {
       const r = await fetch(API + path, {
@@ -96,6 +117,8 @@ export default function Home() {
       const measured = await request("/evaluations/retrieval");
       if (Array.isArray(measured?.data?.results))
         setRetrieval(measured.data.results);
+      const liveRuns = await request("/evaluations/live");
+      if (Array.isArray(liveRuns?.results)) setLive(liveRuns.results);
     } catch (e) {
       setError(String(e));
     }
@@ -150,7 +173,10 @@ export default function Home() {
   }
   async function approve(approve: boolean) {
     try {
-      await request(`/runs/${id}/approval`, "POST", { approve, proposal_id: run.approval?.[0]?.proposal?.id });
+      await request(`/runs/${id}/approval`, "POST", {
+        approve,
+        proposal_id: run.approval?.[0]?.proposal?.id,
+      });
       setRun({ ...run, status: "running" });
       setPollTick((t) => t + 1);
     } catch (e) {
@@ -377,18 +403,10 @@ export default function Home() {
                   </div>
                 ))}
                 {run.status === "awaiting_approval" && (
-                  <div className="approval">
-                    <b>Approval requested</b>
-                    <p>
-                      Review the exact proposed tool and arguments before
-                      approving.
-                    </p>
-                    <pre>{JSON.stringify(run.approval, null, 2)}</pre>
-                    <button className="primary" onClick={() => approve(true)}>
-                      Approve action
-                    </button>
-                    <button onClick={() => approve(false)}>Decline</button>
-                  </div>
+                  <ApprovalCard
+                    proposal={run.approval?.[0]?.proposal}
+                    onDecide={approve}
+                  />
                 )}
                 {run.usage && (
                   <div className="usage">
@@ -419,10 +437,8 @@ export default function Home() {
                 {run.report && (
                   <>
                     <h3>Workflow result</h3>
-                    {run.report.clarification && <p>{run.report.clarification}</p>}
-                    {run.report.grounding?.requires_review && <p>The automated checks cover only part of this report. Review the interpretation alongside its sources and computed records.</p>}
-                    <pre>{JSON.stringify(run.report.findings, null, 2)}</pre>
-                    <h3>Retrieved sources</h3>
+                    <ReportView report={run.report} />
+                    {run.report.citations.length > 0 && <h3>Cited sources</h3>}
                     {run.report.citations.map((c) => (
                       <details key={c.id}>
                         <summary>
@@ -471,6 +487,86 @@ export default function Home() {
                   </button>
                 ))
               )}
+            </div>
+          )}
+          {tab === "Experiments" && live.length > 0 && (
+            <div className="panel">
+              <div className="panel-title">
+                Live-model evaluation · frozen set v1
+                <span className="muted">3 original + 12 unseen tasks</span>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    {[
+                      "Model",
+                      "Planner profile",
+                      "Runs",
+                      "pass@1",
+                      "Original",
+                      "Unseen",
+                      "pass^k",
+                      "p50 / p95",
+                      "Tokens / run",
+                      "Unapproved writes",
+                    ].map((x) => (
+                      <th key={x}>{x}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {live.map((r) => {
+                    const k = r.configuration.repeats;
+                    const all = r.summary[`pass_all_${k}`] as
+                      number | undefined;
+                    return (
+                      <tr key={r.file}>
+                        <td>{r.configuration.model}</td>
+                        <td>{r.configuration.planner_profile}</td>
+                        <td>{r.summary.runs}</td>
+                        <td>{(r.summary.pass_at_1 * 100).toFixed(1)}%</td>
+                        <td>
+                          {r.summary.groups.original
+                            ? (
+                                r.summary.groups.original.pass_at_1 * 100
+                              ).toFixed(1) + "%"
+                            : "—"}
+                        </td>
+                        <td>
+                          {r.summary.groups.unseen
+                            ? (r.summary.groups.unseen.pass_at_1 * 100).toFixed(
+                                1,
+                              ) + "%"
+                            : "—"}
+                        </td>
+                        <td>
+                          {all == null
+                            ? "—"
+                            : `${(all * 100).toFixed(1)}% (k=${k})`}
+                        </td>
+                        <td>
+                          {r.summary.p50_seconds.toFixed(1)}s /{" "}
+                          {r.summary.p95_seconds.toFixed(1)}s
+                        </td>
+                        <td>
+                          {r.summary.mean_tokens_per_run == null
+                            ? "—"
+                            : Math.round(
+                                r.summary.mean_tokens_per_run,
+                              ).toLocaleString()}
+                        </td>
+                        <td>{r.summary.unapproved_effects}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+              <p className="note">
+                Measured local runs bundled with the repository. A run passes
+                only when every programmatic check passes: tool use, citations,
+                computed values, approval outcome, committed effects and
+                idempotent replay.
+              </p>
             </div>
           )}
           {tab === "Experiments" && (
