@@ -630,8 +630,8 @@ export default function Home() {
                   <h3>Measured neural retrieval comparison</h3>
                   <p className="note">
                     Bundled measured local run · 46 synthetic documents, 14
-                    held-out labeled queries per configuration. This is a recorded
-                    artifact, not a new benchmark execution.
+                    held-out labeled queries per configuration. This is a
+                    recorded artifact, not a new benchmark execution.
                   </p>
                   <table>
                     <thead>
