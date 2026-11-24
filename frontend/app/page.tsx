@@ -523,8 +523,7 @@ export default function Home() {
                   {live.map((r) => {
                     const k = r.configuration.repeats;
                     const all = r.summary[`pass_all_${k}`] as
-                      | number
-                      | undefined;
+                      number | undefined;
                     return (
                       <tr key={r.file}>
                         <td>
