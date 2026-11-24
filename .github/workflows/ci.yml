@@ -97,4 +97,4 @@ jobs:
         if: always()
         with:
           name: compose-evidence
-          path: docs/verification/compose-local/
+          path: docs/evidence/compose-ci/

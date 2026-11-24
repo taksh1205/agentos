@@ -10,7 +10,7 @@ if [[ -n "${COMPOSE_OVERRIDES:-}" ]]; then
     IFS=: read -r -a extra <<<"$COMPOSE_OVERRIDES"
     for file in "${extra[@]}"; do compose+=(-f "$file"); done
 fi
-out="${OUTPUT_DIR:-docs/verification/compose-local}"
+out="${OUTPUT_DIR:-docs/evidence/compose-ci}"
 mkdir -p "$out"
 "${compose[@]}" up -d --build --wait
 trap '"${compose[@]}" stop' EXIT

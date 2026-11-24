@@ -22,7 +22,7 @@ The new fixtures, distractors and expected outcomes were written before running 
 | July–August costs and profit | 2/2 | 32.2 | 46.1 | 4,444 |
 | September collections report | 2/2 | 40.2 | 55.3 | 5,981 |
 
-With two observations per case, nearest-rank p95 equals the slower run. Latency includes the graph, tokenizer/model requests, MCP startup and, for research, document indexing. Runs on the same host could compete for CPU. The recorded durations should be used for reproduction context only. [Independent labels](../evals/datasets/live-hardening.json) · [Individual checks, tokens and timings](verification/hardening/trial-scores.json) · [All six original traces](verification/hardening/trials/).
+With two observations per case, nearest-rank p95 equals the slower run. Latency includes the graph, tokenizer/model requests, MCP startup and, for research, document indexing. Runs on the same host could compete for CPU. The recorded durations should be used for reproduction context only. [Independent labels](../../evals/datasets/live-hardening.json) · [Individual checks, tokens and timings](verification/hardening/trial-scores.json) · [All six original traces](verification/hardening/trials/).
 
 - **Research** compared a nine-month minimum retention period for inspection images with a four-month deletion deadline. Both runs cited the clauses, excluded the cafeteria document and recommended joint review where precedence was unclear. The model also repeated a source heading. This added no substantive information.
 - **Analytics** selected costs and profit. Costs rose from $60,000 to $64,500 (+7.50%). Profit fell from $36,000 to $33,000 (−8.33%). Each expected value and change was checked against the labeled row and its own metric sentence.
@@ -69,7 +69,7 @@ The deterministic held-out suites separately matched 9/9 and 8/8 authored outcom
 
 ## Reproduce
 
-Use the [README installation instructions](../README.md) to create the virtual environment and install the optional neural and PostgreSQL dependencies. Use the local inference binary and weights matching the published hashes. Cache both the embedding and reranking models before enabling offline mode. From the repository root, with the virtual environment activated:
+Use the [README installation instructions](../../README.md) to create the virtual environment and install the optional neural and PostgreSQL dependencies. Use the local inference binary and weights matching the published hashes. Cache both the embedding and reranking models before enabling offline mode. From the repository root, with the virtual environment activated:
 
 ```bash
 (cd backend && python -c 'from agentos.rag import neural_model,cross_model; neural_model("sentence-transformers/all-MiniLM-L6-v2",""); cross_model("cross-encoder/ms-marco-TinyBERT-L-2-v2","")')

@@ -58,7 +58,7 @@ A cold offline backend run initially missed TinyBERT weights. After caching them
 
 ## Reproduce
 
-Start with the installation and UI instructions in the [README](../README.md). Activate the virtual environment and install the optional neural and PostgreSQL dependencies. Download the two neural models once before setting offline mode. Set `LLAMA_SERVER`, `MODEL_FILE` and `PG_BIN` to your local binaries and weights. Each results directory must be new.
+Start with the installation and UI instructions in the [README](../../README.md). Activate the virtual environment and install the optional neural and PostgreSQL dependencies. Download the two neural models once before setting offline mode. Set `LLAMA_SERVER`, `MODEL_FILE` and `PG_BIN` to your local binaries and weights. Each results directory must be new.
 
 ```bash
 (cd backend && python -c 'from agentos.rag import neural_model,cross_model; neural_model("sentence-transformers/all-MiniLM-L6-v2",""); cross_model("cross-encoder/ms-marco-TinyBERT-L-2-v2","")')

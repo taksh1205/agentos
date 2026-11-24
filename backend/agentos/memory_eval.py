@@ -95,7 +95,7 @@ if __name__ == "__main__":
     import asyncio
 
     p = argparse.ArgumentParser()
-    p.add_argument("--output", default="../evals/memory-results.json")
+    p.add_argument("--output", default="../evals/results/memory/memory-hashing.json")
     p.add_argument("--mode", default="demo")
     p.add_argument("--model")
     p.add_argument("--backend", default="hashing")

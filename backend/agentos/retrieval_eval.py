@@ -122,7 +122,7 @@ def evaluate(output, include_neural=False, dataset=DATA):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default="../evals/retrieval-results.json")
+    parser.add_argument("--output", default="../evals/results/retrieval/retrieval-development.json")
     parser.add_argument("--neural", action="store_true")
     parser.add_argument("--dataset", default=DATA)
     args = parser.parse_args()

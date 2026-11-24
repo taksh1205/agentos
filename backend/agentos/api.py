@@ -512,7 +512,13 @@ def inbox(user=Depends(identity)):
 def retrieval_evaluation(user=Depends(identity)):
     from pathlib import Path
 
-    path = Path(__file__).resolve().parents[2] / "evals" / "retrieval-heldout-results.json"
+    path = (
+        Path(__file__).resolve().parents[2]
+        / "evals"
+        / "results"
+        / "retrieval"
+        / "retrieval-heldout.json"
+    )
     if not path.exists():
         return {"source": "local_artifact", "data": None}
     return {"source": "bundled_measured_local_run", "data": json.loads(path.read_text())}

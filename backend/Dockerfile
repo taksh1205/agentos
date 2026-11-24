@@ -27,7 +27,11 @@ RUN --mount=type=secret,id=extra_ca,required=false \
  && pip install ".[${INSTALL_EXTRAS}]" -c neural-constraints.txt \
  && pip check
 
-RUN useradd -m agentos && mkdir /data && chown -R agentos /data /evals
+# Pre-create the model cache so a fresh named volume mounted there inherits this
+# ownership; otherwise Docker creates it root-owned and model downloads fail.
+RUN useradd -m agentos \
+ && mkdir -p /data /home/agentos/.cache/huggingface \
+ && chown -R agentos /data /evals /home/agentos/.cache
 USER agentos
 EXPOSE 8000
 HEALTHCHECK --interval=5s --timeout=3s --start-period=20s --retries=30 \

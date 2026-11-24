@@ -360,7 +360,7 @@ if __name__ == "__main__":
     parser.add_argument("--n", type=int, default=24)
     parser.add_argument("--mode", choices=["demo", "openai", "anthropic"], default="demo")
     parser.add_argument("--model")
-    parser.add_argument("--output", default="../evals/agent-results.json")
+    parser.add_argument("--output", default="../evals/results/offline/agent-results.json")
     parser.add_argument("--no-memory", action="store_true")
     parser.add_argument(
         "--memory",
