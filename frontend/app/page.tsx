@@ -54,7 +54,12 @@ type Experiment = {
 };
 type LiveEval = {
   file: string;
-  configuration: { model: string; planner_profile: string; repeats: number };
+  configuration: {
+    dataset: string;
+    model: string;
+    planner_profile: string;
+    repeats: number;
+  };
   summary: {
     runs: number;
     pass_at_1: number;
@@ -492,19 +497,19 @@ export default function Home() {
           {tab === "Experiments" && live.length > 0 && (
             <div className="panel">
               <div className="panel-title">
-                Live-model evaluation · frozen set v1
-                <span className="muted">3 original + 12 unseen tasks</span>
+                Live-model evaluation · frozen task sets
+                <span className="muted">fresh workspace per run</span>
               </div>
               <table>
                 <thead>
                   <tr>
                     {[
+                      "Dataset",
                       "Model",
                       "Planner profile",
                       "Runs",
                       "pass@1",
-                      "Original",
-                      "Unseen",
+                      "By group",
                       "pass^k",
                       "p50 / p95",
                       "Tokens / run",
@@ -518,26 +523,28 @@ export default function Home() {
                   {live.map((r) => {
                     const k = r.configuration.repeats;
                     const all = r.summary[`pass_all_${k}`] as
-                      number | undefined;
+                      | number
+                      | undefined;
                     return (
                       <tr key={r.file}>
+                        <td>
+                          {r.configuration.dataset.replace(
+                            "agentos-live-frozen-",
+                            "",
+                          )}
+                          {r.file.includes("postfix") ? " (post-fix)" : ""}
+                        </td>
                         <td>{r.configuration.model}</td>
                         <td>{r.configuration.planner_profile}</td>
                         <td>{r.summary.runs}</td>
                         <td>{(r.summary.pass_at_1 * 100).toFixed(1)}%</td>
                         <td>
-                          {r.summary.groups.original
-                            ? (
-                                r.summary.groups.original.pass_at_1 * 100
-                              ).toFixed(1) + "%"
-                            : "—"}
-                        </td>
-                        <td>
-                          {r.summary.groups.unseen
-                            ? (r.summary.groups.unseen.pass_at_1 * 100).toFixed(
-                                1,
-                              ) + "%"
-                            : "—"}
+                          {Object.entries(r.summary.groups)
+                            .map(
+                              ([g, v]) =>
+                                `${g} ${(v.pass_at_1 * 100).toFixed(0)}%`,
+                            )
+                            .join(" · ")}
                         </td>
                         <td>
                           {all == null
