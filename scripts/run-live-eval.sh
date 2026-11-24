@@ -2,7 +2,8 @@
 # Run the frozen live evaluation against a loopback-only llama.cpp server.
 #
 #   MODEL_FILE=/abs/qwen.gguf LLAMA_SERVER=/abs/llama-server MODEL_ALIAS=qwen3-4b \
-#   PLANNER_PROFILE=constrained REPEATS=3 OUTPUT=/abs/out.json scripts/run-live-eval.sh [CASE ...]
+#   PLANNER_PROFILE=constrained REPEATS=3 OUTPUT=/abs/out.json [DATASET=/abs/set.json] \
+#   scripts/run-live-eval.sh [CASE ...]
 #
 # For a hosted model, skip this script and run `python -m agentos.live_eval` directly with
 # OPENAI_API_KEY or ANTHROPIC_API_KEY set and PLANNER_PROFILE=general.
@@ -36,6 +37,7 @@ tmp=$(mktemp -d)
 export DATABASE_URL="sqlite:///$tmp/live.db"
 cases=()
 if (( $# > 0 )); then cases=(--cases "$@"); fi
+dataset=(); if [[ -n "${DATASET:-}" ]]; then dataset=(--dataset "$DATASET"); fi
 python -m agentos.live_eval --mode openai --model "$alias_name" --repeats "${REPEATS:-1}" \
-    --output "$OUTPUT" "${cases[@]}"
+    --output "$OUTPUT" "${dataset[@]}" "${cases[@]}"
 rm -rf "$tmp"
