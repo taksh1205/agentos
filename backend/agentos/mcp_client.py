@@ -38,6 +38,18 @@ async def call_tool(workspace, tool, args, *, approval_id=None, scopes=None):
                 "MCP_PERMISSIONS",
                 "OMP_NUM_THREADS",
                 "RETRIEVAL_METHOD",
+                # Network settings (not credentials) so a child behind a corporate proxy
+                # or TLS inspection can still validate its model cache.
+                "HTTPS_PROXY",
+                "https_proxy",
+                "NO_PROXY",
+                "no_proxy",
+                "SSL_CERT_FILE",
+                "REQUESTS_CA_BUNDLE",
+                "CURL_CA_BUNDLE",
+                "HF_ENDPOINT",
+                "HF_HUB_CACHE",
+                "SENTENCE_TRANSFORMERS_HOME",
             )
             if key in os.environ
         },

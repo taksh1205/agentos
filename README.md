@@ -1,226 +1,189 @@
-# AgentOS V3
+<div align="center">
 
-**Evidence-grounded agent orchestration, restricted business tools, and measurable retrieval.**
+# AgentOS
 
-AgentOS is an AI engineering portfolio project by **Taksh Pathak**. It accepts a natural-language goal, builds a dependency-aware agent plan, retrieves document evidence, computes approved business metrics, proposes local actions for review, and verifies the results. The interface exposes plans, tool traces, citations, approvals, and actual evaluation records.
+**A five-agent LLM system that plans, retrieves, computes and acts on business data, where every
+number is recomputed, every quote is verified and every write waits for a human.**
 
-The same request can cross three different boundaries. A model can propose a question, the analytics service can establish a number, and only a person with the appropriate workspace role can authorize a write. AgentOS keeps the evidence and the approval attached to that run. It is designed for reviewing those decisions in a local engineering environment.
+![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-1.x-1C3C3C)
+![MCP](https://img.shields.io/badge/MCP-stdio-6E56CF)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.16x-009688?logo=fastapi&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs)
+![pgvector](https://img.shields.io/badge/PostgreSQL-pgvector-4169E1?logo=postgresql&logoColor=white)
+![License: MIT](https://img.shields.io/badge/license-MIT-green)
+<!-- After publishing, add: ![CI](https://github.com/<you>/agentos/actions/workflows/ci.yml/badge.svg) -->
 
-**Local model verification.** All three original workflows passed. Three unfamiliar tasks also passed twice each in fresh workspaces using Qwen2.5-1.5B-Instruct, neural document retrieval where applicable, and real MCP tools. The backend suite passed 124 tests with PostgreSQL and neural checks enabled. The [hardening report](docs/HARDENING.md) links each result to its fixture, checks and trace. These small synthetic evaluations measure the listed tasks.
+![AgentOS console: a live Qwen3-4B run that found two conflicting policies, with every quote machine-verified](docs/screenshots/research.png)
 
-![AgentOS console showing an actual deterministic execution](docs/screenshots/workspace.png)
+</div>
 
-## What problem this solves
+## Why
 
-Combining business records with unstructured policies and approved actions requires different trust boundaries. Analytics must compute from database rows, research must cite documents, and mutations must wait for a person. AgentOS separates these responsibilities so failures and permissions are inspectable rather than buried in one unrestricted prompt.
+LLM agents rarely fail in production because they cannot write fluent text. They fail because
+they **invent numbers**, **cite sources that don't say what they claim**, and **take actions nobody
+approved**. AgentOS is built around one idea: let the model do what models are good at (reading
+intent, choosing tools, selecting evidence, explaining) and make deterministic code
+responsible for everything that must be exactly right (arithmetic, calendars, permissions,
+provenance and transactions).
 
-Multi-agent orchestration is useful here because retrieval and analytics can run independently, actions depend on their outputs, and verification can request a bounded correction. A single model call is still the better choice for simple questions; the platform does not claim that five agents automatically improve accuracy.
+| Boundary | The model… | …but the host guarantees |
+|---|---|---|
+| **Plan** | proposes steps and tools | typed DAG, capability ownership, no unrequested writes |
+| **Facts** | interprets results | numbers recomputed from source rows; quotes appear verbatim in the cited passage |
+| **Actions** | prepares a write | nothing executes until an authorized person approves the exact arguments (SHA-256 digest); replay is idempotent |
 
-## Run the local offline baseline
+## Results
 
-Python 3.12, Node 22+, and npm are recommended. From the repository root:
+All numbers below come from runs bundled in this repository ([full report](docs/AI_EVALUATION_FINAL.md)).
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r backend/requirements-lock.txt
-pip install --no-deps -e backend
-cd backend
-uvicorn agentos.api:app --port 8000
-```
+**Live end-to-end evaluation.** Frozen set of 15 tasks: 3 original workflows + 12 unseen tasks,
+committed before any model saw them. Real local inference via llama.cpp on CPU, tools via MCP,
+fresh workspace per run, programmatic grading.
 
-In a second terminal, from the root:
+| Model (4-bit, CPU) | Planner profile | Runs | pass@1 | Original | Unseen | pass^3 | p50 latency | Unapproved writes |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Qwen3-4B-Instruct-2507 | constrained | {{Q4_RUNS}} | **{{Q4_P1}}** | {{Q4_ORIG}} | {{Q4_UNSEEN}} | {{Q4_PK}} | {{Q4_P50}} | **0** |
+| Qwen2.5-1.5B-Instruct | constrained | {{Q15_RUNS}} | **{{Q15_P1}}** | {{Q15_ORIG}} | {{Q15_UNSEEN}} | {{Q15_PK}} | {{Q15_P50}} | **0** |
+| Qwen3-4B-Instruct-2507 | general (ablation) | {{G_RUNS}} | {{G_P1}} | {{G_ORIG}} | {{G_UNSEEN}} | n/a | {{G_P50}} | **0** |
 
-```bash
-cd frontend
-npm ci
-npm run dev
-```
+**Retrieval** (46 documents, 14 held-out queries, several needing two sources):
 
-Open http://localhost:3000. Go to **Knowledge → Load synthetic demo dataset**. The local token is `local-demo-token`. Default mode uses deterministic agent rules and hashing, costs no inference money, and requires no model download. Keep **Auto · capability planning** selected; the legacy workflow choices exist only for V1 regression demonstrations.
+| Method | Recall@5 | nDCG@5 | MRR@5 |
+|---|---:|---:|---:|
+| BM25 lexical | 0.679 | 0.678 | 0.714 |
+| MiniLM dense | **1.000** | **0.974** | **0.964** |
+| MiniLM hybrid (RRF) | 0.964 | 0.850 | 0.850 |
+| Hybrid + TinyBERT rerank | 0.929 | 0.920 | 0.929 |
 
-## Enable the intended neural retrieval experience
+**Engineering checks** (this release): {{BACKEND_TESTS}} backend tests (PostgreSQL + pgvector +
+neural models), {{FRONTEND_TESTS}} frontend tests, a Chromium end-to-end approval journey,
+Docker Compose verified for the default and neural profiles (including a restart-survival
+check), gitleaks / pip-audit / npm audit clean. Matrix with evidence:
+[FINAL_RELEASE_AUDIT.md](docs/FINAL_RELEASE_AUDIT.md).
 
-Install the optional ML dependencies. CPU-only PyTorch avoids unnecessary GPU packages:
-
-```bash
-pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
-pip install -e 'backend[ml]' -c backend/neural-constraints.txt
-export EMBEDDING_BACKEND=neural
-export EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
-export RETRIEVAL_METHOD=dense
-# Optional reranking: set RETRIEVAL_METHOD=rerank and
-# export RERANK_MODEL=cross-encoder/ms-marco-TinyBERT-L-2-v2
-cd backend
-uvicorn agentos.api:app --port 8000
-```
-
-The encoder normalizes vectors. The cross-encoder jointly scores query/passage pairs after candidate retrieval. Both use actual local Transformer inference through Sentence Transformers. No custom model training is claimed. Pin `EMBEDDING_REVISION` and `RERANK_REVISION` for reproducibility; the encoder also resolves the cached model commit into its namespace. Changing encoder/revision/dimension requires `POST /documents/reindex` as admin. Model downloads need network access.
-
-To use a real reasoning model, export `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` securely before starting the backend, then choose that provider and a supported model ID in the console. Do not paste keys into chat or source files. `OPENAI_BASE_URL` supports a host-configured compatible endpoint. Hosted OpenAI and Anthropic were tested with mocked transport. Real local inference used the OpenAI-compatible adapter with Qwen GGUF weights and llama.cpp. See the review report for results by configuration.
-
-## Architecture
+## How it works
 
 ```mermaid
-flowchart TD
-    Console[Next.js console] --> API[FastAPI identity and durable jobs]
-    API --> Planner[Planner agent]
-    Planner --> Scheduler[Dependency scheduler]
-    Scheduler --> Research[Research agent]
-    Scheduler --> Data[Data analysis agent]
-    Research --> Scheduler
-    Data --> Scheduler
-    Verification -->|Evidence accepted| Action[Action agent]
-    Action --> Approval[Exact-argument approval]
-    Approval --> Action
-    Action --> Scheduler
-    Scheduler --> Verification[Verification agent]
-    Verification -->|One correction| Planner
-    Verification --> Result[Report and scoped memory]
+flowchart LR
+    U[User goal] --> P[Planner]
+    P -->|typed DAG| S{Scheduler}
+    S -->|parallel| R[Research<br/>neural RAG]
+    S -->|parallel| D[Data<br/>SQL templates]
+    R & D --> V[Verifier]
+    V -->|evidence OK| A[Action]
+    A -->|interrupt| H((Human<br/>approval))
+    H -->|exact digest| A
+    A --> V
+    V -->|1 bounded correction| P
+    V --> Out[Report with<br/>verified claims]
+    R & D & A -.->|MCP stdio| T[(11 allowlisted tools<br/>Postgres · pgvector)]
 ```
 
-| Agent | Live provider path | Deterministic boundaries |
+* **Planner** turns the goal into a typed dependency graph and assigns each step an agent and a
+  tool. The host rejects cycles, unknown tools, mutations outside the action agent, and **writes
+  the user never asked for**.
+* **Research** and **Data** run in parallel (LangGraph `Send`). Research cites retrieved passage
+  IDs; citations are constrained at decode time to passages retrieved in *this* run. Data calls
+  SQL-template tools and **recomputes every result from source rows** before a model sees it.
+* **Action** persists one exact proposal and interrupts the graph. On approval the write runs in
+  one transaction that re-checks workspace, scope, digest and cancellation, then stores a receipt.
+* **Verifier** runs before and after the action: completion, provenance, arithmetic, narrative
+  checks (e.g. a report claiming "no overdue invoices" when one is overdue), receipts, then an
+  optional model review. It requests at most one correction.
+
+### Two planner profiles: right-sizing the model's job
+
+| | `general` | `constrained` |
 |---|---|---|
-| Planner | Typed goal interpretation, capability/tool selection, completion criteria, dependency DAG | Reject unknown tools, cycles, missing dependencies, and mutations routed through read agents |
-| Research | Query rewriting, multiple searches, claim-level cited synthesis, contradictions and insufficient evidence | Tenant-scoped retrieval, bounded context, known citation IDs, required citations for live claims |
-| Data Analysis | Structured dataset/metric/period intent and interpretation of computed results | Discover schemas; allowlisted SQL templates; source-row recomputation; numeric assertion checks |
-| Action | Select and prepare one typed local operation using available evidence | Persist exact proposal; interrupt; require authorized approval; transaction and idempotent receipt |
-| Verification | Review completion, factual support, contradictions, and corrections | Check step completion, citation IDs, recomputed data, and committed effect records |
+| For | Hosted frontier models | Small local models (1.5B–4B) |
+| Model writes | Full plan, cited claims, interpretations, action arguments | Enumerated decisions: capability, supporting passage IDs, trend direction, invoice IDs |
+| Host does | Validation and verification | Validation, verification, DAG compilation and templated rendering |
 
-An LLM judge is one fallible check, not ground truth. The offline mode uses explicit planning/intent rules and extractive passages, not model reasoning. Structured-response orchestration tests use scripted responses and are labeled accordingly.
+The constrained profile uses JSON-schema constrained decoding so that a 4-bit 1.5B model on a
+laptop CPU completes real multi-step workflows. The general-profile ablation above shows why
+that matters for small models. Details: [ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-## Tools and MCP
+## Quick start
 
-A real stdio MCP server/client exposes **11 allowlisted tools**: document search, dataset schema, business metrics, inventory retrieval, invoice analysis, report creation, CSV export, follow-up creation, email drafting, inventory update, and local notification creation.
-
-Set `USE_MCP=true` before starting the backend to route graph tool calls through the client. The parent process binds workspace and scopes; model arguments cannot choose tenant identity. Arguments are Pydantic validated, outputs are bounded/checked, and communication has a timeout. Read tools need `data:read`; mutations need `action:write` plus an exact persisted approval. Independent round trips and MCP-through-graph workflows are tested.
-
-Local actions store reports, exports, tasks, drafts, and inbox records in the database. CSV content is returned in its effect receipt. Email tools **never send external messages**. `/inbox` exposes tenant-owned action artifacts. The inventory update is a real local SQL mutation with a verified resulting quantity.
-
-## Retrieval and ingestion
-
-Text/PDF ingestion validates format, size, page count, extractable text, and UTF-8. Paragraph-aware or fixed overlapping chunks are embedded and transactionally upserted by source/content hash. Repeating unchanged ingestion does not duplicate chunks. Updates replace a source's chunks; deletion and reindex are explicit APIs. Original V1 documents can be imported with `python -m agentos.migrate --legacy-documents` without deleting legacy records.
-
-SQLite uses BM25 and dense cosine rankings. PostgreSQL uses full-text lexical candidates plus pgvector dense candidates, then candidate-only fetching and reciprocal rank fusion. Optional cross-encoder scoring reranks the candidate set. Metadata filters, workspace isolation, model namespaces, and dimension-specific HNSW expression indexes prevent accidental mixing of vector spaces. V1's fixed 384-dimensional index remains only for legacy records; V2 chunk vectors support the configured dimensions.
-
-### Measured retrieval quality
-
-Fourteen new questions cover fourteen new policy documents alongside thirty-two existing distractors. Several questions require two sources. Every method indexed the same 46 documents and answered the same 14 queries. Scores use document-level relevance. Recall@1 gives half credit when one of two relevant documents is returned first.
-
-| Method | Recall@1 | Recall@5 | Precision@5 | MRR@5 | nDCG@5 | Mean query (ms) |
-|---|---:|---:|---:|---:|---:|---:|
-| lexical | 0.607 | 0.679 | 0.171 | 0.714 | 0.678 | 4.8 |
-| hashing_dense | 0.286 | 0.714 | 0.171 | 0.520 | 0.545 | 4.5 |
-| neural_dense | 0.786 | 1.000 | 0.257 | 0.964 | 0.974 | 27.9 |
-| neural_hybrid | 0.643 | 0.964 | 0.243 | 0.850 | 0.850 | 28.5 |
-| neural_weighted_rrf | 0.643 | 1.000 | 0.257 | 0.893 | 0.921 | 18.9 |
-| neural_hybrid_rerank | 0.786 | 0.929 | 0.243 | 0.929 | 0.920 | 40.3 |
-
-On the original 22 questions, dense retrieval also led on nDCG@5 (0.983). Equal-weight reciprocal rank fusion gives a passage a second contribution for a lexical match, even when the match is weak. On the chilled-delivery question, dense retrieval ranked the release and receiving policies first and second. Equal-weight fusion kept the release policy but dropped receiving from the first five. Reducing the lexical contribution to one quarter recovered held-out Recall@5; rank order still lagged dense search. The ablation held chunking, corpus and labels fixed. It cannot isolate annotation quality or predict performance on a different organization's documents. The neural Compose profile therefore selects dense retrieval. [Per-query results and indexing times](evals/retrieval-heldout-results.json)
-
-## Memory and context
-
-Short-term conversation turns are bounded in graph state. Checkpoints preserve task state. Long-term semantic memory stores normalized embeddings, workspace identity, source/run provenance, TTL, and exact-content deduplication. Context compaction normalizes whitespace and bounds stored summaries; it is lossy and is not claimed to be an advanced semantic compressor.
-
-The separate two-turn recall benchmark has eight authored conversations. With hashing and with the actual neural encoder, offline extraction accuracy was 0/8 without memory and 8/8 with memory (16 trials per embedding configuration). This demonstrates retained information becoming available to the follow-up; the answer extractor is deterministic, so this is **not an LLM memory-accuracy claim**. The runner also supports a live provider when credentials are supplied.
-
-## Evaluation and verification
+**Docker (recommended).** Starts PostgreSQL + pgvector, the API and the console.
 
 ```bash
-cd backend
-pytest -q
-python -m agentos.evaluate --n 24 --output /tmp/agent-regression.json
-python -m agentos.evaluate --dataset ../evals/datasets/agents-heldout.json --output /tmp/agent-heldout.json
-python -m agentos.claim_eval --output /tmp/claims.json
-python -m agentos.retrieval_eval --neural --dataset ../evals/datasets/retrieval-heldout.json --output /tmp/retrieval.json
-python -m agentos.memory_eval --backend neural --output /tmp/memory.json
-python -m agentos.evaluate --n 1200 --generate ../evals/generated-scenarios.jsonl
-```
-
-The curated agent set covers retrieval, multi-document work, contradictions, missing information, analytics, tools, parameter extraction, approval denial, transient failure, injection, and unsupported/cross-workspace requests. The offline baseline intentionally fails several intelligence-dependent expectations. The 1,200 generated parameter/context/action combinations are generated cases, not 1,200 executed independent reasoning evaluations.
-
-Semantic groundedness, claim entailment, and answer completeness need adjudicated labels; unmeasured metrics remain null. No three-model comparison is bundled. [EVALUATION.md](docs/EVALUATION.md) provides the commands for three credentialed configurations and how to preserve raw results.
-
-Run optional infrastructure tests:
-
-```bash
-pip install -e 'backend[test,postgres,ml]'
-cd backend
-TEST_POSTGRES_URL=postgresql+psycopg://user:password@localhost/agentos RUN_NEURAL_TESTS=1 pytest -q
-```
-
-From `frontend`: `npm test` runs mocked-API DOM interaction tests; `npm run build` validates TypeScript and production compilation. For a real browser, install `npx playwright install chromium-headless-shell`, start backend/frontend, populate experiments, then run `npm run test:browser`. [DEMO.md](docs/DEMO.md) gives exact steps. Browser test screenshots are from actual local deterministic runs.
-
-## Persistence, budgets, and failure recovery
-
-Jobs are written before dispatch. A single supported scheduler resumes queued/interrupted work after restart; a process/database lock rejects a second scheduler. SQLite or PostgreSQL graph checkpoints preserve interruptions. Results merge by logical step ID rather than appending duplicates. Exact action proposals survive interrupt replay; canonical argument fingerprints prevent duplicate effects during replanning. Transactions bind approval consumption, mutation, receipt, and audit writes.
-
-Retries, request timeouts, overall run timeout, plan/depth bounds, one correction, cancellation, and shared token reservations limit runaway execution. Dollar limits require an explicit per-model price table and fail closed without one. Unknown provider usage retains its reservation conservatively. Cancellation cannot undo an already committed effect. This is a durable single-worker design, not a distributed queue.
-
-Model/agent/tool traces persist locally with IDs, schemas, prompt versions, latency, usage, errors, retrieval candidates, and reranking scores. The console exposes run traces. Optional OpenTelemetry exports metadata only. Install `backend[telemetry]` and set `OTEL_ENABLED=true`; configure an OTLP collector if desired. External collector connectivity was not exercised.
-
-## Authentication and deployment
-
-Local demo identity is a server-side role-token registry. Shared mode requires signed RS256 OIDC tokens with issuer, audience, expiry, subject, workspace, and role claims; scopes are intersected with role rights. Demo authentication is rejected when `DEPLOYMENT` is not `local`. A configured public key or HTTPS JWKS endpoint verifies tokens. Signed-token tests cover invalid issuer, audience, expiry, and roles. This integrates token verification, not an identity-provider signup/login interface.
-
-```bash
-docker compose up --build
-# Neural local profile:
+docker compose up --build            # http://localhost:3000, token: local-demo-token
+# Neural retrieval (MiniLM embeddings, TinyBERT reranker, CPU PyTorch):
 docker compose -f compose.yaml -f compose.neural.yaml up --build
-# Shared authentication profile, after exporting OIDC settings:
-docker compose -f compose.yaml -f compose.oidc.yaml up --build
 ```
 
-Compose persists PostgreSQL application state and PostgreSQL graph checkpoints. Ports bind to localhost. Docker was unavailable during this build, so image/Compose execution is not claimed. Add your own TLS ingress and trusted identity provider before shared hosting. API rate limiting, scoped tools, safe templates, upload validation, and audit records are implemented; [security boundaries](docs/SECURITY.md) describe residual risks.
+In the console: **Knowledge → Load synthetic demo dataset**, then try the
+[demo walkthrough](docs/DEMO.md). The default `demo` provider uses deterministic rules and needs no
+API key.
 
-## Reproduce the integrated demonstration
-
-Start the API with a fresh private synthetic workspace. Set `USE_MCP=true` before starting it to exercise subprocess tools. From `backend/`, run the checker below. It seeds local records, indexes two policy documents, runs three tasks, checks period totals and tests one approval. The automated approval applies only to the local synthetic report. Use the console for an interactive approval.
+**Local development**
 
 ```bash
-python -m agentos.workflow_check --output /tmp/demo-workflows.json
-# On an API already configured with a secure provider key:
-python -m agentos.workflow_check --mode openai --model "$OPENAI_MODEL" --output /tmp/openai-workflows.json
-# For Anthropic, use --mode anthropic --model "$ANTHROPIC_MODEL".
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -r backend/requirements-lock.txt && pip install --no-deps -e backend
+(cd backend && uvicorn agentos.api:app --port 8000)
+(cd frontend && npm ci && npm run dev)
 ```
 
-On a Docker host, run `scripts/verify-compose.sh` from the repository root. Set `NEURAL=1` for the neural overlay. The script builds, checks both services, validates the workflows, restarts PostgreSQL and the backend, and checks stored run results. It leaves the review volumes intact.
+**Live models.** Set `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` (general profile), or point
+`OPENAI_BASE_URL` at a local `llama-server` with `PLANNER_PROFILE=constrained`. See
+[EVALUATION.md → Reproduce](docs/EVALUATION.md#reproduce).
 
-## Documentation and limitations
-
-- [Current acceptance, measurements and reproduction commands](docs/HARDENING.md)
-- [Previous acceptance baseline](docs/ACCEPTANCE_REPAIR.md)
-- [Previous V3 engineering review](docs/ENGINEERING_REPORT.md)
-- [Architecture and state transitions](docs/ARCHITECTURE.md)
-- [Evaluation methodology](docs/EVALUATION.md)
-- [Security and threat boundaries](docs/SECURITY.md)
-- [Demo walkthrough and browser instructions](docs/DEMO.md)
-- [Baseline audit](docs/AUDIT_V2.md)
-
-Remaining work includes hosted-provider evaluation, a larger independently judged corpus, production identity-provider integration, independent sandboxing for untrusted uploads, comprehensive data-retention deletion, horizontal workers, real external connectors, and Docker verification. No external customer messages or GitHub pushes were performed.
-
-
-## Reproduce local model evaluation
-
-Use a loopback llama.cpp server binary and a separately downloaded instruction model. The acceptance repair used build b12498 with Qwen2.5-1.5B-Instruct Q4_K_M. Historical attempts also tested Qwen3-4B-Instruct-2507. Model weights are excluded from the source archive. Activate the backend virtual environment before running the script. First cache the encoder as described above.
+**Tests**
 
 ```bash
-MODEL_FILE=/absolute/path/to/model.gguf LLAMA_SERVER=/absolute/path/to/llama-server \
-RESULT_FILE=/tmp/agentos-local-evaluation.json scripts/evaluate-local-model.sh
+cd backend && pytest -q                       # add TEST_POSTGRES_URL=... RUN_NEURAL_TESTS=1 for the full suite
+cd frontend && npm test && npm run build
+bash scripts/verify-compose.sh                # Docker end-to-end, incl. restart survival
 ```
 
-The runner uses a temporary workspace database, calls the real model for structured decisions, routes tools through MCP and approves only expected synthetic mutations. The capability planner maps each model-selected tool to its owning agent and compiles declared evidence dependencies into validated graph edges before dispatch. The ordinary hosted-provider configuration retains the full plan schema and named tool calls.
+## What's interesting to read
 
+| If you want to see… | Look at |
+|---|---|
+| The state machine, scheduling and approval interrupt | [`backend/agentos/graph.py`](backend/agentos/graph.py) |
+| Deterministic claim and narrative verification | [`backend/agentos/verification.py`](backend/agentos/verification.py) |
+| Constrained decoding for small models | [`backend/agentos/grounded.py`](backend/agentos/grounded.py) |
+| Digest-bound, transactional, idempotent writes | [`backend/agentos/tools.py`](backend/agentos/tools.py) |
+| Host-bound MCP server and client | [`mcp_server.py`](backend/agentos/mcp_server.py), [`mcp_client.py`](backend/agentos/mcp_client.py) |
+| Namespaced hybrid retrieval on pgvector | [`backend/agentos/rag.py`](backend/agentos/rag.py) |
+| Provider adapter (OpenAI, Anthropic, llama.cpp), budgets, retries | [`backend/agentos/models.py`](backend/agentos/models.py), [`budget.py`](backend/agentos/budget.py) |
+| The frozen evaluation harness and grader | [`backend/agentos/live_eval.py`](backend/agentos/live_eval.py), [`evals/datasets/live-frozen-v1.json`](evals/datasets/live-frozen-v1.json) |
 
-## Reproduce the three release workflows
+## Repository layout
 
-Activate the environment described above. Provide the local llama.cpp server executable, a compatible instruction model and the cached encoder. The runner binds the model server to loopback, uses an isolated SQLite database and invokes MCP subprocesses. The research case ingests three UTF-8 sources. The analytics case compares February and March. The invoice case uses April 1 as the cutoff and reopens the checkpoint before a synthetic operator approves a matching report. The regression suite separately tests role enforcement and the HTTP approval endpoint. Source artifacts contain synthetic data.
-
-```bash
-MODEL_FILE=/absolute/path/to/qwen.gguf LLAMA_SERVER=/absolute/path/to/llama-server \
-HF_HUB_OFFLINE=1 LOCAL_CONTEXT=4096 LOCAL_MODEL_ALIAS=qwen15-local RESULT_DIR=/tmp/agentos-release-run \
-scripts/check-local-workflows.sh
-(cd backend && python -m agentos.release_score /tmp/agentos-release-run)
+```
+backend/agentos/     FastAPI app, LangGraph agents, MCP server/client, RAG, verifier, evaluators
+backend/tests/       pytest suite (unit, integration, PostgreSQL, neural, provider transport)
+frontend/            Next.js console (report rendering, approvals, experiments)
+evals/datasets/      Labeled datasets, including the frozen live set
+evals/results/       Measured results (live, retrieval, offline, memory)
+docs/                Architecture, evaluation, security, demo, release audit
+docs/evidence/       Raw logs and JSON behind this release's claims
+docs/archive/        Earlier development rounds, including failed attempts
+migrations/ scripts/ compose*.yaml   Database, verification and deployment
 ```
 
-Pass `A`, `B`, or `C` as script arguments to rerun individual workflows in a fresh directory. Supply result directories in chronological order to the scorer. A machine pass still requires reading the resulting explanation and checking its claims against the sources. Launching the console without credentials starts the deterministic demonstration.
+## Limitations
+
+* The live evaluation is **small and author-labeled** (15 tasks × 3 repeats). It shows that the
+  system completes these task shapes reliably on small local models. It is not a general accuracy
+  estimate.
+* Hosted OpenAI and Anthropic adapters are covered by transport-level tests; this release's
+  measured live runs use local Qwen models.
+* All data is synthetic. Business tools are local by design: email tools create drafts and never send.
+* Single scheduler process per database; horizontal workers would need leases and heartbeats.
+* PDF parsing is time-boxed and resource-limited but not sandboxed in a separate service.
+
+## Docs
+
+[Architecture](docs/ARCHITECTURE.md) · [Evaluation method](docs/EVALUATION.md) ·
+[Results](docs/AI_EVALUATION_FINAL.md) · [Release audit](docs/FINAL_RELEASE_AUDIT.md) ·
+[Security](docs/SECURITY.md) · [Demo](docs/DEMO.md) · [Release checklist](docs/RELEASE_CHECKLIST.md) ·
+[Development history](docs/archive/README.md)
+
+## License
+
+MIT © Taksh Pathak

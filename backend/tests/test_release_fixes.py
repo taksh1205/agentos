@@ -312,3 +312,29 @@ def test_client_model_choice_requires_operator_allowlist(monkeypatch):
     check_model_choice("openai", "gpt-4.1-mini")
     with pytest.raises(HTTPException):
         check_model_choice("anthropic", "claude-opus-4-1")
+
+
+@pytest.mark.asyncio
+async def test_mcp_child_gets_network_settings_but_no_credentials(monkeypatch):
+    import agentos.mcp_client as client
+
+    captured = {}
+
+    class Stop(Exception):
+        pass
+
+    def fake_params(command, args, env):
+        captured.update(env)
+        raise Stop
+
+    monkeypatch.setattr(client, "StdioServerParameters", fake_params)
+    monkeypatch.setenv("HTTPS_PROXY", "http://proxy.internal:3128")
+    monkeypatch.setenv("SSL_CERT_FILE", "/etc/ssl/corp.pem")
+    monkeypatch.setenv("OPENAI_API_KEY", "must-not-leak")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "must-not-leak")
+    with pytest.raises(Stop):
+        await client.call_tool("w", "dataset_schema", {})
+    assert captured["HTTPS_PROXY"] == "http://proxy.internal:3128"
+    assert captured["SSL_CERT_FILE"] == "/etc/ssl/corp.pem"
+    assert captured["MCP_WORKSPACE"] == "w"
+    assert not any("API_KEY" in key for key in captured)
