@@ -74,7 +74,6 @@ mounts it at runtime. The release environment needed this; the override is not p
 
 | Gap | Why it remains | Next step |
 |---|---|---|
-| Hosted GitHub Actions not yet run | Needs the repository to exist on GitHub | First push (step 3 above) |
 | No Anthropic live run | No Anthropic key in the release environment | `--mode anthropic` with the same harness |
 | Small author-labeled live set | Labels are written by hand and every case needs its own fixtures | Grow the set with a versioned `live-frozen-v2.json` |
 | One scheduler per database | Correct restart semantics without distributed leases | Lease and heartbeat job claims for horizontal workers |

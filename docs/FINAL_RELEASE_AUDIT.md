@@ -29,7 +29,7 @@ marked PASS without a run.
 | 18 | npm advisories | **PASS**: 0 vulnerabilities | [`evidence/security/npm-audit.json`](evidence/security/npm-audit.json) |
 | 19 | Personal data or real records | **PASS**: synthetic data only; no emails, phone numbers or keys in the repo | Manual review; gitleaks |
 | 20 | Unsafe defaults | **PASS**: demo auth refused when `DEPLOYMENT` is not local; model allowlist required when shared; ports bound to 127.0.0.1 | [SECURITY.md](SECURITY.md), `tests/test_release_fixes.py` |
-| 21 | Hosted GitHub Actions | **BLOCKED (pending first push)**: the workflow is ready; it runs on the first push | [`.github/workflows/ci.yml`](../.github/workflows/ci.yml) |
+| 21 | Hosted GitHub Actions (security, backend + PostgreSQL, frontend, neural, Docker Compose) | **PASS**: all 5 jobs green on the first push | [CI run 45546958334](https://github.com/taksh1205/agentos/actions/runs/45546958334), [`.github/workflows/ci.yml`](../.github/workflows/ci.yml) |
 
 ## Defects found and fixed during this release
 

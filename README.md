@@ -12,7 +12,7 @@ number is recomputed, every quote is verified and every write waits for a human.
 ![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs)
 ![pgvector](https://img.shields.io/badge/PostgreSQL-pgvector-4169E1?logo=postgresql&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
-<!-- After publishing, add: ![CI](https://github.com/<you>/agentos/actions/workflows/ci.yml/badge.svg) -->
+[![CI](https://github.com/taksh1205/agentos/actions/workflows/ci.yml/badge.svg)](https://github.com/taksh1205/agentos/actions/workflows/ci.yml)
 
 ![AgentOS console: a live GPT-4.1-mini run that planned its own research, self-corrected after verification, found two conflicting policies and machine-verified every quote](docs/screenshots/research.png)
 
