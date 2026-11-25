@@ -31,9 +31,9 @@ the fixes they evaluate:
 
 | Step | What happened | Evidence |
 |---|---|---|
-| 1. Freeze v1 | 3 original workflows + 12 unseen tasks committed (`6038df1`) before any run | `evals/datasets/live-frozen-v1.json` |
+| 1. Freeze v1 | 3 original workflows + 12 unseen tasks committed (`0ae2733`) before any run | `evals/datasets/live-frozen-v1.json` |
 | 2. Run v1 on frozen code (`eval-freeze`) | Originals 100%, unseen 41.7% for both Qwen models; general profile 13.3% | v1 tables below |
-| 3. Freeze v2 *before writing any fix* | 12 new unseen tasks committed (`8be1397`) | `evals/datasets/live-frozen-v2.json` |
+| 3. Freeze v2 *before writing any fix* | 12 new unseen tasks committed (`d876530`) | `evals/datasets/live-frozen-v2.json` |
 | 4. Fix failure classes, not cases | v1 failures became the development signal (section below) | `tests/test_post_v1_fixes.py` |
 | 5. First real hosted-model run | Exposed integration defects in the never-before-exercised general profile; fixed using only the 3 original workflows | `docs/evidence/live-dev/` |
 | 6. Run v2 on frozen code (`eval-freeze-2`) | Held-out result for the fixed system | v2 tables below |

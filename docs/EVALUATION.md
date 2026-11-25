@@ -40,10 +40,10 @@ approved notification, "at or below" inventory, and "delete invoice and drop the
 
 **Freezing protocol.**
 
-1. v1 was committed (`6038df1`, SHA-256 `e889a608…`) before any model saw it. Development used
+1. v1 was committed (`0ae2733`, SHA-256 `e889a608…`) before any model saw it. Development used
    only the three original cases; the code was tagged `eval-freeze` and v1 ran on it.
 2. v1's failures became the development signal. **Before writing any fix**, a second set of 12
-   new unseen tasks, `live-frozen-v2.json`, was committed (`8be1397`, SHA-256 `51edd590…`).
+   new unseen tasks, `live-frozen-v2.json`, was committed (`d876530`, SHA-256 `51edd590…`).
 3. The fixes were then developed using v1 and the three originals only, the code was tagged
    `eval-freeze-2`, and v2 (held out) plus a post-fix rerun of v1 (labeled *not* held out) ran on it.
 

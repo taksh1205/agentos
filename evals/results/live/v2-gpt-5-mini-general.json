@@ -11,7 +11,7 @@
     "retrieval_method": "dense",
     "use_mcp": true,
     "repeats": 1,
-    "git_commit": "db241a4"
+    "git_commit": "175c627"
   },
   "summary": {
     "runs": 12,

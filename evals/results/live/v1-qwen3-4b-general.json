@@ -11,7 +11,7 @@
     "retrieval_method": "dense",
     "use_mcp": true,
     "repeats": 1,
-    "git_commit": "8be1397"
+    "git_commit": "d876530"
   },
   "summary": {
     "runs": 15,
